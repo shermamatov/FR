@@ -5,6 +5,7 @@ WORKDIR /app/front
 COPY ./front/package.json ./
 COPY ./front/package-lock.json ./
 RUN npm install axios
+RUN npm install sass
 COPY ./front/ ./
 RUN npm run build
 
