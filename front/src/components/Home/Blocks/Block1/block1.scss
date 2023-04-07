@@ -185,3 +185,17 @@
         }
     }
 }
+@media (min-width: 1800px) {
+    .block1 {
+        .block1_left {
+            > h1 {
+                font-size: 90px;
+            }
+        }
+        .block1_right {
+            .banner_block {
+                max-width: 750px;
+            }
+        }
+    }
+}

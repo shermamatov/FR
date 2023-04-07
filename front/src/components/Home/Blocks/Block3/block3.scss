@@ -92,3 +92,18 @@
         }
     }
 }
+@media (min-width: 1600px) {
+    .block3_main {
+        min-height: 800px;
+        .block3 {
+            .block3_left {
+                width: 650px;
+            }
+            .block3_right {
+                > h1 {
+                    font-size: 70px;
+                }
+            }
+        }
+    }
+}
