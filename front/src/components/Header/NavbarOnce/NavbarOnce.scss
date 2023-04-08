@@ -50,6 +50,7 @@
                 width: calc(
                     100px + (180 - 100) * ((100vw - 800px) / (1600 - 800))
                 );
+                max-width: 200px;
                 border-radius: 50px;
                 border: 2px dashed rgb(42, 42, 42, 0.5);
                 background-color: transparent;
@@ -60,6 +61,7 @@
                 width: calc(
                     160px + (250 - 160) * ((100vw - 350px) / (1400 - 350))
                 );
+                max-width: 260px;
                 height: 40px;
                 border-radius: 50px;
                 background-color: #a5a582;
@@ -140,6 +142,19 @@ button {
 
         .menu_block {
             display: block;
+        }
+    }
+}
+@media (min-width: 2000px) {
+    .navbar {
+        .navbar_right_block {
+            height: 100px;
+            .navbar_navigate {
+                font-size: 28px;
+            }
+        }
+        .navbar_left_block {
+            width: 200px;
         }
     }
 }

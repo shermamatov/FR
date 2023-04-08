@@ -3,7 +3,7 @@ footer {
     position: relative;
     background-image: url("../../images/Rectangle.png");
     background-repeat: no-repeat;
-    background-size: 100;
+    background-size: cover;
   }
   
   .container {
@@ -14,8 +14,8 @@ footer {
     padding: 10px;
   }
   .container__footer{
-    background-color: #2a2a2a;
     background-color: rgba(0, 0, 0, 0.7);
+    background-size: cover;
   }
   .footer::before {
     content: "";

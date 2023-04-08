@@ -96,6 +96,12 @@
 .pagg__number:hover{
     color: #A5A582;
 }
+
+@media (min-width:1860px){
+    .transparent_text{
+        width: 2000px;
+    }
+}
 @media (max-width:1750px) {
     .grid__img{
         max-width: 400px;
