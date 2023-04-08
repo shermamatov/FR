@@ -12,10 +12,10 @@ const Block3 = () => {
                     <img src={banner} alt="" />
                 </div>
                 <div className="block3_right">
-                    <h1>
+                    <h1 className="bord">
                         SEO TITLE HVAC <br /> CONTRACTOR <br /> IN LOS ANGELES
                     </h1>
-                    <p>
+                    <p className="bord">
                         A global print fulfillment company partnered with Mason{" "}
                         <br />
                         Interactive to grow omnichannel sales via Search Engine{" "}
@@ -31,7 +31,7 @@ const Block3 = () => {
                     </button>
                 </div>
             </div>
-            <h1 className="block3_buhoi_text">Our engineers are trained </h1>
+            <h1 className="block3_buhoi_text ">Our engineers are trained </h1>
         </div>
     );
 };

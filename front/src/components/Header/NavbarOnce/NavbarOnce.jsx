@@ -13,11 +13,11 @@ const NavbarOnce = () => {
                     <img src={navLogo} alt="" />
                 </div>
                 <div className="navbar_navigate">
-                    <div>ABOUT US</div>
-                    <div>SERVICES </div>
-                    <div>REVIEWS</div>
-                    <div>BLOG</div>
-                    <div>PROJECT PHOTOS</div>
+                    <div className="bord">ABOUT US</div>
+                    <div className="bord">SERVICES </div>
+                    <div className="bord">REVIEWS</div>
+                    <div className="bord">BLOG</div>
+                    <div className="bord">PROJECT PHOTOS</div>
                 </div>
                 <div className="right_block_buttons">
                     <button className="number_btn">+1-818-888-10-10</button>

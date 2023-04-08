@@ -11,30 +11,30 @@ const FirstBlock = () => {
     return (
         <div className="block1">
             <div className="block1_left">
-                <h1>
+                <h1 className="bord">
                     Family owners <br /> business of <br /> engineers
                 </h1>
                 <div className="left_bottom_block">
                     <div className="block1_desc">
-                        <div>
+                        <div className="bord">
                             <img src={galochkaIcon} alt="" />
                             <h4>30+ years experience in engineering</h4>
                         </div>
-                        <div>
+                        <div className="bord">
                             <img src={galochkaIcon} alt="" />
                             <h4>Available 24/7 for Emergencies</h4>
                         </div>
-                        <div>
+                        <div className="bord">
                             <img src={galochkaIcon} alt="" />
                             <h4>
                                 Quick service Same-Day inspection and estimate
                             </h4>
                         </div>
-                        <div className="rating_block">
+                        <div className="rating_block bord">
                             <img src={stars} alt="" />
                             <p>95% of clients recommend us</p>
                         </div>
-                        <div className="mass_block">
+                        <div className="mass_block bord">
                             <img src={google} alt="" />
                             <img src={facebook} alt="" />
                             <img src={yelp} alt="" />
@@ -47,7 +47,7 @@ const FirstBlock = () => {
                     </div>
                 </div>
             </div>
-            <div className="block1_right">
+            <div className="block1_right bord">
                 <div className="banner_block">
                     <img src={banner} alt="" />
                     <div className="krujok">
