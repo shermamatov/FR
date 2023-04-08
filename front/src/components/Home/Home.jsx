@@ -5,7 +5,7 @@ import FrServer from "./Blocks/Block4/FrServer";
 import WordsFrom from "./Blocks/Block5/WordsFrom";
 import Block2 from "./Blocks/Block2/Block2";
 import Block3 from "./Blocks/Block3/Block3";
-// import Block6 from "./Blocks/Block6/Block6";
+import ProjectLoaction from "./Blocks/Block8/ProjectLoaction";
 import Block7 from "./Blocks/Block7/Block7";
 import LatestPost from "./Blocks/Block6/LatestPost";
 // block end
@@ -20,6 +20,7 @@ const Home = () => {
             <WordsFrom />
             <Block7 />
             <LatestPost />
+            <ProjectLoaction />
         </div>
     );
 };
