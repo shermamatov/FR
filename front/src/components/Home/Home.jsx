@@ -16,7 +16,7 @@ const Home = () => {
             <Block2 />
             <Block3 />
             <FrServer />
-            <WordsFrom />
+            {/* <WordsFrom /> */}
             <Block6 />
             <Block7 />
         </div>
