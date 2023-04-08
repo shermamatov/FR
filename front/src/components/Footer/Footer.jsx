@@ -12,9 +12,9 @@ import geo from "../../images/geo.png";
 
 const Footer = () => {
   return (
-    <footer >
-    <div className="container__footer">
-      <div className="container ">
+    <footer>
+    <div className="footer__wrapper">
+      <div className="container">
         <div className="row">
           <div className="col-md-4">
             <div className="about">
