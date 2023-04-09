@@ -98,6 +98,11 @@
     color: #A5A582;
 }
 
+@media (min-width:2600px){
+    .transparent_text{
+        width: 3500px !important;
+    }
+}
 @media (min-width:1860px){
     .transparent_text{
         width: 2000px;
