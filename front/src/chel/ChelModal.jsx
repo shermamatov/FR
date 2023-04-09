@@ -16,6 +16,12 @@ const ChelModal = ({ setChelModalState }) => {
     useEffect(() => {
         console.log(checked3);
     }, [checked3]);
+    function reset() {
+        setCheked1(false);
+        setCheked2(false);
+        setCheked3(false);
+        setCheked4(false);
+    }
     return (
         <div
             className="chel_modal_main_block"
@@ -30,7 +36,9 @@ const ChelModal = ({ setChelModalState }) => {
                 />
                 <div className="chel_modal_block">
                     <h2>Accessibility Adjustments</h2>
-                    <button className="reset_btn">reset settings</button>
+                    <button onClick={reset} className="reset_btn">
+                        reset settings
+                    </button>
                     <div className="togle_main_block">
                         <h3>Choose the right accessibility profile for you</h3>
                         <div

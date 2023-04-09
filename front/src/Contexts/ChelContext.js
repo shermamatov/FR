@@ -44,6 +44,36 @@ const ChelContext = ({ children }) => {
             item.classList.add("bord");
         });
     }
+    function bigFontSize() {
+        const h1 = document.querySelectorAll("h1");
+        const p = document.querySelectorAll("p");
+        const h4 = document.querySelectorAll("h4");
+        const h5 = document.querySelectorAll("h5");
+        for (let i of h1) {
+            checked3
+                ? i.classList.add("big_fz_h1")
+                : i.classList.remove("big_fz_h1");
+            console.log(i);
+        }
+        for (let i of h4) {
+            checked3
+                ? i.classList.add("big_fz_h4")
+                : i.classList.remove("big_fz_h4");
+            console.log(i);
+        }
+        for (let i of h5) {
+            checked3
+                ? i.classList.add("big_fz_h5")
+                : i.classList.remove("big_fz_h5");
+            console.log(i);
+        }
+        for (let i of p) {
+            checked3
+                ? i.classList.add("big_fz_p")
+                : i.classList.remove("big_fz_p");
+            console.log(i);
+        }
+    }
     const value = {
         checked1,
         setCheked1,
@@ -55,6 +85,7 @@ const ChelContext = ({ children }) => {
         setCheked4,
         border,
         addBordClass,
+        bigFontSize,
     };
     return (
         <chelContext.Provider value={value}>{children}</chelContext.Provider>
