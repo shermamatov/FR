@@ -22,7 +22,7 @@ const NavbarOnce = () => {
                     <div className="has__border">BLOG</div>
                     <div>PROJECT PHOTOS</div>
                 </div>
-                <div className="right_block_buttons">
+                <div className={"right_block_buttons"}>
                     <button className="number_btn">+1-818-888-10-10</button>
                     <button className="book_btn">Book online now</button>
                 </div>
@@ -45,7 +45,7 @@ const NavbarOnce = () => {
                 <div className="burger__link">PROJECT PHOTOS</div>
             </div>
         </div>
-        <div className={window.Width >= 769 ?'d-none':"navbar"}>
+        <div className={window.innerWidth >= 769 ?'d-none':"navbar"}>
             <div className="d-flex">
                 <a href="https://goo.gl/maps/DyXf6MnjBwvPMhaF6">73 Canal Street, California, LA</a>
                 <a href="tel:+18188881010">+1-818-888-10-10</a>

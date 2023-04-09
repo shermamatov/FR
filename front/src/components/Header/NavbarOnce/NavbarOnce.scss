@@ -47,6 +47,7 @@
             > .has__border, div {
                 position: relative;
                 margin: 0 20px;
+                cursor: pointer;
             }
             .has__border::after {
                 content: "";

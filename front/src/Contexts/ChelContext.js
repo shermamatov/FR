@@ -39,10 +39,10 @@ const ChelContext = ({ children }) => {
         h1.forEach((item) => {
             item.classList.add("bord");
         });
-        const li = document.querySelectorAll("li");
-        li.forEach((item) => {
-            item.classList.add("bord");
-        });
+        // const li = document.querySelectorAll("li");
+        // li.forEach((item) => {
+        //     item.classList.add("bord");
+        // });
     }
     function bigFontSize() {
         const h1 = document.querySelectorAll("h1");
