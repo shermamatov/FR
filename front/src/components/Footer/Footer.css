@@ -1,0 +1,112 @@
+footer {
+  color: white;
+  position: relative;
+  background-image: url("../../images/Rectangle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.footer__wrapper{
+  background-color: rgba(0, 0, 0, 0.9);
+
+}
+.container {
+  align-items: center;
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+}
+.row {
+  flex-direction: row;
+  display: flex;
+  justify-content: space-around;
+  text-align: left;
+}
+.col-md-4 {
+  width: 100%;
+  padding: 50px;
+}
+.about {
+  margin-bottom: 25px;
+}
+.contacts {
+  padding-bottom: 10px;
+}
+
+.col-md-4 h1 {
+  padding-bottom: 15px;
+  font-weight: revert;
+}
+.col-md-p {
+  font-family: Montserrat;
+  width: 85%;
+  line-height: 2.5;
+}
+.okrug {
+  background-color: grey;
+  border-radius: 50%;
+  background-color: rgba(58, 53, 53, 0.8);
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.okrug img {
+  text-align: center;
+  align-items: center;
+  /* padding: 35%; */
+}
+.main_icons {
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin-top: 5%;
+}
+.polosa {
+  width: 60px;
+  height: 5px;
+  border-radius: 5px;
+  background-color: #e9be8a;
+}
+.col-md-4-mini {
+  display: flex;
+  align-items: center;
+  padding-bottom: 4%;
+  padding-top: 4%;
+}
+.col-md-4-mini h4 {
+  font-weight: 200;
+  padding-bottom: 3%;
+  font-family: Montserrat;
+}
+.col-md-4-mini p {
+  font-family: Montserrat;
+  font-weight: 700;
+}
+.col-md-4-mini img {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
+.contacts_polosa {
+  width: 310px;
+  height: 1px;
+  background-color: grey;
+}
+.que_polasa {
+  width: 250px;
+  height: 1px;
+  background-color: grey;
+}
+.col-md-p-4 {
+  padding-top: 5%;
+  padding-bottom: 5%;
+  font-family: Montserrat;
+  font-weight: 700;
+}

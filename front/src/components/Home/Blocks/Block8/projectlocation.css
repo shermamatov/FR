@@ -1,0 +1,82 @@
+.pl__title{
+    font-family: 'Alfa Slab One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 96px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #72421C;
+    text-align: center;
+    margin-bottom: 5%;
+}
+.pl__map iframe{
+    border: none;
+    width: 100%;
+    position: relative;
+}
+.pl__map{
+    position: relative;
+}
+.pl__card{
+    position: absolute;
+    z-index: 10;
+    top: 10%;
+    left: 50%;
+    background: #FFF8ED;
+    border: 1px dashed #000000;
+    padding: 15px 30px;
+}
+.pl__text{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 40px;
+    color: #2A2A2A;
+}
+.pl__text span{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    color: #F2994A;
+}
+@media (max-width:900px) {
+ .pl__title{
+    font-size: 50px;
+ }   
+ .pl__card{
+    left: 40%;
+ }
+}
+@media (max-width:700px) {
+    .pl__card{
+        left: 30%;
+    } 
+}
+@media (max-width:650px) {
+ .pl__title{
+    font-size: 30px;
+ }   
+ .pl__card{
+    padding: 15px 15px;
+ }
+ .pl__text{
+    font-size: 18px;
+ }
+}
+@media (max-width:470px) {
+    .pl__card{
+        left: 20%;
+    }
+    .pl__text{
+        font-size: 14px;
+     }
+   }
+@media (max-width:400px) {
+    .pl__title{
+       font-size: 28px;
+    }   
+   }
