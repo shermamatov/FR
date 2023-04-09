@@ -10,6 +10,7 @@ import Block7 from "./Blocks/Block7/Block7";
 import LatestPost from "./Blocks/Block6/LatestPost";
 import { useChel } from "../../Contexts/ChelContext";
 import "../../chel/chelModal.css";
+import Block9 from "./Blocks/Block9/Block9";
 // block end
 // строго использовать css.module
 const Home = () => {
@@ -20,6 +21,7 @@ const Home = () => {
             <Block3 />
             <FrServer />
             <WordsFrom />
+            <Block9 />
             <Block7 />
             <LatestPost />
             <ProjectLoaction />
