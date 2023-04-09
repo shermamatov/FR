@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./block7.scss";
 import { otzv1, otzv2 } from "../../../../const/consts";
 import rating from "../../../../images/block7_rating.png";
 import img1 from "../../../../images/block7_img1.webp";
 import img2 from "../../../../images/block7_img2.webp";
 import img3 from "../../../../images/block7_img3.webp";
+import { useChel } from "../../../../Contexts/ChelContext";
 const Block7 = () => {
+    const { addBordClass } = useChel();
+    useEffect(() => {
+        addBordClass();
+    }, []);
     return (
         <div className="block7_main">
             <h1>Words From Customers</h1>
