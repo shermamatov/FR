@@ -3,10 +3,16 @@
     width: 110%;
   }
 }
+@media (max-width:1200px) {
+  .main_icons{
+    width: 100%;
+  }
+}
 @media (max-width: 1100px) {
   .col-md-p {
     width: 130%;
   }
+  
 }
 @media (max-width: 1024px) {
   .main_icons {
@@ -26,7 +32,7 @@
     width: 80%;
   }
   .main_icons {
-    width: 35%;
+    width: 80%;
   }
   .contacts h1 {
     font-size: 50px;
@@ -38,9 +44,8 @@
     background-position: center center;
   }
   .col-md-4-mini img {
-    width: 15%;
+    width: 40px !important;
     height: 30px;
-    padding-right: 60px;
   }
   .col-md-p-4 {
     font-size: 20px;

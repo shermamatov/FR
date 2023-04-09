@@ -1,3 +1,4 @@
+
 .navbar {
     width: 90%;
     margin: auto;
@@ -6,6 +7,18 @@
     font-family: "Montserrat";
     justify-content: end;
     position: relative;
+    .d-flex{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        >a{
+            margin-top: 10px;
+            transition: color .5s;
+            &:hover{
+                color:#F2994A ;
+            }
+        }
+    }
     .navbar_left_block {
         // width: 12%;
         width: 150px;
@@ -26,23 +39,24 @@
         justify-content: space-between;
         .navbar_navigate {
             display: flex;
+            align-items: center;
             font-size: calc(
                 10px + (16 - 10) * ((100vw - 800px) / (1400 - 800))
             );
             font-weight: 700;
-            > div {
+            > .has__border, div {
                 position: relative;
-                margin-right: 15px;
-                &::after {
-                    content: "";
-                    position: absolute;
-                    width: 1px;
-                    right: -8px;
-                    top: 4px;
-                    height: 60%;
-                    background: #000;
-                    // display: block;
-                }
+                margin: 0 20px;
+            }
+            .has__border::after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                right: -8px;
+                top: 4px;
+                height: 60%;
+                background: #000;
+                // display: block;
             }
         }
         .right_block_buttons {
@@ -78,10 +92,18 @@
         display: none;
     }
 }
+.burger__menu{
+    display: none;
+}
 button {
     cursor: pointer;
 }
-@media (max-width: 1000px) {
+@media (max-width: 2500px) {
+    .navbar_navigate{
+        > .has__border, div{
+            margin: 0 10px !important;
+        }
+    }
 }
 @media (max-width: 1150px) {
     .navbar {
@@ -106,6 +128,40 @@ button {
     }
 }
 @media (max-width: 768px) {
+    .burger__menu{
+        display: block !important;
+        position: absolute;
+        z-index: 20;
+        right: 0;
+        background-color: #FFF8ED;  
+        height: 100%;
+        top: 0;
+        transform: translateX(100%);
+        transition: all .5s;
+        &--active {
+            transform: translateX(0);
+        }
+        .navbar_burger{
+            padding: 50px 0;
+            .burger__link{
+                margin: 20px 10px;
+                transition: color .5s;
+                cursor: pointer;
+                &:hover{
+                    color: #F2994A;
+                }
+            }
+        }
+        .exit{
+            button{
+                margin: 10px;
+                background-color: transparent;
+                border: none;
+                font-size: 18px;
+                color: #F2994A;
+            }
+        }
+    }
     .navbar {
         .navbar_right_block {
             width: 100%;
@@ -127,6 +183,8 @@ button {
                 > img {
                     height: 100%;
                     width: 100%;
+                    max-width: 55px;
+                    max-height: 50px;
                 }
             }
             .right_block_buttons {
@@ -155,6 +213,20 @@ button {
         }
         .navbar_left_block {
             width: 200px;
+        }
+    }
+}
+@media (max-width:450px){
+    .d-flex{
+        >a{
+            font-size: 14px;
+        }
+    }
+}
+@media (max-width:360px){
+    .d-flex{
+        >a{
+            font-size: 12px;
         }
     }
 }

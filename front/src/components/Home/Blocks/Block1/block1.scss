@@ -189,7 +189,7 @@
     .block1 {
         .block1_left {
             > h1 {
-                font-size: 90px;
+                font-size: 70px;
             }
         }
         .block1_right {
@@ -197,5 +197,10 @@
                 max-width: 750px;
             }
         }
+    }
+}
+@media (max-width:440px) {
+    .block1 .block1_left .left_bottom_block .block1_desc > div > h4 {
+        margin-left: 10px;
     }
 }
