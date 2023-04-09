@@ -174,3 +174,8 @@
         cursor: pointer;
     }
 }
+@media (max-width:390px) {
+    .btn_block button{
+        font-size: 18px;
+    }
+}

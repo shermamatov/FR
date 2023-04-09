@@ -50,7 +50,7 @@ const WordsFrom = () => {
                                     <p>Wood Restoration</p>
                                 </li>
                                 {services_list.map((item) => (
-                                    <li className="bord" key={item.id}>
+                                    <li key={item.id}>
                                         {item.text}
                                     </li>
                                 ))}
@@ -63,7 +63,7 @@ const WordsFrom = () => {
                                 }
                             >
                                 {services_list2.map((item) => (
-                                    <li className="bord" key={item.id}>
+                                    <li key={item.id}>
                                         {item.text}
                                     </li>
                                 ))}
@@ -76,7 +76,7 @@ const WordsFrom = () => {
                                 }
                             >
                                 {services_list3.map((item) => (
-                                    <li className="bord" key={item.id}>
+                                    <li key={item.id}>
                                         {item.text}
                                     </li>
                                 ))}

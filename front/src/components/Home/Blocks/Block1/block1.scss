@@ -65,6 +65,7 @@
                     align-items: center;
                     margin-left: 45px;
                     > img {
+                        cursor: pointer;
                         margin-right: 10px;
                         width: calc(
                             60px + (90 - 60) * ((100vw - 800px) / (1400 - 800))

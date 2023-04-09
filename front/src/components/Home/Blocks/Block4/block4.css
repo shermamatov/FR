@@ -37,6 +37,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     padding: 50px 0;
+
 }
 .grid__item:nth-child(3n+1){
     margin: 45px 0 45px 0px !important;
@@ -139,6 +140,7 @@
     }
     
 }
+
 @media (max-width:850px) {
     .transparent_text{
         text-align: left;
@@ -159,6 +161,7 @@
     }
     .grid_block{
         grid-template-columns: repeat(2, 1fr);
+        padding-left: 8%;
     }
     .grid__desc{
         font-size: 14px;
@@ -200,7 +203,9 @@
         font-size: 30px;        
     }   
     .grid_block{
+        justify-content: center;
         padding: 10px 0;
+        padding-left: 8%;
     }
 }
 @media (max-width:565px) {
@@ -257,5 +262,10 @@
     }
     .pagg__number{
         font-size: 16px;
+    }
+}
+@media (max-width:356px) {
+    .grid_block{
+        padding-left:0;
     }
 }

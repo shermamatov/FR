@@ -6,13 +6,16 @@
       width: 75%;
     } */
   }
+  @media (max-width:768px) {
+    .the-first-right-post {
+      display: none;
+    }
+  }
   @media (max-width: 425px) {
     .latest {
       font-size: 43px;
     }
-    .the-first-right-post {
-      display: none;
-    }
+    
     .post {
       flex-wrap: wrap;
     }
