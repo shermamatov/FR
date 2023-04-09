@@ -3,7 +3,7 @@ footer {
   position: relative;
   background-image: url("../../images/Rectangle.png");
   background-repeat: no-repeat;
-  background-size: 100;
+  background-size: cover;
 }
 .footer__wrapper{
   background-color: rgba(0, 0, 0, 0.9);

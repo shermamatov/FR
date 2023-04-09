@@ -1,10 +1,7 @@
-@media (max-width: 2500px) {
-    /* .post img {
-      width: 65%;
-    } */
-    /* .post {
-      width: 75%;
-    } */
+@media (max-width: 2670px) {
+  .post1 img{
+    width: 685px;
+  }
   }
   @media (max-width:768px) {
     .the-first-right-post {
@@ -44,8 +41,8 @@
       font-size: 10px;
       line-height: 10px;
     }
-    .post img {
-      width: 70%;
+    .post1 img{
+      width: 485px;
     }
     .the-first-right-post {
       padding-left: 13%;
@@ -74,6 +71,21 @@
     .titlenot1 {
       width: 82%;
       font-size: 15px;
+    }
+  }
+  @media (max-width:785px){
+    .post{
+      flex-direction: column;
+      align-items: self-start;
+    }
+    .post1 img{
+      max-width: 600px;
+      width: 100%;
+    }
+  }
+  @media (max-width: 385px) {
+    .latest {
+      font-size: 37px;
     }
   }
   @media (max-width: 320px) {
