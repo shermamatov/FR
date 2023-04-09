@@ -14,14 +14,18 @@ const LatestPost = () => {
       <div className="Latest-Post-main">
         <div className="the-first-left-post">
           <div className="post">
-            <img className="post1" src={mask1} alt="" />
+            <div className="post1">
+              <img src={mask1} alt="" />
+            </div>
             <div className="about1">
               <p className="date">13 Sep 2022</p>
               <a href="#" className="title1">Eight rules for choosing the right color</a>
             </div>
           </div>
           <div className="post">
-            <img src={mask2} alt="" />
+            <div className="post1">
+              <img src={mask2} alt="" />
+            </div>
             <div className="about1">
               <p className="date">13 Sep 2022</p>
               <a href="#" className="title1">
@@ -30,7 +34,9 @@ const LatestPost = () => {
             </div>
           </div>
           <div className="post">
-            <img src={mask3} alt="" />
+            <div className="post1">
+              <img src={mask3} alt="" />
+            </div>
             <div className="about1">
               <p className="date">13 Sep 2022</p>
               <a href="#"  className="title1">

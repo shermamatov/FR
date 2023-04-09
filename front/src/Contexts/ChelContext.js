@@ -53,25 +53,21 @@ const ChelContext = ({ children }) => {
             checked3
                 ? i.classList.add("big_fz_h1")
                 : i.classList.remove("big_fz_h1");
-            console.log(i);
         }
         for (let i of h4) {
             checked3
                 ? i.classList.add("big_fz_h4")
                 : i.classList.remove("big_fz_h4");
-            console.log(i);
         }
         for (let i of h5) {
             checked3
                 ? i.classList.add("big_fz_h5")
                 : i.classList.remove("big_fz_h5");
-            console.log(i);
         }
         for (let i of p) {
             checked3
                 ? i.classList.add("big_fz_p")
                 : i.classList.remove("big_fz_p");
-            console.log(i);
         }
     }
     const value = {

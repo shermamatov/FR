@@ -21,18 +21,18 @@ const Home = () => {
     useEffect(() => {
         const timerId = setTimeout(() => {
             setPrivacy(false);
-        }, 100000);
+        }, 10000);
 
         // Очистка таймера, если компонент размонтируется или состояние изменится
         return () => clearTimeout(timerId);
     }, []);
-    // useEffect(() => {
-    //     if (localStorage.getItem("visited")) {
-    //         setVisited(true);
-    //     } else {
-    //         localStorage.setItem("visited", true);
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (localStorage.getItem("visited")) {
+            setVisited(true);
+        } else {
+            localStorage.setItem("visited", true);
+        }
+    }, []);
     return (
         <div>
             <FirstBlock />
