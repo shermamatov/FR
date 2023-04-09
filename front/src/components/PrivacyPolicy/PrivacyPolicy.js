@@ -9,13 +9,13 @@ export default function PrivacyPolicy() {
         <h1 class="">Privacy Policy</h1>
         <p>
             <span>
-            Through advanced AI technology and well tested methods we can provide unique websites that will ensure the fast development and success of your business. With over 30+ years of experience in AI and computer science, unique methodology of creating and promoting sites, we are confident that we won’t let you down. Choose #1 CyberNet - we care about you and your future.								
+            Through advanced AI technology and well tested methods we can provide unique websites that will ensure the fast development and success of your business. With over 30+ years of experience in AI and computer science, unique methodology of creating and promoting sites, we are confident that we won’t let you down. Choose #1 1Furniture restoration - we care about you and your future.								
             </span>
         </p>
         <h2><strong>Who We Are</strong></h2>
         <p>
         <span>
-        For over 3 generations members of our family have been IT professionals and engineers. The absolute passion and love towards technology became the reason for establishing #1 CyberNet.com. We have developed our own methods for creating and promoting websites. Knowing that AI is of particular importance in the modern world, our business is mainly concentrated on actively using AI technology in business. Our goal is to make sure our methods help you be successful!</span></p>
+        For over 3 generations members of our family have been IT professionals and engineers. The absolute passion and love towards technology became the reason for establishing #1 1Furniture restoration.com. We have developed our own methods for creating and promoting websites. Knowing that AI is of particular importance in the modern world, our business is mainly concentrated on actively using AI technology in business. Our goal is to make sure our methods help you be successful!</span></p>
         <h2><strong>Visitor Comments</strong></h2>
         <p>
         <span>
