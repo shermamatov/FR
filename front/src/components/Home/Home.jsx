@@ -9,6 +9,7 @@ import ProjectLoaction from "./Blocks/Block8/ProjectLoaction";
 import Block7 from "./Blocks/Block7/Block7";
 import LatestPost from "./Blocks/Block6/LatestPost";
 import { useChel } from "../../Contexts/ChelContext";
+import "../../chel/chelModal.css";
 // block end
 // строго использовать css.module
 const Home = () => {

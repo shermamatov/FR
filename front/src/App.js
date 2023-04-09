@@ -19,27 +19,53 @@ function App() {
         setCheked4,
         border,
         checked4,
+        bigFontSize,
     } = useChel();
     useEffect(() => {
         border();
     }, [checked2]);
+    useEffect(() => {
+        bigFontSize();
+    }, [checked3]);
+
     return (
-        <div className={`App ${checked1 && "filterEst"} ${checked4 && "mono"}`}>
+        <div
+            className={`App ${checked1 && "filterEst"} ${checked4 && "mono"} ${
+                checked3 && "megaFilter"
+            }`}
+        >
             {chel && <ChelModal setChelModalState={setChel} />}
             {!chel && (
                 <div
-                    className="pomogator"
                     style={{
-                        position: "fixed",
-                        top: "40vh",
-                        left: "20px",
-                        width: "50px",
-                        zIndex: "100",
-                        cursor: "pointer",
+                        position: "absolute",
+                        width: "100vw",
+                        height: "100vh",
                     }}
-                    onClick={() => setChel(true)}
                 >
-                    <img width="100%" src={chelImg} alt="" />
+                    <div
+                        style={{
+                            position: "relative",
+                            width: "100%",
+                            height: "100%",
+                        }}
+                    >
+                        <div
+                            className="pomogator"
+                            style={{
+                                position: "fixed",
+                                top: "90vh",
+                                // bottom: "20px",
+                                left: "20px",
+                                width: "50px",
+                                zIndex: "100",
+                                cursor: "pointer",
+                            }}
+                            onClick={() => setChel(true)}
+                        >
+                            <img width="100%" src={chelImg} alt="" />
+                        </div>
+                    </div>
                 </div>
             )}
             <Navbar />

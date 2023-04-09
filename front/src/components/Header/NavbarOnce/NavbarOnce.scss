@@ -56,6 +56,11 @@
                 background-color: transparent;
                 height: 40px;
                 font-weight: bold;
+                transition: 0.5s;
+                &:hover {
+                    background-color: #e9be8a;
+                    border: none;
+                }
             }
             .book_btn {
                 width: calc(
@@ -121,9 +126,10 @@ button {
 
             .adap_logo_block {
                 // width: 20%;
-                width: auto;
+                // width: auto;
                 display: block;
                 height: 100%;
+
                 > img {
                     height: 100%;
                     width: 100%;
@@ -150,7 +156,7 @@ button {
         .navbar_right_block {
             height: 100px;
             .navbar_navigate {
-                font-size: 28px;
+                font-size: 24px;
             }
         }
         .navbar_left_block {
