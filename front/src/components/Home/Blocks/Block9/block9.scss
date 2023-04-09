@@ -1,0 +1,18 @@
+.block6 {
+    display: flex;
+    width: 90%;
+    padding: 50px 0px;
+    margin: auto;
+    justify-content: space-evenly;
+    > div {
+        width: calc(200px + (400 - 200) * ((100vw - 350px) / (1600 - 350)));
+        > img {
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 620px) {
+    .block6 {
+        padding: 40px 0px;
+    }
+}
