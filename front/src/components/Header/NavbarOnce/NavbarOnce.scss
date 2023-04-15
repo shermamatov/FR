@@ -1,4 +1,3 @@
-
 .navbar {
     width: 90%;
     margin: auto;
@@ -7,15 +6,15 @@
     font-family: "Montserrat";
     justify-content: end;
     position: relative;
-    .d-flex{
+    .d-flex {
         display: flex;
         justify-content: space-between;
         width: 100%;
-        >a{
+        > a {
             margin-top: 10px;
-            transition: color .5s;
-            &:hover{
-                color:#F2994A ;
+            transition: color 0.5s;
+            &:hover {
+                color: #f2994a;
             }
         }
     }
@@ -44,7 +43,8 @@
                 10px + (16 - 10) * ((100vw - 800px) / (1400 - 800))
             );
             font-weight: 700;
-            > .has__border, div {
+            > .has__border,
+            div {
                 position: relative;
                 margin: 0 20px;
                 cursor: pointer;
@@ -93,15 +93,16 @@
         display: none;
     }
 }
-.burger__menu{
+.burger__menu {
     display: none;
 }
 button {
     cursor: pointer;
 }
 @media (max-width: 2500px) {
-    .navbar_navigate{
-        > .has__border, div{
+    .navbar_navigate {
+        > .has__border,
+        div {
             margin: 0 10px !important;
         }
     }
@@ -117,7 +118,7 @@ button {
         }
     }
 }
-@media (max-width: 970px) {
+@media (max-width: 900px) {
     .number_btn {
         display: none;
     }
@@ -129,37 +130,37 @@ button {
     }
 }
 @media (max-width: 768px) {
-    .burger__menu{
+    .burger__menu {
         display: block !important;
         position: absolute;
         z-index: 20;
         right: 0;
-        background-color: #FFF8ED;  
+        background-color: #fff8ed;
         height: 100%;
         top: 0;
         transform: translateX(100%);
-        transition: all .5s;
+        transition: all 0.5s;
         &--active {
             transform: translateX(0);
         }
-        .navbar_burger{
+        .navbar_burger {
             padding: 50px 0;
-            .burger__link{
+            .burger__link {
                 margin: 20px 10px;
-                transition: color .5s;
+                transition: color 0.5s;
                 cursor: pointer;
-                &:hover{
-                    color: #F2994A;
+                &:hover {
+                    color: #f2994a;
                 }
             }
         }
-        .exit{
-            button{
+        .exit {
+            button {
                 margin: 10px;
                 background-color: transparent;
                 border: none;
                 font-size: 18px;
-                color: #F2994A;
+                color: #f2994a;
             }
         }
     }
@@ -217,16 +218,16 @@ button {
         }
     }
 }
-@media (max-width:450px){
-    .d-flex{
-        >a{
+@media (max-width: 450px) {
+    .d-flex {
+        > a {
             font-size: 14px;
         }
     }
 }
-@media (max-width:360px){
-    .d-flex{
-        >a{
+@media (max-width: 360px) {
+    .d-flex {
+        > a {
             font-size: 12px;
         }
     }

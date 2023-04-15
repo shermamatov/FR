@@ -1,0 +1,20 @@
+.block1 {
+    .services_block1_left {
+        margin-top: 0px;
+    }
+    .services_text_p {
+        font-family: "Montserrat";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #a5a582;
+        margin-bottom: 10px;
+    }
+    margin-bottom: 300px;
+}
+@media (max-width: 768px) {
+    .services_text_p {
+        display: none;
+    }
+}
