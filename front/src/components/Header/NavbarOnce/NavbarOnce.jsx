@@ -39,7 +39,9 @@ const NavbarOnce = () => {
                     </div>
                     <div className={"right_block_buttons"}>
                         <button className="number_btn">+1-818-888-10-10</button>
-                        <button className="book_btn">Book online now</button>
+                        <button className="book_btn" onClick={()=>{
+                            navigate('/book_now')
+                        }}>Book online now</button>
                     </div>
                     <div
                         onClick={() => {
