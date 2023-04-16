@@ -1,42 +1,30 @@
-import React, { useState } from "react";
-import "./BlockNow3.css";
-
+import React, { useEffect, useState } from "react";
+import BlockNowForm2 from "./BlockNowForm2/BlockNowForm2";
+import BlockNowForm1 from "./BlockNowForm1/BlockNowForm1";
 const BlockNow2 = () => {
-  const [state, setState] = useState(false);
-  //   const [name, setName] = useState("");
-  //   const [firstNmae, serFirstName] = useState("");
-  //   const [number, setNumber] = useState("");
-  return (
-    <>
-      <div
-        // style={{ display: "flex" }}
-        className={state === false ? "container" : "hidden_block"}
-      >
-        <h1>meeting</h1>
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-        <button
-          onClick={() => {
-            setState(true);
-          }}
-        >
-          {" "}
-          button 1
-        </button>
-      </div>
-      {/* ////////////////// */}
-      <div
-        // style={{ display: "flex" }}
-        className={state ? "container" : "hidden_block"}
-      >
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-        <button>button 2</button>
-      </div>
-    </>
-  );
+    const [state, setState] = useState(
+        JSON.parse(localStorage.getItem("bookState")) || false
+    );
+    useEffect(() => {
+        if (!localStorage.getItem("bookState")) {
+            localStorage.setItem("bookState", false);
+        }
+    }, []);
+    function changeLocalStorage(bool) {
+        if (localStorage.getItem("bookState")) {
+            localStorage.setItem("bookState", bool);
+            setState(bool);
+        }
+    }
+    return (
+        <div>
+            {state ? (
+                <BlockNowForm1 changeLocalStorage={changeLocalStorage} />
+            ) : (
+                <BlockNowForm2 changeLocalStorage={changeLocalStorage} />
+            )}
+        </div>
+    );
 };
 
 export default BlockNow2;
