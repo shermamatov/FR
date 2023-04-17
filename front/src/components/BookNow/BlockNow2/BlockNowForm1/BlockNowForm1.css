@@ -1,0 +1,88 @@
+.hidden_block {
+    display: none;
+}
+
+.blockNowForm1_title {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: #001733;
+    margin-bottom: 94px;
+}
+
+.blockNowForm1 {
+    width: 880px;
+    margin: 0 auto;
+}
+
+.blockNowForm1 input {
+    width: 100%;
+    padding: 21px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #2A2A2A;
+    outline: none;
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    text-transform: capitalize;
+    color: #2A2A2A;
+
+}
+
+.blockNowForm1 input::placeholder {
+    opacity: 0.7;
+}
+
+.blockNowForm1 button {
+    width: 140px;
+    height: 60px;
+    border-radius: 50%;
+    display: block;
+    margin: 90px auto;
+    background-color: transparent;
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2A2A2A;
+    border: 1px solid #2A2A2A;
+}
+
+
+@media screen and (max-width: 992px){
+    .blockNowForm1{
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blockNowForm1{
+        width: 500px;
+    }
+    .blockNowForm1_title{
+        margin-bottom: 60px;
+    }
+    .blockNowForm1_title,
+    .blockNowForm1 input{
+        font-size: 18px;
+        line-height: 22px;
+    }
+    .blockNowForm1 button {
+        font-size: 16px;
+        line-height: 20px;
+        margin: 60px auto;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .blockNowForm1{
+        width: 100%;
+        padding: 0 10px;
+    }
+}

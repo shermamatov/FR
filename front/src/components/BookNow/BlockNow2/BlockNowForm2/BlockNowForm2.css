@@ -1,0 +1,210 @@
+.date_block {
+    width: 123px;
+    height: 134px;
+    border-radius: 10px;
+    border: 2px dashed green;
+    margin: 0 auto;
+}
+
+.date_block>h1 {
+    /* margin-top: 100px; */
+    /* margin-left: 100px; */
+    text-align: center;
+}
+
+.date_block>h2 {
+    margin-top: 20px;
+    text-align: center;
+    /* margin-left: 100px; */
+}
+
+.blockNowForm2 {
+    width: 880px;
+    margin: 0 auto;
+}
+
+.date_block-wrapper {
+    position: relative;
+}
+
+.date_block-wrapper-next-btn,
+.date_block-wrapper-prev-btn {
+    position: absolute;
+    top: 40%;
+    border: 1px dashed #2A2A2A;
+    border-radius: 10px;
+    width: 35px;
+    height: 35px;
+    background-color: transparent;
+    color: #2A2A2A;
+}
+
+/* .date_block-wrapper-next-btn:hover,
+.date_block-wrapper-prev-btn:hover {
+    color: #F2994A;
+} */
+
+
+.date_block-wrapper-next-btn {
+    right: -25px;
+}
+
+.date_block-wrapper-prev-btn {
+    left: -25px;
+}
+
+.slick-next,
+.slick-prev {
+    z-index: 5;
+    opacity: 0;
+    width: 35px;
+    height: 35px;
+}
+
+
+.blockNowForm2 {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.blockNowForm2_month {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 28px;
+    margin-bottom: 50px;
+}
+
+.blockNowForm2_month button {
+    position: static;
+}
+
+
+.blockNowForm2_time {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2A2A2A;
+    text-align: center;
+    margin: 45px 0;
+}
+
+.blockNowForm2_time_wrapper {
+    text-align: center;
+}
+
+.blockNowForm2_time_item {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #2A2A2A;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.blockNowForm2_time_item:first-child {
+    color: #D9D9D9;
+}
+
+.blockNowForm2_time_item:nth-child(2) {
+    color: #F2994A;
+}
+
+.blockNowForm2_textarea {
+    width: 100%;
+    height: 250px;
+    outline: none;
+    resize: none;
+    background-color: transparent;
+    border: 1px solid #A5A582;
+    border-radius: 15px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: #A5A582;
+    padding: 20px 40px;
+}
+
+.blockNowForm2_textarea::placeholder {
+    opacity: 0.5;
+}
+
+.blockNowForm2_btn {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #2A2A2A;
+    width: 138px;
+    height: 60px;
+    border-radius: 50%;
+    border: 1px solid #2A2A2A;
+    background-color: transparent;
+    margin-top: 50px;
+}
+
+.blockNowForm2_choose {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .blockNowForm2 {
+        width: 700px;
+    }
+
+    .slick-next,
+    .date_block-wrapper-next-btn {
+        right: 0;
+    }
+
+    .slick-prev,
+    .date_block-wrapper-prev-btn {
+        left: 0;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .blockNowForm2 {
+        padding: 35px 0;
+        width: 500px;
+    }
+    .blockNowForm2_choose {
+        display: block;
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 22px;
+        color: #2A2A2A;
+        margin-bottom: 70px;
+    }
+
+    .slick-next, .date_block-wrapper-next-btn {
+        right: -16px;
+    }
+    .slick-prev, .date_block-wrapper-prev-btn {
+        left: -16px;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .blockNowForm2{
+        padding: 35px 10px;
+        width: 100%;
+    }
+    .date_block {
+        width: 90px;
+        font-size: 14px;
+    }
+}
