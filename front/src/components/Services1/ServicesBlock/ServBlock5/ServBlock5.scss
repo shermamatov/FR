@@ -1,0 +1,76 @@
+.servBlock5 {
+    background-image: url('../../../../images/servBlock5-img.png');
+    position: relative;
+    text-align: center;
+    padding: 130px 0 80px 0;
+
+    &_bg {
+        background: #E9BE8A;
+        opacity: 0.95;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    &_title {
+        position: relative;
+        z-index: 2;
+        font-family: 'Montserrat';
+        text-align: center;
+        font-weight: 700;
+        font-size: 80px;
+        line-height: 40px;
+        color: #2A2A2A;
+    }
+
+    &_btn {
+        position: relative;
+        z-index: 2;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 37px;
+        color: #2A2A2A;
+        background: #A5A582;
+        border: 1px solid #2A2A2A;
+        width: 380px;
+        height: 100px;
+        border-radius: 50%;
+        margin-top: 65px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .servBlock5_title {
+        font-size: 60px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .servBlock5_title {
+        font-size: 45px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .servBlock5 {
+        padding: 54px 0;
+    }
+
+    .servBlock5_title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+    .servBlock5_btn {
+        margin-top: 42px;
+        font-size: 20px;
+        line-height: 24px;
+        width: 268px;
+        height: 65px;
+    }
+}

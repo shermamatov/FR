@@ -4,15 +4,16 @@
     border-radius: 10px;
     border: 2px dashed green;
     margin: 0 auto;
+    font-family: "Montserrat";
 }
 
-.date_block>h1 {
+.date_block > h1 {
     /* margin-top: 100px; */
     /* margin-left: 100px; */
     text-align: center;
 }
 
-.date_block>h2 {
+.date_block > h2 {
     margin-top: 20px;
     text-align: center;
     /* margin-left: 100px; */
@@ -31,19 +32,18 @@
 .date_block-wrapper-prev-btn {
     position: absolute;
     top: 40%;
-    border: 1px dashed #2A2A2A;
+    border: 1px dashed #2a2a2a;
     border-radius: 10px;
     width: 35px;
     height: 35px;
     background-color: transparent;
-    color: #2A2A2A;
+    color: #2a2a2a;
 }
 
 /* .date_block-wrapper-next-btn:hover,
 .date_block-wrapper-prev-btn:hover {
     color: #F2994A;
 } */
-
 
 .date_block-wrapper-next-btn {
     right: -25px;
@@ -61,7 +61,6 @@
     height: 35px;
 }
 
-
 .blockNowForm2 {
     padding: 100px 0;
     text-align: center;
@@ -69,7 +68,7 @@
 
 .blockNowForm2_month {
     text-align: center;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 700;
     font-size: 25px;
@@ -85,13 +84,12 @@
     position: static;
 }
 
-
 .blockNowForm2_time {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    color: #2A2A2A;
+    color: #2a2a2a;
     text-align: center;
     margin: 45px 0;
 }
@@ -101,21 +99,21 @@
 }
 
 .blockNowForm2_time_item {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    color: #2A2A2A;
+    color: #2a2a2a;
     text-align: center;
     margin-bottom: 25px;
 }
 
 .blockNowForm2_time_item:first-child {
-    color: #D9D9D9;
+    color: #d9d9d9;
 }
 
 .blockNowForm2_time_item:nth-child(2) {
-    color: #F2994A;
+    color: #f2994a;
 }
 
 .blockNowForm2_textarea {
@@ -124,14 +122,14 @@
     outline: none;
     resize: none;
     background-color: transparent;
-    border: 1px solid #A5A582;
+    border: 1px solid #a5a582;
     border-radius: 15px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-    color: #A5A582;
+    color: #a5a582;
     padding: 20px 40px;
 }
 
@@ -140,15 +138,15 @@
 }
 
 .blockNowForm2_btn {
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: #2A2A2A;
+    color: #2a2a2a;
     width: 138px;
     height: 60px;
     border-radius: 50%;
-    border: 1px solid #2A2A2A;
+    border: 1px solid #2a2a2a;
     background-color: transparent;
     margin-top: 50px;
 }
@@ -173,7 +171,6 @@
     }
 }
 
-
 @media screen and (max-width: 768px) {
     .blockNowForm2 {
         padding: 35px 0;
@@ -181,25 +178,26 @@
     }
     .blockNowForm2_choose {
         display: block;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 500;
         font-size: 18px;
         line-height: 22px;
-        color: #2A2A2A;
+        color: #2a2a2a;
         margin-bottom: 70px;
     }
 
-    .slick-next, .date_block-wrapper-next-btn {
+    .slick-next,
+    .date_block-wrapper-next-btn {
         right: -16px;
     }
-    .slick-prev, .date_block-wrapper-prev-btn {
+    .slick-prev,
+    .date_block-wrapper-prev-btn {
         left: -16px;
     }
-
 }
 
 @media screen and (max-width: 576px) {
-    .blockNowForm2{
+    .blockNowForm2 {
         padding: 35px 10px;
         width: 100%;
     }

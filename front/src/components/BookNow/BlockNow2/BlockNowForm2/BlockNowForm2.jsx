@@ -13,22 +13,53 @@ const BlockNowForm2 = ({ changeLocalStorage }) => {
     // dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
+  const settings2 = {
+    // dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
     slidesToScroll: 1,
   };
 
   return (
     <div className="blockNowForm2">
       <p className="blockNowForm2_choose">Choose day and time</p>
-      <h2 className="blockNowForm2_month">
+      {/* <h2 className="blockNowForm2_month"> */}
+      <div>
         <button className="date_block-wrapper-prev-btn">
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>{" "}
-        February{" "}
+        <Slider {...settings2}>
+          <div>
+            <h3>February</h3>
+          </div>
+          <div>
+            <h3>march</h3>
+          </div>
+          <div>
+            <h3>april</h3>
+          </div>
+          <div>
+            <h3>may</h3>
+          </div>
+          <div>
+            <h3>june</h3>
+          </div>
+          <div>
+            <h3>july</h3>
+          </div>
+          <div>
+            <h3>august</h3>
+          </div>
+        </Slider>
         <button className="date_block-wrapper-next-btn">
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
-      </h2>
+      </div>
+      {/* </h2> */}
       <div className="date_block-wrapper">
         <button className="date_block-wrapper-prev-btn">
           <FontAwesomeIcon icon={faChevronLeft} />
@@ -85,7 +116,6 @@ const BlockNowForm2 = ({ changeLocalStorage }) => {
               <h1>23</h1>
             </div>
           </div>
-
           <div>
             <div
               className="date_block"
@@ -129,7 +159,6 @@ const BlockNowForm2 = ({ changeLocalStorage }) => {
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
-
       <h2 className="blockNowForm2_time">
         Select time for Monday, February 20
       </h2>
