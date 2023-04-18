@@ -14,7 +14,7 @@ const ServBlock3 = () => {
           </div>
           <div className="row row2">
           <div className="col-6">
-            <p className="servBlock3_question servBlock3_question-active">How often should the system be cleaned and why?</p>
+            <p className="servBlock3_question">How often should the system be cleaned and why?</p>
             <p className="servBlock3_question">Can I clean the air conditioner myself?</p>
             <p className="servBlock3_question">How often should the system be cleaned and why?</p>
             <p className="servBlock3_question">How often should the system be cleaned and why?</p>
