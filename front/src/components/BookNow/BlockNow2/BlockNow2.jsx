@@ -18,7 +18,7 @@ const BlockNow2 = () => {
   }
   return (
     <div>
-      {state ? (
+      {!state ? (
         <BlockNowForm1 changeLocalStorage={changeLocalStorage} />
       ) : (
         <BlockNowForm2 changeLocalStorage={changeLocalStorage} />
