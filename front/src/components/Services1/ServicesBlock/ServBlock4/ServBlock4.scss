@@ -1,0 +1,142 @@
+.col-5 {
+    width: 41%;
+    padding: 0 15px;
+}
+
+.col-7 {
+    width: 58%;
+    padding: 0 15px;
+}
+
+
+.servBlock4 {
+
+    &_wrapper {
+        background: #A5A582;
+    }
+
+    &_img {
+        width: 100%;
+        position: relative;
+        top: -10%;
+    }
+
+    &_title {
+        font-family: 'Alfa Slab One';
+        font-weight: 400;
+        font-size: 70px;
+        line-height: 70px;
+        text-transform: uppercase;
+        color: #2A2A2A;
+        margin-top: 80px;
+    }
+
+    &_text {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 25px;
+        line-height: 40px;
+        color: #FFFFFF;
+        margin-top: 45px;
+    }
+
+    &_btn {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #2A2A2A;
+        border: 1px solid #2A2A2A;
+        width: 143px;
+        height: 66px;
+        background-color: transparent;
+        border-radius: 50%;
+        margin: 84px auto;
+        display: block;
+    }
+
+    &_bottomText1 {
+        font-family: 'Montserrat';
+        font-weight: 800;
+        font-size: 100px;
+        line-height: 100px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        opacity: 0.2;
+    }
+
+}
+
+
+@media screen and (max-width: 1400px) {
+    .servBlock4_title {
+        font-size: 60px;
+        line-height: 100%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .servBlock4 {
+        overflow: hidden;
+        .row{
+            flex-wrap: wrap;
+        }
+        .col-5,
+        .col-7 {
+            width: 100%;
+        }
+
+        &_wrapper{
+            position: relative;
+        }
+        &_img{
+            right: -25%;
+        }
+        &_bottomText1{
+            white-space: nowrap;
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .servBlock4_img {
+        right: -30%;
+    }
+
+    .servBlock4_title {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .servBlock4_text{
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .servBlock4_btn{
+        margin-left: 10px;
+        margin-top: 50px;
+    }
+    .servBlock4{
+        &_bottomText1{
+           font-size: 50px;
+           line-height: 60px;
+        }
+        &_title {
+            br{
+                display: none;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 576px){
+    .servBlock4_title{
+        margin-top: 20px;
+    }
+    .servBlock4_text{
+        margin-top: 20px;
+    }
+  
+}
