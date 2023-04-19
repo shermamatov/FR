@@ -5,6 +5,7 @@ import HomePage from "../Pages/HomePage";
 import PrivacyPolicyPage from "../Pages/PrivacyPolicyPage";
 import BookNowPage from "../Pages/BookNowPage";
 import ServicesPage from "../Pages/ServicesPage";
+
 import Photos from "../components/Photos/Photos";
 import BlogPage from "../Pages/BlogPage";
 const MainRoutes = () => {
@@ -26,6 +27,7 @@ const MainRoutes = () => {
       </Routes>
     </>
   );
+
 };
 
 export default MainRoutes;

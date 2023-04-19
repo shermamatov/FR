@@ -1,0 +1,468 @@
+.reviewsBlock1 {
+    padding: 150px 0;
+
+    .col-6 {
+        position: relative;
+    }
+
+    &_circleImg {
+        position: absolute;
+        top: -100px;
+        left: -70px;
+    }
+
+    &_subtitle {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        text-transform: uppercase;
+        color: #A5A582;
+    }
+
+    &_title {
+        font-family: 'Alfa Slab One';
+        font-weight: 400;
+        font-size: 50px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #2A2A2A;
+    }
+
+    &_stars {
+        display: flex;
+        margin-top: 27px;
+        column-gap: 30px;
+
+        &_count {
+            font-family: 'Montserrat';
+            font-weight: 800;
+            font-size: 30px;
+            line-height: 37px;
+            text-transform: uppercase;
+            color: #72421C;
+        }
+
+        &_icon {
+            display: flex;
+            column-gap: 12px;
+        }
+    }
+
+    &_text {
+        margin-top: 20px;
+        font-family: 'Montserrat';
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #041E3C;
+    }
+
+    &_raiting {
+        margin-top: 25px;
+        font-family: 'Montserrat';
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        color: #041E3C;
+
+        &_item {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+
+            &_line {
+                width: 211px;
+                height: 5px;
+                background: #F2994A;
+                border-radius: 100px;
+            }
+        }
+    }
+
+    &_btn {
+        margin-top: 50px;
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #2A2A2A;
+        border: 1px solid #2A2A2A;
+        width: 180px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: transparent;
+    }
+}
+
+
+.reviewsBlock2 {
+
+    .row {
+        flex-wrap: wrap;
+    }
+
+    .col-3 {
+        width: 25%;
+        padding: 0 15px;
+    }
+
+    &_title {
+        display: none;
+    }
+
+    &_btns {
+        display: flex;
+        column-gap: 95px;
+        align-items: center;
+        margin-bottom: 65px;
+
+        button {
+            border: none;
+            background-color: transparent;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 50px;
+            color: #2A2A2A;
+            transition: .5s;
+
+            &:hover {
+                color: #F2994A;
+            }
+        }
+
+        &_filter {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 50px;
+        }
+
+        &_right {
+            display: flex;
+            column-gap: 33px;
+        }
+    }
+
+    &_card {
+        position: relative;
+        padding: 30px 0;
+
+        &_img {
+            width: 100%;
+        }
+
+        &_title {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 40px;
+            color: #2A2A2A;
+            margin-top: 15px;
+        }
+
+        &_raiting {
+            display: flex;
+            column-gap: 20px;
+            align-items: center;
+
+            &_count {
+                font-family: 'Montserrat';
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 40px;
+                color: #F2994A;
+            }
+        }
+
+
+        &_btn {
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+            background: #A5A582;
+            border: none;
+            width: 120px;
+            height: 56px;
+            border-radius: 50%;
+            position: absolute;
+            top: 170px;
+            left: 30px;
+        }
+    }
+
+    &_bottom {
+        display: flex;
+        column-gap: 42px;
+        align-items: center;
+
+        &_row {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &_center {
+            display: flex;
+            column-gap: 37px;
+
+            &_item {
+
+                font-family: 'Rubik';
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 20px;
+                display: flex;
+                align-items: center;
+                color: #2A2A2A;
+            }
+        }
+
+        &_btn {
+            color: #2A2A2A;
+            background-color: transparent;
+            border: 1px dashed #A5A582;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+    }
+
+}
+
+
+.reviewsBlock3 {
+    margin-top: 70px;
+    padding-top: 80px;
+    background: #FCF2E7;
+    padding-bottom: 300px;
+
+
+    .row {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .col-4 {
+        width: 33.3%;
+        padding: 0 15px;
+    }
+
+    &_title {
+        display: none;
+    }
+
+    &_card {
+        margin: 50px 0;
+
+        &_text {
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 40px;
+            color: #2A2A2A;
+        }
+
+        &_name {
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 25px;
+            line-height: 40px;
+            color: #F2994A;
+            margin-top: 15px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1400px) {
+    .reviewsBlock2_card_btn {
+        top: 120px;
+        left: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .reviewsBlock2 {
+        .col-3 {
+            width: 33.3%;
+        }
+
+        &_card_btn {
+            top: 150px;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .reviewsBlock2 {
+        .col-3 {
+            width: 50%;
+        }
+
+        &_card_btn {
+            top: 170px;
+        }
+    }
+
+    .reviewsBlock3 {
+        .col-4 {
+            width: 50%;
+        }
+    }
+
+    .reviewsBlock1 {
+        .col-6 {
+            width: 100%;
+        }
+
+        .col-6:nth-child(2) {
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .reviewsBlock1 {
+        &_subtitle {
+            font-size: 12px;
+            line-height: 15px;
+        }
+
+        &_title {
+            font-size: 30px;
+            line-height: 40px;
+        }
+
+        &_stars_count {
+            font-size: 22px;
+            line-height: 27px;
+        }
+
+    }
+
+    .reviewsBlock2 {
+        &_title {
+            display: block;
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            color: #2A2A2A;
+        }
+
+        &_btns {
+            flex-wrap: wrap;
+            justify-content: space-between;
+            row-gap: 50px;
+
+            button {
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            &_filter {
+                font-size: 18px !important;
+                line-height: 18px !important;
+                order: 1;
+                width: 100%;
+                background: #FCF2E7 !important;
+                border: 1px dashed #72421C !important;
+                border-radius: 10px !important;
+                height: 45px !important;
+            }
+        }
+
+        &_card {
+            &_title {
+                font-size: 14px;
+                line-height: 40px;
+            }
+
+            &_btn {
+                font-size: 12px;
+                line-height: 15px;
+                width: 95px;
+                height: 35px;
+                top: 120px;
+            }
+        }
+    }
+
+    .reviewsBlock3 {
+        padding-bottom: 180px;
+
+        &_title {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 22px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            color: #2A2A2A;
+        }
+
+        &_card {
+
+            &_text {
+                font-size: 12px;
+                line-height: 18px;
+            }
+
+            &_name {
+                font-size: 12px;
+                line-height: 40px;
+                color: #2A2A2A;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    .reviewsBlock1 {
+        padding: 75px 0;
+
+        &_stars {
+            flex-wrap: wrap;
+            row-gap: 10px;
+        }
+
+        &_raiting_item_line {
+            width: 125px;
+        }
+    }
+
+    .reviewsBlock2 {
+        .col-3 {
+            width: 100%;
+        }
+
+        &_bottom {
+            column-gap: 10px;
+
+            &_btn {
+                width: 30px;
+                height: 30px;
+            }
+
+            &_center {
+                column-gap: 25px;
+            }
+        }
+    }
+
+    .reviewsBlock3 {
+        padding-bottom: 120px;
+
+        .col-4 {
+            width: 100%;
+        }
+    }
+}
