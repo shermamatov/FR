@@ -1,125 +1,142 @@
 .family-owners {
-  width: 90%;
-  max-width: 1700px;
-  margin: 0 auto;
+    width: 90%;
+    max-width: 1700px;
+    margin: 0 auto;
 }
 .family-top-box {
-  margin-top: 10%;
-  margin-bottom: 5%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  /* width: 90%; */
+    margin-top: 10%;
+    margin-bottom: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    /* width: 90%; */
 }
 .about-result {
-  color: #a5a582;
-  font-family: Montserrat;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 22px;
+    color: #a5a582;
+    font-family: Montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 .family-title-left h1 {
-  font-family: "Alfa Slab One";
-  font-style: normal;
-  font-weight: 400;
-  line-height: 60px;
-  width: 703px;
-  font-size: 50px;
-  text-transform: uppercase;
+    font-family: "Alfa Slab One";
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    width: 703px;
+    font-size: 50px;
+    text-transform: uppercase;
 }
 .title-result {
-  width: 60%;
+    width: 60%;
 }
 .photes-result-right {
-  /* width: 70%; */
+    /* width: 70%; */
 }
 .photes-result-right img {
-  width: 125%;
-  position: relative;
-  right: 20%;
+    width: 125%;
+    position: relative;
+    right: 20%;
 }
 .title-result {
-  font-family: Montserrat;
-  font-weight: 500;
-  line-height: 20px;
-  font-size: 13px;
-  color: #001733;
+    font-family: Montserrat;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 13px;
+    color: #001733;
 }
+
+.aboutUs_block1_text {
+    width: 40%;
+    font-weight: 400;
+}
+
+.aboutUs_block1 {
+    margin-bottom: 500px;
+}
+
 @media (max-width: 2500px) and (min-width: 2000px) {
-  .about-result {
-    font-size: 30px;
-  }
-  .family-title-left h1 {
-    font-size: 70px;
-    line-height: 90px;
-  }
-  .title-result {
-    font-size: 20px;
-  }
-  .photes-result-right img {
-    width: 165%;
-  }
+    .about-result {
+        font-size: 30px;
+    }
+    .family-title-left h1 {
+        font-size: 70px;
+        line-height: 90px;
+    }
+    .title-result {
+        font-size: 20px;
+    }
+    .photes-result-right img {
+        width: 165%;
+    }
 }
 @media (max-width: 1024px) {
-  .family-title-left h1 {
-    font-size: 41px;
-    line-height: 50px;
-    width: 500px;
-  }
-  .about-result {
-    font-size: 20px;
-  }
-  .title-result {
-    font-size: 13px;
-  }
-  .photes-result-right img {
-    width: 130%;
-  }
+    .family-title-left h1 {
+        font-size: 41px;
+        line-height: 50px;
+        width: 500px;
+    }
+    .about-result {
+        font-size: 20px;
+    }
+    .title-result {
+        font-size: 13px;
+    }
+    .photes-result-right img {
+        width: 130%;
+    }
 }
 @media (max-width: 768px) {
-  .about-result {
-    font-size: 15px;
-  }
-  .family-title-left h1 {
-    font-size: 31px;
-    line-height: inherit;
-    width: 420px;
-  }
-  .title-result {
-    font-size: 9px;
-  }
-  .photes-result-right img {
-    width: 131%;
-  }
+    .about-result {
+        font-size: 15px;
+    }
+    .family-title-left h1 {
+        font-size: 31px;
+        line-height: inherit;
+        width: 420px;
+    }
+    .title-result {
+        font-size: 9px;
+    }
+    .photes-result-right img {
+        width: 131%;
+    }
+    .aboutUs_block1_text {
+        width: 100%;
+        font-weight: 400;
+        margin-bottom: calc(20px + (50 - 20) * ((100vw - 350px) / (800 - 350)));
+    }
 }
 @media (max-width: 425px) {
-  .family-top-box {
-    flex-wrap: wrap;
-  }
-  .family-title-left h1 {
-    font-size: 38px;
-    width: 364px;
-  }
-  .title-result {
-    font-size: 10px;
-    width: 73%;
-  }
-  .photes-result-right img {
-    padding-top: 19px;
-    width: 95%;
-    right: 0%;
-  }
-  .family-title-left h1 {
-    font-size: 33px;
-    width: 317px;
-  }
+    .family-top-box {
+        flex-wrap: wrap;
+    }
+    .family-title-left h1 {
+        font-size: 38px;
+        width: 364px;
+    }
+    .title-result {
+        font-size: 10px;
+        width: 73%;
+    }
+    .photes-result-right img {
+        padding-top: 19px;
+        width: 95%;
+        right: 0%;
+    }
+    .family-title-left h1 {
+        font-size: 33px;
+        width: 317px;
+    }
 }
 @media (max-width: 320px) {
-  .family-title-left h1 {
-    font-size: 29px;
-    width: 278px;
-  }
-  .title-result {
-    width: 97%;
-  }
+    .family-title-left h1 {
+        font-size: 29px;
+        width: 278px;
+    }
+    .title-result {
+        width: 97%;
+    }
 }
