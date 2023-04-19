@@ -1,8 +1,8 @@
 import React from "react";
 import "./ServBlock2.css";
-import i1 from "../../../../images/i1.jpg";
-import i2 from "../../../../images/i2.jpg";
-import i3 from "../../../../images/i3.jpg";
+import i1 from "../../../../images/i1.png";
+import i2 from "../../../../images/i2.png";
+import i3 from "../../../../images/i3.png";
 
 const ServBlock2 = () => {
   return (
