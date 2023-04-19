@@ -33,7 +33,9 @@ const NavbarOnce = () => {
                         >
                             SERVICES{" "}
                         </div>
-                        <div className="has__border">REVIEWS</div>
+                        <div className="has__border"
+                         onClick={() => navigate("/reviews")}
+                        >REVIEWS</div>
                         <div className="has__border">BLOG</div>
                         <div onClick={() => navigate("/photos")}>
                             PROJECT PHOTOS
