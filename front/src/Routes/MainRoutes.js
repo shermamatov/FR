@@ -5,6 +5,8 @@ import HomePage from "../Pages/HomePage";
 import PrivacyPolicyPage from "../Pages/PrivacyPolicyPage";
 import BookNowPage from "../Pages/BookNowPage";
 import ServicesPage from "../Pages/ServicesPage";
+import ReviewsPage from "../Pages/ReviewsPage";
+
 const MainRoutes = () => {
     const PUBLIC_ROUTES = [
         { link: "/AboutUs", Element: <AboutUsPage />, id: 1 },
@@ -12,6 +14,7 @@ const MainRoutes = () => {
         { link: "/privacy_policy", Element: <PrivacyPolicyPage />, id: 3 },
         { link: "/book_now", Element: <BookNowPage />, id: 4 },
         { link: "/services", Element: <ServicesPage />, id: 5 },
+        { link: "/reviews", Element: <ReviewsPage />, id: 6 },
     ];
     return (
         <>
