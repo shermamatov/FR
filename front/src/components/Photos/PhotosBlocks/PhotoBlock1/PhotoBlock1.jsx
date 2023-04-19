@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./PhotoBlock1.scss";
 import filterIcon from "../../../../images/filterIcon.png";
 import photo1 from "../../../../images/photos_Img1.webp";
 import photo2 from "../../../../images/photos_img2.webp";
 import photo3 from "../../../../images/photos_img3.webp";
+import PhotoFilter from "../PhotoFilter/PhotoFilter";
 const PhotoBlock1 = () => {
+    const [modal, setModal] = useState(false);
     return (
-        <div className="photos_main_block">
+        <div className="photos_main_block" onClick={() => setModal(false)}>
             <h1>Project photos</h1>
             <div className="photos_block">
-                <div className="photos_filter_block">
+                <div
+                    className="photos_filter_block"
+                    onClick={(e) => {
+                        setModal(true);
+                        e.stopPropagation();
+                    }}
+                >
                     <img src={filterIcon} alt="" />
                     <p>Filter</p>
                 </div>
                 <div className="photos_img_blocks">
+                    {modal && <PhotoFilter />}
                     <div>
                         <img src={photo1} alt="" />
                     </div>

@@ -9,15 +9,22 @@
         font-size: calc(30px + (50 - 30) * ((100vw - 800px) / (1600 - 800)));
     }
     .photos_filter_block {
+        position: relative;
         display: flex;
         margin-top: calc(30px + (50 - 30) * ((100vw - 800px) / (1600 - 800)));
+        z-index: 3;
         > p {
+            cursor: pointer !important;
             font-size: 18px;
             font-weight: 500;
             margin-left: 10px;
         }
+        > img {
+            cursor: pointer;
+        }
     }
     .photos_img_blocks {
+        position: relative;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 15px;
