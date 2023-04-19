@@ -40,6 +40,7 @@ function App() {
                     style={{
                         position: "absolute",
                         width: "100vw",
+                        zIndex: "-1",
                         height: "100vh",
                     }}
                 >
@@ -48,6 +49,7 @@ function App() {
                             position: "relative",
                             width: "100%",
                             height: "100%",
+                            zIndex: "-1",
                         }}
                     >
                         <div
