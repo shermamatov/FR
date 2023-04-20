@@ -11,7 +11,7 @@ const AboutUs = () => {
         <div>
             <FamilyOwners />
             <WelcomeTo />
-            <Location />
+            {/* <Location /> */}
         </div>
     );
 };
