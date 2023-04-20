@@ -1,21 +1,22 @@
 .blockUs2_title {
-    background: #A5A582;
+    background: #a5a582;
     padding: 40px 0;
 }
 
 .blockUs2_title h1 {
     text-align: center;
-    font-family: 'Alfa Slab One';
+    font-family: "Alfa Slab One";
     font-style: normal;
     font-weight: 400;
     font-size: 50px;
     line-height: 70px;
     text-transform: uppercase;
-    color: #72421C;
+    color: #72421c;
 }
 
 .blockUs2 {
     position: relative;
+    margin-top: calc(50px + (200 - 50) * ((100vw - 350px) / (1400 - 350)));
 }
 
 .blockUs2_wrapper_left {
@@ -27,12 +28,12 @@
     top: 306px;
     left: 0;
     width: 50%;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 800;
     font-size: 80px;
     line-height: 80px;
     text-transform: uppercase;
-    color: #2A2A2A;
+    color: #2a2a2a;
     opacity: 0.2;
 }
 
@@ -52,11 +53,11 @@
 
 .blockUs2_text {
     margin-top: 92px;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 600;
     font-size: 34px;
     line-height: 55px;
-    color: #041E3C;
+    color: #041e3c;
     max-width: 1496px;
 }
 
@@ -81,14 +82,13 @@
     padding-top: 100px;
 }
 
-
 .blockUs2_bottom {
     background-image: url("../../../images/blockUs2-bg.png");
     margin-top: 91px;
 }
 
 .blockUs2_bottom_bg {
-    background: #E9BE8A;
+    background: #e9be8a;
     opacity: 0.95;
     display: flex;
     justify-content: center;
@@ -96,30 +96,27 @@
     padding: 150px 0;
 }
 
-
 .blockUs2_bottom_item {
     display: flex;
     column-gap: 40px;
 }
 
 .blockUs2_bottom_item h4 {
-    font-family: 'Alfa Slab One';
+    font-family: "Alfa Slab One";
     font-weight: 400;
     font-size: 80px;
     line-height: 110px;
-    color: #2A2A2A;
+    color: #2a2a2a;
 }
 
 .blockUs2_bottom_item p {
-
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 700;
     font-size: 25px;
     line-height: 30px;
     text-transform: uppercase;
-    color: #2A2A2A;
+    color: #2a2a2a;
 }
-
 
 @media screen and (max-width: 1400px) {
     .container {
@@ -192,7 +189,6 @@
     }
 }
 
-
 @media screen and (max-width: 768px) {
     .container {
         max-width: 540px;
@@ -261,7 +257,6 @@
         padding: 0 10px;
     }
 
-
     .blockUs2_subtitle2-mobile {
         margin-top: 10px;
     }
@@ -275,7 +270,7 @@
         column-gap: 6px;
     }
 
-    .blockUs2 .bord>img {
+    .blockUs2 .bord > img {
         width: calc(16px + 6 * (100vw - 800px) / 600);
         height: calc(16px + 6 * (100vw - 800px) / 600);
     }

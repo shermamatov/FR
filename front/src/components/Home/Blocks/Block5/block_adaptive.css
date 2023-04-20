@@ -1,4 +1,4 @@
-.d-none{
+.d-none {
     display: none;
 }
 /* @media (max-width:1850px) {
@@ -6,100 +6,101 @@
 
     }
 } */
-@media (max-width:1560px) {
-    .services__bottom .services__list--fc li p{
+@media (max-width: 1560px) {
+    .services__bottom .services__list--fc li p {
         margin-left: 60px;
     }
-    .services__bottom .services__list--fc li::before{
+    .services__bottom .services__list--fc li::before {
         width: 50px;
         height: 5px;
         left: 5px;
     }
 }
-@media (max-width:1430px) {
-    .services__bottom .services__list--fc li p{
+@media (max-width: 1430px) {
+    .services__bottom .services__list--fc li p {
         margin-left: 50px;
         font-size: 28px;
     }
-    .services__bottom .services__list--fc li:first-child::before{
+    .services__bottom .services__list--fc li:first-child::before {
         width: 40px;
         height: 5px;
         left: 5px;
     }
-    .services__list{
+    .services__list {
         font-size: 22px;
     }
 }
-@media (max-width:1190px) {
-    .services__desc{
+@media (max-width: 1190px) {
+    .services__desc {
         max-width: 80%;
     }
-    .services__list{
+    .services__list {
         font-size: 20px;
     }
-    .services__bottom .services__list--fc li p{
+    .services__bottom .services__list--fc li p {
         font-size: 24px;
         margin-left: 40px;
-
     }
-    .services__list li{
+    .services__list li {
         padding: 15px 0;
     }
-    .services__bottom .services__list--fc li:first-child::before{
+    .services__bottom .services__list--fc li:first-child::before {
         width: 30px;
     }
 }
 
-@media (max-width:1010px) {
-    
-    .services__bottom .services__list--fc li p{
+@media (max-width: 1010px) {
+    .services__bottom .services__list--fc li p {
         font-size: 22px;
         margin-left: 40px;
     }
-    .services__list li{
+    .services__list li {
         padding: 10px 0;
         font-size: 18px;
     }
-    .services__bottom .services__list--fc li:first-child::before{
+    .services__bottom .services__list--fc li:first-child::before {
         width: 30px;
     }
 }
-@media (max-width:890px) {
-    .services__title{
+@media (max-width: 890px) {
+    .services__title {
         font-size: 50px;
     }
     .services__desc {
         max-width: 90%;
     }
 }
-@media (max-width:740px) {
-    .services__title{
+@media (max-width: 740px) {
+    .services__title {
         line-height: 60px;
         margin-bottom: 5%;
+    }
+    .services_top_adap {
+        display: block;
     }
     .services__desc {
         max-width: 90%;
     }
-    .services__list{
+    .services__list {
         width: 100%;
     }
-    .services__list li{
+    .services__list li {
         font-size: 26px;
     }
-    .services__bottom .services__list--fc li p{
+    .services__bottom .services__list--fc li p {
         font-size: 36px;
         margin-left: 50px;
     }
-    .services__bottom .services__list--fc li:first-child::before{
+    .services__bottom .services__list--fc li:first-child::before {
         width: 40px;
     }
-    .btn_block{
+    .btn_block {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-top: 10%;
     }
-    .btn_block button{
+    .btn_block button {
         width: 200px;
         height: 100px;
         border: none;
@@ -107,65 +108,67 @@
         font-weight: 500;
         font-size: 26px;
         line-height: 17px;
-        border:1px solid #2A2A2A;
+        border: 1px solid #2a2a2a;
         padding: 15px 15px;
         border-radius: 100%;
         cursor: pointer;
     }
-    .services_block, .services__wrapper{
-        height:fit-content !important;
+    .services_block,
+    .services__wrapper {
+        height: fit-content !important;
     }
-    .services_block-2, .services__wrapper-2{
-        height:fit-content !important;
+    .services_block-2,
+    .services__wrapper-2 {
+        height: fit-content !important;
     }
-    .services__bottom{
+    .services__bottom {
         flex-direction: column;
     }
-    .services__list{
+    .services__list {
         margin: 5% 0;
     }
 }
-@media (max-width:590px){
-    .services__desc{
+@media (max-width: 590px) {
+    .services__desc {
         font-size: 18px;
     }
 }
-@media (max-width:500px){
-    .services__title{
+@media (max-width: 500px) {
+    .services__title {
         font-size: 40px;
     }
-    .services__desc{
+    .services__desc {
         font-size: 16px;
     }
-    .services__list li{
+    .services__list li {
         font-size: 22px;
     }
-    .services__bottom .services__list--fc li p{
+    .services__bottom .services__list--fc li p {
         font-size: 30px;
         margin-left: 30px;
     }
-    .services__bottom .services__list--fc li:first-child::before{
+    .services__bottom .services__list--fc li:first-child::before {
         width: 20px;
     }
 }
-@media (max-width:420px) {
-    .services__title{
+@media (max-width: 420px) {
+    .services__title {
         font-size: 32px;
     }
-    .services__desc{
+    .services__desc {
         max-width: 100%;
     }
-    .services__list li{
+    .services__list li {
         font-size: 20px;
     }
-    .services__bottom .services__list--fc li p{
+    .services__bottom .services__list--fc li p {
         font-size: 26px;
         margin-left: 30px;
     }
-    .services__bottom .services__list--fc li:first-child::before{
+    .services__bottom .services__list--fc li:first-child::before {
         width: 20px;
     }
-    .btn_block button{
+    .btn_block button {
         width: 150px;
         height: 50px;
         font-size: 22px;
@@ -174,8 +177,8 @@
         cursor: pointer;
     }
 }
-@media (max-width:390px) {
-    .btn_block button{
+@media (max-width: 390px) {
+    .btn_block button {
         font-size: 18px;
     }
 }

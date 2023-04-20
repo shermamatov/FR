@@ -11,10 +11,34 @@
         color: #a5a582;
         margin-bottom: 10px;
     }
-    margin-bottom: 300px;
+    // margin-bottom: 300px;
+}
+.service_banner2_block {
+    width: 90%;
+    margin: auto;
+    margin-top: calc(20px + (100 - 20) * ((100vw - 350px) / (1600 - 350)));
+
+    > img {
+        width: 100%;
+    }
+    .serv_banner2_adap {
+        display: none;
+    }
 }
 @media (max-width: 768px) {
     .services_text_p {
         display: none;
+    }
+    .serv_banner_block {
+        display: none !important;
+    }
+    .service_banner2_block {
+        .serv_banner2 {
+            display: none;
+        }
+        .serv_banner2_adap {
+            width: 100%;
+            display: block;
+        }
     }
 }

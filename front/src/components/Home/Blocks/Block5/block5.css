@@ -1,69 +1,81 @@
-ul,li{
+ul,
+li {
     list-style: none;
 }
-.services_block, .services_block-2{
-    background-image:  url('../../../../images/word_bg.png') ;
+.services_block,
+.services_block-2 {
+    background-image: url("../../../../images/word_bg.png");
     background-size: cover;
-    color: #2A2A2A;
+    color: #2a2a2a;
     height: fit-content;
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-style: normal;
 }
-.services__wrapper, .services__wrapper-2{
-    background: #E9BE8A;
-    opacity: 0.95;
+.services__wrapper,
+.services__wrapper-2 {
+    background: #e9be8a;
+    /* opacity: 0.95; */
     height: fit-content;
 }
-.services__inner{
+.services__inner {
     padding: 60px 20px;
-
 }
-.services__title{
-    font-family: 'Alfa Slab One';
+.services__title {
+    font-family: "Alfa Slab One";
     font-style: normal;
     font-weight: 400;
     font-size: 60px;
     line-height: 96px;
     text-transform: uppercase;
 }
-.services__desc{
+.services__desc {
     font-weight: 500;
     font-size: 20px;
     line-height: 35px;
     max-width: 1100px;
 }
-.services__bottom{
+.services__bottom {
     margin-top: 5%;
     display: flex;
     align-items: center;
 }
-.services__list{
+.services__list {
     font-weight: 700;
     font-size: 25px;
-    line-height: 40px;   
+    line-height: 40px;
     text-transform: capitalize;
     margin-right: 5%;
     width: 30%;
 }
-.services__list li{
+.services__list li {
     padding: 20px 0;
-    border-bottom: 1px solid #2A2A2A;
+    border-bottom: 1px solid #2a2a2a;
 }
-.services__list--fc li:first-child{
+.services__list--fc li:first-child {
     font-weight: 700;
     font-size: 35px;
     line-height: 40px;
     position: relative;
 }
-.services__list--fc li p{
+.services__list--fc li p {
     margin-left: 90px;
 }
-.services__list--fc li:first-child::before{
-    content: '';
+.services__list--fc li:first-child::before {
+    content: "";
     position: absolute;
     width: 67px;
     height: 5px;
-    background-color: #2A2A2A;
+    background-color: #2a2a2a;
     top: 50%;
     left: 5px;
+}
+.services_top_adap {
+    display: none;
+}
+.serv_block2 {
+    margin-top: calc(45px + (110 - 45) * ((100vw -350px) / (1400 - 350)));
+}
+
+.srv_bottom_adap {
+    margin-top: 0px;
 }

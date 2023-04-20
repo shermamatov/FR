@@ -10,7 +10,12 @@ const NavbarOnce = () => {
         <>
             <div className="navbar">
                 <div className="navbar_left_block">
-                    <img src={navLogo} alt="" />
+                    <img
+                        onclick={() => navigate("/")}
+                        style={{ cursor: "pointer" }}
+                        src={navLogo}
+                        alt=""
+                    />
                 </div>
                 <div className="navbar_right_block">
                     <div className="adap_logo_block">
@@ -33,15 +38,32 @@ const NavbarOnce = () => {
                         >
                             SERVICES{" "}
                         </div>
-                        <div className="has__border">REVIEWS</div>
-                        <div className="has__border">BLOG</div>
-                        <div>PROJECT PHOTOS</div>
+                        <div
+                            className="has__border"
+                            onClick={() => navigate("/reviews")}
+                        >
+                            REVIEWS
+                        </div>
+                        <div
+                            className="has__border"
+                            onClick={() => navigate("/blog")}
+                        >
+                            BLOG
+                        </div>
+                        <div onClick={() => navigate("/photos")}>
+                            PROJECT PHOTOS
+                        </div>
                     </div>
                     <div className={"right_block_buttons"}>
                         <button className="number_btn">+1-818-888-10-10</button>
-                        <button className="book_btn" onClick={()=>{
-                            navigate('/book_now')
-                        }}>Book online now</button>
+                        <button
+                            className="book_btn"
+                            onClick={() => {
+                                navigate("/book_now");
+                            }}
+                        >
+                            Book online now
+                        </button>
                     </div>
                     <div
                         onClick={() => {
