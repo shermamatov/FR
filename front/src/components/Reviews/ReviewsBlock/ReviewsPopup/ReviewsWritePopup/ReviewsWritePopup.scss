@@ -1,0 +1,432 @@
+.reviewsWritePopup {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    z-index: 100;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    transition: .5s;
+
+
+    &_logo {
+        display: none;
+    }
+
+    &-show {
+        right: 0;
+    }
+
+    &_left {
+        width: 40%;
+        background: #4F4F4F;
+        opacity: 0.5;
+        height: 100vh;
+        transition: 1.5s;
+        cursor: pointer;
+    }
+
+    &_right {
+        background: #FFF8ED;
+        width: 60%;
+        height: 100vh;
+        padding: 70px 70px;
+        overflow: auto;
+    }
+
+    &_title {
+        font-family: 'Montserrat';
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 40px;
+        color: #2A2A2A;
+    }
+
+
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px dashed #F2994A;
+        padding-bottom: 56px;
+        align-items: center;
+
+        &_right {
+            display: flex;
+            column-gap: 60px;
+            align-items: center;
+        }
+
+        &_btn {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #2A2A2A;
+            background-color: transparent;
+            border: none;
+
+            &-active {
+                color: #F2994A;
+            }
+        }
+
+        &_closeBtn {
+            display: none;
+        }
+    }
+
+    &_name {
+
+        &_title {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #2A2A2A;
+            margin-top: 80px;
+        }
+
+        &_input {
+            margin-top: 10px;
+            font-family: 'Montserrat';
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 22px;
+            color: #2A2A2A;
+            padding: 17px 25px;
+            background-color: transparent;
+            width: 560px;
+            border: none;
+            border-bottom: 1px solid #2a2a2a7e;
+            outline: none;
+
+            &:placeholder {
+                text-transform: capitalize;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &_productRating {
+
+        &_title {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #2A2A2A;
+            margin-top: 70px;
+        }
+
+        &_subtitle {
+            font-family: 'Montserrat';
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 17px;
+            color: #2A2A2A;
+        }
+
+        &_item {
+            width: 270px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 22px;
+
+
+            &_text {
+                font-family: 'Montserrat';
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 22px;
+                color: #2A2A2A;
+            }
+
+            &_right {
+
+                button {
+                    background-color: transparent;
+                    border: none;
+                    padding: 0 1px;
+                }
+            }
+        }
+    }
+
+    &_bottom {
+
+        &_title {
+            font-family: 'Montserrat';
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            text-transform: uppercase;
+            color: #2A2A2A;
+            margin-top: 80px;
+            margin-bottom: 40px;
+        }
+
+        &_textarea {
+            width: 100%;
+            resize: none;
+            padding: 20px 40px;
+            border: 1px solid #D9D9D9;
+            border-radius: 10px;
+            background-color: transparent;
+            height: 200px;
+            outline: none;
+            font-family: 'Montserrat';
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+            text-transform: capitalize;
+
+            &::placeholder {
+                color: #D9D9D9;
+            }
+        }
+    }
+
+    &_submitBtn {
+        font-family: 'Montserrat';
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #2A2A2A;
+        width: 180px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 1px solid #2A2A2A;
+        transition: .5s;
+        display: block;
+        margin: 120px auto;
+
+        &:hover {
+            color: #FFFFFF;
+            background: #F2994A;
+            border-color: #F2994A;
+        }
+    }
+
+    &_bottom {
+        &_img {
+            width: 370px;
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        &_btn {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #FCF2E7;
+            border: 1px solid #F2994A;
+            color: #F2994A;
+            font-weight: bold;
+            right: -17px;
+            top: -17px;
+        }
+    }
+
+}
+
+
+@media screen and (max-width: 1400px) {
+
+    .reviewsWritePopup {
+
+        &_title {
+            font-size: 30px;
+            line-height: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .reviewsWritePopup {
+
+
+
+        &_right {
+            width: 70%;
+        }
+
+        &_left {
+            width: 30%;
+        }
+
+        &_title {
+            font-size: 27px;
+        }
+
+        &_header {
+            &_btn {
+                font-size: 18px;
+            }
+
+            &_right {
+                column-gap: 35px;
+            }
+
+
+        }
+
+
+    }
+
+
+}
+
+@media screen and (max-width: 992px) {
+    .reviewsWritePopup {
+
+        &_right {
+            width: 80%;
+        }
+
+        &_left {
+            width: 20%;
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .reviewsWritePopup {
+
+        &_name {
+            &_title {
+                margin-top: 120px;
+            }
+
+            &_input {
+                width: 280px;
+            }
+        }
+
+        &_right {
+            width: 100%;
+        }
+
+        &_left {
+            width: 0%;
+        }
+
+        &_logo {
+            display: block;
+            background-color: transparent;
+            border: none;
+
+            img {
+                width: 64px;
+            }
+        }
+
+        &_header {
+            position: relative;
+            padding-bottom: 20px;
+
+            &_right {
+                position: absolute;
+                top: 100%;
+                width: 100%;
+                justify-content: space-evenly;
+                padding-top: 28px;
+            }
+
+            &_closeBtn {
+                display: block;
+                color: #F2994A;
+                font-weight: bold;
+                background-color: transparent;
+                border: none;
+                font-size: 25px;
+            }
+        }
+
+    }
+
+}
+
+
+@media screen and (max-width: 576px) {
+    .reviewsWritePopup {
+        &_right {
+            padding: 14px;
+        }
+
+        &_title {
+            font-size: 18px;
+            line-height: 22px;
+        }
+
+        &_header {
+            &_btn {
+                font-size: 16px;
+                line-height: 20px;
+            }
+        }
+
+        &_name {
+
+            &_title {
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            &_input {
+                font-size: 12px;
+                line-height: 15px;
+                padding: 10px 15px;
+                width: 240px;
+            }
+        }
+
+        &_productRating {
+
+            &_title {
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            &_subtitle {
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+            &_item {
+                width: 240px;
+
+                &_text {
+                    font-size: 14px;
+                    line-height: 17px;
+                }
+            }
+        }
+
+        &_bottom {
+
+            &_title {
+                font-size: 14px;
+                line-height: 17px;
+            }
+
+            &_textarea {
+                font-size: 12px;
+                line-height: 15px;
+            }
+
+            &_img{
+                width: 240px;
+            }
+        }
+    }
+}

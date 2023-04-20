@@ -1,11 +1,14 @@
-import React from "react";
+import {useState} from "react";
 import reviewsBlock1Star from '../img/reviewsBlock1-star.svg';
 import reviewsBlock1Cirlce from '../img/reviewsBlock1-circle.png';
 import reviewsBlock1Big from '../img/reviewsBlock1-big.png';
+import ReviewsWritePopup from "./ReviewsPopup/ReviewsWritePopup/ReviewsWritePopup";
 
 const ReviewsBlock1 = () => {
+    const [showPopup, setShowPopup] = useState(false);
   return (
     <section className="reviewsBlock1">
+        <ReviewsWritePopup showPopup={showPopup} setShowPopup={setShowPopup}/>
       <div className="container">
         <div className="row">
             <div className="col-6">
@@ -49,7 +52,9 @@ const ReviewsBlock1 = () => {
                         <p className="reviewsBlock1_raiting_item_right">(0)</p>
                     </div>
                 </div>
-                <button className="reviewsBlock1_btn">Write review</button>
+                <button className="reviewsBlock1_btn"
+                onClick={()=> setShowPopup(true)}
+                >Write review</button>
             </div>
             <div className="col-6">
                 <img src={reviewsBlock1Cirlce} alt="" className="reviewsBlock1_circleImg" />
