@@ -23,6 +23,7 @@ COPY ./ .
 COPY --from=build /app/front/build ./front/build
 
 RUN pip install -r requirements.txt
+RUN python3 manage.py collectstatic --noinput
 RUN python3 manage.py makemigrations
 RUN python3 manage.py migrate
 

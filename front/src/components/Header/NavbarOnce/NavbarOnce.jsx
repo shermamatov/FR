@@ -27,6 +27,7 @@ const NavbarOnce = () => {
               REVIEWS
             </div>
             <div className="has__border" onClick={() => navigate("/blog")}>BLOG</div>
+
             <div onClick={() => navigate("/photos")}>PROJECT PHOTOS</div>
           </div>
           <div className={"right_block_buttons"}>

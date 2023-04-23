@@ -1,6 +1,11 @@
 .pl__block {
     margin-top: calc(30px + (100 - 30) * ((100vw - 350px) / (1600 - 350)));
 }
+
+.pl__block-hidden{
+    display: none;
+}
+
 .pl__title {
     font-family: "Alfa Slab One";
     font-style: normal;
