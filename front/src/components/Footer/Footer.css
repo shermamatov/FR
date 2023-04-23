@@ -30,6 +30,10 @@ footer {
   width: 100%;
   padding: 50px;
 }
+.footer__wrapper .col-md-p-4{
+  cursor: pointer;
+}
+
 .about {
   margin-bottom: 25px;
 }

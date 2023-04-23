@@ -10,6 +10,7 @@ import PhotosPage from "../Pages/PhotosPage";
 import BlogPage from '../Pages/BlogPage';
 import Photos from "../components/Photos/Photos";
 import Services2Page from "../Pages/Services2Page";
+import LocationPage from "../Pages/LocationPage";
 
 
 const MainRoutes = () => {
@@ -24,6 +25,7 @@ const MainRoutes = () => {
         { link: "/photos", Element: <Photos />, id: 8 },
         { link: "/blog", Element: <BlogPage />, id: 9 },
         { link: "/services2", Element: <Services2Page />, id: 10 },
+        { link: "/location", Element: <LocationPage />, id: 11 },
     ];
     return (
         <>

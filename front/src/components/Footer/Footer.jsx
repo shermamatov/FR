@@ -8,10 +8,12 @@ import call from "../../images/call.png";
 import email from "../../images/email.png";
 import geo from "../../images/geo.png";
 import ProjectLoaction from "../Home/Blocks/Block8/ProjectLoaction";
+import { useNavigate } from "react-router-dom";
 
 // строго использовать css.module
 
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <>
             <ProjectLoaction />
@@ -98,7 +100,11 @@ const Footer = () => {
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p className="col-md-p-4"> Locations</p>
+                                        <p className="col-md-p-4"
+                                            onClick={()=>{
+                                                navigate('/location')
+                                            }}
+                                        > Locations</p>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
