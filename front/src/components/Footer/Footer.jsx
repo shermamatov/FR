@@ -58,7 +58,7 @@ const Footer = () => {
                                     <img src={geo} alt="" />
                                     <div className="con-min">
                                         <h4>Address</h4>
-                                        <p>73 Canal Street, New York, Los</p>
+                                        {/* <p>73 Canal Street, New York, Los</p> */}
                                     </div>
                                 </div>
                                 <div className="contacts_polosa"></div>
@@ -67,7 +67,7 @@ const Footer = () => {
                                     <img src={call} alt="" />
                                     <div className="con-min">
                                         <h4>Address</h4>
-                                        <p>73 Canal Street, New York, Los</p>
+                                        <p>+18188581533</p>
                                     </div>
                                 </div>
                                 <div className="contacts_polosa"></div>
@@ -76,7 +76,7 @@ const Footer = () => {
                                     <img src={email} alt="" />
                                     <div className="con-min">
                                         <h4>Address</h4>
-                                        <p>73 Canal Street, New York, Los</p>
+                                        <p>info@1furniturerestoration.com</p>
                                     </div>
                                 </div>
                             </div>
@@ -100,11 +100,15 @@ const Footer = () => {
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p className="col-md-p-4"
-                                            onClick={()=>{
-                                                navigate('/location')
+                                        <p
+                                            className="col-md-p-4"
+                                            onClick={() => {
+                                                navigate("/location");
                                             }}
-                                        > Locations</p>
+                                        >
+                                            {" "}
+                                            Locations
+                                        </p>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">

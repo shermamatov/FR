@@ -1,62 +1,65 @@
 .servBlock3 {
-    background: #FCF2E7;
-    padding: 110px 0;
-
+    background: #fcf2e7;
+    padding-top: calc(40px + (100 - 40) * ((100vw - 350px) / (1600 - 350)));
+    padding-bottom: calc(40px + (100 - 40) * ((100vw - 350px) / (1600 - 350)));
     .row {
         flex-wrap: wrap;
     }
-
+    .srv3 {
+        width: 90%;
+        margin: auto;
+    }
     .row2 {
         margin-top: 120px;
     }
 
     &_title {
-        font-family: 'Alfa Slab One';
+        font-family: "Alfa Slab One";
         font-weight: 400;
         font-size: 60px;
         line-height: 40px;
-        color: #F2994A;
+        color: #f2994a;
     }
 
     &_subtitle {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 700;
         font-size: 30px;
         line-height: 40px;
-        color: #2A2A2A;
+        color: #2a2a2a;
         margin-top: 30px;
     }
 
     &_text {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 500;
         font-size: 20px;
         line-height: 35px;
-        color: #2A2A2A;
+        color: #2a2a2a;
         margin-top: 12px;
     }
 
     &_question {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 600;
         font-size: 20px;
         line-height: 50px;
-        color: #2A2A2A;
+        color: #2a2a2a;
         padding: 20px 0;
-        border-bottom: 1px solid #B3B3B4!important;
+        border-bottom: 1px solid #b3b3b4 !important;
 
         &:hover {
-            color: #72421C;
+            color: #72421c;
         }
     }
 
     &_btn {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 500;
         font-size: 16px;
         line-height: 20px;
-        color: #2A2A2A;
-        border: 1px solid #2A2A2A;
+        color: #2a2a2a;
+        border: 1px solid #2a2a2a;
         border-radius: 50%;
         background-color: transparent;
         width: 200px;
@@ -65,7 +68,6 @@
         display: block;
     }
 }
-
 
 @media screen and (max-width: 992px) {
     .servBlock3 {
@@ -109,10 +111,10 @@
             line-height: 25px;
             padding: 22px 0;
         }
-        &_btn{
+        &_btn {
             margin-top: 50px;
         }
-        .row2{
+        .row2 {
             margin-top: 50px;
         }
     }
