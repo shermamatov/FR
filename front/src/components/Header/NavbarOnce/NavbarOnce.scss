@@ -99,7 +99,7 @@
 button {
     cursor: pointer;
 }
-@media (max-width: 2500px) {
+@media (max-width: 2000px) {
     .navbar_navigate {
         > .has__border,
         div {
@@ -210,7 +210,18 @@ button {
         .navbar_right_block {
             height: 100px;
             .navbar_navigate {
-                font-size: 26px;
+                font-size: 22px;
+                > div {
+                    margin-right: 15px !important;
+                }
+                .has__border::after {
+                    content: "";
+                    right: -20px !important;
+                    top: 4px;
+                    height: 60%;
+                    background: #000;
+                    // display: block;
+                }
             }
         }
         .navbar_left_block {

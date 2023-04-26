@@ -119,9 +119,9 @@
 }
 
 @media screen and (max-width: 1400px) {
-    .container {
+    /* .container {
         max-width: 1140px;
-    }
+    } */
 
     .blockUs2_wrapper_left {
         padding-top: 330px;
@@ -129,9 +129,9 @@
 }
 
 @media screen and (max-width: 1200px) {
-    .container {
+    /* .container {
         max-width: 960px;
-    }
+    } */
 
     .blockUs2 .col-6 {
         width: 100%;
@@ -168,9 +168,9 @@
 }
 
 @media screen and (max-width: 992px) {
-    .container {
+    /* .container {
         max-width: 720px;
-    }
+    } */
 
     .blockUs2_subtitle1 {
         font-size: 60px;
@@ -190,9 +190,9 @@
 }
 
 @media screen and (max-width: 768px) {
-    .container {
+    /* .container {
         max-width: 540px;
-    }
+    } */
 
     .blockUs2_title h1 {
         font-size: 30px;
@@ -252,10 +252,10 @@
 }
 
 @media screen and (max-width: 576px) {
-    .container {
+    /* .container {
         max-width: 100%;
         padding: 0 10px;
-    }
+    } */
 
     .blockUs2_subtitle2-mobile {
         margin-top: 10px;

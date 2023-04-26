@@ -3,8 +3,8 @@
     background-color: #e7ddc9;
     height: 50px;
     > div {
-        width: 75%;
-        max-width: 1400px;
+        width: 71%;
+        max-width: 1240px;
         margin: 0 auto;
         display: flex;
         align-items: center;
@@ -27,6 +27,12 @@
                 margin-right: 10px;
             }
         }
+        .upn_change {
+            font-size: 12px;
+            color: #72421c;
+            cursor: pointer;
+            margin-left: 10px;
+        }
     }
 }
 @media (max-width: 1200px) {
@@ -41,11 +47,23 @@
         }
     }
 }
+@media (max-width: 1400px) {
+    .upNavbar {
+        > div {
+            .upn_change {
+                display: none;
+            }
+        }
+    }
+}
 @media (min-width: 2000px) {
     .upNavbar {
         > div {
             p {
                 font-size: 18px;
+            }
+            h3 {
+                font-size: 22px;
             }
         }
     }

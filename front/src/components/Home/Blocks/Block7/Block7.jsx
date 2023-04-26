@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Slider from 'react-slick';
+import Slider from "react-slick";
 import "./block7.scss";
 import { otzv1, otzv2 } from "../../../../const/consts";
 import rating from "../../../../images/block7_rating.png";
@@ -9,7 +9,7 @@ import img3 from "../../../../images/block7_img3.webp";
 import { useChel } from "../../../../Contexts/ChelContext";
 const Block7 = () => {
     const settings = {
-        arrows:false,
+        arrows: false,
         infinite: true,
         speed: 500,
         slidesToShow: 3,
@@ -17,16 +17,16 @@ const Block7 = () => {
             {
                 breakpoint: 1208,
                 settings: {
-                  slidesToShow: 2, // на экранах меньше 768px показываем 2 слайда
+                    slidesToShow: 2, // на экранах меньше 768px показываем 2 слайда
                 },
-              },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 1, // на экранах меньше 768px показываем 2 слайда
-              },
             },
-          ],
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1, // на экранах меньше 768px показываем 2 слайда
+                },
+            },
+        ],
         slidesToScroll: 1,
         adaptiveHeight: true,
         swipe: true,
@@ -34,11 +34,11 @@ const Block7 = () => {
         touchMove: true,
         pauseOnHover: true,
         onContextMenu: (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          return false;
-        }
-      };      
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        },
+    };
     const { addBordClass } = useChel();
     useEffect(() => {
         addBordClass();
@@ -60,7 +60,7 @@ const Block7 = () => {
                     ))}
                 </Slider>
             </div>
-            <div  className="video_review_adap">
+            <div className="video_review_adap">
                 <Slider {...settings}>
                     {otzv2.map((item) => (
                         <div className="video_review_block_adap" key={item.id}>
