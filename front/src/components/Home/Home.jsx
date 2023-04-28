@@ -21,7 +21,7 @@ const Home = () => {
     useEffect(() => {
         const timerId = setTimeout(() => {
             setPrivacy(false);
-        }, 10000);
+        }, 30000);
 
         // Очистка таймера, если компонент размонтируется или состояние изменится
         return () => clearTimeout(timerId);
