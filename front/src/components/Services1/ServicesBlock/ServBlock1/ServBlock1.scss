@@ -17,7 +17,7 @@
     width: 90%;
     margin: auto;
     margin-top: calc(20px + (100 - 20) * ((100vw - 350px) / (1600 - 350)));
-
+    max-width: 1600px;
     > img {
         width: 100%;
     }

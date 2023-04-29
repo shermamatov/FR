@@ -1,23 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NavbarOnce.scss";
 import navLogo from "../../../images/navLogo.png";
 import menuIcon from "../../../images/menu.png";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import NavbarModal from "../NavbarModal/NavbarModal";
+import strela from "../../../images/strelka.png";
 const NavbarOnce = () => {
     const navigate = useNavigate();
     const [burger, setBurger] = useState(false);
+    const [modal, setModal] = useState(false);
+    const { pathname } = useLocation();
     return (
         <>
             <div className="navbar">
                 <div className="navbar_left_block">
                     <img
-                        onclick={() => navigate("/")}
-                        style={{ cursor: "pointer" }}
                         src={navLogo}
+                        style={{ cursor: "pointer" }}
                         alt=""
+                        onClick={() => navigate("/")}
                     />
                 </div>
-                <div className="navbar_right_block">
+                <div
+                    className="navbar_right_block"
+                    onMouseLeave={() => setModal(false)}
+                >
                     <div className="adap_logo_block">
                         <img
                             onClick={() => navigate("/")}
@@ -29,30 +36,83 @@ const NavbarOnce = () => {
                         <div
                             onClick={() => navigate("/AboutUs")}
                             className="has__border"
+                            onMouseLeave={() => setModal(false)}
                         >
                             ABOUT US
+                            <div
+                                className="linia"
+                                style={{
+                                    width: `${
+                                        pathname == "/AboutUs" ? "50%" : "0%"
+                                    }`,
+                                }}
+                            ></div>
                         </div>
                         <div
-                            className="has__border"
+                            className="has__border serv "
                             onClick={() => navigate("/services")}
+                            onMouseOver={() => setModal(true)}
+                            // onMouseLeave={() => setModal(false)}
                         >
-                            SERVICES{" "}
+                            <p className="serv">SERVICES </p>
+                            <img
+                                style={{
+                                    transform: `${
+                                        modal
+                                            ? "rotate(-360deg)"
+                                            : "rotate(-180deg)"
+                                    }`,
+                                }}
+                                src={strela}
+                                alt=""
+                            />
                         </div>
                         <div
                             className="has__border"
                             onClick={() => navigate("/reviews")}
+                            onMouseLeave={() => setModal(false)}
                         >
                             REVIEWS
+                            <div
+                                className="linia"
+                                style={{
+                                    width: `${
+                                        pathname == "/reviews" ? "50%" : "0%"
+                                    }`,
+                                }}
+                            ></div>
                         </div>
                         <div
                             className="has__border"
                             onClick={() => navigate("/blog")}
+                            onMouseLeave={() => setModal(false)}
                         >
                             BLOG
+                            <div
+                                className="linia"
+                                style={{
+                                    width: `${
+                                        pathname == "/blog" ? "50%" : "0%"
+                                    }`,
+                                }}
+                            ></div>
                         </div>
-                        <div onClick={() => navigate("/photos")}>
+
+                        <div
+                            onClick={() => navigate("/photos")}
+                            onMouseLeave={() => setModal(false)}
+                        >
                             PROJECT PHOTOS
+                            <div
+                                className="linia"
+                                style={{
+                                    width: `${
+                                        pathname == "/photos" ? "50%" : "0%"
+                                    }`,
+                                }}
+                            ></div>
                         </div>
+                        <NavbarModal setModal={setModal} modal={modal} />
                     </div>
                     <div className={"right_block_buttons"}>
                         <button className="number_btn">+1-818-888-10-10</button>
@@ -88,15 +148,23 @@ const NavbarOnce = () => {
                             setBurger(false);
                         }}
                     >
-                        <span>X</span>
+                        <span>&#128473;</span>
                     </button>
                 </div>
                 <div className="navbar_burger">
                     <div className="burger__link">ABOUT US</div>
-                    <div className="burger__link">SERVICES </div>
+                    <div className="burger__link serv">SERVICES </div>
                     <div className="burger__link">REVIEWS</div>
                     <div className="burger__link">BLOG</div>
                     <div className="burger__link">PROJECT PHOTOS</div>
+                    <button
+                        className="book_btn"
+                        onClick={() => {
+                            navigate("/book_now");
+                        }}
+                    >
+                        Book online now
+                    </button>
                 </div>
             </div>
             <div className={window.innerWidth >= 769 ? "d-none" : "navbar"}>

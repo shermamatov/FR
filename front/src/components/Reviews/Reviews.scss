@@ -1,8 +1,10 @@
 .reviewsBlock1 {
     padding: 150px 0;
-
+    width: 90%;
+    margin: auto;
     .col-6 {
         position: relative;
+        padding: 0;
     }
 
     &_circleImg {
@@ -12,21 +14,21 @@
     }
 
     &_subtitle {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
         text-transform: uppercase;
-        color: #A5A582;
+        color: #a5a582;
     }
 
     &_title {
-        font-family: 'Alfa Slab One';
+        font-family: "Alfa Slab One";
         font-weight: 400;
         font-size: 50px;
         line-height: 120%;
         text-transform: uppercase;
-        color: #2A2A2A;
+        color: #2a2a2a;
     }
 
     &_stars {
@@ -35,12 +37,12 @@
         column-gap: 30px;
 
         &_count {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 800;
             font-size: 30px;
             line-height: 37px;
             text-transform: uppercase;
-            color: #72421C;
+            color: #72421c;
         }
 
         &_icon {
@@ -51,21 +53,21 @@
 
     &_text {
         margin-top: 20px;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 800;
         font-size: 20px;
         line-height: 24px;
         text-transform: uppercase;
-        color: #041E3C;
+        color: #041e3c;
     }
 
     &_raiting {
         margin-top: 25px;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 600;
         font-size: 20px;
         line-height: 24px;
-        color: #041E3C;
+        color: #041e3c;
 
         &_item {
             display: flex;
@@ -75,7 +77,7 @@
             &_line {
                 width: 211px;
                 height: 5px;
-                background: #F2994A;
+                background: #f2994a;
                 border-radius: 100px;
             }
         }
@@ -83,12 +85,12 @@
 
     &_btn {
         margin-top: 50px;
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 500;
         font-size: 16px;
         line-height: 20px;
-        color: #2A2A2A;
-        border: 1px solid #2A2A2A;
+        color: #2a2a2a;
+        border: 1px solid #2a2a2a;
         width: 180px;
         height: 60px;
         border-radius: 50%;
@@ -96,10 +98,7 @@
     }
 }
 
-
-
 .reviewsBlock2 {
-
     .row {
         flex-wrap: wrap;
     }
@@ -119,18 +118,20 @@
         align-items: center;
         margin-bottom: 65px;
         position: relative;
+        width: 90%;
+        margin: auto;
         button {
             border: none;
             background-color: transparent;
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 600;
             font-size: 18px;
             line-height: 50px;
-            color: #2A2A2A;
-            transition: .5s;
+            color: #2a2a2a;
+            transition: 0.5s;
 
             &:hover {
-                color: #F2994A;
+                color: #f2994a;
             }
         }
 
@@ -155,11 +156,11 @@
         }
 
         &_title {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 600;
             font-size: 25px;
             line-height: 40px;
-            color: #2A2A2A;
+            color: #2a2a2a;
             margin-top: 15px;
         }
 
@@ -169,22 +170,21 @@
             align-items: center;
 
             &_count {
-                font-family: 'Montserrat';
+                font-family: "Montserrat";
                 font-weight: 700;
                 font-size: 25px;
                 line-height: 40px;
-                color: #F2994A;
+                color: #f2994a;
             }
         }
 
-
         &_btn {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 500;
             font-size: 14px;
             line-height: 17px;
-            color: #FFFFFF;
-            background: #A5A582;
+            color: #ffffff;
+            background: #a5a582;
             border: none;
             width: 120px;
             height: 56px;
@@ -210,36 +210,32 @@
             column-gap: 37px;
 
             &_item {
-
-                font-family: 'Rubik';
+                font-family: "Rubik";
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 20px;
                 display: flex;
                 align-items: center;
-                color: #2A2A2A;
+                color: #2a2a2a;
             }
         }
 
         &_btn {
-            color: #2A2A2A;
+            color: #2a2a2a;
             background-color: transparent;
-            border: 1px dashed #A5A582;
+            border: 1px dashed #a5a582;
             width: 70px;
             height: 70px;
             border-radius: 50%;
         }
     }
-
 }
-
 
 .reviewsBlock3 {
     margin-top: 70px;
     padding-top: 80px;
-    background: #FCF2E7;
+    background: #fcf2e7;
     padding-bottom: 300px;
-
 
     .row {
         flex-wrap: wrap;
@@ -259,24 +255,23 @@
         margin: 50px 0;
 
         &_text {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 500;
             font-size: 20px;
             line-height: 40px;
-            color: #2A2A2A;
+            color: #2a2a2a;
         }
 
         &_name {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 600;
             font-size: 25px;
             line-height: 40px;
-            color: #F2994A;
+            color: #f2994a;
             margin-top: 15px;
         }
     }
 }
-
 
 @media screen and (max-width: 1400px) {
     .reviewsBlock2_card_btn {
@@ -326,7 +321,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
     .reviewsBlock1 {
         &_subtitle {
             font-size: 12px;
@@ -342,19 +336,18 @@
             font-size: 22px;
             line-height: 27px;
         }
-
     }
 
     .reviewsBlock2 {
         &_title {
             display: block;
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 22px;
             line-height: 24px;
             display: flex;
             align-items: center;
-            color: #2A2A2A;
+            color: #2a2a2a;
         }
 
         &_btns {
@@ -372,8 +365,8 @@
                 line-height: 18px !important;
                 order: 1;
                 width: 100%;
-                background: #FCF2E7 !important;
-                border: 1px dashed #72421C !important;
+                background: #fcf2e7 !important;
+                border: 1px dashed #72421c !important;
                 border-radius: 10px !important;
                 height: 45px !important;
             }
@@ -399,17 +392,16 @@
         padding-bottom: 180px;
 
         &_title {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 22px;
             line-height: 24px;
             display: flex;
             align-items: center;
-            color: #2A2A2A;
+            color: #2a2a2a;
         }
 
         &_card {
-
             &_text {
                 font-size: 12px;
                 line-height: 18px;
@@ -418,15 +410,13 @@
             &_name {
                 font-size: 12px;
                 line-height: 40px;
-                color: #2A2A2A;
+                color: #2a2a2a;
             }
         }
     }
-
 }
 
 @media screen and (max-width: 576px) {
-
     .reviewsBlock1 {
         padding: 75px 0;
 
