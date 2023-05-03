@@ -17,7 +17,7 @@ WORKDIR /usr/src/app
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip && pip install sentry-sdk
 
 COPY ./ .
 COPY --from=build /app/front/build ./front/build
