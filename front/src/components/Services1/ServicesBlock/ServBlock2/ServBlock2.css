@@ -17,6 +17,9 @@
 }
 .image-box-2 img {
     width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 .image-box-2 p {
@@ -26,6 +29,7 @@
     line-height: 30px;
 }
 .image-box-2 {
+    width: 33.3%;
     padding: 50px 10px;
     border-top: dashed 1px black;
     border-bottom: dashed 1px black;
@@ -45,9 +49,9 @@ li {
 ul {
     line-height: 50px;
 }
-li:hover {
+/* li:hover {
     color: red;
-}
+} */
 @media (max-width: 1024px) {
     li {
         font-size: 13px;

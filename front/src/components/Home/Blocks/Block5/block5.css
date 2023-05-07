@@ -53,18 +53,24 @@ li {
     padding: 20px 0;
     border-bottom: 1px solid #2a2a2a;
 }
-.services__list--fc li:first-child {
+.services__list--fc li{
+    transition: .5s;
+    cursor: pointer;
+}
+.services__list--fc li:hover {
     font-weight: 700;
     font-size: 35px;
     line-height: 40px;
-    position: relative;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
 }
 .services__list--fc li p {
     margin-left: 90px;
 }
-.services__list--fc li:first-child::before {
+.services__list--fc li:hover::before {
     content: "";
-    position: absolute;
+    display: block;
     width: 67px;
     height: 5px;
     background-color: #2a2a2a;

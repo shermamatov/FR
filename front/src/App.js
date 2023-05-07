@@ -6,8 +6,11 @@ import MainRoutes from "./Routes/MainRoutes";
 import ChelModal from "./chel/ChelModal";
 import chelImg from "./images/chel.png";
 import { useChel } from "./Contexts/ChelContext";
+import { useDispatch } from "react-redux";
+import { getLocations, getStates } from "./redux/reducers/app";
 
 function App() {
+    const dispatch = useDispatch();
     const [chel, setChel] = useState(false);
     const {
         checked1,
@@ -27,7 +30,10 @@ function App() {
     useEffect(() => {
         bigFontSize();
     }, [checked3]);
-
+useEffect(()=>{
+dispatch(getStates());
+dispatch(getLocations());
+},)
     return (
         <div
             className={`App ${checked1 && "filterEst"} ${checked4 && "mono"} ${
