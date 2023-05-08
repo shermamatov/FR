@@ -70,7 +70,9 @@ export const getServices = () =>{
     return (dispatch) =>{
         axios(`/api/service/`)
         .then(({data})=>{
-            return dispatch({type: GET_SERVICES, data})
+            return dispatch({type: GET_SERVICES, data: data.filter(item =>{
+                return item.main_menu
+            })})
         })
     }
 }
@@ -92,7 +94,7 @@ export  const createNestedList = (arr = [], count = 10) => {
       if (i === 0) {
         childList = [rec];
         i++;
-        return [...acc]
+        return [...acc, childList]
       } else if (i < (count - 1)) {
         childList = [...childList, rec];
         i++;

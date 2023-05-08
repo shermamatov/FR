@@ -17,6 +17,7 @@
     margin-top: 20px;
     text-align: center;
     /* margin-left: 100px; */
+    font-size: 16px;
 }
 
 .blockNowForm2 {
@@ -112,8 +113,9 @@
     color: #d9d9d9;
 }
 
-.blockNowForm2_time_item:nth-child(2) {
+.blockNowForm2_time_item:hover {
     color: #f2994a;
+    cursor: pointer;
 }
 
 .blockNowForm2_textarea {

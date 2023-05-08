@@ -4,7 +4,7 @@ import i1 from "../../../../images/i1.png";
 import i2 from "../../../../images/i2.png";
 import i3 from "../../../../images/i3.png";
 import { useDispatch, useSelector } from "react-redux";
-import { getServicesSingle } from "../../../../redux/reducers/app";
+import { createNestedList, getServicesSingle } from "../../../../redux/reducers/app";
 import { useParams } from "react-router-dom";
 
 const ServBlock2 = () => {
@@ -12,14 +12,18 @@ const ServBlock2 = () => {
     const dispatch = useDispatch()
     const params = useParams();
     const [childListWithPhoto, setChildListWithPhoto] = useState([]);
+    const [childListWithoutPhoto, setChildListWithoutPhoto] = useState([]);
 
     useEffect(()=>{
        dispatch(getServicesSingle(params.serviceId));
     }, [params]);
     useEffect(()=>{
-        console.log(servicesSingle);
         if(JSON.stringify(servicesSingle) !== '{}'){
             setChildListWithPhoto([servicesSingle.children[0], servicesSingle.children[1], servicesSingle.children[2]])
+            const bigList = servicesSingle.children.filter((item, idx) =>{
+                return idx > 2
+            })
+            setChildListWithoutPhoto(createNestedList(bigList))
         }
     }, [servicesSingle])
     return (
@@ -38,34 +42,22 @@ const ServBlock2 = () => {
                     </div>
                     })
                 }
-                   
+
                 </div>
                 {/* //////////////////////// */}
                 <div className="textaboveserv">
-                    <ul>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                    </ul>
-                    <ul>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                    </ul>
-                    <ul>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>How often should the system be cleaned and why?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                        <li>Can I clean the air conditioner myself?</li>
-                    </ul>
+                    {
+                        childListWithoutPhoto.map((item, idx) =>{
+                            return <ul key={idx}>
+                                    {
+                                        item.map(element =>{
+                                            return <li key={element.id}>{element.name}</li>
+                                        })
+                                    }
+                            </ul>
+                        })
+                    }
+            
                 </div>
             </div>
         </div>
