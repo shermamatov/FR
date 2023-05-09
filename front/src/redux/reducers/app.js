@@ -57,7 +57,7 @@ export default (state = initState, action) =>{
 
 export const getStates = () =>{
     return (dispatch) =>{
-        axios(`/api/states/`)
+        axios(`https://itek-dev.highcat.org/api/states/`)
         .then(({data})=>{
             return dispatch({type: GET_STATES, data})
         })
@@ -67,7 +67,7 @@ export const getStates = () =>{
 
 export const getLocations = () =>{
     return (dispatch) =>{
-        axios(`/api/locations/`)
+        axios(`https://itek-dev.highcat.org/api/locations/`)
         .then(({data})=>{
             return dispatch({type: GET_LOCATIONS, data})
         })
@@ -76,7 +76,7 @@ export const getLocations = () =>{
 
 export const getServices = () =>{
     return (dispatch) =>{
-        axios(`/api/service/`)
+        axios(`https://itek-dev.highcat.org/api/service/`)
         .then(({data})=>{
             return dispatch({type: GET_SERVICES, data: data.filter(item =>{
                 return item.main_menu
@@ -88,7 +88,7 @@ export const getServices = () =>{
 
 export const getServicesSingle = (id) =>{
     return (dispatch) =>{
-        axios(`/api/service/${id}/`)
+        axios(`https://itek-dev.highcat.org/api/service/${id}/`)
         .then(({data})=>{
             return dispatch({type: GET_SERVICES_SINGLE, data})
         })
