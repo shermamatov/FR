@@ -1,6 +1,7 @@
 import axios from 'axios';
 const GET_STATES = 'GET_STATES';
 const GET_LOCATIONS = 'GET_LOCATIONS';
+const GET_CURRENT_LOCATION = 'GET_CURRENT_LOCATION';
 const GET_SERVICES = 'GET_SERVICES';
 const GET_SERVICES_SINGLE = 'GET_SERVICES_SINGLE';
 const DOMAIN = 'https://itek-dev.highcat.org/';
@@ -10,6 +11,7 @@ const initState = {
     locations: [],
     services: [],
     servicesSingle: {},
+    currentLocation: {},
 }
 
 
@@ -40,6 +42,12 @@ export default (state = initState, action) =>{
             return {
                 ...state,
                 servicesSingle: action.data
+            }
+        }
+        case GET_CURRENT_LOCATION:{
+            return {
+                ...state,
+                currentLocation: action.data
             }
         }
 
@@ -83,6 +91,14 @@ export const getServicesSingle = (id) =>{
         axios(`/api/service/${id}/`)
         .then(({data})=>{
             return dispatch({type: GET_SERVICES_SINGLE, data})
+        })
+    }
+}
+export const getCurrentLocation = () =>{
+    return (dispatch) =>{
+        axios(`https://ipwho.is/`)
+        .then(({data})=>{
+            return dispatch({type: GET_CURRENT_LOCATION, data})
         })
     }
 }

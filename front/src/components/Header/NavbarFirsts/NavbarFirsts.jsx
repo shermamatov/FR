@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./NavbarFirsts.scss";
-
+import { getCurrentLocation } from "../../../redux/reducers/app";
+import {useDispatch, useSelector} from "react-redux";
 const NavbarFirsts = () => {
+    const dispatch = useDispatch()
+    const currentLocation = useSelector(s => s.app.currentLocation)
+    // const [currentLocationstate, setCurrentLocation] = useState('');
+    useEffect(() => {
+        dispatch(getCurrentLocation())
+    }, []);
+    useEffect(()=>{
+        console.log(currentLocation);
+    }, [currentLocation])
     return (
         <div className="upNavbar">
             <div>
                 <p>
-                    73 Canal Street, Los Angales, CA{" "}
-                    <span className="upn_change">change</span>
+                    73 Canal Street, {currentLocation.city}, {currentLocation.region}{" "}
+                    <span className="upn_change" >change</span>
                 </p>
 
                 <h3>
