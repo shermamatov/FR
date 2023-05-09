@@ -54,20 +54,19 @@ const Footer = () => {
                                     <h1>Contacts</h1>
                                     <div className="polosa"></div>
                                 </div>
-                                <div className="col-md-4-mini">
+                                {/* <div className="col-md-4-mini">
                                     <img src={geo} alt="" />
                                     <div className="con-min">
                                         <h4>Address</h4>
-                                        {/* <p>73 Canal Street, New York, Los</p> */}
                                     </div>
                                 </div>
-                                <div className="contacts_polosa"></div>
+                                <div className="contacts_polosa"></div> */}
 
                                 <div className="col-md-4-mini">
                                     <img src={call} alt="" />
                                     <div className="con-min">
-                                        <h4>Address</h4>
-                                        <p>+18188581533</p>
+                                        <h4>Phone number</h4>
+                                        <p>+1 818 858 12 08</p>
                                     </div>
                                 </div>
                                 <div className="contacts_polosa"></div>
@@ -75,7 +74,7 @@ const Footer = () => {
                                 <div className="col-md-4-mini">
                                     <img src={email} alt="" />
                                     <div className="con-min">
-                                        <h4>Address</h4>
+                                        <h4>E-mail</h4>
                                         <p>info@1furniturerestoration.com</p>
                                     </div>
                                 </div>
