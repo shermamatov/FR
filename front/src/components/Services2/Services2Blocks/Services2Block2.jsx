@@ -4,9 +4,14 @@ import {
     services_list2,
     services_list3,
 } from "../../../const/consts";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+
 const Services2Block2 = () => {
     const [width, setWidth] = useState(window.innerWidth);
     const [hide, setHide] = useState(false);
+    const services = useSelector( s => s.app.services);
+    const navigate = useNavigate();
 
     useEffect(() => {
         function handleResize() {
@@ -50,33 +55,36 @@ const Services2Block2 = () => {
                         </div>
                         <div className="services__bottom srv_bottom_adap">
                             <ul className="services__list services__list--fc">
-                                <li>
-                                    <p>Wood Restoration</p>
-                                </li>
-                                {services_list.map((item) => (
-                                    <li key={item.id}>{item.text}</li>
+                                {services.map((item) => (
+                                    <li key={item.id} onClick={()=>{
+                                        navigate(`/services/${item.id}`)
+                                      }}><span>{item.title}</span></li>
                                 ))}
                             </ul>
                             <ul
                                 className={
                                     width < 740 && hide === false
                                         ? "services__list d-none"
-                                        : "services__list"
+                                        : "services__list services__list--fc"
                                 }
                             >
-                                {services_list2.map((item) => (
-                                    <li key={item.id}>{item.text}</li>
+                                {services.map((item) => (
+                                    <li key={item.id} onClick={()=>{
+                                        navigate(`/services/${item.id}`)
+                                      }}><span>{item.title}</span></li>
                                 ))}
                             </ul>
                             <ul
                                 className={
                                     width < 740 && hide === false
                                         ? "services__list d-none"
-                                        : "services__list"
+                                        : "services__list services__list--fc"
                                 }
                             >
-                                {services_list3.map((item) => (
-                                    <li key={item.id}>{item.text}</li>
+                                {services.map((item) => (
+                                    <li key={item.id} onClick={()=>{
+                                        navigate(`/services/${item.id}`)
+                                      }}><span>{item.title}</span></li>
                                 ))}
                             </ul>
                         </div>

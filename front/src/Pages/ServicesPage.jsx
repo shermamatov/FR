@@ -1,12 +1,12 @@
 import React from "react";
-import Services from "../components/Services1/Services";
+import Services2 from "../components/Services2/Services2";
 
-const ServicesPage = () => {
+const Services2Page = () => {
     return (
         <div>
-            <Services />
+            <Services2 />
         </div>
     );
 };
 
-export default ServicesPage;
+export default Services2Page;

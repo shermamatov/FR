@@ -1,15 +1,21 @@
 import React, { useEffect, useState } from "react";
+import {useDispatch} from 'react-redux';
 import "./NavbarOnce.scss";
 import navLogo from "../../../images/navLogo.png";
 import menuIcon from "../../../images/menu.png";
 import { useLocation, useNavigate } from "react-router-dom";
 import NavbarModal from "../NavbarModal/NavbarModal";
 import strela from "../../../images/strelka.png";
+import {getServices} from '../../../redux/reducers/app';
 const NavbarOnce = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
     const { pathname } = useLocation();
+    useEffect(()=>{
+        dispatch(getServices())
+    }, [])
     return (
         <>
             <div className="navbar">
@@ -34,7 +40,7 @@ const NavbarOnce = () => {
                     </div>
                     <div className="navbar_navigate">
                         <div
-                            onClick={() => navigate("/AboutUs")}
+                            onClick={() => navigate("/about_us")}
                             className="has__border"
                             onMouseLeave={() => setModal(false)}
                         >

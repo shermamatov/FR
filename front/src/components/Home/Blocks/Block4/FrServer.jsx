@@ -2,8 +2,12 @@ import React, { useState, useEffect } from "react";
 import "./block4.css";
 import grid_img from "../../../../images/grid_img.png";
 import { useChel } from "../../../../Contexts/ChelContext";
+import { useSelector } from "react-redux";
+import { json } from "react-router-dom";
+
 const FrServer = () => {
     const [width, setWidth] = useState(window.innerWidth);
+    const servicesSingle = useSelector(s => s.app.servicesSingle);
     const { checked3 } = useChel();
     useEffect(() => {
         function handleResize() {
@@ -31,69 +35,20 @@ const FrServer = () => {
                     OUR photos
                 </h2>
                 <div className="grid_block grid_block--none">
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade,
-                            spending three years at
-                        </p>
-                    </div>
+                    {
+                        JSON.stringify(servicesSingle) == '{}'
+                        ? ''
+                        : servicesSingle.media.map(item =>{
+                            return  <div key={item.id} className="grid__item">
+                            <img src={item.photo} alt="" className="grid__img" />
+                            <p className="grid__desc">
+                                The unseen of spending three years at Pixelgrade,
+                                spending three years at
+                            </p>
+                        </div>
+                        })
+                    }
+                 
                 </div>
                 <div
                     className={width < 850 ? "grid_block" : "grid_block d-none"}

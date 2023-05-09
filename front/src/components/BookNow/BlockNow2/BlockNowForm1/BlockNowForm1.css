@@ -16,7 +16,8 @@
     margin: 0 auto;
 }
 
-.blockNowForm1 input {
+.blockNowForm1 input,
+.blockNowForm1 select{
     width: 100%;
     padding: 21px;
     background-color: transparent;
@@ -29,7 +30,6 @@
     font-weight: 400;
     font-size: 25px;
     line-height: 30px;
-    text-transform: capitalize;
     color: #2A2A2A;
 
 }
