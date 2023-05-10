@@ -12,6 +12,6 @@ services:
       - /home/1furniture/backend_static:/opt/backend_static
     networks:
       - 1furniture
- networks:
+networks:
   1furniture:
     name: 1furniture
