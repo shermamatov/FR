@@ -24,7 +24,7 @@ variables:
     name: gcr.io/kaniko-project/executor:debug
     entrypoint: [""]
   before_script:
-    - cp $NGINX_CONF deployments/nginx.conf
+    - cp $NGINX_CONF deployments/default.conf
     - *set_docker_registry_vars
   script:
  #   - cp "$CONFIG" mainsite/config.py
