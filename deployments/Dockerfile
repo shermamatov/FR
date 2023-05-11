@@ -14,4 +14,6 @@ FROM nginx:1.23-alpine
 
 COPY deployments/nginx.conf /etc/nginx/conf.d/default.conf
 
+RUN echo "load_module modules/ngx_http_image_filter_module.so;" >> /etc/nginx/nginx.conf
+
 COPY --from=build /app/front/build /usr/share/nginx/html
