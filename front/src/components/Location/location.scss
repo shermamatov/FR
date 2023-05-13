@@ -5,7 +5,7 @@
         padding: 0 15px;
     }
 
-    .row{
+    .row {
         flex-wrap: wrap;
         row-gap: 25px;
         justify-content: flex-start;
@@ -71,8 +71,10 @@
             font-size: 22px;
             line-height: 44px;
             color: #000000;
+            cursor: pointer;
         }
-        &_bottomLine{
+
+        &_bottomLine {
             margin-top: 60px;
             border: 1px solid #A5A582;
         }
@@ -81,13 +83,13 @@
 
 
 @media screen and (max-width: 1400px) {
-    .location .col{
+    .location .col {
         width: 25%;
     }
 }
 
 @media screen and (max-width: 1200px) {
-    .location .col{
+    .location .col {
         width: 33.3%;
     }
 }
@@ -100,7 +102,7 @@
 }
 
 @media screen and (max-width: 768px) {
-    .location .col{
+    .location .col {
         width: 50%;
     }
 }
@@ -110,6 +112,7 @@
         font-size: 14px;
         line-height: 30px;
     }
+
     .location_block2_title {
         font-size: 22px;
         line-height: 27px;

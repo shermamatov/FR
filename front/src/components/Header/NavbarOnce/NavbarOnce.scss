@@ -131,7 +131,7 @@ button {
 @media (max-width: 768px) {
     .burger__menu {
         display: block !important;
-        position: absolute;
+        position: fixed;
         z-index: 20;
         right: 0;
         background-color: #fff8ed;

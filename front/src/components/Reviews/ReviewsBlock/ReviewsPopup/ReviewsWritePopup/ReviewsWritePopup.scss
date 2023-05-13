@@ -155,7 +155,9 @@
             }
         }
     }
-
+.star_btn_point{
+    border-bottom: 4px solid gold;
+}
     &_bottom {
 
         &_title {
@@ -182,7 +184,6 @@
             font-weight: 600;
             font-size: 20px;
             line-height: 24px;
-            text-transform: capitalize;
 
             &::placeholder {
                 color: #D9D9D9;

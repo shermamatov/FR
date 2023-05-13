@@ -1,8 +1,14 @@
-const WriteForm = () => {
+
+
+
+
+const WriteForm = ({review_text, setReview_text}) => {
   return (
     <div className="reviewsWritePopup_bottom">
       <h1 className="reviewsWritePopup_bottom_title">Your Review</h1>
-      <textarea placeholder="Write review" className="reviewsWritePopup_bottom_textarea"></textarea>
+      <textarea onChange={e => {
+        setReview_text(e.target.value)
+      }} value={review_text} placeholder="Write review" className="reviewsWritePopup_bottom_textarea"></textarea>
     </div>
   );
 };

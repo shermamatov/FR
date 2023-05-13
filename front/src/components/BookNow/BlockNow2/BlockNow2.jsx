@@ -19,9 +19,7 @@ const [formData, setFormData] = useState({})
       localStorage.setItem("bookState", false);
     }
   }, []);
-  useEffect(()=>{
-    console.log(formData);
-  },[formData])
+
   return (
     <div>
       {!state ? (

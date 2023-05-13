@@ -18,7 +18,7 @@ const MainRoutes = () => {
         { link: "/", Element: <HomePage />, id: 2 },
         { link: "/privacy_policy", Element: <PrivacyPolicyPage />, id: 3 },
         { link: "/book_now", Element: <BookNowPage />, id: 4 },
-        { link: "/services/:serviceId", Element: <ServicesSinglePage />, id: 5 },
+        { link: "/services/:slug", Element: <ServicesSinglePage />, id: 5 },
         // { link: "/photos", Element: <PhotosPage />, id: 6 },
         { link: "/reviews", Element: <ReviewsPage />, id: 7 },
         { link: "/photos", Element: <Photos />, id: 8 },
