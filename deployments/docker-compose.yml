@@ -3,11 +3,15 @@ version: '3.7'
 services:
   web:
     image: ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}
-    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}
+    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-front
     restart: always
     ports:
-      - 127.0.0.1:${APP_PORT}:8000
+      - 127.0.0.1:${APP_PORT}:80
     volumes:
-      - /home/1furnitures_media:/usr/src/app/media
- #   env_file:
- #      - .env
+      - /home/1furniture/media:/opt/media
+      - /home/1furniture/backend_static:/opt/backend_static
+    networks:
+      - 1furniture
+networks:
+  1furniture:
+    name: 1furniture

@@ -1,4 +1,6 @@
 README.md
 .git
-deployments
 Dockerfile
+deployments/.gitlab-ci.yml
+deployments/docker-compose.yml
+deployments/Dockerfile.yml
