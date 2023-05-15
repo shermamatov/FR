@@ -123,7 +123,7 @@ const NavbarOnce = () => {
                         <NavbarModal setModal={setModal} modal={modal} />
                     </div>
                     <div className={"right_block_buttons"}>
-                        <button className="number_btn">+1-818-888-10-10</button>
+                        <button className="number_btn">+1 818 858 15 33</button>
                         <button
                             className="book_btn"
                             onClick={() => {

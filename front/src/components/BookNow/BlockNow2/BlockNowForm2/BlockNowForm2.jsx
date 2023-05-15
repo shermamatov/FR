@@ -10,12 +10,14 @@ import {
 import moment from "moment";
 import { useSelector } from "react-redux";
 
-const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData }) => {
+const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData, setMessage }) => {
   const [day, setDay] = useState({});
   const [dayOfWeek, setDayOfWeek] = useState("");
   const month = moment().format("MMMM");
   const [time, setTime] = useState("");
   const [comment, setComment] = useState("");
+  const [loading, setLoading] = useState(false);
+
 
   function getNextFiveDays() {
     const monthList = [
@@ -52,7 +54,7 @@ const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData }) => {
         full: `${start.format("HHmm")} - ${start
           .add(2, "hour")
           .format("HHmm")}`,
-        start: start.format("HHmm"),
+        start: start.format("HHmm") - 200,
       };
       slots.push(slot);
     }
@@ -92,21 +94,25 @@ const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData }) => {
       comment,
       time: `${now.getFullYear()}-${formatNum(
         day.month + 1
-      )}-${day.date}T${time.slice(0, 2)}:00:00`,
+      )}-${day.date}T${`${time}`.slice(0, 2)}:00:00`,
     });
     if(comment && day && time && month){
+      setLoading(true);
     axios.post('https://itek-dev.highcat.org/api/bookings/', {
       ...formData,
       comment,
       time: `${now.getFullYear()}-${day.date}-${formatNum(
         day.month + 1
-      )}T${time.slice(0, 2)}:00`,
+      )}T${`${time}`.slice(0, 2)}:00`,
     }).then(response =>{
       console.log(response);
+      setMessage('application sent')
     }).catch(error =>{
       console.log(error);
+      setMessage('An error has occurred. Try again or contact our call center')
     }).finally(()=>{
       changeLocalStorage(false);
+      setLoading(false)
     })
   }
   };
@@ -162,9 +168,10 @@ const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData }) => {
               key={item.start}
               onClick={() => {
                 setTime(item.start);
-
+                console.log(item);
+                console.log(time);
               }}
-              className="blockNowForm2_time_item"
+              className={item.start == time ? "blockNowForm2_time_item blockNowForm2_time_item-active" : "blockNowForm2_time_item"}
             >
               {item.full}
             </p>
@@ -178,7 +185,11 @@ const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData }) => {
           setComment(e.target.value);
         }}
       ></textarea>
-      <button
+
+      {
+        loading
+        ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        :   <button
         onClick={() => {
 
           bookNow();
@@ -187,6 +198,9 @@ const BlockNowForm2 = ({ changeLocalStorage, setFormData, formData }) => {
       >
         Book now
       </button>
+      }
+
+
     </div>
   );
 };

@@ -4,9 +4,9 @@ import BlockNowForm1 from "./BlockNowForm1/BlockNowForm1";
 const BlockNow2 = () => {
 const [formData, setFormData] = useState({})
   const [state, setState] = useState(
-    JSON.parse(localStorage.getItem("bookState")) || false
+  false
   );
-
+  const [message, setMessage] = useState('');
 
   function changeLocalStorage(bool) {
     if (localStorage.getItem("bookState")) {
@@ -23,9 +23,9 @@ const [formData, setFormData] = useState({})
   return (
     <div>
       {!state ? (
-        <BlockNowForm1 setFormData={setFormData} changeLocalStorage={changeLocalStorage} />
+        <BlockNowForm1 message={message} setFormData={setFormData} changeLocalStorage={changeLocalStorage} />
       ) : (
-        <BlockNowForm2 setFormData={setFormData} formData={formData} changeLocalStorage={changeLocalStorage} />
+        <BlockNowForm2 setMessage={setMessage} setFormData={setFormData} formData={formData} changeLocalStorage={changeLocalStorage} />
       )}
     </div>
   );

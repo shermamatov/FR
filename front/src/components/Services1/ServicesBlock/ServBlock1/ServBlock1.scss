@@ -1,6 +1,7 @@
 .block1 {
     .services_block1_left {
         margin-top: 0px;
+        width: 50%;
     }
     .services_text_p {
         font-family: "Montserrat";
@@ -23,6 +24,14 @@
     }
     .serv_banner2_adap {
         display: none;
+    }
+    &_img{
+
+        img{
+            width: 50%;
+            background-size: cover;
+            background-position: center;
+        }
     }
 }
 @media (max-width: 768px) {

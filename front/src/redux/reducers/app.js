@@ -106,6 +106,7 @@ export const getServices = (locationId) => {
 
 export const getServicesSingle = (id, locationId) => {
     return (dispatch) => {
+        dispatch({type: GET_SERVICES_SINGLE, data: {}})
         axios(`https://itek-dev.highcat.org/api/service/${id}/?for_location=${locationId}`)
             .then(({ data }) => {
                 return dispatch({ type: GET_SERVICES_SINGLE, data })

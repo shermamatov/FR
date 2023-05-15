@@ -18,19 +18,34 @@ const ReviewsWritePopup = ({ showPopup, setShowPopup }) => {
   const [location, setLocation] = useState(null);
   const services = useSelector((s) => s.app.services);
   const locations = useSelector((s) => s.app.locations);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
 
   const submitReview = () => {
     if (name.trim() && review_text.trim() && stars && service && location) {
+      setLoading(true);
       axios
         .post("https://itek-dev.highcat.org/api/review/", {
           name,
           stars,
           review_text,
           service,
-          location
+          location,
+          image1: null,
+          image2: null,
+          phone: "",
+          email: ""
         })
-        .then((response) => console.log(response))
-        .catch((error) => console.log(error));
+        .then((response) => {
+          console.log(response);
+          setMessage('Successfully');
+        })
+        .catch((error) =>{
+           console.log(error);
+           setMessage('An error has occurred. try again')
+          }).finally(()=>{
+            setLoading(false)
+          });
     }
   };
 
@@ -290,14 +305,24 @@ const ReviewsWritePopup = ({ showPopup, setShowPopup }) => {
           <VideoForm />
         )}
 
-        <button
-          onClick={() => {
-            submitReview();
-          }}
-          className="reviewsWritePopup_submitBtn"
-        >
-          Submit review
-        </button>
+{
+  loading
+  ? <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+  : <button
+  onClick={() => {
+    submitReview();
+  }}
+  className="reviewsWritePopup_submitBtn"
+>
+  Submit review
+</button>
+}
+{
+  message.length > 0
+  ? <p>{message}</p>
+  : ''
+}
+
       </div>
     </div>
   );

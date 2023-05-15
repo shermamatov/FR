@@ -107,13 +107,14 @@
     color: #2a2a2a;
     text-align: center;
     margin-bottom: 25px;
+    cursor: pointer;
 }
 
-.blockNowForm2_time_item:first-child {
+/* .blockNowForm2_time_item:first-child {
     color: #d9d9d9;
-}
+} */
 
-.blockNowForm2_time_item:hover {
+.blockNowForm2_time_item-active {
     color: #f2994a;
     cursor: pointer;
 }

@@ -66,7 +66,7 @@ const Footer = () => {
                                     <img src={call} alt="" />
                                     <div className="con-min">
                                         <h4>Phone number</h4>
-                                        <p>+1 818 858 12 08</p>
+                                        <p>+1 818 858 15 33</p>
                                     </div>
                                 </div>
                                 <div className="contacts_polosa"></div>

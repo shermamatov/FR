@@ -3,20 +3,20 @@ import "./BlockNowForm1.css";
 import { useDispatch, useSelector } from "react-redux";
 import { getLocations } from "../../../../redux/reducers/app";
 
-const BlockNowForm1 = ({ changeLocalStorage, setFormData }) => {
+const BlockNowForm1 = ({ changeLocalStorage, setFormData, message }) => {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEamil] = useState("");
   const [address, setAddress] = useState("");
   const [service, setService] = useState(null);
-const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState(null);
 
   const services = useSelector((s) => s.app.services);
-  const locations = useSelector(s => s.app.locations);
-  useEffect(()=>{
-    dispatch(getLocations())
-  })
+  const locations = useSelector((s) => s.app.locations);
+  useEffect(() => {
+    dispatch(getLocations());
+  });
   return (
     <>
       <div
@@ -54,29 +54,43 @@ const [location, setLocation] = useState(null);
           placeholder="Address"
           type="text"
         />
-        <select defaultValue={'0'} onChange={e =>{
-          setService(e.target.value)
-        }}>
-          <option disabled value="0">service</option>
-          {
-            services.map(item =>{
-              return <option key={item.id} value={item.id}>{item.name}</option>
-            })
-          }
+        <select
+          defaultValue={"0"}
+          onChange={(e) => {
+            setService(e.target.value);
+          }}
+        >
+          <option disabled value="0">
+            service
+          </option>
+          {services.map((item) => {
+            return (
+              <option key={item.id} value={item.id}>
+                {item.name}
+              </option>
+            );
+          })}
         </select>
-        <select defaultValue={'0'} onChange={e =>{
-          setLocation(e.target.value)
-        }}>
-          <option disabled value="0">city/location</option>
-          {
-            locations.map(item =>{
-              return <option key={item.id} value={item.id}>{item.location_name}</option>
-            })
-          }
+        <select
+          defaultValue={"0"}
+          onChange={(e) => {
+            setLocation(e.target.value);
+          }}
+        >
+          <option disabled value="0">
+            city/location
+          </option>
+          {locations.map((item) => {
+            return (
+              <option key={item.id} value={item.id}>
+                {item.location_name}
+              </option>
+            );
+          })}
         </select>
         <button
           onClick={() => {
-            if(name && phone && address && email && service && location){
+            if (name && phone && address && email && service && location) {
               changeLocalStorage(true);
               setFormData({
                 name,
@@ -84,15 +98,15 @@ const [location, setLocation] = useState(null);
                 address,
                 email,
                 service,
-                location
+                location,
               });
             }
-
           }}
         >
           {" "}
           Next
         </button>
+        {message.length > 0 ? <p>{message}</p> : ""}
       </div>
     </>
   );

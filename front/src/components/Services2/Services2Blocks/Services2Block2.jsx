@@ -52,7 +52,7 @@ const Services2Block2 = () => {
             <div className="services__bottom srv_bottom_adap">
                 {
                     servicesList.length === 0
-                    ? ''
+                    ?   <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
                     :servicesList.map(element=>{
                         return  <ul key={element[0].id} className="services__list services__list--fc">
                         {element.map((item) => (
