@@ -19,11 +19,13 @@ const initState = {
     services: [],
     servicesSingle: {},
     currentLocation: localStorage.getItem('currentLocation') ? JSON.parse(localStorage.getItem('currentLocation')) : {},
-    blogs: []
+    blogs: [],
+    reviews: [],
 }
 
 
 export default (state = initState, action) => {
+
     switch (action.type) {
         case GET_STATES: {
             return {
@@ -77,7 +79,6 @@ export const getStates = () => {
             .then(({ data }) => {
                 return dispatch({ type: GET_STATES, data })
             })
-
     }
 }
 

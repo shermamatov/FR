@@ -14,6 +14,7 @@ const BlockNowForm1 = ({ changeLocalStorage, setFormData, message }) => {
 
   const services = useSelector((s) => s.app.services);
   const locations = useSelector((s) => s.app.locations);
+  const currentLocation = useSelector(s => s.app.currentLocation);
   useEffect(() => {
     dispatch(getLocations());
   });
@@ -71,7 +72,7 @@ const BlockNowForm1 = ({ changeLocalStorage, setFormData, message }) => {
             );
           })}
         </select>
-        <select
+        {/* <select
           defaultValue={"0"}
           onChange={(e) => {
             setLocation(e.target.value);
@@ -87,10 +88,10 @@ const BlockNowForm1 = ({ changeLocalStorage, setFormData, message }) => {
               </option>
             );
           })}
-        </select>
+        </select> */}
         <button
           onClick={() => {
-            if (name && phone && address && email && service && location) {
+            if (name && phone && address && email && service && currentLocation) {
               changeLocalStorage(true);
               setFormData({
                 name,
@@ -98,7 +99,7 @@ const BlockNowForm1 = ({ changeLocalStorage, setFormData, message }) => {
                 address,
                 email,
                 service,
-                location,
+                location: currentLocation,
               });
             }
           }}

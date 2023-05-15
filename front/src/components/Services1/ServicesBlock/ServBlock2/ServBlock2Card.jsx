@@ -1,8 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ServBlock2Card = ({ item }) => {
+  const navigate = useNavigate();
   return (
-    <div key={item.id} className="image-box-2">
+    <div onClick={()=>{
+      navigate(`/services/${item.slug}`)
+    }} key={item.id} className="image-box-2">
       <div className="image-box-2-image">
         {item.offer_image_before && item.offer_image_after ? (
           <>

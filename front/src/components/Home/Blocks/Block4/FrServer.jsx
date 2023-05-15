@@ -48,7 +48,7 @@ const FrServer = () => {
                         </div>
                         })
                     }
-                 
+
                 </div>
                 <div
                     className={width < 850 ? "grid_block" : "grid_block d-none"}
@@ -90,6 +90,9 @@ const FrServer = () => {
                         </p>
                     </div>
                 </div>
+                {/* {
+                    JSON.stringify(servicesSingle) !== '{}' && servicesSingle.media
+                } */}
                 <div className="paggination d-flex">
                     <button className="prev__btn btn">
                         <svg

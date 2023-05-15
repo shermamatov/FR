@@ -7,8 +7,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { createNestedList, getServicesSingle } from "../../../../redux/reducers/app";
 import { useParams } from "react-router-dom";
 import ServBlock2Card from "./ServBlock2Card";
+import { useNavigate } from "react-router-dom";
 
 const ServBlock2 = () => {
+    const navigate = useNavigate();
     const servicesSingle = useSelector(s => s.app.servicesSingle);
     const currentLocation = useSelector(s => s.app.currentLocation);
     const dispatch = useDispatch()
@@ -67,7 +69,9 @@ const ServBlock2 = () => {
                             return <ul key={idx}>
                                     {
                                         item.map(element =>{
-                                            return <li key={element.id}>{element.name}</li>
+                                            return <li onClick={()=>{
+                                                navigate(`/services/${item.slug}`)
+                                              }}  key={element.id}>{element.name}</li>
                                         })
                                     }
                             </ul>

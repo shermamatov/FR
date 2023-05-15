@@ -33,7 +33,7 @@ const ServBlock1 = () => {
           <div className="left_bottom_block">
             <div className="block1_desc">
               <div className="bord">
-                <p>{servicesSingle.description}</p>
+                <p>{servicesSingle.text1}</p>
               </div>
               <div className="bord">
                 <img src={galochkaIcon} alt="" />

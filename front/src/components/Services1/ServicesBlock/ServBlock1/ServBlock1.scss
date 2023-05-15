@@ -29,8 +29,9 @@
 
         img{
             width: 50%;
-            background-size: cover;
-            background-position: center;
+            object-fit: cover;
+            object-position: center;
+            height: 430px;
         }
     }
 }
