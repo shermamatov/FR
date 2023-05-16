@@ -1,137 +1,136 @@
 @media (max-width: 1250px) {
-  .col-md-4-mini p {
-    width: 110%;
-  }
+    .col-md-4-mini p {
+        width: 110%;
+    }
 }
-@media (max-width:1200px) {
-  .main_icons{
-    width: 100%;
-  }
+@media (max-width: 1200px) {
+    .main_icons {
+        width: 100%;
+    }
 }
 @media (max-width: 1100px) {
-  .col-md-p {
-    width: 130%;
-  }
-  
+    .col-md-p {
+        width: 130%;
+    }
 }
 @media (max-width: 1024px) {
-  .main_icons {
-    width: 110%;
-  }
+    .main_icons {
+        width: 110%;
+    }
 }
 @media (max-width: 900px) {
-  .row {
-    flex-wrap: wrap;
-  }
-  .about h1 {
-    font-size: 50px;
-  }
-  .col-md-p {
-    font-size: 20px;
-    text-align: left;
-    width: 80%;
-  }
-  .main_icons {
-    width: 80%;
-  }
-  .contacts h1 {
-    font-size: 50px;
-  }
-  footer {
-    /* background-size: 100% 100%; */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-  .col-md-4-mini img {
-    width: 40px !important;
-    height: 30px;
-  }
-  .col-md-p-4 {
-    font-size: 20px;
-  }
-  .que_polasa {
-    width: 350px;
-  }
-  .polosa {
-    width: 15%;
-  }
+    .row {
+        flex-wrap: wrap;
+    }
+    .about h1 {
+        font-size: 50px;
+    }
+    .col-md-p {
+        font-size: 20px;
+        text-align: left;
+        width: 80%;
+    }
+    .main_icons {
+        width: 80%;
+    }
+    .contacts h1 {
+        font-size: 50px;
+    }
+    footer {
+        /* background-size: 100% 100%; */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    .col-md-4-mini img {
+        width: 40px !important;
+        height: 30px;
+    }
+    .col-md-p-4 {
+        font-size: 20px;
+    }
+    .que_polasa {
+        width: 350px;
+    }
+    .polosa {
+        width: 15%;
+    }
 }
 
 @media (max-width: 425px) {
-  .polosa {
-    width: 25%;
-  }
-  .about h1 {
-    font-size: 40px;
-  }
-  .col-md-p {
-    font-size: 15px;
-    text-align: left;
-    width: 120%;
-    line-height: 1.8;
-  }
-  .main_icons {
-    width: 60%;
+    .polosa {
+        width: 25%;
+    }
+    .about h1 {
+        font-size: 40px;
+    }
+    .col-md-p {
+        font-size: 15px;
+        text-align: left;
+        width: 120%;
+        line-height: 1.8;
+    }
+    .main_icons {
+        width: 60%;
 
-    height: 25px;
-  }
-  .main_icons div {
-    height: 45px;
-    width: 24%;
-  }
-  .okrug img {
-    /* padding-bottom: 15%; */
-  }
-  .col-md-4-mini img {
-    width: 17%;
-    height: 20px;
-    padding-right: 15px;
-  }
-  .col-md-4-mini p {
-    width: 140%;
-  }
-  .contacts h1 {
-    font-size: 40px;
-  }
-  .col-md-p-4 {
-    font-size: 15px;
-  }
-  .que_polasa {
-    width: 250px;
-  }
+        height: 25px;
+    }
+    .main_icons div {
+        height: 45px;
+        width: 24%;
+    }
+    .okrug img {
+        /* padding-bottom: 15%; */
+    }
+    .col-md-4-mini img {
+        width: 17%;
+        height: 20px;
+        padding-right: 15px;
+    }
+    .col-md-4-mini p {
+        width: 140%;
+    }
+    .contacts h1 {
+        font-size: 40px;
+    }
+    .col-md-p-4 {
+        font-size: 15px;
+    }
+    .que_polasa {
+        width: 250px;
+    }
 }
 @media (max-width: 320px) {
-  .col-md-4 {
-    padding: 10px;
-  }
-  .about h1 {
-    font-size: 30px;
-  }
-  .col-md-p {
-    text-align: left;
-    font-size: 13px;
-    width: 125%;
-  }
-  .contacts h1 {
-    font-size: 30px;
-  }
+    .col-md-4 {
+        padding: 10px;
+    }
+    .about h1 {
+        font-size: 30px;
+    }
+    .col-md-p {
+        text-align: left;
+        font-size: 13px;
+        width: 125%;
+    }
+    .contacts h1 {
+        font-size: 30px;
+    }
 }
 
 @media (max-width: 375px) {
-  .col-md-4 {
-    padding: 10px;
-    padding-top: 30%;
-  }
-  .col-md-4-mini img {
-    width: 23%;
-    height: 20px;
-    padding-right: 15px;
-  }
-  .col-md-4-mini p {
-    width: 180%;
-  }
-  .con-min {
-    padding-right: 25%;
-  }
+    .col-md-4 {
+        padding: 10px;
+        padding-top: 30%;
+    }
+    .col-md-4-mini img {
+        width: 23%;
+        height: 20px;
+        padding-right: 15px;
+    }
+    .col-md-4-mini p {
+        width: 180%;
+    }
+    .con-min {
+        padding-right: 25%;
+    }
 }
