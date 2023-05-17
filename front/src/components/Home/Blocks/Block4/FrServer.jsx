@@ -1,45 +1,27 @@
-import { useEffect } from "react";
-import axios from "axios";
 import "./block4.css";
+import clsx from "clsx";
 import grid_img from "../../../../images/grid_img.png";
 import { useResize } from "../../../../hooks/useResize"
 import { useChel } from "../../../../Contexts/ChelContext";
-import { useSelector } from "react-redux";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPhotos } from "../../../../api";
 
 
 const FrServer = () => {
     const width = useResize();
-    const servicesSingle = useSelector(s => s.app.servicesSingle);
     const { checked3 } = useChel();
-    const { isLoading, error, data } = useQuery(['photos'], fetchPhotos)
-
-    function addBordClass() {
-        const grid__desc = document.querySelectorAll(".grid__desc");
-        for (let i of grid__desc) {
-            i.classList.add("bord");
-        }
-    }
-    useEffect(() => {
-        addBordClass();
-    }, []);
+    const { data } = useQuery(['photos'], fetchPhotos)
 
     return (
         <div className="fr_server">
             <h2 className="transparent_text">at manufacturing plants</h2>
             <div className="container">
-                <h2 className={`fr__title bord ${checked3 && "big_fz_h2"}`}>
-                    OUR photos
-                </h2>
+                <h2 className={clsx(`fr__title bord`, checked3 && "big_fz_h2")}>our photos</h2>
                 <div className="grid_block grid_block--none">
                     {data?.map((item) => (
                         <div key={item.id} className="grid__item">
                             <img src={item.photo} alt="" className="grid__img" />
-                            <p className="grid__desc">
-                                The unseen of spending three years at Pixelgrade,
-                                spending three years at
-                            </p>
+                            <p className="grid__desc bord">{item.caption}</p>
                         </div>
                     ))}
                 </div>
@@ -83,9 +65,6 @@ const FrServer = () => {
                         </p>
                     </div>
                 </div>
-                {/* {
-                    JSON.stringify(servicesSingle) !== '{}' && servicesSingle.media
-                } */}
                 <div className="paggination d-flex">
                     <button className="prev__btn btn">
                         <svg
