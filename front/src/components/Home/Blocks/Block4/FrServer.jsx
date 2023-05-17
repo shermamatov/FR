@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 import "./block4.css";
 import grid_img from "../../../../images/grid_img.png";
+import { useResize } from "../../../../hooks/useResize"
 import { useChel } from "../../../../Contexts/ChelContext";
 import { useSelector } from "react-redux";
-import { json } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPhotos } from "../../../../api";
+
 
 const FrServer = () => {
-    const [width, setWidth] = useState(window.innerWidth);
+    const width = useResize();
     const servicesSingle = useSelector(s => s.app.servicesSingle);
     const { checked3 } = useChel();
-    useEffect(() => {
-        function handleResize() {
-            setWidth(window.innerWidth);
-        }
-        window.addEventListener("resize", handleResize);
+    const { isLoading, error, data } = useQuery(['photos'], fetchPhotos)
 
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
     function addBordClass() {
         const grid__desc = document.querySelectorAll(".grid__desc");
         for (let i of grid__desc) {
@@ -35,20 +33,15 @@ const FrServer = () => {
                     OUR photos
                 </h2>
                 <div className="grid_block grid_block--none">
-                    {
-                        JSON.stringify(servicesSingle) == '{}'
-                        ? ''
-                        : servicesSingle.media.map(item =>{
-                            return  <div key={item.id} className="grid__item">
+                    {data?.map((item) => (
+                        <div key={item.id} className="grid__item">
                             <img src={item.photo} alt="" className="grid__img" />
                             <p className="grid__desc">
                                 The unseen of spending three years at Pixelgrade,
                                 spending three years at
                             </p>
                         </div>
-                        })
-                    }
-
+                    ))}
                 </div>
                 <div
                     className={width < 850 ? "grid_block" : "grid_block d-none"}
