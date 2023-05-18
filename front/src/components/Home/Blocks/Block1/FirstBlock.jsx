@@ -7,7 +7,9 @@ import facebook from "../../../../images/Facebook.png";
 import yelp from "../../../../images/Yelp.png";
 import banner from "../../../../images/block1Banner.webp";
 import krujok from "../../../../images/block1Krug.png";
+import { useNavigate } from "react-router-dom";
 const FirstBlock = () => {
+    const navigate = useNavigate();
     return (
         <div className="block1">
             <div className="block1_left">
@@ -40,7 +42,9 @@ const FirstBlock = () => {
                             <img src={yelp} alt="" />
                         </div>
                         <div className="btn_block1">
-                            <button className="btn_var3">
+                            <button onClick={()=>{
+                                navigate('/book_now')
+                            }} className="btn_var3">
                                 book online now
                             </button>
                         </div>
