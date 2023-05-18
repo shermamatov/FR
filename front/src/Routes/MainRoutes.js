@@ -6,7 +6,6 @@ import PrivacyPolicyPage from "../Pages/PrivacyPolicyPage";
 import BookNowPage from "../Pages/BookNowPage";
 import ServicesSinglePage from "../Pages/ServicesSinglePage";
 import ReviewsPage from "../Pages/ReviewsPage";
-import PhotosPage from "../Pages/PhotosPage";
 import BlogPage from "../Pages/BlogPage";
 import Photos from "../components/Photos/Photos";
 import ServicesPage from "../Pages/ServicesPage";
@@ -20,7 +19,6 @@ const MainRoutes = () => {
         { link: "/privacy_policy", Element: <PrivacyPolicyPage />, id: 3 },
         { link: "/book_now", Element: <BookNowPage />, id: 4 },
         { link: "/services/:slug", Element: <ServicesSinglePage />, id: 5 },
-        // { link: "/photos", Element: <PhotosPage />, id: 6 },
         { link: "/reviews", Element: <ReviewsPage />, id: 7 },
         { link: "/photos", Element: <Photos />, id: 8 },
         { link: "/blog", Element: <BlogPage />, id: 9 },

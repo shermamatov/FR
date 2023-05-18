@@ -1,20 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./PhotoBlock1.scss";
 import filterIcon from "../../../../images/filterIcon.png";
-import photo1 from "../../../../images/photos_Img1.webp";
-import photo2 from "../../../../images/photos_img2.webp";
-import photo3 from "../../../../images/photos_img3.webp";
 import PhotoFilter from "../PhotoFilter/PhotoFilter";
-import { useDispatch, useSelector } from "react-redux";
-import { getphotos } from "../../../../redux/reducers/app";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPhotos } from "../../../../api";
+
 const PhotoBlock1 = () => {
   const [modal, setModal] = useState(false);
-  const dispatch = useDispatch();
-  const mediaArr = useSelector((s) => s.app.media);
+  const { data = [] } = useQuery(['photos'], fetchPhotos)
 
-  useEffect(() => {
-    dispatch(getphotos());
-  }, []);
+
   return (
     <div className="photos_main_block" onClick={() => setModal(false)}>
       <h1>Project photos</h1>
@@ -27,53 +22,15 @@ const PhotoBlock1 = () => {
           }}
         >
           <img src={filterIcon} alt="" />
-          {/* <div></div> */}
           <p>Filter</p>
         </div>
         <div className="photos_img_blocks">
           {modal && <PhotoFilter />}
-          {mediaArr?.map((item) => (
+          {data.map((item) => (
             <div key={item.id}>
               <img src={item.photo} alt="" />
             </div>
           ))}
-
-          {/* <div>
-            <img src={photo1} alt="" />
-          </div>€
-          <div>
-            <img src={photo2} alt="" />
-          </div>
-          <div>
-            <img src={photo3} alt="" />
-          </div>
-          <div>
-            <img src={photo1} alt="" />
-          </div>
-          <div>
-            <img src={photo3} alt="" />
-          </div>
-          <div>
-            <img src={photo2} alt="" />
-          </div>
-          <div>
-            <img src={photo2} alt="" />
-          </div>
-          <div>
-            <img src={photo3} alt="" />
-          </div>
-          <div>
-            <img src={photo1} alt="" />
-          </div>
-          <div>
-            <img src={photo2} alt="" />
-          </div>
-          <div>
-            <img src={photo3} alt="" />
-          </div>
-          <div>
-            <img src={photo1} alt="" />
-          </div> */}
         </div>
       </div>
       <div className="photos_pagination paggination d-flex">
