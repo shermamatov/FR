@@ -7,6 +7,7 @@ const GET_SERVICES_SINGLE = "GET_SERVICES_SINGLE";
 const GET_BLOGS = "GET_BLOGS";
 const GET_BLOGS_SINGLE = "GET_BLOG_SINGLE";
 const GET_REVIEWS = "GET_REVIEWS";
+const GET_PHOTOS = "GET_PHOTOS";
 
 const DOMAIN = "https://itek-dev.highcat.org/";
 const currentLocationFindApi =
@@ -17,7 +18,7 @@ const servicesForLocationApi = `https://itek-dev.highcat.org/api/service/1/?for_
 const servicesAPI = "https://itek-dev.highcat.org/api/service/";
 const blogsAPI = "https://itek-dev.highcat.org/api/blogs/";
 const reviewsAPI = "https://itek-dev.highcat.org/api/review/";
-
+const media = "http://itek-dev.highcat.org/api/media/";
 const initState = {
     states: [],
     locations: [],
@@ -28,11 +29,18 @@ const initState = {
         : {},
     blogs: [],
     reviews: [],
+    media: [],
     blogSingle: {},
 };
 
 export default (state = initState, action) => {
     switch (action.type) {
+        case GET_PHOTOS: {
+            return {
+                ...state,
+                media: action.data,
+            };
+        }
         case GET_STATES: {
             return {
                 ...state,
@@ -78,17 +86,16 @@ export default (state = initState, action) => {
             };
         }
 
-        case GET_BLOGS_SINGLE: {
-            return {
-                ...state,
-                blogSingle: action.data,
-            };
-        }
-
         case GET_REVIEWS: {
             return {
                 ...state,
                 reviews: action.data,
+            };
+        }
+        case GET_BLOGS_SINGLE: {
+            return {
+                ...state,
+                blogSingle: action.data,
             };
         }
 
@@ -109,6 +116,15 @@ export const getLocations = () => {
     return (dispatch) => {
         axios(activeLoctionsAPi).then(({ data }) => {
             return dispatch({ type: GET_LOCATIONS, data });
+        });
+    };
+};
+
+export const getphotos = () => {
+    console.log("work");
+    return (dispatch) => {
+        axios(`/api/media`).then(({ data }) => {
+            return dispatch({ type: GET_PHOTOS, data });
         });
     };
 };

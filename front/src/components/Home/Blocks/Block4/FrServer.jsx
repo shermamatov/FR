@@ -1,98 +1,29 @@
-import React, { useState, useEffect } from "react";
 import "./block4.css";
-import grid_img from "../../../../images/grid_img.png";
+import clsx from "clsx";
+import { useResize } from "../../../../hooks/useResize"
 import { useChel } from "../../../../Contexts/ChelContext";
-import { useSelector } from "react-redux";
-import { json } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import { fetchPhotos } from "../../../../api";
+
 
 const FrServer = () => {
-    const [width, setWidth] = useState(window.innerWidth);
-    const servicesSingle = useSelector(s => s.app.servicesSingle);
+    const width = useResize();
     const { checked3 } = useChel();
-    useEffect(() => {
-        function handleResize() {
-            setWidth(window.innerWidth);
-        }
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-    function addBordClass() {
-        const grid__desc = document.querySelectorAll(".grid__desc");
-        for (let i of grid__desc) {
-            i.classList.add("bord");
-        }
-    }
-    useEffect(() => {
-        addBordClass();
-    }, []);
+    const { data } = useQuery(['photos'], fetchPhotos)
 
     return (
         <div className="fr_server">
             <h2 className="transparent_text">at manufacturing plants</h2>
             <div className="container">
-                <h2 className={`fr__title bord ${checked3 && "big_fz_h2"}`}>
-                    OUR photos
-                </h2>
-                <div className="grid_block grid_block--none">
-                    {
-                        JSON.stringify(servicesSingle) == '{}'
-                        ? ''
-                        : servicesSingle.media.map(item =>{
-                            return  <div key={item.id} className="grid__item">
+                <h2 className={clsx(`fr__title bord`, checked3 && "big_fz_h2")}>our photos</h2>
+                <div className="grid_block">
+                    {data?.map((item) => (
+                        <div key={item.id} className="grid__item">
                             <img src={item.photo} alt="" className="grid__img" />
-                            <p className="grid__desc">
-                                The unseen of spending three years at Pixelgrade,
-                                spending three years at
-                            </p>
+                            <p className="grid__desc bord">{item.caption}</p>
                         </div>
-                        })
-                    }
-
+                    ))}
                 </div>
-                <div
-                    className={width < 850 ? "grid_block" : "grid_block d-none"}
-                >
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                </div>
-                {/* {
-                    JSON.stringify(servicesSingle) !== '{}' && servicesSingle.media
-                } */}
                 <div className="paggination d-flex">
                     <button className="prev__btn btn">
                         <svg

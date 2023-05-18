@@ -99,7 +99,7 @@ const BlockNowForm1 = ({ changeLocalStorage, setFormData, message }) => {
                 address,
                 email,
                 service,
-                location: currentLocation,
+                location: currentLocation.id,
               });
             }
           }}
