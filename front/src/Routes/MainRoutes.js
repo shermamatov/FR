@@ -26,7 +26,7 @@ const MainRoutes = () => {
         { link: "/blog", Element: <BlogPage />, id: 9 },
         { link: "/services", Element: <ServicesPage />, id: 10 },
         { link: "/location", Element: <LocationPage />, id: 11 },
-        { link: "/blog_single", Element: <BlogSinglePage />, id: 12 },
+        { link: "/blog_single/:id", Element: <BlogSinglePage />, id: 12 },
     ];
     return (
         <>

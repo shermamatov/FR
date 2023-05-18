@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./BlogSingle.scss";
 import banner1 from "../../images/blogSingle_banner1.webp";
 import banner2 from "../../images/blogSingle_banner2.webp";
@@ -9,7 +9,28 @@ import twit from "../../images/twit.png";
 import link from "../../images/link.png";
 import share from "../../images/share.png";
 import face from "../../images/face.png";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+import { getOneBlogs } from "../../redux/reducers/app";
 const BlogSingle = () => {
+    const dispatch = useDispatch();
+    const blog = useSelector((s) => s.app.blogSingle);
+    const { id } = useParams();
+
+    useEffect(() => {
+        dispatch(getOneBlogs(id));
+    }, []);
+
+    // useEffect(() => {
+    //     sliceServArr(blog.services);
+    // }, [blog]);
+
+    function sliceServArr(arr = []) {
+        let arra = [...arr];
+        let a = arra.splice(0, 3);
+        return a;
+    }
+
     return (
         <div className="container blogSingle_main">
             <section className="all-title ">
@@ -33,45 +54,30 @@ const BlogSingle = () => {
                 </ul>
             </section>
             <div className="blogSingle_banner1">
-                <img src={banner1} alt="" />
+                <img src={blog.image1} alt="" />
             </div>
             <p className="blogSingle_blogName">Business Strategy </p>
-            <h1 className="blogSingle_blogTitle">
-                A-Series Ultra Low NOx Gas Furnace 80% Single Stage 40,000 BTU
-                Non-Variable Upflow/Horizontal 14.5" wide
-            </h1>
+            <h1 className="blogSingle_blogTitle">{blog.title}</h1>
             <p className="blogSingle_blogData">POSTED ON DECEMBER 2,2021</p>
-            <p className="blogSingle_blogDesc">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Sit
-                amet venenatis urna cursus eget nunc scelerisque viverra mauris.
-                Leo vel orci porta non pulvinar neque. Magna ac placerat
-                vestibulum lectus. Aenean pharetra magna ac placerat. Felis
-                bibendum ut tristique et egestas quis ipsum suspendisse
-                ultrices. Scelerisque varius morbi enim nunc faucibus a. Nunc
-                congue nisi vitae suscipit. Eget nunc scelerisque viverra mauris
-                in aliquam sem fringilla. Facilisis sed odio morbi quis.
-                Senectus et netus et malesuada. Dignissim enim sit amet
-                venenatis. Imperdiet dui accumsan sit amet nulla. Cras sed felis
-                eget velit aliquet sagittis id consectetur purus. Vitae aliquet
-                nec ullamcorper sit amet risus nullam eget. Mi bibendum neque
-                egestas congue quisque egestas diam in. Magna eget est lorem
-                ipsum dolor sit amet consectetur. Ultrices eros in cursus
-                turpis. Aliquam vestibulum morbi blandit cursus risus at
-                ultrices mi. Dictum varius duis at consectetur.
-            </p>
+            <p className="blogSingle_blogDesc">{blog.description}</p>
             <div className="blogSingle_banner1">
                 <img src={banner2} alt="" />
             </div>
             <div className="blogSingle_services_block">
-                <div>
-                    <img src={blogServImg1} alt="" />
-                    <p>
-                        The unseen of spending three years at Pixelgrade,
-                        spending three years at
-                    </p>
-                </div>
-                <div>
+                {sliceServArr(blog.services).map((item) => (
+                    <div key={item.id}>
+                        <img
+                            src={
+                                item.offer_image
+                                    ? item.offer_image
+                                    : blogServImg1
+                            }
+                            alt="sorry"
+                        />
+                        <p>{item.name}</p>
+                    </div>
+                ))}
+                {/* <div>
                     <img src={blogServImg2} alt="" />
                     <p>
                         How to optimize images in WordPress for faster loading
@@ -81,7 +87,7 @@ const BlogSingle = () => {
                 <div>
                     <img src={blogServImg3} alt="" />
                     <p>Start a blog to reach your creative peak</p>
-                </div>
+                </div> */}
             </div>
             <div className="qestion">
                 <h4>1. What is the point of this meeting?</h4>

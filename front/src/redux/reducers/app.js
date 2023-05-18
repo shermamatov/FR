@@ -5,6 +5,7 @@ const GET_CURRENT_LOCATION = "GET_CURRENT_LOCATION";
 const GET_SERVICES = "GET_SERVICES";
 const GET_SERVICES_SINGLE = "GET_SERVICES_SINGLE";
 const GET_BLOGS = "GET_BLOGS";
+const GET_BLOGS_SINGLE = "GET_BLOG_SINGLE";
 const GET_REVIEWS = "GET_REVIEWS";
 
 const DOMAIN = "https://itek-dev.highcat.org/";
@@ -27,6 +28,7 @@ const initState = {
         : {},
     blogs: [],
     reviews: [],
+    blogSingle: {},
 };
 
 export default (state = initState, action) => {
@@ -73,6 +75,13 @@ export default (state = initState, action) => {
             return {
                 ...state,
                 blogs: action.data,
+            };
+        }
+
+        case GET_BLOGS_SINGLE: {
+            return {
+                ...state,
+                blogSingle: action.data,
             };
         }
 
@@ -144,6 +153,16 @@ export const getBlogs = () => {
         axios(blogsAPI).then(({ data }) => {
             return dispatch({ type: GET_BLOGS, data });
         });
+    };
+};
+
+export const getOneBlogs = (id) => {
+    return (dispatch) => {
+        axios(`https://itek-dev.highcat.org/api/blogs/${id}`).then(
+            ({ data }) => {
+                return dispatch({ type: GET_BLOGS_SINGLE, data });
+            }
+        );
     };
 };
 
