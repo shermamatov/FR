@@ -27,6 +27,7 @@ const PhotoBlock1 = () => {
           }}
         >
           <img src={filterIcon} alt="" />
+          {/* <div></div> */}
           <p>Filter</p>
         </div>
         <div className="photos_img_blocks">
