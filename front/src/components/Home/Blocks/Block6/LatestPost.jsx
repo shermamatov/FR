@@ -1,77 +1,73 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./block6.css";
+import { useQuery } from "@tanstack/react-query";
 import "./latestAdaptive.css";
-import mask1 from "./imageLatestPost/Mask1.png";
-import mask2 from "./imageLatestPost/Mask2.png";
-import mask3 from "./imageLatestPost/Mask3.png";
-import mask4 from "./imageLatestPost/Mask4.png";
-// import mask5 from "./imageLatestPost/Mask5.png";
+import { fetchPosts } from "../../../../api";
+import { Link } from "react-router-dom";
 
 const LatestPost = () => {
+    const { data = [] } = useQuery(['post'], fetchPosts)
+
+    const formatter = useMemo(() => new Intl.DateTimeFormat('en-US', {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+    }), [])
+
+    const blog = useMemo(() => {
+        const leftPart = data.slice(0, 3);
+        const rightPost1 = data[3];
+        const rightPost2 = data[4];
+
+        return { leftPart, rightPost1, rightPost2 }
+    }, [data])
+
+    const { leftPart, rightPost1, rightPost2 } = blog
+
     return (
         <div className="latest-Post">
             <h1 className="latest">LATEST POST</h1>
             <div className="Latest-Post-main">
                 <div className="the-first-left-post">
-                    <div className="post">
-                        <div className="post1">
-                            <img src={mask1} alt="" />
-                        </div>
-                        <div className="about1">
-                            <p className="date">13 Sep 2022</p>
-                            <a href="#" className="title1">
-                                Eight rules for choosing the right color
-                            </a>
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post1">
-                            <img src={mask2} alt="" />
-                        </div>
-                        <div className="about1">
-                            <p className="date">13 Sep 2022</p>
-                            <a href="#" className="title1">
-                                Celebrating Thanksgiving At Home
-                            </a>
-                        </div>
-                    </div>
-                    <div className="post">
-                        <div className="post1">
-                            <img src={mask3} alt="" />
-                        </div>
-                        <div className="about1">
-                            <p className="date">13 Sep 2022</p>
-                            <a href="#" className="title1">
-                                Setting Intentions Instead of Resolutions for
-                                2021
-                            </a>
-                        </div>
-                    </div>
+                    {leftPart.map((post) => (
+                        <article key={post.id} className="post">
+                            <figure className="post1">
+                                <img src={post.image1} alt="" />
+                            </figure>
+                            <div className="about1">
+                                <p className="date">{formatter.format(new Date(post.created_at))}</p>
+                                <Link to={`/blog/${post.id}`} className="title1">{post.title}</Link>
+                            </div>
+                        </article>
+                    ))}
                 </div>
                 <div className="the-first-right-post">
-                    <div className="postnot">
-                        <img src={mask3} alt="" />
-                        <div className="about11">
-                            <p className="datenot">13 Sep 2022</p>
-                            <a href="#" className="titlenot">
-                                Mindfulness Activities for Kids & Toddlers
-                            </a>
+                    {rightPost1 && (
+                        <div className="postnot">
+                            <img src={rightPost1.image1} alt="" />
+                            <div className="about11">
+                                <p className="datenot">{formatter.format(new Date(rightPost1.created_at))}</p>
+                                <Link to={`/blog/${rightPost1.id}`} className="titlenot">
+                                    {rightPost1.title}
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                    <div className="postnot1">
-                        <img src={mask4} alt="" />
-                        <div className="about11">
-                            <p className="datenot">13 Sep 2022</p>
-                            <a href="#" className="titlenot1">
-                                The Revolutionary Functionality of the Doona Car
-                                Seat & Stroller
-                            </a>
+                    )}
+                    {rightPost2 && (
+                        <div className="postnot1">
+                            <img src={rightPost2.image1} alt="" />
+                            <div className="about11">
+                                <p className="datenot">{formatter.format(new Date(rightPost2.created_at))}</p>
+                                <Link to={`/blog/${rightPost2.id}`} className="titlenot1">
+                                    {rightPost2.title}
+                                </Link>
+                            </div>
                         </div>
-                    </div>
+                    )}
                 </div>
             </div>
             <div className="btn_block">
-                <button className="latest__btn">View all posts</button>
+                <Link to="/blog" className="latest__btn">View all posts</Link>
             </div>
         </div>
     );
