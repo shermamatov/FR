@@ -1,37 +1,7 @@
 import "./block4.css";
 import clsx from "clsx";
-import grid_img from "../../../../images/grid_img.png";
 import { useResize } from "../../../../hooks/useResize"
 import { useChel } from "../../../../Contexts/ChelContext";
-<<<<<<< HEAD
-import { useSelector } from "react-redux";
-import { json } from "react-router-dom";
-import { createNestedList } from "../../../../redux/reducers/app";
-
-const FrServer = () => {
-    const [width, setWidth] = useState(window.innerWidth);
-    const servicesSingle = useSelector(s => s.app.servicesSingle);
-    const [photosList, setPhotosList] = useState([]);
-    const { checked3 } = useChel();
-
-    useEffect(() => {
-        function handleResize() {
-            setWidth(window.innerWidth);
-        }
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
-    function addBordClass() {
-        const grid__desc = document.querySelectorAll(".grid__desc");
-        for (let i of grid__desc) {
-            i.classList.add("bord");
-        }
-    }
-    useEffect(() => {
-        addBordClass();
-    }, []);
-=======
 import { useQuery } from "@tanstack/react-query";
 import { fetchPhotos } from "../../../../api";
 
@@ -40,39 +10,13 @@ const FrServer = () => {
     const width = useResize();
     const { checked3 } = useChel();
     const { data } = useQuery(['photos'], fetchPhotos)
->>>>>>> 6a097312f0b51888754c86271aeb9eaf69b8e63c
 
-    useEffect(()=>{
-        if(JSON.stringify(servicesSingle) !== '{}'){
-            setPhotosList(createNestedList(servicesSingle.media, 9))
-        }
-    }, [servicesSingle])
     return (
         <div className="fr_server">
             <h2 className="transparent_text">at manufacturing plants</h2>
             <div className="container">
-<<<<<<< HEAD
-                <h2 className={`fr__title bord ${checked3 && "big_fz_h2"}`}>
-                    OUR photos
-                </h2>
-                {
-                    photosList.map(element =>{
-                        return <div key={element[0].id} className="grid_block grid_block--none">
-                        {
-                            element.map(item =>{
-                                return  <div key={item.id} className="grid__item">
-                                <img src={item.photo} alt="" className="grid__img" />
-                                <p className="grid__desc">
-                                    The unseen of spending three years at Pixelgrade,
-                                    spending three years at
-                                </p>
-                            </div>
-                            })
-                        }
-
-=======
                 <h2 className={clsx(`fr__title bord`, checked3 && "big_fz_h2")}>our photos</h2>
-                <div className="grid_block grid_block--none">
+                <div className="grid_block">
                     {data?.map((item) => (
                         <div key={item.id} className="grid__item">
                             <img src={item.photo} alt="" className="grid__img" />
@@ -80,65 +24,7 @@ const FrServer = () => {
                         </div>
                     ))}
                 </div>
-                <div
-                    className={width < 850 ? "grid_block" : "grid_block d-none"}
-                >
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
-                    </div>
-                    <div className="grid__item">
-                        <img src={grid_img} alt="" className="grid__img" />
-                        <p className="grid__desc">
-                            The unseen of spending three years at Pixelgrade
-                        </p>
->>>>>>> 6a097312f0b51888754c86271aeb9eaf69b8e63c
-                    </div>
-                    })
-                }
-
-
-{
-                    photosList.map(element =>{
-                        return <div key={element[0].id}  className={width < 850 ? "grid_block" : "grid_block d-none"}>
-                        {
-                            element.map(item =>{
-                                return  <div key={item.id} className="grid__item">
-                                <img src={item.photo} alt="" className="grid__img" />
-                                <p className="grid__desc">
-                                    The unseen of spending three years at Pixelgrade,
-                                    spending three years at
-                                </p>
-                            </div>
-                            })
-                        }
-
-                    </div>
-<<<<<<< HEAD
-                    })
-                }
-                
-                {
-                    JSON.stringify(servicesSingle) !== '{}' && servicesSingle.media.length > 9
-                    ?<div className="paggination d-flex">
-=======
-                </div>
                 <div className="paggination d-flex">
->>>>>>> 6a097312f0b51888754c86271aeb9eaf69b8e63c
                     <button className="prev__btn btn">
                         <svg
                             width="12"
@@ -179,9 +65,6 @@ const FrServer = () => {
                         </svg>
                     </button>
                 </div>
-                : ''
-                }
-
             </div>
         </div>
     );
