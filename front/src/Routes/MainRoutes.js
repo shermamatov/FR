@@ -11,6 +11,7 @@ import BlogPage from "../Pages/BlogPage";
 import Photos from "../components/Photos/Photos";
 import ServicesPage from "../Pages/ServicesPage";
 import LocationPage from "../Pages/LocationPage";
+import BlogSinglePage from "../Pages/BlogSinglePage";
 
 const MainRoutes = () => {
     const PUBLIC_ROUTES = [
@@ -25,6 +26,7 @@ const MainRoutes = () => {
         { link: "/blog", Element: <BlogPage />, id: 9 },
         { link: "/services", Element: <ServicesPage />, id: 10 },
         { link: "/location", Element: <LocationPage />, id: 11 },
+        { link: "/blog_single", Element: <BlogSinglePage />, id: 12 },
     ];
     return (
         <>
