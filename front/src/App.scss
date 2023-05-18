@@ -45,6 +45,32 @@
     left: 56px;
     animation: lds-ellipsis3 0.6s infinite;
 }
+
+.purple {
+    color: #9b51e0;
+}
+.blue {
+    color: #107ebd;
+    font-weight: 700;
+}
+.redy {
+    color: #ec2a48;
+    font-weight: 700;
+}
+.yellow {
+    color: #f2994a;
+}
+.green {
+    color: #219653;
+}
+.black {
+    color: black;
+}
+
+.orange {
+    color: #e07b37 !important;
+}
+
 @keyframes lds-ellipsis1 {
     0% {
         transform: scale(0);

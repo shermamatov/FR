@@ -6,9 +6,11 @@ import person3 from "../../images/person3.png";
 import bath from "../../images/bath.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getBlogs } from "../../redux/reducers/app";
+import { useNavigate } from "react-router-dom";
 
 const Blog = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const blogs = useSelector((s) => s.app.blogs);
     useEffect(() => {
         dispatch(getBlogs());
@@ -186,7 +188,14 @@ const Blog = () => {
                                                       .trim() + "..."
                                                 : item.description}
                                         </p>
-                                        <span style={{ color: "#F2994A" }}>
+                                        <span
+                                            onClick={() =>
+                                                navigate(
+                                                    `/blog_single/${item.id}`
+                                                )
+                                            }
+                                            style={{ color: "#F2994A" }}
+                                        >
                                             Read More article
                                         </span>
                                     </div>

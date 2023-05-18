@@ -51,7 +51,13 @@
     font-size: 12px;
     font-weight: 500;
     line-height: 2;
+    margin-top: 40px;
 }
+
+.four-faiis span {
+    cursor: pointer;
+}
+
 /* section1 end */
 /* section2 start  */
 .two-fail {
