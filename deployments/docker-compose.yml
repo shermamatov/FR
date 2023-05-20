@@ -10,6 +10,7 @@ services:
     volumes:
       - /home/1furniture/media:/opt/media
       - /home/1furniture/backend_static:/opt/backend_static
+      - /home/1furniture/image_cache:/tmp/image_cache
     networks:
       - 1furniture
 networks:
