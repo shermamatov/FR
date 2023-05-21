@@ -1,4 +1,5 @@
 import { fetchPhotos } from '@/api';
+import { Layout } from '@/components/Layout';
 import Image from 'next/image';
 import { use } from 'react';
 
@@ -6,7 +7,7 @@ export default function Photos() {
   const photos = use(fetchPhotos());
 
   return (
-    <main className="content">
+    <Layout className="content">
       <h1 className="mb-14">Project photos</h1>
       <div></div>
 
@@ -22,6 +23,6 @@ export default function Photos() {
           />
         ))}
       </div>
-    </main>
+    </Layout>
   );
 }

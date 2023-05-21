@@ -1,15 +1,15 @@
-import { fetchPhotos, fetchPostById, fetchServiceById } from '@/api';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
+import { fetchServiceById } from '@/api';
+import { PageNavProps } from '@/app/types';
+import { Layout } from '@/components/Layout';
 import { use } from 'react';
 
-export default function ServiceSingle({ params }) {
+export default function ServiceSingle({ params }: PageNavProps) {
   const service = use(fetchServiceById(params.id));
 
   return (
-    <main className="content">
-      <h1 className="mb-14">{service.title}</h1>
+    <Layout className="content">
+      <h1 className="mb-14">{service.name}</h1>
       <div></div>
-    </main>
+    </Layout>
   );
 }

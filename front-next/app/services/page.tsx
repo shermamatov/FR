@@ -1,4 +1,5 @@
-import { fetchBlog, fetchPhotos, fetchServices } from '@/api';
+import { fetchServices } from '@/api';
+import { Layout } from '@/components/Layout';
 import Link from 'next/link';
 import { use } from 'react';
 
@@ -6,7 +7,7 @@ export default function Services() {
   const services = use(fetchServices());
 
   return (
-    <main className="content">
+    <Layout className="content">
       <h1 className="mb-14">Services</h1>
       <div></div>
 
@@ -17,6 +18,6 @@ export default function Services() {
           </Link>
         ))}
       </div>
-    </main>
+    </Layout>
   );
 }

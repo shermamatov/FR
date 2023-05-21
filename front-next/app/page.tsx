@@ -1,13 +1,10 @@
-import { fetchPhotos } from '@/api';
 import { Blog } from '@/components/Blog';
-import Image from 'next/image';
+import { Layout } from '@/components/Layout';
 import Link from 'next/link';
 
 export default async function Home() {
-  const photos = await fetchPhotos();
-
   return (
-    <main className="pt-28">
+    <Layout isHome>
       <section className="content">
         <div className="grid grid-cols-2 gap-5">
           <div>
@@ -89,6 +86,6 @@ export default async function Home() {
         </div>
       </section>
       <Blog data={[]} />
-    </main>
+    </Layout>
   );
 }

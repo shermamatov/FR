@@ -38,7 +38,7 @@ h3 {
 }
 
 main {
-  @apply pt-16;
+  @apply pt-32;
 }
 
 address {

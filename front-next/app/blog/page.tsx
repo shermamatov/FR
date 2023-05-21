@@ -1,4 +1,5 @@
-import { fetchBlog, fetchPhotos } from '@/api';
+import { fetchBlog } from '@/api';
+import { Layout } from '@/components/Layout';
 import Link from 'next/link';
 import { use } from 'react';
 
@@ -8,7 +9,7 @@ export default function Blog() {
   console.log('posts', posts)
 
   return (
-    <main className="content">
+    <Layout className="content">
       <h1 className="mb-14">Blog</h1>
       <div></div>
 
@@ -17,6 +18,6 @@ export default function Blog() {
           <Link key={item.id} href={`/blog/${item.id}`}>{item.title}</Link>
         ))}
       </div>
-    </main>
+    </Layout>
   );
 }

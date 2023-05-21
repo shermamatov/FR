@@ -1,20 +1,20 @@
-import { fetchBlog, fetchPhotos } from '@/api';
-import Image from 'next/image';
+import { fetchReviews } from '@/api';
+import { Layout } from '@/components/Layout';
 import { use } from 'react';
 
 export default function Reviews() {
-  const reviews = use(fetchBlog());
+  const reviews = use(fetchReviews());
 
   return (
-    <main className="content">
+    <Layout className="content">
       <h1 className="mb-14">Reviews</h1>
       <div></div>
 
       <div className="grid grid-cols-3 gap-x-4 gap-y-9">
         {reviews?.results.map((item) => (
-          <div key={item.id}>{item.title}</div>
+          <div key={item.id}>{item.name}</div>
         ))}
       </div>
-    </main>
+    </Layout>
   );
 }

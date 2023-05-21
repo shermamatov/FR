@@ -1,6 +1,8 @@
+import { Layout } from "@/components/Layout";
+
 export default function Location() {
   return (
-    <main>
+    <Layout location={false}>
       <h1 className="content mb-[23px] text-brown-800 text-center">
         Project location
       </h1>
@@ -12,6 +14,6 @@ export default function Location() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       />
-    </main>
+    </Layout>
   );
 }

@@ -1,16 +1,14 @@
-import { fetchPhotos, fetchPostById } from '@/api';
+import { fetchPostById } from '@/api';
 import { PageNavProps } from '@/app/types';
-import { NextPage } from 'next';
-import Image from 'next/image';
-import { useRouter } from 'next/navigation';
+import { Layout } from '@/components/Layout';
 import { use } from 'react';
 
 export default function BlogSingle({ params }: PageNavProps) {
   const post = use(fetchPostById(params.id));
 
   return (
-    <main className="content">
+    <Layout className="content">
       <h1 className="mb-14">{post.title}</h1>
-    </main>
+    </Layout>
   );
 }
