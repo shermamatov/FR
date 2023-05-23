@@ -51,7 +51,7 @@ const Blog = () => {
                                         fontWeight: "700",
                                     }}
                                 >
-                                    Business Strategy{" "}
+                                    Business Strategy
                                 </span>
                             </div>
                             <div>

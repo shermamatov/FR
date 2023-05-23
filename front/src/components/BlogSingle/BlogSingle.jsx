@@ -77,17 +77,6 @@ const BlogSingle = () => {
                         <p>{item.name}</p>
                     </div>
                 ))}
-                {/* <div>
-                    <img src={blogServImg2} alt="" />
-                    <p>
-                        How to optimize images in WordPress for faster loading
-                        (complete guide)
-                    </p>
-                </div>
-                <div>
-                    <img src={blogServImg3} alt="" />
-                    <p>Start a blog to reach your creative peak</p>
-                </div> */}
             </div>
             <div className="qestion">
                 <h4>1. What is the point of this meeting?</h4>

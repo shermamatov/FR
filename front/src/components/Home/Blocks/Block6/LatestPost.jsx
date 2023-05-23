@@ -6,30 +6,34 @@ import { fetchPosts } from "../../../../api";
 import { Link } from "react-router-dom";
 
 const LatestPost = () => {
-    const { data = [] } = useQuery(['post'], fetchPosts)
+    // const { data = [] } = useQuery(["post"], fetchPosts);
 
-    const formatter = useMemo(() => new Intl.DateTimeFormat('en-US', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric',
-    }), [])
+    const formatter = useMemo(
+        () =>
+            new Intl.DateTimeFormat("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+            }),
+        []
+    );
 
-    const blog = useMemo(() => {
-        const leftPart = data.slice(0, 3);
-        const rightPost1 = data[3];
-        const rightPost2 = data[4];
+    // const blog = useMemo(() => {
+    //     const leftPart = data.slice(0, 3);
+    //     const rightPost1 = data[3];
+    //     const rightPost2 = data[4];
 
-        return { leftPart, rightPost1, rightPost2 }
-    }, [data])
+    //     return { leftPart, rightPost1, rightPost2 };
+    // }, [data]);
 
-    const { leftPart, rightPost1, rightPost2 } = blog
+    // const { leftPart, rightPost1, rightPost2 } = blog;
 
     return (
         <div className="latest-Post">
             <h1 className="latest">LATEST POST</h1>
             <div className="Latest-Post-main">
                 <div className="the-first-left-post">
-                    {leftPart.map((post) => (
+                    {/* {leftPart.map((post) => (
                         <article key={post.id} className="post">
                             <figure className="post1">
                                 <img src={post.image1} alt="" />
@@ -39,10 +43,10 @@ const LatestPost = () => {
                                 <Link to={`/blog/${post.id}`} className="title1">{post.title}</Link>
                             </div>
                         </article>
-                    ))}
+                    ))} */}
                 </div>
                 <div className="the-first-right-post">
-                    {rightPost1 && (
+                    {/* {rightPost1 && (
                         <div className="postnot">
                             <img src={rightPost1.image1} alt="" />
                             <div className="about11">
@@ -63,11 +67,13 @@ const LatestPost = () => {
                                 </Link>
                             </div>
                         </div>
-                    )}
+                    )} */}
                 </div>
             </div>
             <div className="btn_block">
-                <Link to="/blog" className="latest__btn">View all posts</Link>
+                <Link to="/blog" className="latest__btn">
+                    View all posts
+                </Link>
             </div>
         </div>
     );
