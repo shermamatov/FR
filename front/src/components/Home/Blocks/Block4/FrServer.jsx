@@ -1,28 +1,29 @@
 import "./block4.css";
 import clsx from "clsx";
-import { useResize } from "../../../../hooks/useResize"
+import { useResize } from "../../../../hooks/useResize";
 import { useChel } from "../../../../Contexts/ChelContext";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPhotos } from "../../../../api";
 
-
 const FrServer = () => {
     const width = useResize();
     const { checked3 } = useChel();
-    const { data } = useQuery(['photos'], fetchPhotos)
+    // const { data } = useQuery(["photos"], fetchPhotos);
 
     return (
         <div className="fr_server">
             <h2 className="transparent_text">at manufacturing plants</h2>
             <div className="container">
-                <h2 className={clsx(`fr__title bord`, checked3 && "big_fz_h2")}>our photos</h2>
+                <h2 className={clsx(`fr__title bord`, checked3 && "big_fz_h2")}>
+                    our photos
+                </h2>
                 <div className="grid_block">
-                    {data?.map((item) => (
+                    {/* {data?.map((item) => (
                         <div key={item.id} className="grid__item">
                             <img src={item.photo} alt="" className="grid__img" />
                             <p className="grid__desc bord">{item.caption}</p>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
                 <div className="paggination d-flex">
                     <button className="prev__btn btn">
