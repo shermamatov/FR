@@ -4,15 +4,266 @@ import Image from "next/image";
 import Link from "next/link";
 import { use } from "react";
 import bath from "@/assets/bath.png";
+import "./blogPage.scss";
+import { log } from "console";
 export default function Blog() {
     const posts = use(fetchBlog());
-
-    console.log("posts", posts);
-
+    function getMiniData() {
+        const arr = [...posts.results];
+        return arr.slice(0, 4);
+    }
     return (
         <Layout className="content">
-            {/* <h1 className="mb-14">Blog</h1>
-            <div></div>
+            <div className={"flex mb-8"}>
+                <p className="font-bold">All</p>
+                <p className="ml-5 font-bold" style={{ color: "#9B51E0" }}>
+                    Cooling
+                </p>
+                <p
+                    className="ml-5 font-bold"
+                    style={{ color: "#107EBD", whiteSpace: "nowrap" }}
+                >
+                    Business Strategy{" "}
+                </p>
+                <p className="ml-5 font-bold" style={{ color: "#EC2A48" }}>
+                    Heating{" "}
+                </p>
+                <p style={{ color: "#F2994A" }} className="ml-5 font-bold">
+                    Repairing
+                </p>
+                <p style={{ color: "#219653" }} className="ml-5 font-bold">
+                    Commercial
+                </p>
+            </div>
+            <div className="blog_block1">
+                <div className="blog_block1_left">
+                    <Image src={bath} alt="" />
+                </div>
+                <div className="blog_block1_right">
+                    <div style={{ color: "#107EBD", whiteSpace: "nowrap" }}>
+                        Business Strategy
+                    </div>
+                    <div>
+                        <span
+                            style={{
+                                color: "#72421C",
+                                fontWeight: "600",
+                                lineHeight: "15px",
+                            }}
+                        >
+                            December 30, 2019
+                        </span>
+                    </div>
+                    <h1>
+                        A-Series Ultra Low NOx Gas Furnace 80% Single Stage
+                        40,000 BTU Non-Variable Upflow/ Horizontal 14.5 wide
+                    </h1>
+                    <p>
+                        A global print fulfillment company partnered with Mason
+                        Interactive to grow omnichannel sales via Search Engine
+                        Optimization (SEO). During the course of the engagement,
+                        the client saw a 134% increase in organic traffic,
+                        resulting in a measurable increase in leads, and sales.
+                        the client saw a 134% increase in organic traffic,
+                        resulting in a measurable increase in leads, and sales.
+                    </p>
+                    <a href="#" style={{ color: "#F2994A" }}>
+                        Read More article
+                    </a>
+                </div>
+            </div>
+            <div className="blog_block2">
+                <div className="blog_card">
+                    <Image src={bath} alt="" />
+                    <div style={{ color: "#F2994A", fontWeight: "700" }}>
+                        Heating
+                    </div>
+                    <span
+                        style={{
+                            color: "#72421C",
+                            fontWeight: "600",
+                            lineHeight: "15px",
+                        }}
+                    >
+                        December 30, 2019
+                    </span>
+                    <h3>How, when and why we stay</h3>
+                    <p>
+                        Staying in touch with customers is important for any
+                        company; it often forms part of any good marketing
+                        strategy. Staying in touch with customers is important
+                        for any company; it often forms part of any good
+                        marketing strategy.{" "}
+                    </p>
+                    <Link href={`/blog/1`}>
+                        <span
+                            style={{
+                                color: "#F2994A",
+                            }}
+                        >
+                            Read More article
+                        </span>
+                    </Link>
+                </div>
+                <div className="blog_card">
+                    <Image src={bath} alt="" />
+                    <div style={{ fontWeight: "700", color: "#9B51E0" }}>
+                        Cooling
+                    </div>
+                    <span
+                        style={{
+                            color: "#72421C",
+                            fontWeight: "600",
+                            lineHeight: "15px",
+                        }}
+                    >
+                        December 30, 2019
+                    </span>
+                    <h3>How, when and why we stay</h3>
+                    <p>
+                        Staying in touch with customers is important for any
+                        company; it often forms part of any good marketing
+                        strategy. Staying in touch with customers is important
+                        for any company; it often forms part of any good
+                        marketing strategy.
+                    </p>
+                    <Link href={`/blog/1`}>
+                        <span
+                            style={{
+                                color: "#F2994A",
+                            }}
+                        >
+                            Read More article
+                        </span>
+                    </Link>
+                </div>
+            </div>
+
+            <div className="blog_block3 hidden md:grid">
+                {getMiniData().map((item) => (
+                    <div className="blog_card" key={item.id}>
+                        <Image src={bath} alt="" />
+                        <div style={{ color: "#F2994A", fontWeight: "700" }}>
+                            Heating
+                        </div>
+                        <span
+                            style={{
+                                color: "#72421C",
+                                fontWeight: "600",
+                                lineHeight: "15px",
+                                fontSize: "12px",
+                            }}
+                        >
+                            December 30, 2019
+                        </span>
+                        <h3>{item.title}</h3>
+                        <p>
+                            {item.description.length > 200
+                                ? item.description.slice(0, 200) + " ..."
+                                : item.description}
+                        </p>
+                        <Link href={`/blog/${item.id}`}>
+                            <span
+                                style={{
+                                    color: "#F2994A",
+                                    position: "absolute",
+                                    bottom: "10px",
+                                    left: "10px",
+                                }}
+                            >
+                                Read More article
+                            </span>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+            <div className="blog_block3 grid md:hidden">
+                {posts.results.map((item) => (
+                    <div className="blog_card" key={item.id}>
+                        <Image src={bath} alt="" />
+                        <div style={{ color: "#F2994A", fontWeight: "700" }}>
+                            Heating
+                        </div>
+                        <span
+                            style={{
+                                color: "#72421C",
+                                fontWeight: "600",
+                                lineHeight: "15px",
+                                fontSize: "12px",
+                            }}
+                        >
+                            December 30, 2019
+                        </span>
+                        <h3>{item.title}</h3>
+                        <p>
+                            {item.description.length > 200
+                                ? item.description.slice(0, 200) + " ..."
+                                : item.description}
+                        </p>
+                        <Link href={`/blog/${item.id}`}>
+                            <span
+                                style={{
+                                    color: "#F2994A",
+                                    position: "absolute",
+                                    bottom: "10px",
+                                    left: "10px",
+                                }}
+                            >
+                                Read More article
+                            </span>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+            {/* <section className="">
+                <div className="flex">
+                    <div className="w-1/2">
+                        <Image src={bath} alt="" />
+                    </div>
+                    <div className="">
+                        <div className="dsa">
+                            <span
+                                style={{
+                                    color: "#107EBD",
+                                    fontWeight: "700",
+                                }}
+                            >
+                                Business Strategy{" "}
+                            </span>
+                        </div>
+                        <div>
+                            <span
+                                style={{
+                                    color: "#72421C",
+                                    fontWeight: "600",
+                                    lineHeight: "15px",
+                                }}
+                            >
+                                December 30, 2019
+                            </span>
+                        </div>
+                        <h1 className="text-3xl">
+                            A-Series Ultra Low NOx Gas Furnace 80% Single Stage
+                            40,000 BTU Non-Variable Upflow/Horizontal 14.5 wide
+                        </h1>
+                        <p className="">
+                            A global print fulfillment company partnered with
+                            Mason Interactive to grow omnichannel sales via
+                            Search Engine Optimization (SEO). During the course
+                            of the engagement, the client saw a 134% increase in
+                            organic traffic, resulting in a measurable increase
+                            in leads, and sales. the client saw a 134% increase
+                            in organic traffic, resulting in a measurable
+                            increase in leads, and sales.
+                            <div>
+                                <span style={{ color: "#F2994A" }}>
+                                    Read More article
+                                </span>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </section>
             <div className="grid grid-cols-3 gap-x-4 gap-y-9">
                 {posts?.results.map((item) => (
                     <Link key={item.id} href={`/blog/${item.id}`}>
@@ -20,210 +271,6 @@ export default function Blog() {
                     </Link>
                 ))}
             </div> */}
-            <main className="blog">
-                <div className="blog-box">
-                    <section className="all-title">
-                        <ul className="all-title-block">
-                            <li className="title-li">All</li>
-                            <li
-                                style={{ color: "#9B51E0" }}
-                                className="title-li"
-                            >
-                                Cooling
-                            </li>
-                            <li
-                                style={{ color: "#107EBD" }}
-                                className="title-li"
-                            >
-                                Business Strategy{" "}
-                            </li>
-                            <li
-                                style={{ color: "#EC2A48" }}
-                                className="title-li"
-                            >
-                                Heating{" "}
-                            </li>
-                            <li
-                                style={{ color: "#F2994A" }}
-                                className="title-li"
-                            >
-                                Repairing
-                            </li>
-                            <li
-                                style={{ color: "#219653" }}
-                                className="title-li"
-                            >
-                                Commercial
-                            </li>
-                        </ul>
-                    </section>
-                    <section className="about-infor">
-                        <div className="about-infor-box">
-                            <div className="description-image">
-                                {/* <img src={person} alt="" /> */}
-                            </div>
-                            <div className="title-for">
-                                <div className="dsa">
-                                    <span
-                                        style={{
-                                            color: "#107EBD",
-                                            fontWeight: "700",
-                                        }}
-                                    >
-                                        Business Strategy{" "}
-                                    </span>
-                                </div>
-                                <div>
-                                    <span
-                                        style={{
-                                            color: "#72421C",
-                                            fontWeight: "600",
-                                            lineHeight: "15px",
-                                        }}
-                                    >
-                                        December 30, 2019
-                                    </span>
-                                </div>
-                                <h1 className="h1-a-server">
-                                    A-Series Ultra Low NOx Gas Furnace 80%
-                                    Single Stage 40,000 BTU Non-Variable
-                                    Upflow/Horizontal 14.5 wide
-                                </h1>
-                                <p className="a-global">
-                                    A global print fulfillment company partnered
-                                    with Mason Interactive to grow omnichannel
-                                    sales via Search Engine Optimization (SEO).
-                                    During the course of the engagement, the
-                                    client saw a 134% increase in organic
-                                    traffic, resulting in a measurable increase
-                                    in leads, and sales. the client saw a 134%
-                                    increase in organic traffic, resulting in a
-                                    measurable increase in leads, and sales.
-                                    <div>
-                                        <span style={{ color: "#F2994A" }}>
-                                            Read More article
-                                        </span>
-                                    </div>
-                                </p>
-                            </div>
-                        </div>
-                    </section>
-                    <section className="two-fail">
-                        <div className="two-fail-box">
-                            <div className="two">
-                                {/* <img src={person2} alt="" /> */}
-                                <div>
-                                    <span
-                                        style={{
-                                            color: "#F2994A",
-                                            lineHeight: "2",
-                                        }}
-                                    >
-                                        Heating
-                                    </span>
-                                </div>
-                                <h3>How, when and why we stay</h3>
-                                <p>
-                                    Staying in touch with customers is important
-                                    for any company; it often forms part of any
-                                    good marketing strategy.
-                                </p>
-                                <span style={{ color: "#F2994A" }}>
-                                    Read More article
-                                </span>
-                            </div>
-
-                            <div className="two">
-                                {/* <img src={person3} alt="" /> */}
-                                <div>
-                                    <span
-                                        style={{
-                                            color: "#F2994A",
-                                            lineHeight: "2",
-                                        }}
-                                    >
-                                        Heating
-                                    </span>
-                                </div>
-                                <h3>How, when and why we stay</h3>
-                                <p>
-                                    Staying in touch with customers is important
-                                    for any company; it often forms part of any
-                                    good marketing strategy.{" "}
-                                </p>
-                                <span style={{ color: "#F2994A" }}>
-                                    Read More article
-                                </span>
-                            </div>
-                        </div>
-                    </section>
-                    <section className="four-faiis">
-                        <div className="two-fail-boxs">
-                            {posts?.results.map((item) => {
-                                return (
-                                    <div
-                                        key={item.id}
-                                        className="two-fail-boxs-cols"
-                                    >
-                                        <div className="twos">
-                                            <Image
-                                                src={bath}
-                                                alt=""
-                                                width={100}
-                                                height={100}
-                                            />
-                                            <div>
-                                                <span
-                                                    style={{
-                                                        color: "#F2994A",
-                                                        lineHeight: "2",
-                                                    }}
-                                                >
-                                                    Heating
-                                                </span>
-                                            </div>
-                                            <div>
-                                                <span
-                                                    style={{
-                                                        color: "#72421C",
-                                                        lineHeight: "2",
-                                                        fontWeight: "600",
-                                                    }}
-                                                >
-                                                    {item.created_at.slice(
-                                                        0,
-                                                        10
-                                                    )}
-                                                </span>
-                                            </div>
-                                            <h3>
-                                                {item.title.length > 21
-                                                    ? item.title
-                                                          .slice(0, 18)
-                                                          .trim() + "..."
-                                                    : item.title}
-                                            </h3>
-                                            <p>
-                                                {item.description.length > 100
-                                                    ? item.description
-                                                          .slice(0, 97)
-                                                          .trim() + "..."
-                                                    : item.description}
-                                            </p>
-                                            <Link
-                                                key={item.id}
-                                                href={`/blog/${item.id}`}
-                                            >
-                                                <span>Read More article</span>
-                                            </Link>
-                                        </div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-                    </section>
-                </div>
-            </main>
         </Layout>
     );
 }
