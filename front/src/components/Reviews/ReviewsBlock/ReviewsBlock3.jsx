@@ -71,7 +71,7 @@ const ReviewsBlock3 = () => {
                 <h1 className="reviewsBlock3_title">Review</h1>
                 <div className="row">
                     {reviewsState?.map((item) => (
-                        <div className="col-4">
+                        <div className="col-4" key={item.id}>
                             <div className="reviewsBlock3_card">
                                 <p className="reviewsBlock3_card_text">
                                     {item.review_text}
