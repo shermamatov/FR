@@ -63,6 +63,7 @@ const Block7 = () => {
             }
             setVideoReviews(list);
         }
+        console.log(reviews);
     }, [reviews]);
     return (
         <div className="block7_main">

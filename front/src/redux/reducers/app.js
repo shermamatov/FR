@@ -185,7 +185,7 @@ export const getOneBlogs = (id) => {
 export const getReviews = () => {
     return (dispatch) => {
         axios(reviewsAPI).then(({ data }) => {
-            return dispatch({ type: GET_REVIEWS, data });
+            return dispatch({ type: GET_REVIEWS, data: data.results });
         });
     };
 };
