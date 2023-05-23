@@ -107,7 +107,7 @@ export default (state = initState, action) => {
 export const getStates = () => {
     return (dispatch) => {
         axios(`https://itek-dev.highcat.org/api/states/`).then(({ data }) => {
-            return dispatch({ type: GET_STATES, data });
+            return dispatch({ type: GET_STATES, data: data.results });
         });
     };
 };
@@ -115,7 +115,7 @@ export const getStates = () => {
 export const getLocations = () => {
     return (dispatch) => {
         axios(activeLoctionsAPi).then(({ data }) => {
-            return dispatch({ type: GET_LOCATIONS, data });
+            return dispatch({ type: GET_LOCATIONS, data: data.results });
         });
     };
 };
@@ -124,7 +124,7 @@ export const getphotos = () => {
     console.log("work");
     return (dispatch) => {
         axios(`/api/media`).then(({ data }) => {
-            return dispatch({ type: GET_PHOTOS, data });
+            return dispatch({ type: GET_PHOTOS, data: data.results });
         });
     };
 };
@@ -134,7 +134,7 @@ export const getServices = (locationId) => {
         axios(servicesAPI).then(({ data }) => {
             return dispatch({
                 type: GET_SERVICES,
-                data: data.filter((item) => {
+                data: data.results.filter((item) => {
                     return item.main_menu;
                 }),
             });
@@ -167,7 +167,7 @@ export const getCurrentLocation = (location = {}) => {
 export const getBlogs = () => {
     return (dispatch) => {
         axios(blogsAPI).then(({ data }) => {
-            return dispatch({ type: GET_BLOGS, data });
+            return dispatch({ type: GET_BLOGS, data: data.results });
         });
     };
 };

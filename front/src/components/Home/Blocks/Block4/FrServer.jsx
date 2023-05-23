@@ -8,7 +8,7 @@ import { fetchPhotos } from "../../../../api";
 const FrServer = () => {
     const width = useResize();
     const { checked3 } = useChel();
-    // const { data } = useQuery(["photos"], fetchPhotos);
+    const { data } = useQuery(["photos"], fetchPhotos);
 
     return (
         <div className="fr_server">
@@ -18,12 +18,16 @@ const FrServer = () => {
                     our photos
                 </h2>
                 <div className="grid_block">
-                    {/* {data?.map((item) => (
+                    {data?.map((item) => (
                         <div key={item.id} className="grid__item">
-                            <img src={item.photo} alt="" className="grid__img" />
+                            <img
+                                src={item.photo}
+                                alt=""
+                                className="grid__img"
+                            />
                             <p className="grid__desc bord">{item.caption}</p>
                         </div>
-                    ))} */}
+                    ))}
                 </div>
                 <div className="paggination d-flex">
                     <button className="prev__btn btn">
