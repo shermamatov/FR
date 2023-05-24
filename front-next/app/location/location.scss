@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:wght@300;400;600;700;800&display=swap");
+
+.location {
+    .col {
+        width: 20%;
+        padding: 0 15px;
+    }
+
+    .row {
+        flex-wrap: wrap;
+        row-gap: 25px;
+        justify-content: flex-start;
+    }
+
+    &_row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+
+    &_subtitle {
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #f2994a;
+    }
+
+    &_title {
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: 50px;
+        line-height: 61px;
+        color: #2a2a2a;
+    }
+
+    &_input {
+        font-family: "Montserrat";
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        color: #2a2a2a;
+        width: 560px;
+        padding: 17px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #2a2a2a7b;
+
+        &::placeholder {
+            text-transform: capitalize;
+            opacity: 0.7;
+        }
+    }
+
+    &_block2 {
+        background: #fcf2e7;
+        padding: 95px 0;
+
+        &_title {
+            font-family: "Montserrat";
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 39px;
+            color: #2a2a2a;
+            margin-bottom: 80px;
+        }
+
+        &_item {
+            font-family: "Montserrat";
+            font-weight: 600;
+            font-size: 22px;
+            line-height: 44px;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        &_bottomLine {
+            margin-top: 60px;
+            border: 1px solid #a5a582;
+        }
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .location .col {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .location .col {
+        width: 33.3%;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .location_block2_item {
+        font-size: 17px;
+        line-height: 39px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .location .col {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .location_block2_item {
+        font-size: 14px;
+        line-height: 30px;
+    }
+
+    .location_block2_title {
+        font-size: 22px;
+        line-height: 27px;
+        margin-bottom: 40px;
+    }
+}

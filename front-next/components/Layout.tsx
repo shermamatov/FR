@@ -1,7 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/navLogo.png";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, use, useEffect, useState } from "react";
+import { Location, getCurrentLocation } from "@/api";
 
 interface LayoutProps extends PropsWithChildren {
     location?: boolean;
@@ -9,13 +12,38 @@ interface LayoutProps extends PropsWithChildren {
 }
 
 export function Layout({ children, location = true, className }: LayoutProps) {
+    const currLocation = use(getCurrentLocation());
+    const [currLocat, setCurrLocat] = useState<Location>();
+    useEffect(() => {
+        if (localStorage.getItem("currentLocation")) {
+            setCurrLocat(
+                JSON.parse(localStorage.getItem("currentLocation") || "{}")
+            );
+        } else {
+            setCurrLocat(currLocation);
+        }
+    }, []);
+    console.log(currLocat);
+    if (typeof window !== "undefined") {
+        if (!localStorage.getItem("currentLocation")) {
+            localStorage.setItem(
+                "currentLocation",
+                JSON.stringify(currLocation)
+            );
+        }
+    }
+
     return (
         <>
             <header>
                 <div className="bg-brown-200">
                     <div className="discount content items-center h-16 px-40">
                         <div className="flex gap-2 text-sm items-center">
-                            <address>73 Canal Street, California, LA</address>
+                            <address>
+                                {currLocation.location_name +
+                                    " " +
+                                    currLocation.state.name}
+                            </address>
                             <Link href="/location">change</Link>
                         </div>
                         <p className="text-center text-brown-800 text-xl font-bold flex-shrink">

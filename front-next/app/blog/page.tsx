@@ -142,7 +142,12 @@ export default function Blog() {
             <div className="blog_block3 hidden md:grid">
                 {getMiniData().map((item) => (
                     <div className="blog_card" key={item.id}>
-                        <Image src={bath} alt="" />
+                        <Image
+                            width={100}
+                            height={100}
+                            src={item.image1 ? item.image1 : bath}
+                            alt=""
+                        />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating
                         </div>
