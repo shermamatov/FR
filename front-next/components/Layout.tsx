@@ -38,11 +38,11 @@ export function Layout({ children, location = true, className }: LayoutProps) {
                     </Link>
                     <div className="header-content">
                         <nav>
-                            <a href="/about-us">About us</a>
-                            <a href="/services">Services</a>
-                            <a href="/reviews">Reviews</a>
-                            <a href="/blog">Blog</a>
-                            <a href="/photos">Project photos</a>
+                            <Link href="/about-us">About us</Link>
+                            <Link href="/services">Services</Link>
+                            <Link href="/reviews">Reviews</Link>
+                            <Link href="/blog">Blog</Link>
+                            <Link href="/photos">Project photos</Link>
                         </nav>
                         <div className="flex gap-4">
                             <a href="tel:+18188881010" className="phone">
