@@ -14,26 +14,24 @@ export default function Location() {
     }
     return (
         <Layout location={false}>
-            <section className="content">
-                <div className="container">
-                    <div className="location_row">
-                        <div className="location_row_left">
-                            <p className="location_subtitle">Locations</p>
-                            <h1 className="location_title">
-                                Your city is Glendale
-                            </h1>
-                        </div>
-                        <input
-                            type="text"
-                            placeholder="insert your city or zip coude"
-                            className="location_input"
-                        />
-                        <Image
-                            src={circleImg}
-                            alt=""
-                            className="location_row_img"
-                        />
+            <section className="content location_adap_main_block">
+                <div className="location_row">
+                    <div className="location_row_left">
+                        <p className="location_subtitle">Locations</p>
+                        <h1 className="location_title">
+                            Your city is Glendale
+                        </h1>
                     </div>
+                    <input
+                        type="text"
+                        placeholder="insert your city or zip coude"
+                        className="location_input"
+                    />
+                    <Image
+                        src={circleImg}
+                        alt=""
+                        className="location_row_img"
+                    />
                 </div>
             </section>
             <section>
