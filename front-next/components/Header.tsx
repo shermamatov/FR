@@ -79,7 +79,7 @@ const Header = () => {
                             </Link>
                         </div>
                         <div className="navbar_navigate">
-                            <Link href="/about_us">
+                            <Link href="/about">
                                 <div
                                     className="has__border"
                                     onMouseLeave={() => setModal(false)}
@@ -231,16 +231,19 @@ const Header = () => {
                         <Link href="/about_us">
                             <div className="burger__link">ABOUT US</div>
                         </Link>
+
                         <Link href="/services">
-                            {" "}
                             <div className="burger__link serv">SERVICES </div>
                         </Link>
+
                         <Link href="/reviews">
                             <div className="burger__link">REVIEWS</div>
                         </Link>
+
                         <Link href="/blog">
                             <div className="burger__link">BLOG</div>
                         </Link>
+
                         <Link href="/photos">
                             <div className="burger__link">PROJECT PHOTOS</div>
                         </Link>
