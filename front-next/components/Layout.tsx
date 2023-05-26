@@ -1,8 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/navLogo.png";
-import { PropsWithChildren, use, useEffect, useState } from "react";
-import { Location, getCurrentLocation } from "@/api";
+import { PropsWithChildren, use } from "react";
+import { Location, fetchServices, getCurrentLocation } from "@/api";
 import Header from "./Header";
 
 interface LayoutProps extends PropsWithChildren {
@@ -12,10 +12,11 @@ interface LayoutProps extends PropsWithChildren {
 
 export function Layout({ children, location = true, className }: LayoutProps) {
     // const currLocation = use(getCurrentLocation());
+    const services = use(fetchServices());
 
     return (
         <>
-            <Header />
+            <Header services={services} />
             <main className={className}>{children}</main>
             {location && (
                 <section>

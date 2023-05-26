@@ -5,18 +5,18 @@ import React, { use, useEffect, useState } from "react";
 import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
-
 import "./Header.scss";
-import { fetchServices } from "@/api";
-const Header = () => {
-    const services = use(fetchServices());
+import { Photo, Service, fetchServices } from "@/api";
+import { usePathname } from "next/navigation";
+import { AppProps } from "next/app";
+
+const Header = ({ services }: any) => {
+    const pathname = usePathname();
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
-    const [width, setWidth] = useState(1200);
     useEffect(() => {
-        setWidth(window.innerWidth);
+        // serServices(fetchServices());
     }, []);
-
     return (
         <div>
             <header>
@@ -33,34 +33,7 @@ const Header = () => {
                         </h3>
                     </div>
                 </div>
-                {/* <div className="content pl-40 relative">
-                    <Link href="/">
-                        <Image
-                            src={logo}
-                            width={188}
-                            height={160}
-                            alt="logo"
-                            className="absolute left-8 -z-10"
-                        />
-                    </Link>
-                    <div className="header-content">
-                        <nav>
-                            <a href="/about-us">About us</a>
-                            <a href="/services">Services</a>
-                            <a href="/reviews">Reviews</a>
-                            <a href="/blog">Blog</a>
-                            <a href="/photos">Project photos</a>
-                        </nav>
-                        <div className="flex gap-4">
-                            <a href="tel:+18188881010" className="phone">
-                                +1-818-888-10-10
-                            </a>
-                            <Link href="/book" className="btn">
-                                Book online now
-                            </Link>
-                        </div>
-                    </div>
-                </div> */}
+
                 <div className="navbar content">
                     <div className="navbar_left_block">
                         <Image
@@ -71,7 +44,7 @@ const Header = () => {
                     </div>
                     <div
                         className="navbar_right_block"
-                        // onMouseLeave={() => setModal(false)}
+                        onMouseLeave={() => setModal(false)}
                     >
                         <div className="adap_logo_block">
                             <Link href="/">
@@ -87,11 +60,13 @@ const Header = () => {
                                     ABOUT US
                                     <div
                                         className="linia"
-                                        // style={{
-                                        //     width: `${
-                                        //         pathname == "/AboutUs" ? "50%" : "0%"
-                                        //     }`,
-                                        // }}
+                                        style={{
+                                            width: `${
+                                                pathname == "/about"
+                                                    ? "50%"
+                                                    : "0%"
+                                            }`,
+                                        }}
                                     ></div>
                                 </div>
                             </Link>
@@ -102,10 +77,12 @@ const Header = () => {
                                     onMouseOver={(e) => {
                                         setModal(true);
                                         e.stopPropagation();
+                                        console.log("timur");
+                                        console.log(modal);
                                     }}
-                                    onMouseLeave={() => setModal(false)}
+                                    // onMouseLeave={() => setModal(false)}
                                 >
-                                    <p className="serv">SERVICES </p>
+                                    <p className="serv">SERVICES</p>
                                     <Image
                                         style={{
                                             transform: `${
@@ -122,17 +99,19 @@ const Header = () => {
 
                             <Link href="/reviews">
                                 <div
-                                    className="has__border"
+                                    className="has__border "
                                     onMouseLeave={() => setModal(false)}
                                 >
                                     REVIEWS
                                     <div
                                         className="linia"
-                                        // style={{
-                                        //     width: `${
-                                        //         pathname == "/reviews" ? "50%" : "0%"
-                                        //     }`,
-                                        // }}
+                                        style={{
+                                            width: `${
+                                                pathname == "/reviews"
+                                                    ? "50%"
+                                                    : "0%"
+                                            }`,
+                                        }}
                                     ></div>
                                 </div>
                             </Link>
@@ -145,11 +124,13 @@ const Header = () => {
                                     BLOG
                                     <div
                                         className="linia"
-                                        // style={{
-                                        //     width: `${
-                                        //         pathname == "/blog" ? "50%" : "0%"
-                                        //     }`,
-                                        // }}
+                                        style={{
+                                            width: `${
+                                                pathname == "/blog"
+                                                    ? "50%"
+                                                    : "0%"
+                                            }`,
+                                        }}
                                     ></div>
                                 </div>
                             </Link>
@@ -159,35 +140,42 @@ const Header = () => {
                                     PROJECT PHOTOS
                                     <div
                                         className="linia"
-                                        // style={{
-                                        //     width: `${
-                                        //         pathname == "/photos" ? "50%" : "0%"
-                                        //     }`,
-                                        // }}
+                                        style={{
+                                            width: `${
+                                                pathname == "/photos"
+                                                    ? "50%"
+                                                    : "0%"
+                                            }`,
+                                        }}
                                     ></div>
                                 </div>
                             </Link>
                             {/* <NavbarModal setModal={setModal} modal={modal} /> */}
-                            {/* <div
-                                onMouseOver={() => setModal(true)}
-                                onMouseLeave={() => setModal(false)}
-                                className="nav_modal"
-                                style={{
-                                    display: `${modal ? "flex" : "none"}`,
-                                }}
-                            >
-                                {services.results.length === 0
-                                    ? ""
-                                    : services.results.map((item) => (
-                                          <ul key={item.id}>
-                                              <Link
-                                                  href={`/services/${item.slug}`}
-                                              >
-                                                  <li>{item.name}</li>
-                                              </Link>
-                                          </ul>
-                                      ))}
-                            </div> */}
+                            {modal && (
+                                <div
+                                    onMouseOver={() => setModal(true)}
+                                    // onMouseLeave={() => setModal(false)}
+                                    className="nav_modal"
+                                    // style={{
+                                    //     display: `${modal ? "flex" : "none"}`,
+                                    // }}
+                                >
+                                    <ul>
+                                        {services.results.length === 0
+                                            ? ""
+                                            : services.results.map(
+                                                  (item: Service) => (
+                                                      <Link
+                                                          href={`/services/${item.slug}`}
+                                                          key={item.id}
+                                                      >
+                                                          <li>{item.name}</li>
+                                                      </Link>
+                                                  )
+                                              )}
+                                    </ul>
+                                </div>
+                            )}
                         </div>
                         <div className={"right_block_buttons"}>
                             <button className="number_btn">
