@@ -12,13 +12,14 @@ import blockUs2SubtitleMobile from '../../assets/blockUs2-subtitle-mobile.png'
 import blockUs2Icon1 from '../../assets/blockUs2-icon1.svg'
 import blockUs2Icon2 from '../../assets/blockUs2-icon2.svg'
 import stars from '../../assets/block1Stars.png'
+import bg from '../../assets/blockUs2-bg.png'
 import Image from "next/dist/client/legacy/image";
 
 
 export default async function AboutUs() {
     return (
         <Layout>
-            <section className="content">
+            <section className="about_page">
                 <div className="block1">
                     <div className="block1_left">
                         <p className="about-result">about us</p>
@@ -55,9 +56,9 @@ export default async function AboutUs() {
                             #1furniture restoration
                         </h1>
                     </div>
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-6">
+                    <div className="container plants">
+                        <div className="row ">
+                            <div className="col-8">
                                 <div className="blockUs2_wrapper_left">
                                     <h2 className="blockUs2_subtitle1">Our engineers are trained </h2>
                                     <div className='blockUs2_subtitle2'>
@@ -68,7 +69,7 @@ export default async function AboutUs() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-6">
+                            <div className="col-4">
                                 <div className="left_bottom_block">
                                     <div className="block1_desc">
                                         <div className="bord">
@@ -97,19 +98,27 @@ export default async function AboutUs() {
                                 </div>
                             </div>
                         </div>
-                        <p className="blockUs2_text">
-                            Our attention to detail and commitment to our values have helped us
-                            grow. It all started 15 years ago with our President, a young aspiring
-                            HVAC technician, who wanted to make an impact in the industry. Well,
-                            with his drive, and the help of our NexGen family along the way, we've
-                            grown to 8 locations across Southern California, servicing customers
-                            every day and continuing to grow into the industry standard for all
-                            things HVAC. Welcome to NexGen!
-                        </p>
+                        <div className="blockUs2_text">
+                            <p >
+                                Our attention to detail and commitment to our values have helped us
+                                grow. It all started 15 years ago with our President, a young aspiring
+                                HVAC technician, who wanted to make an impact in the industry. Well,
+                                with his drive, and the help of our NexGen family along the way, we've
+                                grown to 8 locations across Southern California, servicing customers
+                                every day and continuing to grow into the industry standard for all
+                                things HVAC. Welcome to NexGen!
+                            </p>
+                        </div>
 
                     </div>
                     <div className="blockUs2_bottom">
-                        <div className="blockUs2_bottom_bg">
+                        <div className="blockUs2_bottom_bg" style={{
+                            backgroundImage: `url(${bg.src})`,
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'cover',
+                            width:'100%',
+                            height: '100%'
+                        }}>
                             <div className="blockUs2_bottom_item">
                                 <Image src={blockUs2Icon1} alt="" />
                                 <div className="blockUs2_bottom_item_text">
@@ -128,8 +137,6 @@ export default async function AboutUs() {
                     </div>
                 </div>
             </section>
-
-            <Blog data={[]}/>
         </Layout>
     );
 }
