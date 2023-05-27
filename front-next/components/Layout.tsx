@@ -12,7 +12,7 @@ interface LayoutProps extends PropsWithChildren {
 }
 
 export function Layout({ children, location = true, className }: LayoutProps) {
-    const currLocation = use(getCurrentLocation());
+    const currLocation = 'use(getCurrentLocation())';
     const [currLocat, setCurrLocat] = useState<Location>();
     useEffect(() => {
         if (localStorage.getItem("currentLocation")) {
@@ -39,11 +39,11 @@ export function Layout({ children, location = true, className }: LayoutProps) {
                 <div className="bg-brown-200">
                     <div className="discount content items-center h-16 px-40">
                         <div className="flex gap-2 text-sm items-center">
-                            <address>
+                            {/* <address>
                                 {currLocation.location_name +
                                     " " +
                                     currLocation.state.name}
-                            </address>
+                            </address> */}
                             <Link href="/location">change</Link>
                         </div>
                         <p className="text-center text-brown-800 text-xl font-bold flex-shrink">

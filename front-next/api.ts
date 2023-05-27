@@ -149,6 +149,7 @@ export async function fetchReviews(
     return res.json();
 }
 
+
 export interface Booking {
     id: number;
     time: string;
