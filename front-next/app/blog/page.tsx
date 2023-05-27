@@ -5,7 +5,6 @@ import Link from "next/link";
 import { use } from "react";
 import bath from "@/assets/bath.png";
 import "./blogPage.scss";
-import { log } from "console";
 export default function Blog() {
     const posts = use(fetchBlog());
     function getMiniData() {
