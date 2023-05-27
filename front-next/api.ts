@@ -49,10 +49,8 @@ export interface Location {
 export async function fetchLocations(
     limit = 20,
     offset = 0
-): Promise<PaginationData<Photo>> {
-    const res = await fetch(
-        `${API_URL}/locations?limit=${limit}&offset=${offset}`
-    );
+): Promise<PaginationData<Location>> {
+    const res = await fetch(`${API_URL}/locations/?is_active=1`);
     return res.json();
 }
 
@@ -151,6 +149,7 @@ export async function fetchReviews(
     return res.json();
 }
 
+
 export interface Booking {
     id: number;
     time: string;
@@ -166,5 +165,10 @@ export async function createBooking(payload: Booking): Promise<Service> {
             "content-type": "application/json",
         },
     });
+    return res.json();
+}
+
+export async function getCurrentLocation(): Promise<Location> {
+    const res = await fetch(`${API_URL}/location/find/`);
     return res.json();
 }

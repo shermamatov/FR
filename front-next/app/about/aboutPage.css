@@ -146,7 +146,7 @@
 
   .block1 .block1_left .left_bottom_block .block1_desc .rating_block {
     flex-direction: column;
-    margin-left: 0px;
+    margin-left: 0;
     align-items: start;
   }
 

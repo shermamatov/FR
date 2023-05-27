@@ -1,60 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/assets/navLogo.png";
-import { PropsWithChildren } from "react";
+import {PropsWithChildren, use} from "react";
+import {Location, fetchServices, getCurrentLocation} from "@/api";
+import Header from "./Header";
 
 interface LayoutProps extends PropsWithChildren {
     location?: boolean;
     className?: string;
 }
 
-export function Layout({ children, location = true, className }: LayoutProps) {
+export function Layout({children, location = true, className}: LayoutProps) {
+    // const currLocation = use(getCurrentLocation());
+    const services = use(fetchServices());
+
     return (
         <>
-            <header>
-                <div className="bg-brown-200">
-                    <div className="discount content items-center h-16 px-40">
-                        <div className="flex gap-2 text-sm items-center">
-                            <address>73 Canal Street, California, LA</address>
-                            <Link href="/location">change</Link>
-                        </div>
-                        <p className="text-center text-brown-800 text-xl font-bold flex-shrink">
-                            <span className="pr-4">20%</span> Todays special
-                            Deal in your city
-                        </p>
-                    </div>
-                </div>
+            <Header services={services}/>
 
-                <div className="content pl-40 relative">
-                    {/* TODO: Fix position */}
-                    <Link href="/">
-                        <Image
-                            src={logo}
-                            width={188}
-                            height={160}
-                            alt="logo"
-                            className="absolute left-8 -z-10"
-                        />
-                    </Link>
-                    <div className="header-content">
-                        <nav>
-                            <Link href="/about-us">About us</Link>
-                            <Link href="/services">Services</Link>
-                            <Link href="/reviews">Reviews</Link>
-                            <Link href="/blog">Blog</Link>
-                            <Link href="/photos">Project photos</Link>
-                        </nav>
-                        <div className="flex gap-4">
-                            <a href="tel:+18188881010" className="phone">
-                                +1-818-888-10-10
-                            </a>
-                            <Link href="/book" className="btn">
-                                Book online now
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </header>
             <main className={className}>{children}</main>
             {location && (
                 <section>
