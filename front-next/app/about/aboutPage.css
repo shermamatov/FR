@@ -1,0 +1,528 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,800&display=swap");
+
+.block1 {
+  width: 90%;
+  max-width: 1600px;
+  display: flex;
+  justify-content: space-between;
+  /*gap: 60px;*/
+  margin: 0 auto;
+  /*margin-top: calc(45px + (80 - 45) * ((100vw - 800px) / (1400 - 800)));*/
+  position: relative;
+}
+
+.block1 .block1_left {
+  margin-top: calc(20px + (30 - 20) * ((100vw - 800px) / (1400 - 800)));
+}
+
+.block1 .block1_left > h1 {
+  font-size: calc(36px + (54 - 36) * ((100vw - 800px) / (1400 - 800)));
+  font-family: "Alfa Slab One";
+  font-weight: 400;
+  color: #2a2a2a;
+  line-height: 90%;
+  text-transform: uppercase;
+}
+
+.block1 .block1_left .left_bottom_block {
+  margin-top: 25px;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc > div {
+  font-family: "Montserrat";
+  display: flex;
+  margin-top: 20px;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc > div > img {
+  width: calc(16px + (22 - 16) * ((100vw - 800px) / (1400 - 800)));
+  height: calc(16px + (22 - 16) * ((100vw - 800px) / (1400 - 800)));
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .aboutUs_block1_text{
+  max-width: 400px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 35px;
+  color: #001733;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc > div > h4 {
+  margin-left: 20px;
+  font-size: calc(12px + (18 - 12) * ((100vw - 800px) / (1400 - 800)));
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .rating_block {
+  margin-left: 45px;
+  display: flex;
+  align-items: center;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .rating_block > img {
+  width: calc(80px + (120 - 80) * ((100vw - 800px) / (1400 - 800)));
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .rating_block > p {
+  font-weight: 800;
+  font-size: calc(12px + (18 - 12) * ((100vw - 800px) / (1400 - 800)));
+  margin-left: 10px;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .mass_block {
+  display: flex;
+  align-items: center;
+  margin-left: 45px;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .mass_block > img {
+  cursor: pointer;
+  margin-right: 10px;
+  width: calc(60px + (90 - 60) * ((100vw - 800px) / (1400 - 800)));
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .btn_block1 {
+  margin-left: 45px;
+  margin-top: 40px;
+}
+
+.block1 .block1_left .left_bottom_block .block1_desc .btn_block1 > button {
+  width: calc(140px + (200 - 140) * ((100vw - 800px) / (1600 - 800)));
+  height: calc(42px + (50 - 42) * ((100vw - 800px) / (1600 - 800)));
+}
+
+.block1 .block1_right {
+  position: absolute;
+  right: -10%;
+}
+
+.block1 .block1_right .banner_block {
+  position: relative;
+  width: calc(300px + (750 - 400) * ((100vw - 800px) / (1600 - 800)));
+}
+
+.block1 .block1_right .banner_block > img {
+  width: 100%;
+}
+
+.block1 .block1_right .banner_block .krujok {
+  position: absolute;
+  width: calc(100px + (150 - 100) * ((100vw - 800px) / (1600 - 800)));
+  top: -10%;
+  left: -10%;
+}
+
+.block1 .block1_right .banner_block .krujok > img {
+  width: 100%;
+}
+
+.btn_var3 {
+  width: 200px;
+  height: 50px;
+  border-radius: 100%;
+  background-color: transparent;
+  border: 1px solid black;
+  font-family: "Montserrat";
+  font-weight: 500;
+  transition: 0.5s;
+}
+
+.btn_var3:hover {
+  background-color: #a5a582;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .block1 {
+    flex-direction: column;
+  }
+
+  .block1 .block1_left .left_bottom_block {
+    margin-top: 25px;
+  }
+
+  .block1 .block1_left .left_bottom_block .block1_desc > div > h4 {
+    font-size: calc(12px + (16 - 12) * ((100vw - 350px) / (800 - 350)));
+  }
+
+  .block1 .block1_left .left_bottom_block .block1_desc .rating_block {
+    flex-direction: column;
+    margin-left: 0;
+    align-items: start;
+  }
+
+  .block1 .block1_left .left_bottom_block .block1_desc .rating_block > img {
+    width: 100px;
+  }
+
+  .block1 .block1_left .left_bottom_block .block1_desc .rating_block > p {
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  .block1 .block1_left .left_bottom_block .block1_desc .mass_block {
+    display: flex;
+    align-items: center;
+    margin-left: 0px;
+    margin-top: 5px;
+  }
+
+  .block1 .block1_left .left_bottom_block .block1_desc .mass_block > img {
+    margin-right: 10px;
+    width: calc(60px + (90 - 60) * ((100vw - 350px) / (800 - 350)));
+    height: auto;
+  }
+
+  .block1 .block1_right {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+  }
+
+  .block1 .block1_right .banner_block {
+    width: calc(500px + (900 - 500) * ((100vw - 350px) / (800 - 350)));
+  }
+
+  .block1 .block1_right .banner_block .krujok {
+    position: absolute;
+    width: calc(100px + (150 - 100) * ((100vw - 350px) / (800 - 350)));
+    top: -13%;
+    left: -13%;
+  }
+
+  .block1 .block1_right .banner_block .krujok > img {
+    width: 100%;
+  }
+
+  .block1 .btn_block1 > button {
+    display: none;
+  }
+}
+
+@media (min-width: 1800px) {
+  .block1 .block1_left > h1 {
+    font-size: 75px;
+  }
+
+  .block1 .block1_right .banner_block {
+    max-width: 750px;
+  }
+}
+
+
+.blockUs2_title {
+  background: #a5a582;
+  padding: 40px 0;
+}
+
+.blockUs2_title h1 {
+  text-align: center;
+  font-family: "Alfa Slab One";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 70px;
+  text-transform: uppercase;
+  color: #72421c;
+}
+
+.blockUs2 {
+  position: relative;
+  margin-top: 75px;
+}
+
+.blockUs2_wrapper_left {
+  padding-top: 267px;
+}
+
+.blockUs2_subtitle1 {
+  position: absolute;
+  top: 306px;
+  left: -130px;
+  width: 60%;
+  font-family: "Montserrat";
+  font-weight: 800;
+  font-size: 80px;
+  line-height: 80px;
+  text-transform: uppercase;
+  color: #2a2a2a;
+  opacity: 0.2;
+}
+
+.blockUs2_subtitle2 {
+  width: 100%;
+}
+
+.blockUs2_subtitle2-mobile {
+  display: none;
+  width: 100%;
+}
+
+.blockUs2 .rating_block,
+.blockUs2 .mass_block {
+  padding-left: 50px;
+}
+
+.blockUs2_text {
+  margin-top: 92px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 55px;
+  color: #041e3c;
+  max-width: 1496px;
+}
+
+.blockUs2 .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-6 {
+  width: 50%;
+  padding: 0 15px;
+}
+
+.blockUs2 .bord {
+  font-family: "Montserrat";
+  display: flex;
+  margin-top: 20px;
+  column-gap: 27px;
+}
+
+.blockUs2 .bord h4, .blockUs2 .bord p {
+  font-weight: 700;
+}
+
+.blockUs2 .left_bottom_block {
+  padding-top: 100px;
+}
+
+.blockUs2_bottom {
+  background-image: url("../../assets/blockUs2-bg.png");
+  margin-top: 91px;
+}
+
+.blockUs2_bottom_bg {
+  background: #e9be8a;
+  opacity: 0.95;
+  display: flex;
+  justify-content: center;
+  column-gap: 310px;
+  padding: 150px 0;
+}
+
+.blockUs2_bottom_item {
+  display: flex;
+  column-gap: 40px;
+}
+
+.blockUs2_bottom_item h4 {
+  font-family: "Alfa Slab One";
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 110px;
+  color: #2a2a2a;
+}
+
+.blockUs2_bottom_item p {
+  font-family: "Montserrat";
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 30px;
+  text-transform: uppercase;
+  color: #2a2a2a;
+}
+
+@media screen and (max-width: 1400px) {
+  /* .container {
+      max-width: 1140px;
+  } */
+  .blockUs2_wrapper_left {
+    padding-top: 330px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  /* .container {
+      max-width: 960px;
+  } */
+  .blockUs2 .col-6 {
+    width: 100%;
+  }
+
+  .blockUs2 .row {
+    flex-wrap: wrap-reverse;
+  }
+
+  .blockUs2_subtitle1 {
+    position: static;
+    width: 100%;
+  }
+
+  .blockUs2_wrapper_left {
+    padding-top: 90px;
+  }
+
+  .blockUs2_subtitle2 {
+    margin-top: 20px;
+  }
+
+  .blockUs2_bottom_bg {
+    column-gap: 150px;
+  }
+
+  .blockUs2_bottom_item h4 {
+    font-size: 60px;
+  }
+
+  .blockUs2_bottom_item p {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* .container {
+      max-width: 720px;
+  } */
+  .blockUs2_subtitle1 {
+    font-size: 60px;
+  }
+
+  .blockUs2_text {
+    font-size: 26px;
+  }
+
+  .blockUs2 .left_bottom_block {
+    padding-top: 50px;
+  }
+
+  .blockUs2_bottom_bg {
+    column-gap: 70px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* .container {
+      max-width: 540px;
+  } */
+  .blockUs2_title h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .blockUs2_title {
+    padding: 33px 0;
+  }
+
+  .blockUs2_subtitle1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .blockUs2_subtitle2 {
+    display: none;
+  }
+
+  .blockUs2_subtitle2-mobile {
+    display: inline-block;
+  }
+
+  .blockUs2_text {
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 30px;
+  }
+
+  .blockUs2_bottom_item h4 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+
+  .blockUs2_bottom_item p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .blockUs2_bottom_item img {
+    height: 24px;
+    width: 24px;
+  }
+
+  .blockUs2_bottom_item {
+    column-gap: 20px;
+  }
+
+  .blockUs2_bottom_bg {
+    column-gap: 50px;
+    padding: 69px 0;
+  }
+
+  .blockUs2_bottom {
+    margin-top: 33px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* .container {
+      max-width: 100%;
+      padding: 0 10px;
+  } */
+  .blockUs2_subtitle2-mobile {
+    margin-top: 10px;
+  }
+
+  .blockUs2 .bord h4 {
+    font-size: 12px;
+    line-height: 29px;
+  }
+
+  .blockUs2 .bord {
+    margin-top: 10px;
+    column-gap: 6px;
+  }
+
+  .blockUs2 .bord > img {
+    width: calc(16px + 6 * (100vw - 800px) / 600);
+    height: calc(16px + 6 * (100vw - 800px) / 600);
+  }
+
+  .blockUs2 .rating_block,
+  .blockUs2 .mass_block {
+    padding-left: 0;
+  }
+
+  .blockUs2 .rating_block img {
+    width: 100px;
+    height: 16px;
+  }
+
+  .blockUs2 .rating_block {
+    display: block;
+  }
+
+  .blockUs2 .mass_block img {
+    margin-right: 10px;
+    width: calc(60px + 30 * (100vw - 350px) / 450);
+    height: auto;
+  }
+
+  .blockUs2_bottom_item {
+    column-gap: 10px;
+  }
+
+  .blockUs2_bottom_bg {
+    column-gap: 10px;
+  }
+
+  .blockUs2_bottom_item p {
+    font-size: 9px;
+    line-height: 11px;
+  }
+
+  .blockUs2_bottom_item h4 {
+    font-size: 19px;
+    line-height: 25px;
+  }
+}
