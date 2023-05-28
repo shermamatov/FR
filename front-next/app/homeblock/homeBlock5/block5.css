@@ -8,7 +8,7 @@ li {
     background-size: cover;
     color: #2a2a2a;
     height: fit-content;
-    font-family: "Montserrat";
+
     font-style: normal;
     background: #e9be8a;
 }
@@ -23,7 +23,7 @@ li {
     margin: auto;
 }
 .services__title {
-    font-family: "Alfa Slab One";
+
     font-style: normal;
     font-weight: 400;
     font-size: 60px;

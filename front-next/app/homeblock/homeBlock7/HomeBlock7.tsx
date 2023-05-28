@@ -2,7 +2,7 @@
 import { fetchReviews } from '@/api';
 import Link from 'next/link';
 import { use} from 'react';
-import Slider from "react-slick";
+// import Slider from "react-slick";
 import './block7.scss';
 import rating from './rating.svg';
 import Image from 'next/image';
@@ -49,7 +49,7 @@ export default function HomeBlock7() {
             <div className="content">
                 <h1>Words From Customers</h1>
                 <div className="text_review">
-                    <Slider {...settings}>
+                    {/* <Slider {...settings}>
                         {reviews.results.map((item) => (
                             <div className="text_review_block" key={item.id}>
                                 <p>
@@ -66,7 +66,7 @@ export default function HomeBlock7() {
                                 </div>
                             </div>
                         ))}
-                    </Slider>
+                    </Slider> */}
                 </div>
                 {/* <div className="video_review_adap">
                     <Slider {...settings}>

@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import "./globals.css";
 import { Alfa_Slab_One, Montserrat } from "next/font/google";
-import { getCurrentLocation } from "@/api";
-import { use } from "react";
+
 export const fontAlfa = Alfa_Slab_One({
     weight: ["400"],
     style: ["normal"],
@@ -27,7 +26,6 @@ export const metadata = {
 
 export default function RootLayout({
     children,
-    ...props
 }: {
     children: React.ReactNode;
 }) {

@@ -11,7 +11,7 @@ import HomeBlock7 from './homeblock/homeBlock7/HomeBlock7';
 
 export default async function Home() {
     return (
-        <Layout isHome>
+        <Layout>
             <HomeBlock1 />
             <HomeBlock2 />
             <HomeBlock3 />
