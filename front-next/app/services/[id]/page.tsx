@@ -1,4 +1,4 @@
-import { fetchServiceById } from "@/api";
+import { fetchServiceById, fetchReviews } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
 import { use } from "react";
@@ -6,9 +6,26 @@ import ServBlock1 from "../servBlock1";
 import altBefore from "@/assets/services_before.jpg";
 import altAfter from "@/assets/services_after.jpg";
 import Image from "next/image";
+import bath2 from "@/assets/bath.png";
+import icon1 from "@/assets/serv_icon1.svg";
+import icon2 from "@/assets/serv_icon2.svg";
+import HomeBlock3 from "@/app/homeblock/homeBlock3/HomeBlock3";
+import ServBlock9 from "./ServBlock9";
 
 export default function ServiceSingle({ params }: PageNavProps) {
+    // const post = use(fetchPostById(params.id));
     const service = use(fetchServiceById(params.id));
+    const reviews = use(fetchReviews());
+    function sliceServArr() {
+        let arra = [...service.children];
+        let a = arra.splice(0, 3);
+        return a;
+    }
+    function sliceServArr2() {
+        let arra = [...service.children];
+        let a = arra.splice(3);
+        return a;
+    }
     return (
         <Layout>
             <ServBlock1 />
@@ -72,6 +89,152 @@ export default function ServiceSingle({ params }: PageNavProps) {
                     </div>
                 </div>
             </section>
+            <section className="content">
+                <div className="blogSingle_services_block">
+                    {sliceServArr().map((item) => (
+                        <div key={item.id}>
+                            <Image
+                                src={
+                                    item.offer_image ? item.offer_image : bath2
+                                }
+                                alt="sorry"
+                                width={100}
+                                height={100}
+                                unoptimized
+                            />
+                            <p>{item.name}</p>
+                        </div>
+                    ))}
+                </div>
+            </section>
+            <section
+                className="content flex mt-10 cursor-pointer pt-10 pb-16"
+                style={{ width: "100%" }}
+            >
+                {sliceServArr2().map((item) => (
+                    <div
+                        style={{ width: "100%" }}
+                        className="flex justify-between"
+                        key={item.id}
+                    >
+                        <p className="font-bold text-xl">{item.name}</p>
+                    </div>
+                ))}
+            </section>
+            <section className="servBlock3">
+                <div className="content srv3">
+                    <div className="row">
+                        <div className="col-6">
+                            <h1 className="servBlock3_title">FAQ</h1>
+                            <h2 className="servBlock3_subtitle">
+                                What problems can arise during heating?
+                            </h2>
+                            <p className="servBlock3_text">
+                                We offer a wide range of HVAC services catered
+                                to both residential and commercial clients. Even
+                                the all-powerful Pointing has no control about
+                                the blind texts.
+                            </p>
+                        </div>
+                        <div className="col-6"></div>
+                    </div>
+                    <div className="row row2">
+                        <div className="col-6">
+                            <p className="servBlock3_question">
+                                How often should the system be cleaned and why?
+                            </p>
+                            <p className="servBlock3_question">
+                                Can I clean the air conditioner myself?
+                            </p>
+                            <p className="servBlock3_question">
+                                How often should the system be cleaned and why?
+                            </p>
+                            <p className="servBlock3_question">
+                                How often should the system be cleaned and why?
+                            </p>
+                            <p className="servBlock3_question">
+                                Can I clean the air conditioner myself?
+                            </p>
+                            <p className="servBlock3_question">
+                                Can I clean the air conditioner myself?
+                            </p>
+                        </div>
+                        <div className="col-6">
+                            <p className="servBlock3_question">
+                                How often should the system be cleaned and why?
+                            </p>
+                            <p className="servBlock3_question">
+                                Can I clean the air conditioner myself?
+                            </p>
+                            <p className="servBlock3_question">
+                                How often should the system be cleaned and why?
+                            </p>
+                            <p className="servBlock3_question">
+                                How often should the system be cleaned and why?
+                            </p>
+                            <p className="servBlock3_question">
+                                Can I clean the air conditioner myself?
+                            </p>
+                            <p className="servBlock3_question">
+                                Can I clean the air conditioner myself?
+                            </p>
+                        </div>
+                    </div>
+                    <button className="servBlock3_btn">more questions</button>
+                </div>
+            </section>
+            <HomeBlock3 />
+            <div className="content">
+                <div className="fr_server">
+                    <h2 className="transparent_text">
+                        at manufacturing plants
+                    </h2>
+                    <h2>our photos</h2>
+                    <div className="grid_block">
+                        {service.media.map((item) => (
+                            <div key={item.id} className="grid__item">
+                                <Image
+                                    src={item.photo}
+                                    alt={item.caption}
+                                    className="grid__img"
+                                    unoptimized
+                                    width={100}
+                                    height={100}
+                                />
+                                <p className="grid__desc bord">
+                                    {item.caption}
+                                </p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+            <div className="servBlock5">
+                <div className="servBlock5_bg"></div>
+                <h1 className="servBlock5_title">10 YERS WARANTY</h1>
+                <button className="servBlock5_btn">Book online now</button>
+            </div>
+            <section className="content flex justify-around pt-12 pb-12   ">
+                <div className="flex items-center">
+                    <Image className="w-12 md:w-20" src={icon2} alt="#" />
+                    <div className="flex flex-col ml-4">
+                        <h2 className="text-3xl md:text-5xl">+1000</h2>{" "}
+                        <p className="text-center font-bold text-xs md:text-base">
+                            Completed project
+                        </p>
+                    </div>
+                </div>
+                <div className="flex items-center">
+                    <Image className="w-12 md:w-20" src={icon1} alt="#" />
+                    <div className="flex flex-col ">
+                        <h2 className="text-3xl md:text-5xl">+5000</h2>{" "}
+                        <p className="text-center font-bold text-xs md:text-base">
+                            clients review
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <ServBlock9 reviews={reviews} />
         </Layout>
     );
 }
