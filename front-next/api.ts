@@ -115,9 +115,7 @@ export async function fetchServices(
     limit = 20,
     offset = 0
 ): Promise<PaginationData<Service>> {
-    const res = await fetch(
-        `${API_URL}/service?limit=${limit}&offset=${offset}`
-    );
+    const res = await fetch(`${API_URL}/service/`);
     return res.json();
 }
 
@@ -148,7 +146,6 @@ export async function fetchReviews(
     );
     return res.json();
 }
-
 
 export interface Booking {
     id: number;

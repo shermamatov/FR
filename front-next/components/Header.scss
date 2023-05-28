@@ -225,7 +225,6 @@ button {
                 margin-left: 45px;
             }
             .burger__link {
-
                 font-weight: 700;
                 font-size: 18px;
                 margin-top: 20px;
@@ -358,10 +357,10 @@ button {
     top: 180%;
     left: -20px;
     transition: 1s;
-    padding: 20px;
+    padding: 30px;
     ul {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 10px;
         justify-content: space-between;
         width: 100%;
