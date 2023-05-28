@@ -4,7 +4,7 @@ import "./block4.css";
 import Image from "next/image";
 
 export default function HomeBlock4() {
-    const photos = use(fetchPhotos());
+    const photos = use(fetchPhotos(9));
 
     return (
         <div className="content">
@@ -23,7 +23,9 @@ export default function HomeBlock4() {
                                 width={100}
                                 height={100}
                             />
-                            <p className="grid__desc bord">{item.caption}</p>
+                            <p className="grid__desc bord">
+                                {item.caption || "media description"}
+                            </p>
                         </div>
                     ))}
                 </div>
