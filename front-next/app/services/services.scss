@@ -1,12 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,800&display=swap");
-
 .block1 {
     display: flex;
     justify-content: space-between;
     margin: auto;
     margin-top: calc(45px + (80 - 45) * ((100vw - 800px) / (1400 - 800)));
     position: relative;
+    // overflow-x: ;
     .block1_left {
         margin-top: calc(20px + (30 - 20) * ((100vw - 800px) / (1400 - 800)));
         > h1 {
@@ -49,6 +47,7 @@
                         width: calc(
                             80px + (120 - 80) * ((100vw - 800px) / (1400 - 800))
                         );
+                        max-width: 120px;
                     }
                     > p {
                         font-weight: 800;
@@ -68,6 +67,7 @@
                         width: calc(
                             60px + (90 - 60) * ((100vw - 800px) / (1400 - 800))
                         );
+                        max-width: 90px;
                     }
                 }
                 .btn_block1 {
@@ -88,9 +88,10 @@
     }
     .block1_right {
         position: absolute;
-        right: -8%;
+        right: -15%;
         .banner_block {
             position: relative;
+            max-width: 700px;
             width: calc(400px + (750 - 400) * ((100vw - 800px) / (1600 - 800)));
             > img {
                 width: 100%;
@@ -123,6 +124,69 @@
         border: none;
     }
 }
+
+.serv_before_after_block {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 5px solid #a5a582;
+    > img {
+        width: 49%;
+    }
+}
+
+.serv_before_after_block_adap {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #a5a582;
+    > div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        > img {
+            width: 49.5%;
+        }
+    }
+    .serv_before_after_block_bottom {
+        display: flex;
+        // align-items: ;
+        justify-content: space-between;
+        background-color: #f2994a;
+        padding: 20px;
+        h2 {
+            font-size: 32px;
+        }
+        h4 {
+            color: white;
+            font-weight: 400;
+            font-size: 24px;
+            > span {
+                font-size: 42px;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .serv_before_after_block_adap {
+        border: 8px solid #a5a582;
+        .serv_before_after_block_bottom {
+            h2 {
+                font-size: 24px;
+            }
+            h4 {
+                font-size: 18px;
+                font-family: "Alfa Slab One";
+
+                > span {
+                    font-size: 32px;
+                }
+            }
+        }
+    }
+}
+
 @media (max-width: 768px) {
     .block1 {
         flex-direction: column;
@@ -197,16 +261,32 @@
         }
     }
 }
-@media (min-width: 1800px) {
+@media (min-width: 1600px) {
     .block1 {
         .block1_left {
             > h1 {
-                font-size: 75px;
+                font-size: 54px;
+            }
+            .left_bottom_block {
+                .block1_desc {
+                    > div {
+                        > h4 {
+                            font-size: 18px;
+                        }
+                    }
+                    .rating_block {
+                        > p {
+                            font-size: 16px;
+                        }
+                    }
+                }
             }
         }
         .block1_right {
             .banner_block {
-                max-width: 750px;
+                img {
+                    max-width: 650px;
+                }
             }
         }
     }

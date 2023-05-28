@@ -21,7 +21,7 @@
             width: 70%;
             padding: calc(20px + (40 - 20) * ((100vw - 800px) / (1600 - 800)));
             > h1 {
-                font-family: "Alfa Slab One";
+                // font-family: "Alfa Slab One";
                 font-size: calc(
                     32px + (56 - 32) * ((100vw - 800px) / (1600 - 800))
                 );
@@ -108,7 +108,7 @@
     }
 }
 @media (min-width: 2900px) {
-    .block3_main{
+    .block3_main {
         min-height: 52vh;
     }
 }

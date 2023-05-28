@@ -45,7 +45,6 @@ export default function RootLayout({
                                 a wide range of services for both residential
                                 and commercial clients.
                             </p>
-
                             <a href="">facebook</a>
                             <a href="">gmail</a>
                             <a href="">yumi</a>
