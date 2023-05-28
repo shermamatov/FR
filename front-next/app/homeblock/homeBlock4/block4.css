@@ -13,7 +13,7 @@
     position: absolute;
     right: -5%;
     top: -10px;
-    font-family: "Montserrat";
+
     font-style: normal;
     font-weight: 800;
     font-size: calc(32.4px + 3.6vw);
@@ -27,7 +27,7 @@
         0 -1px 1px #a5a582;
 }
 .fr__title {
-    font-family: "Alfa Slab One";
+
     font-style: normal;
     font-weight: 400;
     font-size: calc(30px + (60 - 30) * ((100vw - 350px) / (1600 - 350)));
@@ -65,7 +65,7 @@
     object-position: center;
 }
 .grid__desc {
-    font-family: "Montserrat";
+
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
