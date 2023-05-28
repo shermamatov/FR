@@ -1,5 +1,7 @@
 import { use } from 'react';
 import { fetchReviews } from '@/api';
+import ratingIcons from './img/rating-icons.svg';
+import Image from 'next/image';
 
 export default function ReviewsBlock3 (){
     const reviews = use(fetchReviews());
@@ -12,7 +14,7 @@ export default function ReviewsBlock3 (){
          <div key={item.id}>
          <div className="reviewsBlock3_card">
              <p className="reviewsBlock3_card_text">
-             My second time using them. They are quick to respond, very nice, and have reasonable prices. I will definitely be calling them in the future with any of my home hvac needs/repairs.
+             {item.review_text}
              </p>
              <div>
                  <h3 className="reviewsBlock3_card_name">
@@ -23,10 +25,10 @@ export default function ReviewsBlock3 (){
                          className="reviewsBlock2_card_raiting_icons"
                          style={{ marginLeft: "-5px" }}
                      >
-                        {/* Todo: img */}
+                        <Image src={ratingIcons} alt="" />
                      </div>
                      <p className="reviewsBlock2_card_raiting_count">
-                         4.5
+                         {item.stars}
                      </p>
                  </div>
              </div>
