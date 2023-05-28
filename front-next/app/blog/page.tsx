@@ -5,6 +5,7 @@ import Link from "next/link";
 import { use } from "react";
 import bath from "@/assets/bath.png";
 import "./blogPage.scss";
+import { relative } from "path";
 export default function Blog() {
     const posts = use(fetchBlog());
     function getMiniData() {
@@ -72,70 +73,47 @@ export default function Blog() {
                 </div>
             </div>
             <div className="blog_block2">
-                <div className="blog_card">
-                    <Image src={bath} alt="" />
-                    <div style={{ color: "#F2994A", fontWeight: "700" }}>
-                        Heating
-                    </div>
-                    <span
-                        style={{
-                            color: "#72421C",
-                            fontWeight: "600",
-                            lineHeight: "15px",
-                        }}
+                {posts.results.slice(0, 2).map((item) => (
+                    <div
+                        className="blog_card"
+                        style={{ position: "relative" }}
+                        key={item.id}
                     >
-                        December 30, 2019
-                    </span>
-                    <h3>How, when and why we stay</h3>
-                    <p>
-                        Staying in touch with customers is important for any
-                        company; it often forms part of any good marketing
-                        strategy. Staying in touch with customers is important
-                        for any company; it often forms part of any good
-                        marketing strategy.{" "}
-                    </p>
-                    <Link href={`/blog/1`}>
+                        <Image
+                            src={item.image1 || bath}
+                            width={100}
+                            height={100}
+                            unoptimized
+                            alt=""
+                        />
+                        <div style={{ color: "#F2994A", fontWeight: "700" }}>
+                            Heating
+                        </div>
                         <span
                             style={{
-                                color: "#F2994A",
+                                color: "#72421C",
+                                fontWeight: "600",
+                                lineHeight: "15px",
                             }}
                         >
-                            Read More article
+                            December 30, 2019
                         </span>
-                    </Link>
-                </div>
-                <div className="blog_card">
-                    <Image src={bath} alt="" />
-                    <div style={{ fontWeight: "700", color: "#9B51E0" }}>
-                        Cooling
+                        <h3>{item.title}</h3>
+                        <p>{item.description}</p>
+                        <Link href={`/blog/${item.id}`}>
+                            <span
+                                style={{
+                                    color: "#F2994A",
+                                    position: "absolute",
+                                    bottom: "10px",
+                                    left: "10px",
+                                }}
+                            >
+                                Read More article
+                            </span>
+                        </Link>
                     </div>
-                    <span
-                        style={{
-                            color: "#72421C",
-                            fontWeight: "600",
-                            lineHeight: "15px",
-                        }}
-                    >
-                        December 30, 2019
-                    </span>
-                    <h3>How, when and why we stay</h3>
-                    <p>
-                        Staying in touch with customers is important for any
-                        company; it often forms part of any good marketing
-                        strategy. Staying in touch with customers is important
-                        for any company; it often forms part of any good
-                        marketing strategy.
-                    </p>
-                    <Link href={`/blog/1`}>
-                        <span
-                            style={{
-                                color: "#F2994A",
-                            }}
-                        >
-                            Read More article
-                        </span>
-                    </Link>
-                </div>
+                ))}
             </div>
 
             <div className="blog_block3 hidden md:grid">
@@ -145,6 +123,7 @@ export default function Blog() {
                             width={100}
                             height={100}
                             src={item.image1 ? item.image1 : bath}
+                            unoptimized
                             alt=""
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
@@ -184,7 +163,13 @@ export default function Blog() {
             <div className="blog_block3 grid md:hidden">
                 {posts.results.map((item) => (
                     <div className="blog_card" key={item.id}>
-                        <Image src={bath} alt="" />
+                        <Image
+                            src={item.image1 ? item.image1 : bath}
+                            width={100}
+                            height={100}
+                            unoptimized
+                            alt=""
+                        />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating
                         </div>

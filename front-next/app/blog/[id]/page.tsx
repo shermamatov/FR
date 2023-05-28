@@ -19,7 +19,7 @@ export default function BlogSingle({ params }: PageNavProps) {
     }
     return (
         <Layout className="content">
-            <div className="container">
+            <div>
                 <div className={"flex mb-8"}>
                     <p className="font-bold">All</p>
                     <p className="ml-5 font-bold" style={{ color: "#9B51E0" }}>
@@ -42,7 +42,13 @@ export default function BlogSingle({ params }: PageNavProps) {
                     </p>
                 </div>
                 <div className="blogSingle_main_block">
-                    <Image src={bath} alt="" />
+                    <Image
+                        src={post.image1 || bath}
+                        width={100}
+                        height={100}
+                        unoptimized
+                        alt=""
+                    />
                     <div
                         style={{
                             color: "#107EBD",
@@ -60,7 +66,13 @@ export default function BlogSingle({ params }: PageNavProps) {
                         POSTED ON DECEMBER 2,2021
                     </p>
                     <p>{post.description}</p>
-                    <Image src={bath} alt="" />
+                    <Image
+                        src={post.image2 || bath}
+                        width={100}
+                        height={100}
+                        unoptimized
+                        alt=""
+                    />
                     <div className="blogSingle_services_block">
                         {sliceServArr().map((item) => (
                             <div key={item.id}>
