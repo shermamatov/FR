@@ -22,7 +22,6 @@
 
 .block1 .block1_left > h1 {
   font-size: calc(36px + (54 - 36) * ((100vw - 800px) / (1400 - 800)));
-  font-family: "Alfa Slab One";
   font-weight: 400;
   color: #2a2a2a;
   line-height: 90%;
@@ -34,7 +33,6 @@
 }
 
 .block1 .block1_left .left_bottom_block .block1_desc > div {
-  font-family: "Montserrat";
   display: flex;
   margin-top: 20px;
 }
@@ -126,7 +124,7 @@
   border-radius: 100%;
   background-color: transparent;
   border: 1px solid black;
-  font-family: "Montserrat";
+
   font-weight: 500;
   transition: 0.5s;
 }
@@ -229,7 +227,6 @@
 
 .blockUs2_title h1 {
   text-align: center;
-  font-family: "Alfa Slab One";
   font-style: normal;
   font-weight: 400;
   font-size: 50px;
@@ -240,7 +237,7 @@
 
 .blockUs2 {
   position: relative;
-  margin-top: 75px;
+  margin-top: 150px;
 }
 
 .blockUs2_wrapper_left {
@@ -252,7 +249,6 @@
   top: 306px;
   left: -5%;
   width: 710px;
-  font-family: "Montserrat";
   font-weight: 800;
   font-size: 80px;
   line-height: 80px;
@@ -280,7 +276,7 @@
 }
 
 .blockUs2_text p{
-  font-family: "Montserrat";
+
   font-weight: 600;
   font-size: 34px;
   line-height: 55px;
@@ -299,7 +295,7 @@
 }
 
 .blockUs2 .bord {
-  font-family: "Montserrat";
+
   display: flex;
   margin-top: 20px;
   column-gap: 27px;
@@ -344,7 +340,7 @@
 }
 
 .blockUs2_bottom_item h4 {
-  font-family: "Alfa Slab One";
+
   font-weight: 400;
   font-size: 80px;
   line-height: 110px;
@@ -352,7 +348,7 @@
 }
 
 .blockUs2_bottom_item p {
-  font-family: "Montserrat";
+
   font-weight: 700;
   font-size: 25px;
   line-height: 30px;
@@ -454,7 +450,7 @@
     display: inline-block;
   }
 
-  .blockUs2_text {
+  .blockUs2_text p {
     font-size: 18px;
     line-height: 22px;
     margin-top: 30px;
@@ -538,7 +534,7 @@
   }
 
   .blockUs2_bottom_bg {
-    column-gap: 10px;
+    column-gap: 30px;
   }
 
   .blockUs2_bottom_item p {
@@ -549,5 +545,8 @@
   .blockUs2_bottom_item h4 {
     font-size: 19px;
     line-height: 25px;
+  }
+  .blockUs2_bottom_item img {
+    width: 25px !important;
   }
 }
