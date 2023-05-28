@@ -18,13 +18,11 @@
             color: #2a2a2a;
             line-height: 90%;
             text-transform: uppercase;
-
         }
         .left_bottom_block {
             margin-top: 25px;
             .block1_desc {
                 > div {
-
                     display: flex;
                     margin-top: 20px;
                     > img {
@@ -173,11 +171,13 @@
             width: 100%;
             display: flex;
             justify-content: end;
-            margin-top: 30px;
+            margin-top: 80px;
+            right: 0;
             .banner_block {
-                width: calc(
-                    500px + (900 - 500) * ((100vw - 350px) / (800 - 350))
-                );
+                // width: calc(
+                //     500px + (900 - 500) * ((100vw - 350px) / (800 - 350))
+                // );
+                width: 100%;
                 .krujok {
                     position: absolute;
                     width: calc(
@@ -192,9 +192,7 @@
             }
         }
         .btn_block1 {
-            > button {
-                display: none;
-            }
+            display: none !important;
         }
     }
 }

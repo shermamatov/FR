@@ -62,7 +62,7 @@ export default function BlogSingle({ params }: PageNavProps) {
                     <p>{post.description}</p>
                     <Image src={bath} alt="" />
                     <div className="blogSingle_services_block">
-                        {sliceServArr().map((item: Post) => (
+                        {sliceServArr().map((item) => (
                             <div key={item.id}>
                                 <Image src={bath2} alt="sorry" />
                                 <p>{item.name}</p>
