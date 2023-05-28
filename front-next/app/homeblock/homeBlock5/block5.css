@@ -11,6 +11,7 @@ li {
 
     font-style: normal;
     background: #e9be8a;
+    padding-bottom: 80px;
 }
 .services__wrapper,
 .services__wrapper-2 {
@@ -19,16 +20,16 @@ li {
 }
 .services__inner {
     padding: 60px 0px;
-    width: 90%;
+    /* width: 90%; */
     margin: auto;
 }
 .services__title {
-
     font-style: normal;
     font-weight: 400;
-    font-size: 60px;
-    line-height: 96px;
+    font-size: 54px;
+    line-height: 76px;
     text-transform: uppercase;
+    margin-bottom: 20px;
 }
 .services__desc {
     font-weight: 500;
@@ -41,20 +42,19 @@ li {
 }
 .services__list {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 22px;
     line-height: 40px;
     text-transform: capitalize;
-
 }
 .services__list li {
-    transition: .5s;
+    transition: 0.5s;
     padding: 20px 0;
     border-bottom: 1px solid #2a2a2a;
 }
 
 .services__list li:hover {
     font-weight: 700;
-    font-size: 35px;
+    font-size: 24px;
     line-height: 40px;
     display: flex;
     align-items: center;
@@ -66,11 +66,12 @@ li {
 .services__list li:hover::before {
     content: "";
     display: block;
-    width: 67px;
-    height: 5px;
+    width: 40px;
+    height: 4px;
     background-color: #2a2a2a;
     top: 50%;
     left: 5px;
+    transition: 0.5s;
 }
 .services_top_adap {
     display: none;
@@ -82,7 +83,6 @@ li {
 .srv_bottom_adap {
     margin-top: 0px;
 }
-
 
 .d-none {
     display: none;
