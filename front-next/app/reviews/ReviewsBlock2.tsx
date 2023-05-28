@@ -1,5 +1,8 @@
 import { use } from "react";
 import { fetchReviews } from "@/api";
+import Image from 'next/image';
+import cardImg from './img/card-img.jpg';
+import ratingIcons from './img/rating-icons.svg';
 
 export default function ReviewsBlock2() {
     const reviews = use(fetchReviews());
@@ -27,14 +30,14 @@ export default function ReviewsBlock2() {
                                     <button className="reviewsBlock2_card_btn">
                                         Play video
                                     </button>
-                                    <span className="reviewsBlock2_card_img"></span>
+                                    <Image src={cardImg} className="reviewsBlock2_card_img" alt=""  />
                                 </div>
                                 <h3 className="reviewsBlock2_card_title">
                                     {item.name}
                                 </h3>
                                 <div className="reviewsBlock2_card_raiting">
                                     <div className="reviewsBlock2_card_raiting_icons">
-                                        {/* Todo: img */}
+                                        <Image src={ratingIcons} alt="" />
                                     </div>
                                     <p className="reviewsBlock2_card_raiting_count">
                                         4.5
