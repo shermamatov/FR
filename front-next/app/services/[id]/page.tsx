@@ -11,6 +11,7 @@ import icon1 from "@/assets/serv_icon1.svg";
 import icon2 from "@/assets/serv_icon2.svg";
 import HomeBlock3 from "@/app/homeblock/homeBlock3/HomeBlock3";
 import ServBlock9 from "./ServBlock9";
+import Link from "next/link";
 
 export default function ServiceSingle({ params }: PageNavProps) {
     // const post = use(fetchPostById(params.id));
@@ -18,9 +19,15 @@ export default function ServiceSingle({ params }: PageNavProps) {
     const services = use(fetchServices());
     const reviews = use(fetchReviews());
     function sliceServArr() {
-        let arra = [...service.children];
-        let a = arra.splice(0, 3);
-        return a;
+        if (service.children.length > 2) {
+            let arra = [...service.children];
+            let a = arra.splice(0, 3);
+            return a;
+        } else {
+            let arra = [...services.results];
+            let a = arra.splice(0, 3);
+            return a;
+        }
     }
     function sliceServArr2() {
         let arra = [...service.children];
@@ -103,7 +110,9 @@ export default function ServiceSingle({ params }: PageNavProps) {
                                 height={100}
                                 unoptimized
                             />
-                            <p>{item.name}</p>
+                            <Link href={`/services/${item.slug}`}>
+                                <p>{item.name}</p>
+                            </Link>
                         </div>
                     ))}
                 </div>
@@ -116,9 +125,11 @@ export default function ServiceSingle({ params }: PageNavProps) {
                     (item) =>
                         item.name != service.name && (
                             <div style={{ marginTop: "20px" }} key={item.id}>
-                                <p className="font-bold text-xl cursor-pointer">
-                                    {item.name}
-                                </p>
+                                <Link href={`/services/${item.slug}`}>
+                                    <p className="font-bold text-xl cursor-pointer">
+                                        {item.name}
+                                    </p>
+                                </Link>
                             </div>
                         )
                 )}

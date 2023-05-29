@@ -33,6 +33,7 @@
                         );
                     }
                     > h4 {
+                        font-family: "Montserrat";
                         margin-left: 20px;
                         font-size: calc(
                             12px + (18 - 12) * ((100vw - 800px) / (1400 - 800))
@@ -101,6 +102,7 @@
                 width: calc(
                     100px + (150 - 100) * ((100vw - 800px) / (1600 - 800))
                 );
+                max-width: 150px;
                 top: -10%;
                 left: -10%;
                 > img {
@@ -590,7 +592,9 @@
 }
 @media (min-width: 1600px) {
     .block1 {
+        margin-top: 100px;
         .block1_left {
+            margin-top: 40px;
             > h1 {
                 font-size: 54px;
             }
