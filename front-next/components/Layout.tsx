@@ -16,7 +16,7 @@ export function Layout({ children, location = true, className }: LayoutProps) {
 
     return (
         <>
-            <Header services={[]} currentLocation={{}} />
+            <Header />
             {/* <Header services={services} currLocation={currLocation} /> */}
             <main className={className}>{children}</main>
             {location && (

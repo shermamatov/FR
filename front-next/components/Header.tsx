@@ -6,35 +6,48 @@ import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
 import "./Header.scss";
-import { Service } from "@/api";
+import {
+    Location,
+    PaginationData,
+    Service,
+    fetchServices,
+    getCurrentLocation,
+} from "@/api";
 import { usePathname } from "next/navigation";
 import { AppProps } from "next/app";
 
-const Header = ({ services, currLocation }: any) => {
+const Header = () => {
     const pathname = usePathname();
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
-    // const locationTest = JSON.parse(localStorage.getItem("currentLocation"));
-
+    const [services, setServices] = useState<PaginationData<Service>>();
+    const [location, setLocation] = useState<Location>();
+    async function getData() {
+        setServices(await fetchServices());
+    }
+    async function getLocat() {
+        if (localStorage.getItem("currentLocation")) {
+            setLocation(JSON.parse(localStorage.getItem("currentLocation")));
+        } else {
+            setLocation(await getCurrentLocation());
+        }
+    }
+    useEffect(() => {
+        getData();
+        getLocat();
+    }, []);
+    // useEffect(() => {
+    //     getLocat();
+    // }, [localStorage.getItem("currentLocation")]);
     return (
         <div>
             <header>
                 <div className="upNavbar">
                     <div className="content">
                         <p>
-                            {/* {JSON.stringify(currLocation) === "{}" ? (
-                                "..."
-                            ) : locationTest === "" ? (
-                                <>
-                                    {currLocation.state.name},{" "}
-                                    {currLocation.location_name}
-                                </>
-                            ) : (
-                                <>
-                                    {locationTest.state.name},{" "}
-                                    {locationTest.location_name}
-                                </>
-                            )} */}
+                            {location
+                                ? `${location?.location_name} ${location?.state.name}`
+                                : "East Hollywood California"}
                             <Link href="/location" className="upn_change">
                                 change
                             </Link>
@@ -170,9 +183,9 @@ const Header = ({ services, currLocation }: any) => {
                                     // }}
                                 >
                                     <ul>
-                                        {services.results.length === 0
+                                        {services?.results.length === 0
                                             ? ""
-                                            : services.results.map(
+                                            : services?.results.map(
                                                   (item: Service) => (
                                                       <Link
                                                           href={`/services/${item.slug}`}
@@ -259,9 +272,9 @@ const Header = ({ services, currLocation }: any) => {
                                         main services
                                     </div>
                                 </Link>
-                                {services.results.length === 0
+                                {services?.results.length === 0
                                     ? ""
-                                    : services.results.map((item: Service) => (
+                                    : services?.results.map((item: Service) => (
                                           <Link
                                               href={`/services/${item.slug}`}
                                               key={item.id}
