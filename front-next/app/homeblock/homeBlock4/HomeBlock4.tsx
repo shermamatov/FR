@@ -1,10 +1,20 @@
-import { fetchPhotos } from "@/api";
-import { use } from "react";
+"use client";
+import { PaginationData, Photo, fetchPhotos, getPaggPage } from "@/api";
+import { use, useEffect, useState } from "react";
 import "./block4.css";
 import Image from "next/image";
 
 export default function HomeBlock4() {
-    const photos = use(fetchPhotos(9));
+    // const photos = use(fetchPhotos(9));
+    const [photos, setPhotos] = useState<PaginationData<Photo>>();
+    const [currentPage, setCurrentPage] = useState(0);
+    async function getData(limit = 3, offset = 0) {
+        setPhotos(await fetchPhotos(limit, offset));
+    }
+
+    useEffect(() => {
+        getData(3, 3 * currentPage);
+    }, [currentPage]);
 
     return (
         <div className="content">
@@ -29,8 +39,17 @@ export default function HomeBlock4() {
                         </div>
                     ))}
                 </div>
-                <div className="paggination d-flex">
-                    <button className="prev__btn btn">
+                <div className="paggination flex">
+                    <button
+                        className={`prev__btn btn ${
+                            currentPage <= 0 && "noActive"
+                        }`}
+                        onClick={() =>
+                            setCurrentPage(
+                                currentPage < 0 ? currentPage : currentPage - 1
+                            )
+                        }
+                    >
                         <svg
                             width="12"
                             height="24"
@@ -44,18 +63,39 @@ export default function HomeBlock4() {
                             />
                         </svg>
                     </button>
-                    <div className="d-flex pagg_numbers">
-                        <p className="pagg__number">1</p>
-                        <p className="pagg__number">2</p>
-                        <p className="pagg__number">3</p>
-                        <p className="pagg__number">.</p>
-                        <p className="pagg__number">.</p>
-                        <p className="pagg__number">.</p>
-                        <p className="pagg__number">.</p>
-                        <p className="pagg__number">.</p>
-                        <p className="pagg__number">16</p>
+                    <div className="flex pagg_numbers">
+                        {getPaggPage(photos?.count, 3).map((item: any) => (
+                            <p
+                                onClick={() => setCurrentPage(item)}
+                                key={item}
+                                className="pagg__number"
+                            >
+                                {item != ". . ." ? item + 1 : item}
+                            </p>
+                        ))}
+                        {/* <p className="pagg__number">1</p>
+                    <p className="pagg__number">2</p>
+                    <p className="pagg__number">3</p>
+                    <p className="pagg__number">.</p>
+                    <p className="pagg__number">.</p>
+                    <p className="pagg__number">.</p>
+                    <p className="pagg__number">.</p>
+                    <p className="pagg__number">.</p>
+                    <p className="pagg__number">16</p> */}
                     </div>
-                    <button className="next__btn btn">
+                    <button
+                        className={`next__btn btn ${
+                            currentPage >= Math.ceil(photos?.count / 3) - 1 &&
+                            "noActive"
+                        } `}
+                        onClick={() => {
+                            setCurrentPage(
+                                currentPage >= Math.ceil(photos?.count / 3) - 1
+                                    ? currentPage
+                                    : currentPage + 1
+                            );
+                        }}
+                    >
                         <svg
                             width="12"
                             height="24"
