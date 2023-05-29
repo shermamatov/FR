@@ -165,7 +165,13 @@ export async function createBooking(payload: Booking): Promise<Service> {
     return res.json();
 }
 
+export let currentLocation = {
+
+};
+
 export async function getCurrentLocation(): Promise<Location> {
     const res = await fetch(`${API_URL}/location/find/`);
+
     return res.json();
+
 }
