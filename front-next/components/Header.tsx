@@ -6,12 +6,13 @@ import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
 import "./Header.scss";
-import { Photo, Service, fetchServices } from "@/api";
+import { Service, currentLocation, getCurrentLocation} from "@/api";
 import { usePathname } from "next/navigation";
 import { AppProps } from "next/app";
 
-const Header = ({ services }: any) => {
+const Header = ({ services, currLocation }: any) => {
     const pathname = usePathname();
+
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
     useEffect(() => {
@@ -23,9 +24,15 @@ const Header = ({ services }: any) => {
                 <div className="upNavbar">
                     <div className="content">
                         <p>
-                            73 Canal Street, California, LA
-                            <Link href="/location">
-                                <span className="upn_change">change</span>
+                            {
+                                JSON.stringify(currLocation) === '{}'
+                                ? '...'
+                                : <>
+ { currLocation.state.name}, {currLocation.location_name}
+                                </>
+                            }
+                            <Link href="/location" className="upn_change">
+                                change
                             </Link>
                         </p>
                         <h3>
