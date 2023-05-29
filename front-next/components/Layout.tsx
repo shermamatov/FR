@@ -11,13 +11,13 @@ interface LayoutProps extends PropsWithChildren {
 }
 
 export function Layout({ children, location = true, className }: LayoutProps) {
-    const currLocation = use(getCurrentLocation());
-    const services = use(fetchServices());
+    // const currLocation = use(getCurrentLocation());
+    // const services = use(fetchServices());
 
     return (
         <>
-            <Header services={services} currLocation={currLocation} />
-
+            <Header services={[]} currentLocation={{}} />
+            {/* <Header services={services} currLocation={currLocation} /> */}
             <main className={className}>{children}</main>
             {location && (
                 <section>
