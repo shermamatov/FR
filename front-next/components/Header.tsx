@@ -6,39 +6,35 @@ import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
 import "./Header.scss";
-import { Service, currentLocation, getCurrentLocation } from "@/api";
+import { Service } from "@/api";
 import { usePathname } from "next/navigation";
 import { AppProps } from "next/app";
 
 const Header = ({ services, currLocation }: any) => {
     const pathname = usePathname();
-
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
-    const locationTest = JSON.parse(localStorage.getItem('currentLocation'))
+    // const locationTest = JSON.parse(localStorage.getItem("currentLocation"));
 
-    useEffect(() => {
-        // serServices(fetchServices());
-    }, []);
     return (
         <div>
             <header>
                 <div className="upNavbar">
                     <div className="content">
                         <p>
-                            {JSON.stringify(currLocation) === "{}" ? (
+                            {/* {JSON.stringify(currLocation) === "{}" ? (
                                 "..."
-                            ) :locationTest === "" ? (
+                            ) : locationTest === "" ? (
                                 <>
                                     {currLocation.state.name},{" "}
                                     {currLocation.location_name}
                                 </>
-                            ):(
+                            ) : (
                                 <>
                                     {locationTest.state.name},{" "}
                                     {locationTest.location_name}
                                 </>
-                            )}
+                            )} */}
                             <Link href="/location" className="upn_change">
                                 change
                             </Link>

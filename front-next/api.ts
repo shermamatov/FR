@@ -165,13 +165,19 @@ export async function createBooking(payload: Booking): Promise<Service> {
     return res.json();
 }
 
-export let currentLocation = {
-
-};
+export let currentLocation = {};
 
 export async function getCurrentLocation(): Promise<Location> {
     const res = await fetch(`${API_URL}/location/find/`);
-    
     return res.json();
-
+}
+export function getPaggPage(count = 0, page = 1) {
+    let num = Math.ceil(count / page);
+    let arr: any = [];
+    for (let i = 0; i < num; i++) {
+        arr.push(i);
+    }
+    arr.splice(-1, 0, ". . .");
+    // console.log(arr);
+    return arr;
 }
