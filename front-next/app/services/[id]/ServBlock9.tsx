@@ -94,6 +94,7 @@ const ServBlock9 = ({ reviews }: any) => {
                                     height={100}
                                     src={item.image1 ? item.image1 : img1}
                                     alt=""
+                                    unoptimized
                                 />
                                 <h5>{item.name}</h5>
                                 <div>
@@ -119,6 +120,7 @@ const ServBlock9 = ({ reviews }: any) => {
                                                 : img1
                                         }
                                         alt=""
+                                        unoptimized
                                     />
                                     <h5>{reviews.results[0].name}</h5>
                                     <div>
@@ -141,6 +143,7 @@ const ServBlock9 = ({ reviews }: any) => {
                                         height={100}
                                         src={item.image1 ? item.image1 : img3}
                                         alt=""
+                                        unoptimized
                                     />
                                     <h5>{item.name}</h5>
                                     <div>

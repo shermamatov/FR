@@ -176,7 +176,9 @@ const Header = ({ services, currLocation }: any) => {
                                                           href={`/services/${item.slug}`}
                                                           key={item.id}
                                                       >
-                                                          <li>{item.name}</li>
+                                                          <li className="mb-5">
+                                                              {item.name}
+                                                          </li>
                                                       </Link>
                                                   )
                                               )}

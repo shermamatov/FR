@@ -1,4 +1,4 @@
-import { fetchServiceById, fetchReviews } from "@/api";
+import { fetchServiceById, fetchReviews, fetchServices } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
 import { use } from "react";
@@ -15,6 +15,7 @@ import ServBlock9 from "./ServBlock9";
 export default function ServiceSingle({ params }: PageNavProps) {
     // const post = use(fetchPostById(params.id));
     const service = use(fetchServiceById(params.id));
+    const services = use(fetchServices());
     const reviews = use(fetchReviews());
     function sliceServArr() {
         let arra = [...service.children];
@@ -108,18 +109,19 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 </div>
             </section>
             <section
-                className="content flex mt-10 cursor-pointer pt-10 pb-16"
+                className="content mt-10 pt-10 pb-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid justify-between gap-2.5"
                 style={{ width: "100%" }}
             >
-                {sliceServArr2().map((item) => (
-                    <div
-                        style={{ width: "100%" }}
-                        className="flex justify-between"
-                        key={item.id}
-                    >
-                        <p className="font-bold text-xl">{item.name}</p>
-                    </div>
-                ))}
+                {services.results.map(
+                    (item) =>
+                        item.name != service.name && (
+                            <div style={{ marginTop: "20px" }} key={item.id}>
+                                <p className="font-bold text-xl cursor-pointer">
+                                    {item.name}
+                                </p>
+                            </div>
+                        )
+                )}
             </section>
             <section className="servBlock3">
                 <div className="content srv3">
