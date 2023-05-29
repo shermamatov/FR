@@ -58,7 +58,7 @@ const ServBlock9 = ({ reviews }: any) => {
 
     return (
         <div className="block7_main mb-20">
-            <div className="content">
+            <div className="">
                 <h1>Words From Customers</h1>
                 <div className="text_review">
                     <Slider {...settings}>
@@ -105,7 +105,7 @@ const ServBlock9 = ({ reviews }: any) => {
                     </Slider>
                 </div>
 
-                <div className="video_review">
+                <div className="video_review content">
                     <div className="video_left">
                         <div className="video_left_block">
                             {reviews && reviews.results.length > 0 ? (
