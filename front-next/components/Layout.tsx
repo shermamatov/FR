@@ -13,7 +13,6 @@ interface LayoutProps extends PropsWithChildren {
 export function Layout({ children, location = true, className }: LayoutProps) {
     const currLocation = use(getCurrentLocation());
     const services = use(fetchServices());
-    console.log(services);
 
     return (
         <>

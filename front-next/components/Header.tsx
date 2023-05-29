@@ -85,8 +85,6 @@ const Header = ({ services, currLocation }: any) => {
                                     onMouseOver={(e) => {
                                         setModal(true);
                                         e.stopPropagation();
-                                        console.log("timur");
-                                        console.log(modal);
                                     }}
                                     // onMouseLeave={() => setModal(false)}
                                 >

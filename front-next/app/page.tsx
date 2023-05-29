@@ -8,13 +8,13 @@ import HomeBlock4 from "./homeblock/homeBlock4/HomeBlock4";
 import HomeBlock5 from "./homeblock/homeBlock5/HomeBlock5";
 import HomeBlock6 from "./homeblock/homeBlock6/HomeBlock6";
 import HomeBlock7 from "./homeblock/homeBlock7/HomeBlock7";
-import { fetchReviews } from "@/api";
+import { fetchBlog, fetchReviews } from "@/api";
 import ServBlock9 from "./services/[id]/ServBlock9";
 import { use } from "react";
 
 export default function Home() {
     const reviews = use(fetchReviews());
-
+    const blogs = use(fetchBlog());
     return (
         <Layout>
             <HomeBlock1 />
@@ -24,7 +24,7 @@ export default function Home() {
             <HomeBlock5 />
             <HomeBlock6 />
             <ServBlock9 reviews={reviews} />
-            <Blog data={[]} />
+            <Blog data={blogs.results} />
         </Layout>
     );
 }
