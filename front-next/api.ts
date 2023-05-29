@@ -171,7 +171,7 @@ export let currentLocation = {
 
 export async function getCurrentLocation(): Promise<Location> {
     const res = await fetch(`${API_URL}/location/find/`);
-
+    
     return res.json();
 
 }

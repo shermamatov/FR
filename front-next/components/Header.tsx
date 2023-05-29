@@ -15,6 +15,8 @@ const Header = ({ services, currLocation }: any) => {
 
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
+    const locationTest = JSON.parse(localStorage.getItem('currentLocation'))
+
     useEffect(() => {
         // serServices(fetchServices());
     }, []);
@@ -26,10 +28,15 @@ const Header = ({ services, currLocation }: any) => {
                         <p>
                             {JSON.stringify(currLocation) === "{}" ? (
                                 "..."
-                            ) : (
+                            ) :locationTest === "" ? (
                                 <>
                                     {currLocation.state.name},{" "}
                                     {currLocation.location_name}
+                                </>
+                            ):(
+                                <>
+                                    {locationTest.state.name},{" "}
+                                    {locationTest.location_name}
                                 </>
                             )}
                             <Link href="/location" className="upn_change">
