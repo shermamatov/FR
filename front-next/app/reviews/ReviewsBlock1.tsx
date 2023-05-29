@@ -1,110 +1,114 @@
-"use client"
-import Image from 'next/image';
-import starIcon from './img/star-icon.svg';
-import circleImg from './img/circle-img.svg';
-import bigImg from './img/bg.jpg';
-import ReviewsWritePopup from './ReviewsPopup/ReviewsWritePopup/ReviewsWritePopup';
+"use client";
+import Image from "next/image";
+import starIcon from "./img/star-icon.svg";
+import circleImg from "./img/circle-img.svg";
+import bigImg from "./img/bg.jpg";
+import ReviewsWritePopup from "./ReviewsPopup/ReviewsWritePopup/ReviewsWritePopup";
 
-export default function ReviewsBlock1 ({services}){
+export default function ReviewsBlock1({ services }) {
+    function showReviewsWritePopup() {
+        let popup = document.getElementById("reviewsWritePopup");
+        popup.className += " reviewsWritePopup-show";
+    }
 
-  function showReviewsWritePopup (){
-    let popup = document.getElementById('reviewsWritePopup');
-    popup.className += ' reviewsWritePopup-show'
-  }
+    return (
+        <div className="reviewsBlock1">
+            <ReviewsWritePopup services={services} />
+            <div className="content">
+                <div className="grid grid-cols-2">
+                    <div>
+                        <h1 className="reviewsBlock1_subtitle">Review</h1>
+                        <h2>Overall Rating from 129 Reviews</h2>
+                        <div className="reviewsBlock1_stars">
+                            <div className="reviewsBlock1_stars_icon">
+                                <Image src={starIcon} alt="" />
+                                <Image src={starIcon} alt="" />
+                                <Image src={starIcon} alt="" />
+                                <Image src={starIcon} alt="" />
+                                <Image src={starIcon} alt="" />
+                            </div>
+                            <h4 className="reviewsBlock1_stars_count">
+                                5.0/4.7
+                            </h4>
+                        </div>
+                        <p className="reviewsBlock1_text">
+                            95% of clients recommend us
+                        </p>
+                        <div className="reviewsBlock1_raiting">
+                            <div className="reviewsBlock1_raiting_item">
+                                <p className="reviewsBlock1_raiting_item_left">
+                                    5 star
+                                </p>
+                                <div className="reviewsBlock1_raiting_item_line"></div>
+                                <p className="reviewsBlock1_raiting_item_right">
+                                    (120)
+                                </p>
+                            </div>
 
+                            <div className="reviewsBlock1_raiting_item">
+                                <p className="reviewsBlock1_raiting_item_left">
+                                    4 star
+                                </p>
+                                <div className="reviewsBlock1_raiting_item_line"></div>
+                                <p className="reviewsBlock1_raiting_item_right">
+                                    (0)
+                                </p>
+                            </div>
 
-     return(
-        <div className='reviewsBlock1'>
-          <ReviewsWritePopup services={services}/>
-          <div className="content">
-        <div className="grid grid-cols-2">
-          <div>
+                            <div className="reviewsBlock1_raiting_item">
+                                <p className="reviewsBlock1_raiting_item_left">
+                                    3 star
+                                </p>
+                                <div className="reviewsBlock1_raiting_item_line"></div>
+                                <p className="reviewsBlock1_raiting_item_right">
+                                    (0)
+                                </p>
+                            </div>
 
-            <h1 className="reviewsBlock1_subtitle">Review</h1>
-            <h2>Overall Rating  from 129 Reviews</h2>
-            <div className="reviewsBlock1_stars">
-              <div className="reviewsBlock1_stars_icon">
-                <Image src={starIcon} alt="" />
-                <Image src={starIcon} alt="" />
-                <Image src={starIcon} alt="" />
-                <Image src={starIcon} alt="" />
-                <Image src={starIcon} alt="" />
-              </div>
-              <h4 className="reviewsBlock1_stars_count">5.0/4.7</h4>
+                            <div className="reviewsBlock1_raiting_item">
+                                <p className="reviewsBlock1_raiting_item_left">
+                                    2 star
+                                </p>
+                                <div className="reviewsBlock1_raiting_item_line"></div>
+                                <p className="reviewsBlock1_raiting_item_right">
+                                    (0)
+                                </p>
+                            </div>
+
+                            <div className="reviewsBlock1_raiting_item">
+                                <p className="reviewsBlock1_raiting_item_left">
+                                    1 star
+                                </p>
+                                <div className="reviewsBlock1_raiting_item_line"></div>
+                                <p className="reviewsBlock1_raiting_item_right">
+                                    (0)
+                                </p>
+                            </div>
+                        </div>
+
+                        <button
+                            className="reviewsBlock1_btn"
+                            id="reviewsBlock1_btn"
+                            onClick={() => showReviewsWritePopup()}
+                        >
+                            Write review
+                        </button>
+                    </div>
+
+                    <div className="reviewsBlock1_images">
+                        <Image
+                            src={circleImg}
+                            className="reviewsBlock1_circleImg"
+                            alt=""
+                        />
+                        <Image
+                            src={bigImg}
+                            className="reviewsBlock1_bigImg"
+                            alt=""
+                        />
+                    </div>
+                </div>
             </div>
-            <p className="reviewsBlock1_text">95% of clients recommend us</p>
-            <div className="reviewsBlock1_raiting">
-
-              <div className="reviewsBlock1_raiting_item">
-                <p className="reviewsBlock1_raiting_item_left">
-                  5 star
-                </p>
-                <div className="reviewsBlock1_raiting_item_line"></div>
-                <p className="reviewsBlock1_raiting_item_right">
-                  (120)
-                </p>
-              </div>
-
-              <div className="reviewsBlock1_raiting_item">
-                <p className="reviewsBlock1_raiting_item_left">
-                  4 star
-                </p>
-                <div className="reviewsBlock1_raiting_item_line"></div>
-                <p className="reviewsBlock1_raiting_item_right">
-                  (0)
-                </p>
-              </div>
-
-              <div className="reviewsBlock1_raiting_item">
-                <p className="reviewsBlock1_raiting_item_left">
-                  3 star
-                </p>
-                <div className="reviewsBlock1_raiting_item_line"></div>
-                <p className="reviewsBlock1_raiting_item_right">
-                  (0)
-                </p>
-              </div>
-
-              <div className="reviewsBlock1_raiting_item">
-                <p className="reviewsBlock1_raiting_item_left">
-                  2 star
-                </p>
-                <div className="reviewsBlock1_raiting_item_line"></div>
-                <p className="reviewsBlock1_raiting_item_right">
-                  (0)
-                </p>
-              </div>
-
-              <div className="reviewsBlock1_raiting_item">
-                <p className="reviewsBlock1_raiting_item_left">
-                  1 star
-                </p>
-                <div className="reviewsBlock1_raiting_item_line"></div>
-                <p className="reviewsBlock1_raiting_item_right">
-                  (0)
-                </p>
-              </div>
-
-            </div>
-
-            <button
-              className="reviewsBlock1_btn"
-              id="reviewsBlock1_btn"
-              onClick={()=> showReviewsWritePopup()}
-            >
-              Write review
-            </button>
-
-          </div>
-
-          <div className='reviewsBlock1_images'>
-           
-            <Image src={circleImg} className='reviewsBlock1_circleImg' alt="" />
-            <Image src={bigImg} className='reviewsBlock1_bigImg' alt="" />
-          </div>
-
         </div>
-</div>
-      </div>
-     )
+    );
 }

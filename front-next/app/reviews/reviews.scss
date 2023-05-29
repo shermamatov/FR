@@ -1,7 +1,5 @@
 .reviewsBlock1 {
-
-
-    &_images{
+    &_images {
         position: relative;
     }
     &_circleImg {
@@ -13,14 +11,13 @@
         border-radius: 50%;
     }
 
-    &_bigImg{
+    &_bigImg {
         width: 120%;
         height: 500px;
-        object-fit:cover;
+        object-fit: cover;
     }
 
     &_subtitle {
-
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
@@ -28,14 +25,12 @@
         color: #a5a582;
     }
 
-
     &_stars {
         display: flex;
         margin-top: 27px;
         column-gap: 30px;
 
         &_count {
-
             font-weight: 800;
             font-size: 30px;
             line-height: 37px;
@@ -98,12 +93,7 @@
 
 .reviewsBlock2 {
     p {
-
     }
-
-
-
-
 
     &_btns {
         display: flex;
@@ -146,16 +136,19 @@
 
         &_img {
             width: 100%;
-            height: 280px;
+            height: 200px;
+            object-fit: cover;
+            background-size: cover;
         }
 
         &_title {
-
             font-weight: 600;
             font-size: 25px;
             line-height: 40px;
             color: #2a2a2a;
             margin-top: 15px;
+            font-family: "Montserrat";
+            margin-left: 5px;
         }
 
         &_raiting {
@@ -164,7 +157,6 @@
             align-items: center;
 
             &_count {
-
                 font-weight: 700;
                 font-size: 25px;
                 line-height: 40px;
@@ -173,7 +165,6 @@
         }
 
         &_btn {
-
             font-weight: 500;
             font-size: 14px;
             line-height: 17px;
@@ -207,7 +198,6 @@
             column-gap: 37px;
 
             &_item {
-
                 font-weight: 400;
                 font-size: 16px;
                 line-height: 20px;
@@ -255,8 +245,8 @@
         flex-direction: column;
         justify-content: space-between;
         height: 300px;
-        &_text {
 
+        &_text {
             font-weight: 500;
             font-size: 20px;
             line-height: 40px;
@@ -269,13 +259,76 @@
         }
 
         &_name {
-
             font-weight: 600;
             font-size: 25px;
             line-height: 40px;
             color: #f2994a;
+            font-family: "Montserrat";
             margin-top: 15px;
         }
+    }
+}
+
+.paggination {
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+.btn {
+    background-color: transparent;
+    border: none;
+    border: 1px dashed #a5a582;
+    border-radius: 100%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // padding: 10px;
+}
+.btn svg path {
+    transition: fill 0.5s;
+}
+.noActive svg path {
+    fill: #a5a582;
+}
+.prev__btn {
+    transform: rotate(180deg);
+}
+.pagg_numbers {
+    margin: 0 20px;
+}
+.pagg__number {
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: color 0.5s;
+}
+.pagg__number:hover {
+    color: #a5a582;
+}
+@media (max-width: 550px) {
+    .paggination {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+    .btn {
+        width: 50px;
+        height: 50px;
+        > svg {
+            width: 10px;
+            height: 20px;
+        }
+    }
+    .pagg_numbers {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+        // margin: 0;
+    }
+    .pagg__number {
+        margin: 0;
     }
 }
 
@@ -400,7 +453,6 @@
         padding-bottom: 180px;
 
         &_title {
-
             font-weight: 700;
             font-size: 22px;
             line-height: 24px;
