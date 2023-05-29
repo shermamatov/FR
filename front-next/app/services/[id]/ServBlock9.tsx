@@ -55,7 +55,6 @@ const ServBlock9 = ({ reviews }: any) => {
         // }
         setVideoReviews(reviews.results.slice(1, 5));
     }, [reviews]);
-    console.log(reviews);
 
     return (
         <div className="block7_main mb-20">
