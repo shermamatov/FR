@@ -6,7 +6,7 @@ import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
 import "./Header.scss";
-import { Service, currentLocation, getCurrentLocation} from "@/api";
+import { Service, currentLocation, getCurrentLocation } from "@/api";
 import { usePathname } from "next/navigation";
 import { AppProps } from "next/app";
 
@@ -24,13 +24,14 @@ const Header = ({ services, currLocation }: any) => {
                 <div className="upNavbar">
                     <div className="content">
                         <p>
-                            {
-                                JSON.stringify(currLocation) === '{}'
-                                ? '...'
-                                : <>
- { currLocation.state.name}, {currLocation.location_name}
+                            {JSON.stringify(currLocation) === "{}" ? (
+                                "..."
+                            ) : (
+                                <>
+                                    {currLocation.state.name},{" "}
+                                    {currLocation.location_name}
                                 </>
-                            }
+                            )}
                             <Link href="/location" className="upn_change">
                                 change
                             </Link>
@@ -229,9 +230,48 @@ const Header = ({ services, currLocation }: any) => {
                             <div className="burger__link">ABOUT US</div>
                         </Link>
 
-                        <Link href="/services">
-                            <div className="burger__link serv">SERVICES </div>
+                        <Link href="">
+                            <div
+                                className="burger__link serv"
+                                onClick={() => setModal(!modal)}
+                            >
+                                SERVICES{" "}
+                                <Image
+                                    unoptimized
+                                    className="mt-[10px]"
+                                    style={{
+                                        transform: `${
+                                            modal
+                                                ? "rotate(-360deg)"
+                                                : "rotate(-180deg)"
+                                        }`,
+                                    }}
+                                    src={strela}
+                                    alt=""
+                                />
+                            </div>
                         </Link>
+                        {modal && (
+                            <div>
+                                <Link href={`/services/`}>
+                                    <div className="burger__link font-medium text-base ml-14">
+                                        main services
+                                    </div>
+                                </Link>
+                                {services.results.length === 0
+                                    ? ""
+                                    : services.results.map((item: Service) => (
+                                          <Link
+                                              href={`/services/${item.slug}`}
+                                              key={item.id}
+                                          >
+                                              <div className="burger__link font-medium text-base ml-14">
+                                                  {item.name}
+                                              </div>
+                                          </Link>
+                                      ))}
+                            </div>
+                        )}
 
                         <Link href="/reviews">
                             <div className="burger__link">REVIEWS</div>
@@ -246,7 +286,7 @@ const Header = ({ services, currLocation }: any) => {
                         </Link>
 
                         <Link href="/book_now">
-                            <button className="book_btn">
+                            <button className="book_btn ml-10 mt-5">
                                 Book online now
                             </button>
                         </Link>
