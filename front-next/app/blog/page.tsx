@@ -6,12 +6,15 @@ import { use } from "react";
 import bath from "@/assets/bath.png";
 import "./blogPage.scss";
 import { relative } from "path";
+
 export default function Blog() {
     const posts = use(fetchBlog());
+    
     function getMiniData() {
         const arr = [...posts.results];
-        return arr.slice(0, 4);
+        return arr.slice(2, );
     }
+
     return (
         <Layout className="content">
             <div className={"flex mb-8"}>
