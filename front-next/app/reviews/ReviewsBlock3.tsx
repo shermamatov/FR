@@ -29,7 +29,7 @@ export default function ReviewsBlock3() {
     return (
         <div className="reviewsBlock3">
             <div className="content">
-                <div className="grid grid-cols-3 gap-x-4 gap-y-9">
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-9">
                     {reviews?.results.map((item) => (
                         <div key={item.id}>
                             <div className="reviewsBlock3_card">
