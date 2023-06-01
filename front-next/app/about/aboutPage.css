@@ -53,6 +53,10 @@
     align-items: center;
 }
 
+.block1_desc h4 {
+    font-family: "Montserrat";
+}
+
 .block1 .block1_left .left_bottom_block .block1_desc .rating_block > img {
     width: calc(80px + (120 - 80) * ((100vw - 800px) / (1400 - 800)));
 }
