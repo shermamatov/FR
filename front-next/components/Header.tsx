@@ -46,7 +46,7 @@ const Header = () => {
                 <div className="upNavbar">
                     <div className="content">
                         <p>
-                            {location
+                            {location && JSON.stringify(location) !== '{}'
                                 ? `${location?.location_name} ${location?.state.name}`
                                 : "East Hollywood California"}
                             <Link href="/location" className="upn_change">
