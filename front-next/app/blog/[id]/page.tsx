@@ -1,7 +1,7 @@
 import { Post, fetchPostById } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
-import { use } from "react";
+import { use, useMemo } from "react";
 import twit from "@/assets/twit.png";
 import link from "@/assets/link.png";
 import share from "@/assets/share.png";
@@ -17,6 +17,15 @@ export default function BlogSingle({ params }: PageNavProps) {
         let a = arra.splice(0, 3);
         return a;
     }
+    const formatter = useMemo(
+        () =>
+            new Intl.DateTimeFormat("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+            }),
+        []
+    );
     return (
         <Layout className="content">
             <div>
@@ -63,7 +72,7 @@ export default function BlogSingle({ params }: PageNavProps) {
 
                     <h1>{post.title}</h1>
                     <p className="blogSingle_blogData">
-                        POSTED ON DECEMBER 2,2021
+                        POSTED ON {formatter.format(new Date(post.created_at))}
                     </p>
                     <p>{post.description}</p>
                     <Image
