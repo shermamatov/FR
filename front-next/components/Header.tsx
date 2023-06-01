@@ -39,6 +39,7 @@ const Header = () => {
   // useEffect(() => {
   //     getLocat();
   // }, [localStorage.getItem("currentLocation")]);
+  console.log(services);
   return (
     <div>
       <header>
@@ -168,7 +169,7 @@ const Header = () => {
               <button className="number_btn">
                 <a href="tel: +1 818 858 15 33">+1 818 858 15 33</a>
               </button>
-              <Link href="/book_now">
+              <Link href="/book">
                 <button className="book_btn">Book online now</button>
               </Link>
             </div>
