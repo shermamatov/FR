@@ -1,9 +1,13 @@
 import { Layout } from "@/components/Layout";
+import BooknowFirst from "./bookpopup/booknow/booknowFirst";
+import BooknowSecond from "./bookpopup/booknowSecond/booknowSecond";
 
 export default function Book() {
   return (
-    <Layout className="content">
-      <h1>Book now</h1>
+    <Layout className="">
+      {" "}
+      <BooknowFirst />
+      <BooknowSecond />
     </Layout>
   );
 }
