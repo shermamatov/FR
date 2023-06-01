@@ -176,6 +176,9 @@ export default function ServiceSingle({ params }: PageNavProps) {
       <section
         className="content mt-10 pt-10 pb-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid justify-between gap-2.5"
         style={{ width: "100%" }}>
+        <div style={{ marginTop: "20px" }} key={service.id}>
+          <p className="font-bold text-3xl underline">{service.name}</p>
+        </div>
         {services.results.map(
           (item) =>
             item.name != service.name && (
