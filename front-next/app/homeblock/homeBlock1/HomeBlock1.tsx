@@ -44,10 +44,7 @@ export default function HomeBlock1() {
                                 <Image src={yelp} alt="" />
                             </div>
                             <div className="btn_block1">
-                                <Link
-                                    href="/book"
-                                    className="btn-book px-12 text-lg"
-                                >
+                                <Link href="/book" className="btn-book px-12 ">
                                     book online now
                                 </Link>
                             </div>
