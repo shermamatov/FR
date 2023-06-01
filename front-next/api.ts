@@ -120,7 +120,7 @@ export async function fetchServices(
 }
 
 export async function fetchServiceById(id: number | string): Promise<Service> {
-    const res = await fetch(`${API_URL}/service/${id}`);
+    const res = await fetch(`${API_URL}/service/${id}/?for_location=<2724>`);
     return res.json();
 }
 
