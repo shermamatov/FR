@@ -6,8 +6,19 @@ import img1 from "@/assets/block7_img1.webp";
 import img3 from "@/assets/block7_img3.webp";
 import "./ServBlock9.scss";
 import Image from "next/image";
+import Rating from "@mui/material/Rating";
+import { styled } from "@mui/material";
 const ServBlock9 = ({ reviews }: any) => {
     const [videoReviews, setVideoReviews] = useState([]);
+    const StyledRating = styled(Rating)({
+        "& .MuiRating-iconFilled": {
+            color: "#f2994a",
+        },
+        "& .MuiRating-iconHover": {
+            color: "#ff3d47",
+        },
+    });
+
     const settings = {
         arrows: false,
         infinite: true,
@@ -72,7 +83,15 @@ const ServBlock9 = ({ reviews }: any) => {
                                 <div>
                                     <h5>{item.name}</h5>
                                     <div>
-                                        <Image src={rating} alt="" />
+                                        <StyledRating
+                                            name="read-only"
+                                            value={item.stars}
+                                            readOnly
+                                            precision={0.5}
+                                            sx={{
+                                                fontSize: "30px",
+                                            }}
+                                        />
                                         <p>{item.stars}</p>
                                     </div>
                                 </div>
@@ -97,7 +116,16 @@ const ServBlock9 = ({ reviews }: any) => {
                                 />
                                 <h5>{item.name}</h5>
                                 <div>
-                                    <Image src={rating} alt="" />
+                                    {/* <Image src={rating} alt="" /> */}
+                                    <StyledRating
+                                        name="read-only"
+                                        value={item.stars}
+                                        readOnly
+                                        precision={0.5}
+                                        sx={{
+                                            fontSize: "30px",
+                                        }}
+                                    />
                                     <p>{item.stars}</p>
                                 </div>
                             </div>
@@ -123,7 +151,16 @@ const ServBlock9 = ({ reviews }: any) => {
                                     />
                                     <h5>{reviews.results[0].name}</h5>
                                     <div>
-                                        <Image src={rating} alt="" />
+                                        {/* <Image src={rating} alt="" /> */}
+                                        <StyledRating
+                                            name="read-only"
+                                            value={reviews.results[0].stars}
+                                            readOnly
+                                            precision={0.5}
+                                            sx={{
+                                                fontSize: "30px",
+                                            }}
+                                        />
                                         <p>{reviews.results[0].stars}</p>
                                     </div>
                                 </>
@@ -146,7 +183,16 @@ const ServBlock9 = ({ reviews }: any) => {
                                     />
                                     <h5>{item.name}</h5>
                                     <div>
-                                        <Image src={rating} alt="" />
+                                        {/* <Image src={rating} alt="" /> */}
+                                        <StyledRating
+                                            name="read-only"
+                                            value={item.stars}
+                                            readOnly
+                                            precision={0.5}
+                                            sx={{
+                                                fontSize: "30px",
+                                            }}
+                                        />
                                         <p>{item.stars}</p>
                                     </div>
                                 </div>

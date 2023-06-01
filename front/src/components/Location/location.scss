@@ -1,5 +1,4 @@
 .location {
-
     .col {
         width: 20%;
         padding: 0 15px;
@@ -18,27 +17,27 @@
     }
 
     &_subtitle {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 700;
         font-size: 18px;
         line-height: 22px;
-        color: #F2994A;
+        color: #f2994a;
     }
 
     &_title {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 700;
         font-size: 50px;
         line-height: 61px;
-        color: #2A2A2A;
+        color: #2a2a2a;
     }
 
     &_input {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 400;
         font-size: 18px;
         line-height: 22px;
-        color: #2A2A2A;
+        color: #2a2a2a;
         width: 560px;
         padding: 17px;
         background-color: transparent;
@@ -53,20 +52,20 @@
     }
 
     &_block2 {
-        background: #FCF2E7;
+        background: #fcf2e7;
         padding: 95px 0;
 
         &_title {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 32px;
             line-height: 39px;
-            color: #2A2A2A;
+            color: #2a2a2a;
             margin-bottom: 80px;
         }
 
         &_item {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 600;
             font-size: 22px;
             line-height: 44px;
@@ -76,11 +75,10 @@
 
         &_bottomLine {
             margin-top: 60px;
-            border: 1px solid #A5A582;
+            border: 1px solid #a5a582;
         }
     }
 }
-
 
 @media screen and (max-width: 1400px) {
     .location .col {

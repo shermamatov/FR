@@ -4,7 +4,6 @@ import { useQuery } from "@tanstack/react-query";
 import "./latestAdaptive.css";
 import { fetchPosts } from "../../../../api";
 import { Link } from "react-router-dom";
-
 const LatestPost = () => {
     const { data = [] } = useQuery(["post"], fetchPosts);
 
