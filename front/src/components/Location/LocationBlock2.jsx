@@ -18,6 +18,7 @@ const LocationBlock2 = () => {
     useEffect(() => {
         setNestedList(createNestedList(locations, 20));
     }, [locations]);
+    console.log(nestedList);
     return (
         <section className="location_block2">
             <div className="container">
