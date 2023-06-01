@@ -12,7 +12,7 @@ footer a {
 
 .footer__wrapper {
     background-color: rgba(0, 0, 0, 0.9);
-    padding-top: 30px;
+    padding: 50px 0;
 }
 .container {
     align-items: center;
@@ -28,12 +28,12 @@ footer a {
 .row {
     flex-direction: row;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     text-align: left;
 }
 .col-md-4 {
     width: 100%;
-    padding: 50px;
+    margin-right: 20px;
 }
 .footer__wrapper .col-md-p-4 {
     cursor: pointer;
@@ -66,6 +66,7 @@ footer a {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 10px;
 }
 .okrug img {
     text-align: center;
@@ -74,8 +75,8 @@ footer a {
 }
 .main_icons {
     display: flex;
-    justify-content: space-around;
-    width: 60%;
+    // justify-content: space-around;
+    // width: 60%;
     margin-top: 5%;
 }
 .polosa {
@@ -122,7 +123,7 @@ footer a {
 }
 @media (max-width: 1250px) {
     .col-md-4-mini p {
-        width: 110%;
+        width: 100%;
     }
 }
 @media (max-width: 1200px) {
@@ -138,12 +139,12 @@ footer a {
         width: 220px;
     }
     .col-md-p {
-        width: 130%;
+        width: 100%;
     }
 }
 @media (max-width: 1024px) {
     .main_icons {
-        width: 110%;
+        width: 100%;
     }
 }
 @media (max-width: 900px) {
@@ -159,7 +160,7 @@ footer a {
         width: 80%;
     }
     .col-md-4 {
-        padding: 20px;
+        // padding: 20px;
         margin-top: 50px;
     }
     .main_icons {
