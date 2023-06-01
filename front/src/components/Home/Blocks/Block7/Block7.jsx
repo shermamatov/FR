@@ -9,6 +9,7 @@ import img3 from "../../../../images/block7_img3.webp";
 import { useChel } from "../../../../Contexts/ChelContext";
 import { useDispatch, useSelector } from "react-redux";
 import { getReviews } from "../../../../redux/reducers/app";
+
 const Block7 = () => {
     const dispatch = useDispatch();
     const reviews = useSelector((s) => s.app.reviews);
@@ -66,7 +67,7 @@ const Block7 = () => {
         console.log(reviews);
     }, [reviews]);
     return (
-        <div className="block7_main">
+        <div className="block7_main ">
             <h1>Words From Customers</h1>
             <div className="text_review">
                 <Slider {...settings}>
