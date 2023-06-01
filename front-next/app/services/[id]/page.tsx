@@ -1,3 +1,5 @@
+"use client";
+
 import { fetchServiceById, fetchReviews, fetchServices } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
@@ -21,9 +23,9 @@ import yelp from "@/assets/yelp.svg";
 import banner from "@/assets/banner.jpg";
 import krujok from "@/assets/block1Krug.png";
 import "../services.scss";
-
 export default function ServiceSingle({ params }: PageNavProps) {
   // const post = use(fetchPostById(params.id));
+
   const service = use(fetchServiceById(params.id));
   const services = use(fetchServices());
   const reviews = use(fetchReviews());
@@ -43,6 +45,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
     let a = arra.splice(3);
     return a;
   }
+  console.log(service);
+
   return (
     <Layout>
       <div>

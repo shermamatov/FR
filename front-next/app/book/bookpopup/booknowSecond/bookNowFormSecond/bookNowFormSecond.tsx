@@ -9,13 +9,12 @@ import {
     faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
-// import { useSelector } from "react-redux";
 
 const BookNowFormSecond = ({
-    //   changeLocalStorage,
+    setState,
     setFormData,
     formData,
-    //   setMessage,
+    setMessage,
 }) => {
     const [day, setDay] = useState({});
     const [dayOfWeek, setDayOfWeek] = useState("");
@@ -40,7 +39,7 @@ const BookNowFormSecond = ({
             "December",
         ];
         const days = [];
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 5; i++) {
             const date = moment().add(i, "days");
             days.push({
                 date: date.format("DD"),
@@ -48,8 +47,6 @@ const BookNowFormSecond = ({
                 month: monthList.indexOf(date.format("MMMM")),
             });
         }
-        console.log(days);
-
         return days;
     }
     const timeSlots = () => {
@@ -65,8 +62,6 @@ const BookNowFormSecond = ({
             };
             slots.push(slot);
         }
-        console.log(slots);
-
         return slots;
     };
 
@@ -77,7 +72,7 @@ const BookNowFormSecond = ({
         // dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
     };
     const settings2 = {
@@ -95,40 +90,38 @@ const BookNowFormSecond = ({
             return num;
         }
     };
-
     const bookNow = () => {
         const now = new Date();
+
         setFormData({
             ...formData,
             comment,
-            time: `${now.getFullYear()}-${formatNum(day.month + 1)}-${
-                day.date
-            }T${`${time}`.slice(0, 2)}:00:00`,
+            time: `${now.getFullYear()}-${formatNum(
+                day.month + 1
+            )}-${day.date}T${`${time}`.slice(0, 2)}:00:00`,
         });
         if (comment && day && time && month) {
+            console.log(`${now.getFullYear()}-${day.date}-${formatNum(
+                day.month + 1
+            )}T${`${time}`.slice(0, 2)}:00`);
+
             setLoading(true);
-            axios
-                .post("https://itek-dev.highcat.org/api/bookings/", {
-                    ...formData,
-                    comment,
-                    time: `${now.getFullYear()}-${day.date}-${formatNum(
-                        day.month + 1
-                    )}T${`${time}`.slice(0, 2)}:00`,
-                })
-                .then((response) => {
-                    console.log(response);
-                    setMessage("application sent");
-                })
-                .catch((error) => {
-                    console.log(error);
-                    setMessage(
-                        "An error has occurred. Try again or contact our call center"
-                    );
-                })
-                .finally(() => {
-                    changeLocalStorage(false);
-                    setLoading(false);
-                });
+            axios.post('https://itek-dev.highcat.org/api/bookings/', {
+                ...formData,
+                comment,
+                time: `${now.getFullYear()}-${day.date}-${formatNum(
+                    day.month + 1
+                )}T${`${time}`.slice(0, 2)}:00`,
+            }).then(response => {
+                console.log(response);
+                setMessage(response.data)
+            }).catch(error => {
+                console.log(error);
+                setMessage('An error has occurred. Try again or contact our call center')
+            }).finally(() => {
+                setState(false);
+                setLoading(false)
+            })
         }
     };
 
@@ -147,6 +140,7 @@ const BookNowFormSecond = ({
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <Slider {...settings}>
+
                     {dates.map((item, idx) => {
                         return (
                             <div key={idx}>

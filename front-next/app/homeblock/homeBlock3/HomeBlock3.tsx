@@ -9,7 +9,7 @@ import { useState } from "react";
 export default function HomeBlock3() {
     const [modal, setModal] = useState(false);
     return (
-        <div className="block3_main">
+        <div className="block3_main z-10">
             <div className="content">
                 {modal && (
                     <div
@@ -18,7 +18,7 @@ export default function HomeBlock3() {
                     >
                         <div
                             className="relative"
-                            style={{ padding: "30px 5%" }}
+                            style={{ padding: "40px 3%" }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             <Image
@@ -26,8 +26,8 @@ export default function HomeBlock3() {
                                     width: "40px",
                                     height: "40px",
                                     position: "absolute",
-                                    right: "4%",
-                                    top: "2%",
+                                    right: "2%",
+                                    top: "3%",
                                     cursor: "pointer",
                                 }}
                                 onClick={() => setModal(false)}
@@ -77,7 +77,7 @@ export default function HomeBlock3() {
                             sales.
                         </p>
                         <button
-                            className="btn_variant"
+                            className="btn_variant z-30"
                             onClick={() => setModal(true)}
                         >
                             Read more
