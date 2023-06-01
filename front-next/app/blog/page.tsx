@@ -2,19 +2,27 @@ import { fetchBlog } from "@/api";
 import { Layout } from "@/components/Layout";
 import Image from "next/image";
 import Link from "next/link";
-import { use } from "react";
+import { use, useMemo } from "react";
 import bath from "@/assets/bath.png";
 import "./blogPage.scss";
 import { relative } from "path";
 
 export default function Blog() {
     const posts = use(fetchBlog());
-    
+
     function getMiniData() {
         const arr = [...posts.results];
-        return arr.slice(2, );
+        return arr.slice(2);
     }
-
+    const formatter = useMemo(
+        () =>
+            new Intl.DateTimeFormat("en-US", {
+                day: "numeric",
+                month: "short",
+                year: "numeric",
+            }),
+        []
+    );
     return (
         <Layout className="content">
             <div className={"flex mb-8"}>
@@ -99,7 +107,7 @@ export default function Blog() {
                                 lineHeight: "15px",
                             }}
                         >
-                            December 30, 2019
+                            {formatter.format(new Date(item.created_at))}
                         </span>
                         <h3>{item.title}</h3>
                         <p>{item.description}</p>
@@ -140,7 +148,7 @@ export default function Blog() {
                                 fontSize: "12px",
                             }}
                         >
-                            December 30, 2019
+                            {formatter.format(new Date(item.created_at))}
                         </span>
                         <h3>{item.title}</h3>
                         <p>
