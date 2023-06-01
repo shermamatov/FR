@@ -39,7 +39,7 @@ const Header = () => {
   // useEffect(() => {
   //     getLocat();
   // }, [localStorage.getItem("currentLocation")]);
-  console.log(services);
+  // console.log(services);
   return (
     <div>
       <header>
