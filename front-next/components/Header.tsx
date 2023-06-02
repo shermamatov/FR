@@ -5,6 +5,7 @@ import React, { use, useEffect, useState } from "react";
 import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
+import axios from 'axios';
 import "./Header.scss";
 import {
   Location,
@@ -23,6 +24,7 @@ const Header = () => {
   const [modal, setModal] = useState(false);
   const [services, setServices] = useState<PaginationData<Service>>();
   const [location, setLocation] = useState<Location>();
+  const [currentLocation, setCurrentLocation] = useState({});
   async function getData() {
     setServices(await fetchServices());
   }
@@ -43,11 +45,12 @@ const Header = () => {
     if (location) {
       localStorage.setItem("currentLocation", JSON.stringify(location));
       localStorage.setItem("locationId", JSON.stringify(location.id));
+    } else{
+      axios('https://itek-dev.highcat.org/api/location/find/')
+      .then(({data})=> setCurrentLocation(data))
     }
   }, []);
-  // useEffect(() => {
-  //   getLocat();
-  // }, [localStorage.getItem("currentLocation")]);
+
   return (
     <div>
       <header>
@@ -56,7 +59,10 @@ const Header = () => {
             <p>
               {location
                 ? `${location?.location_name} ${location?.state.name}`
-                : "East Hollywood California"}
+                : JSON.stringify(currentLocation) !== '{}'
+                ? `${currentLocation?.currentLocation_name} ${currentLocation?.state.name}`
+                : ''
+                }
               <Link href="/location" className="upn_change">
                 change
               </Link>
