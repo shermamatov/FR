@@ -1,10 +1,8 @@
-"use client";
-
 import { fetchServiceById, fetchReviews, fetchServices } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
 import { use } from "react";
-import ServBlock1 from "../servBlock1";
+// import ServBlock1 from "../../servBlock1";
 import altBefore from "@/assets/services_before.jpg";
 import altAfter from "@/assets/services_after.jpg";
 import Image from "next/image";
@@ -12,7 +10,7 @@ import bath2 from "@/assets/bath.png";
 import icon1 from "@/assets/serv_icon1.svg";
 import icon2 from "@/assets/serv_icon2.svg";
 import HomeBlock3 from "@/app/homeblock/homeBlock3/HomeBlock3";
-import ServBlock9 from "./ServBlock9";
+import ServBlock9 from "../ServBlock9";
 import Link from "next/link";
 import React from "react";
 import galochkaIcon from "@/assets/galochkaIcon.svg";
@@ -22,13 +20,16 @@ import facebook from "@/assets/facebook.svg";
 import yelp from "@/assets/yelp.svg";
 import banner from "@/assets/banner.jpg";
 import krujok from "@/assets/block1Krug.png";
-import "../services.scss";
+import "../../services.scss";
+import LocationChecker from "@/components/LocationChecker";
 export default function ServiceSingle({ params }: PageNavProps) {
   // const post = use(fetchPostById(params.id));
-
   const service = use(fetchServiceById(params.id));
   const services = use(fetchServices());
   const reviews = use(fetchReviews());
+
+  // console.log(locationId);
+
   function sliceServArr() {
     if (service.children.length > 2) {
       let arra = [...service.children];
@@ -45,7 +46,6 @@ export default function ServiceSingle({ params }: PageNavProps) {
     let a = arra.splice(3);
     return a;
   }
-  console.log(service);
 
   return (
     <Layout>
@@ -57,7 +57,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 SERVICES
               </p>
               <h1 className="bord w-full md:w-[50%] mb-4">{service.name}</h1>
-              <p className="w-full md:w-[50%]">{service.description}</p>
+              <LocationChecker params={params} />
+
               <div className="left_bottom_block">
                 <div className="block1_desc">
                   <div className="bord">
@@ -170,7 +171,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 height={100}
                 unoptimized
               />
-              <Link href={`/services/${item.slug}`}>
+              <Link href={`/services/${item.slug}/${params.locId}`}>
                 <p>{item.name}</p>
               </Link>
             </div>
@@ -187,7 +188,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
           (item) =>
             item.name != service.name && (
               <div style={{ marginTop: "20px" }} key={item.id}>
-                <Link href={`/services/${item.slug}`}>
+                <Link href={`/services/${item.slug}/${params.locId}`}>
                   <p className="font-bold text-xl cursor-pointer">
                     {item.name}
                   </p>

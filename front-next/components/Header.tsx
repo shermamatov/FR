@@ -18,6 +18,7 @@ import { AppProps } from "next/app";
 
 const Header = () => {
   const pathname = usePathname();
+
   const [burger, setBurger] = useState(false);
   const [modal, setModal] = useState(false);
   const [services, setServices] = useState<PaginationData<Service>>();
@@ -26,7 +27,11 @@ const Header = () => {
     setServices(await fetchServices());
   }
   async function getLocat() {
-    if (localStorage.getItem("currentLocation")) {
+    if (
+      typeof window !== "undefined" &&
+      window.localStorage &&
+      localStorage.getItem("currentLocation")
+    ) {
       setLocation(JSON.parse(localStorage.getItem("currentLocation")));
     } else {
       setLocation(await getCurrentLocation());
@@ -35,11 +40,14 @@ const Header = () => {
   useEffect(() => {
     getData();
     getLocat();
+    if (location) {
+      localStorage.setItem("currentLocation", JSON.stringify(location));
+      localStorage.setItem("locationId", JSON.stringify(location.id));
+    }
   }, []);
   // useEffect(() => {
-  //     getLocat();
+  //   getLocat();
   // }, [localStorage.getItem("currentLocation")]);
-  console.log(services);
   return (
     <div>
       <header>
@@ -157,7 +165,9 @@ const Header = () => {
                     {services?.results.length === 0
                       ? ""
                       : services?.results.map((item: Service) => (
-                          <Link href={`/services/${item.slug}`} key={item.id}>
+                          <Link
+                            href={`/services/${item.slug}/${location?.id}`}
+                            key={item.id}>
                             <li className="mb-5">{item.name}</li>
                           </Link>
                         ))}
@@ -229,7 +239,9 @@ const Header = () => {
                 {services?.results.length === 0
                   ? ""
                   : services?.results.map((item: Service) => (
-                      <Link href={`/services/${item.slug}`} key={item.id}>
+                      <Link
+                        href={`/services/${item.slug}/${location?.id}`}
+                        key={item.id}>
                         <div className="burger__link font-medium text-base ml-14">
                           {item.name}
                         </div>
