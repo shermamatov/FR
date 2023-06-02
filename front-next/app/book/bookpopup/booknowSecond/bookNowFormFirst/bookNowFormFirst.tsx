@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./bookNowFormFirst.css";
+import axios from 'axios';
 
 export default function BookNowFormFirst({ setFormData, formData, services, changeLocalStorage, message, setState }) {
 
@@ -10,8 +11,14 @@ export default function BookNowFormFirst({ setFormData, formData, services, chan
   const [address, setAddress] = useState("");
   const [service, setService] = useState(null);
   const [location, setLocation] = useState(localStorage.getItem('currentLocation') ? JSON.parse(localStorage.getItem('currentLocation')): {});
+  const [currentLocation, setCurrentLocation] = useState({});
 
-
+useEffect(()=>{
+if(JSON.stringify(location) === '{}'){
+  axios('https://itek-dev.highcat.org/api/location/find/')
+  .then(({data})=> setLocation(data))
+}
+}, [])
   return (
     <>
       <div
