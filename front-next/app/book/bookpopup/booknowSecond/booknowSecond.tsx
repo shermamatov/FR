@@ -2,22 +2,12 @@
 import React, { useEffect, useState } from "react";
 import BookNowFormFirst from "./bookNowFormFirst/bookNowFormFirst";
 import BookNowFormSecond from "./bookNowFormSecond/bookNowFormSecond";
-export default function BooknowSecond() {
+export default function BooknowSecond({services}) {
     const [formData, setFormData] = useState({});
-    const [state, setState] = useState(true);
+    const [state, setState] = useState(false);
     const [message, setMessage] = useState("");
 
-    function changeLocalStorage(bool) {
-        if (localStorage.getItem("bookState")) {
-            localStorage.setItem("bookState", bool);
-            setState(bool);
-        }
-    }
-    useEffect(() => {
-        if (!localStorage.getItem("bookState")) {
-            localStorage.setItem("bookState", false);
-        }
-    }, []);
+
 
     return (
         <div>
@@ -25,14 +15,15 @@ export default function BooknowSecond() {
                 <BookNowFormFirst
                     message={message}
                     setFormData={setFormData}
-                    changeLocalStorage={changeLocalStorage}
+                    services={services}
+                    setState={setState}
                 />
             ) : (
                 <BookNowFormSecond
                     setMessage={setMessage}
                     setFormData={setFormData}
                     formData={formData}
-                    changeLocalStorage={changeLocalStorage}
+                    setState={setState}
                 />
             )}
         </div>
