@@ -228,14 +228,16 @@ export default function Photos() {
                         </div>
                         <button
                             className={`next__btn btn ${
+                                photos &&
                                 currentPage >=
                                     Math.ceil(photos?.count / 12) - 1 &&
                                 "noActive"
                             } `}
                             onClick={() => {
                                 setCurrentPage(
-                                    currentPage >=
-                                        Math.ceil(photos?.count / 12) - 1
+                                    photos &&
+                                        currentPage >=
+                                            Math.ceil(photos?.count / 12) - 1
                                         ? currentPage
                                         : currentPage + 1
                                 );

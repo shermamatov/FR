@@ -182,7 +182,7 @@ export function getPaggPage(count = 0, page = 1) {
     for (let i = 0; i < num; i++) {
         arr.push(i);
     }
-    arr.splice(-1, 0, ". . .");
+    arr.length > 5 && arr.splice(-1, 0, ". . .");
     // console.log(arr);
     return arr;
 }
