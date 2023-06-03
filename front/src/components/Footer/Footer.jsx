@@ -6,7 +6,6 @@ import m from "../../images/m.png";
 import Yelp from "../../images/Yelp1.png";
 import call from "../../images/call.png";
 import email from "../../images/email.png";
-import geo from "../../images/geo.png";
 import ProjectLoaction from "../Home/Blocks/Block8/ProjectLoaction";
 import { useNavigate } from "react-router-dom";
 
@@ -66,7 +65,11 @@ const Footer = () => {
                                     <img src={call} alt="" />
                                     <div className="con-min">
                                         <h4>Phone number</h4>
-                                        <p><a href="tel: +1 818 858 15 33">+1 818 858 15 33</a></p>
+                                        <p>
+                                            <a href="tel: +1 818 858 15 33">
+                                                +1 818 858 15 33
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="contacts_polosa"></div>
@@ -75,7 +78,11 @@ const Footer = () => {
                                     <img src={email} alt="" />
                                     <div className="con-min">
                                         <h4>E-mail</h4>
-                                        <p><a href="mailto:info@1furniturerestoration.com">info@1furniturerestoration.com</a></p>
+                                        <p>
+                                            <a href="mailto:info@1furniturerestoration.com">
+                                                info@1furniturerestoration.com
+                                            </a>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -86,22 +93,40 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <div className="title">
-                                        <p onClick={()=>{
-                                            navigate('/about_us')
-                                        }} className="col-md-p-4"> About Us</p>
+                                        <p
+                                            onClick={() => {
+                                                navigate("/about_us");
+                                            }}
+                                            className="col-md-p-4"
+                                        >
+                                            {" "}
+                                            About Us
+                                        </p>
                                     </div>
                                     <div className="que_polasa"></div>
 
                                     <div className="title">
-                                        <p onClick={()=>{
-                                            navigate('/services')
-                                        }} className="col-md-p-4"> Services</p>
+                                        <p
+                                            onClick={() => {
+                                                navigate("/services");
+                                            }}
+                                            className="col-md-p-4"
+                                        >
+                                            {" "}
+                                            Services
+                                        </p>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p onClick={()=>{
-                                            navigate('/blog')
-                                        }} className="col-md-p-4"> Blogs</p>
+                                        <p
+                                            onClick={() => {
+                                                navigate("/blog");
+                                            }}
+                                            className="col-md-p-4"
+                                        >
+                                            {" "}
+                                            Blogs
+                                        </p>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
@@ -117,9 +142,15 @@ const Footer = () => {
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p onClick={()=>{
-                                            navigate('/photos')
-                                        }} className="col-md-p-4"> Photos</p>
+                                        <p
+                                            onClick={() => {
+                                                navigate("/photos");
+                                            }}
+                                            className="col-md-p-4"
+                                        >
+                                            {" "}
+                                            Photos
+                                        </p>
                                     </div>
                                     <div className="que_polasa"></div>
                                 </div>
