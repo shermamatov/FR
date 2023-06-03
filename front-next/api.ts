@@ -108,8 +108,9 @@ export interface Service extends ServiceShort {
     image2: string | null;
     children: ServiceShort[];
     created_at: string;
-    text_for_location: string;
+    text_for_location: object | any;
 }
+
 
 export async function fetchServices(
     limit = 20,
@@ -120,7 +121,11 @@ export async function fetchServices(
 }
 
 export async function fetchServiceById(id: number | string): Promise<Service> {
-    const res = await fetch(`${API_URL}/service/${id}/?for_location=<2724>`);
+    const res = await fetch(`${API_URL}/service/${id}`);
+    return res.json();
+}
+export async function fetchServiceByIdandLoc(id: number | string, locationId: number | null | string): Promise<Service> {
+    const res = await fetch(`${API_URL}/service/${id}/?for_location=${locationId}`);
     return res.json();
 }
 
@@ -165,7 +170,7 @@ export async function createBooking(payload: Booking): Promise<Service> {
     return res.json();
 }
 
-export let currentLocation = {};
+
 
 export async function getCurrentLocation(): Promise<Location> {
     const res = await fetch(`${API_URL}/location/find/`);

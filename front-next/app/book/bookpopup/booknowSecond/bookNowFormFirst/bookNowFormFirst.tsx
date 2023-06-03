@@ -1,24 +1,24 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./bookNowFormFirst.css";
-// import { useDispatch, useSelector } from "react-redux";
-// import { getLocations } from "../../../../redux/reducers/app";
+import axios from 'axios';
 
-export default function BookNowFormFirst({ setFormData, formData }) {
-  // const dispatch = useDispatch();
+export default function BookNowFormFirst({ setFormData, formData, services, changeLocalStorage, message, setState }) {
+
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEamil] = useState("");
   const [address, setAddress] = useState("");
   const [service, setService] = useState(null);
-  const [location, setLocation] = useState(null);
+  const [location, setLocation] = useState(localStorage.getItem('currentLocation') ? JSON.parse(localStorage.getItem('currentLocation')): {});
+  const [currentLocation, setCurrentLocation] = useState({});
 
-  //   const services = useSelector((s) => s.app.services);
-  //   const locations = useSelector((s) => s.app.locations);
-  //   const currentLocation = useSelector(s => s.app.currentLocation);
-  //   useEffect(() => {
-  // dispatch(getLocations());
-  //   });
+useEffect(()=>{
+if(JSON.stringify(location) === '{}'){
+  axios('https://itek-dev.highcat.org/api/location/find/')
+  .then(({data})=> setLocation(data))
+}
+}, [])
   return (
     <>
       <div
@@ -56,7 +56,7 @@ export default function BookNowFormFirst({ setFormData, formData }) {
           placeholder="Address"
           type="text"
         />
-        {/* <select
+        <select
             defaultValue={"0"}
             onChange={(e) => {
               setService(e.target.value);
@@ -72,35 +72,20 @@ export default function BookNowFormFirst({ setFormData, formData }) {
                 </option>
               );
             })}
-          </select> */}
-        {/* <select
-            defaultValue={"0"}
-            onChange={(e) => {
-              setLocation(e.target.value);
-            }}
-          >
-            <option disabled value="0">
-              city/location
-            </option>
-            {locations.map((item) => {
-              return (
-                <option key={item.id} value={item.id}>
-                  {item.location_name}
-                </option>
-              );
-            })}
-          </select> */}
+          </select>
+
         <button
           onClick={() => {
             if (name && phone && address && email && service) {
-              // changeLocalStorage(true);
+
+              setState(true)
               setFormData({
                 name,
                 phone,
                 address,
                 email,
                 service,
-                //   location: currentLocation.id,
+                location: location.id,
               });
             }
           }}
@@ -108,7 +93,7 @@ export default function BookNowFormFirst({ setFormData, formData }) {
           {" "}
           Next
         </button>
-        {/* {message.length > 0 ? <p>{message}</p> : ""} */}
+        { message ? <p>{message}</p> : ""}
       </div>
     </>
   );

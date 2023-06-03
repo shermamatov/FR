@@ -5,6 +5,7 @@ import React, { use, useEffect, useState } from "react";
 import logo from "@/assets/navLogo.png";
 import strela from "@/assets/strelka.png";
 import menuIcon from "@/assets/menu.png";
+import axios from "axios";
 import "./Header.scss";
 import {
     Location,
@@ -18,15 +19,21 @@ import { AppProps } from "next/app";
 
 const Header = () => {
     const pathname = usePathname();
+
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
     const [services, setServices] = useState<PaginationData<Service>>();
     const [location, setLocation] = useState<Location>();
+    const [currentLocation, setCurrentLocation] = useState({});
     async function getData() {
         setServices(await fetchServices());
     }
     async function getLocat() {
-        if (localStorage.getItem("currentLocation")) {
+        if (
+            typeof window !== "undefined" &&
+            window.localStorage &&
+            localStorage.getItem("currentLocation")
+        ) {
             setLocation(JSON.parse(localStorage.getItem("currentLocation")));
         } else {
             setLocation(await getCurrentLocation());
@@ -35,10 +42,16 @@ const Header = () => {
     useEffect(() => {
         getData();
         getLocat();
+        if (location) {
+            localStorage.setItem("currentLocation", JSON.stringify(location));
+            localStorage.setItem("locationId", JSON.stringify(location.id));
+        } else {
+            axios("https://itek-dev.highcat.org/api/location/find/").then(
+                ({ data }) => setCurrentLocation(data)
+            );
+        }
     }, []);
-    // useEffect(() => {
-    //     getLocat();
-    // }, [localStorage.getItem("currentLocation")]);
+
     return (
         <div>
             <header>
@@ -47,7 +60,9 @@ const Header = () => {
                         <p>
                             {location
                                 ? `${location?.location_name} ${location?.state.name}`
-                                : "East Hollywood California"}
+                                : JSON.stringify(currentLocation) !== "{}"
+                                ? `${currentLocation?.currentLocation_name} ${currentLocation?.state.name}`
+                                : ""}
                             <Link href="/location" className="upn_change">
                                 change
                             </Link>
@@ -188,7 +203,7 @@ const Header = () => {
                                             : services?.results.map(
                                                   (item: Service) => (
                                                       <Link
-                                                          href={`/services/${item.slug}`}
+                                                          href={`/services/${item.slug}/${location?.id}`}
                                                           key={item.id}
                                                       >
                                                           <li className="mb-5">
@@ -240,7 +255,7 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="navbar_burger">
-                        <Link href="/about">
+                        <Link href="/about_us">
                             <div className="burger__link">ABOUT US</div>
                         </Link>
 
@@ -276,7 +291,7 @@ const Header = () => {
                                     ? ""
                                     : services?.results.map((item: Service) => (
                                           <Link
-                                              href={`/services/${item.slug}`}
+                                              href={`/services/${item.slug}/${location?.id}`}
                                               key={item.id}
                                           >
                                               <div className="burger__link font-medium text-base ml-14">
