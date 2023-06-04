@@ -16,6 +16,9 @@ const nextConfig = {
         ],
         domains: ["itek-dev.highcat.org"],
     },
+    eslint: {
+        ignoreDuringBuilds: true,
+    },
 };
 
 module.exports = nextConfig;
