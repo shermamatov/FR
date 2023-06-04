@@ -7,7 +7,7 @@ COPY ./front/package-lock.json ./
 RUN npm install axios
 RUN npm install sass
 COPY ./front/ ./
-RUN npm run build
+RUN npm install next
 
 # Nginx Start
 FROM nginx:1.23-alpine
