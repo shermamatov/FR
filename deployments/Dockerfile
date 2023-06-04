@@ -1,5 +1,5 @@
 # Build React static files
-FROM node:18.13.0-alpine as build
+FROM node:18.16.0-alpine as build
 
 WORKDIR /app/front
 COPY ./front/package.json ./
