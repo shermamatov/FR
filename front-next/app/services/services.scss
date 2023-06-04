@@ -134,6 +134,9 @@
     border: 5px solid #a5a582;
     > img {
         width: 49%;
+        max-height: 600px;
+        object-fit: cover;
+        background-size: cover;
     }
 }
 

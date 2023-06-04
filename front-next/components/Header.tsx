@@ -19,12 +19,12 @@ import { AppProps } from "next/app";
 
 const Header = () => {
     const pathname = usePathname();
-
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
+    const [currentLocation, setCurrentLocation] = useState({});
+
     const [services, setServices] = useState<PaginationData<Service>>();
     const [location, setLocation] = useState<Location>();
-    const [currentLocation, setCurrentLocation] = useState({});
     async function getData() {
         setServices(await fetchServices());
     }
@@ -34,7 +34,9 @@ const Header = () => {
             window.localStorage &&
             localStorage.getItem("currentLocation")
         ) {
-            setLocation(JSON.parse(localStorage.getItem("currentLocation")));
+            setLocation(
+                JSON.parse(localStorage.getItem("currentLocation") || "")
+            );
         } else {
             setLocation(await getCurrentLocation());
         }
@@ -74,13 +76,15 @@ const Header = () => {
                 </div>
 
                 <div className="navbar content">
-                    <div className="navbar_left_block">
-                        <Image
-                            src={logo}
-                            style={{ cursor: "pointer" }}
-                            alt=""
-                        />
-                    </div>
+                    <Link href={"/"}>
+                        <div className="navbar_left_block">
+                            <Image
+                                src={logo}
+                                style={{ cursor: "pointer" }}
+                                alt=""
+                            />
+                        </div>
+                    </Link>
                     <div
                         className="navbar_right_block"
                         onMouseLeave={() => setModal(false)}
