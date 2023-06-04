@@ -31,6 +31,7 @@ export default function Photos() {
     //         }
     //     }
     // }
+
     // function filterHandler() {
     //     let arr = [];
     //     let checkboxArr = document.getElementsByName("horns");
