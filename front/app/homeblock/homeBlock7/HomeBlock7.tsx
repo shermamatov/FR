@@ -1,13 +1,13 @@
-'use client'
-import { fetchReviews } from '@/api';
-import Link from 'next/link';
-import { use} from 'react';
+"use client";
+import { fetchReviews } from "@/api";
+import Link from "next/link";
+import { use } from "react";
 // import Slider from "react-slick";
-import './block7.scss';
-import rating from './rating.svg';
-import Image from 'next/image';
-import img1 from './image1.webp';
-import img3 from './img3.webp';
+import "./block7.scss";
+import rating from "./rating.svg";
+import Image from "next/image";
+import img1 from "./image1.webp";
+import img3 from "./img3.webp";
 
 export default function HomeBlock7() {
     const reviews = use(fetchReviews());
@@ -36,13 +36,12 @@ export default function HomeBlock7() {
         swipeToSlide: true,
         touchMove: true,
         pauseOnHover: true,
-        onContextMenu: (e) => {
+        onContextMenu: (e: any) => {
             e.preventDefault();
             e.stopPropagation();
             return false;
         },
     };
-
 
     return (
         <div className="block7_main">
@@ -130,5 +129,5 @@ export default function HomeBlock7() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
