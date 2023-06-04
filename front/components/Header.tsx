@@ -21,7 +21,7 @@ const Header = () => {
     const pathname = usePathname();
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
-    const [currentLocation, setCurrentLocation] = useState({});
+    const [currentLocation, setCurrentLocation] = useState<any>({});
 
     const [services, setServices] = useState<PaginationData<Service>>();
     const [location, setLocation] = useState<Location>();
