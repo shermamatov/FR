@@ -1,6 +1,6 @@
 import "./ReviewsFilterPopup.scss";
 
-const ReviewsFilterPopup = ({ showFilterPopup }) => {
+const ReviewsFilterPopup = ({ showFilterPopup }: any) => {
     return (
         <div
             className={

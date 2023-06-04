@@ -85,12 +85,15 @@ export default function HomeBlock4() {
                     </div>
                     <button
                         className={`next__btn btn ${
+                            photos &&
                             currentPage >= Math.ceil(photos?.count / 3) - 1 &&
                             "noActive"
                         } `}
                         onClick={() => {
                             setCurrentPage(
-                                currentPage >= Math.ceil(photos?.count / 3) - 1
+                                photos &&
+                                    currentPage >=
+                                        Math.ceil(photos?.count / 3) - 1
                                     ? currentPage
                                     : currentPage + 1
                             );
