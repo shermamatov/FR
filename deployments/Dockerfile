@@ -8,7 +8,7 @@ RUN npm install axios
 RUN npm install sass
 RUN npm install next
 COPY ./front/ ./
-npm run build
+RUN npm run build
 # Nginx Start
 FROM nginx:1.23-alpine
 
