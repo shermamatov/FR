@@ -10,13 +10,13 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
 
-const BookNowFormSecond = ({
+export default function BookNowFormSecond({
     setState,
     setFormData,
     formData,
     setMessage,
-}) => {
-    const [day, setDay] = useState({});
+}: any) {
+    const [day, setDay] = useState<any>({});
     const [dayOfWeek, setDayOfWeek] = useState("");
     const month = moment().format("MMMM");
     const [time, setTime] = useState("");
@@ -49,8 +49,23 @@ const BookNowFormSecond = ({
         }
         return days;
     }
-    const timeSlots = () => {
-        const slots = [];
+    // const timeSlots = () => {
+    //     const slots = [];
+    //     const start = moment("10:00", "HHmm");
+    //     const end = moment("20:00", "HHmm");
+    //     while (start.isBefore(end)) {
+    //         const slot = {
+    //             full: `${start.format("HHmm")} - ${start
+    //                 .add(2, "hour")
+    //                 .format("HHmm")}`,
+    //             start: start.format("HHmm") - 200,
+    //         };
+    //         slots.push(slot);
+    //     }
+    //     return slots;
+    // };
+    const timeSlots = (): { full: string; start: string }[] => {
+        const slots: { full: string; start: string }[] = [];
         const start = moment("10:00", "HHmm");
         const end = moment("20:00", "HHmm");
         while (start.isBefore(end)) {
@@ -58,7 +73,7 @@ const BookNowFormSecond = ({
                 full: `${start.format("HHmm")} - ${start
                     .add(2, "hour")
                     .format("HHmm")}`,
-                start: start.format("HHmm") - 200,
+                start: (parseInt(start.format("HHmm")) - 200).toString(),
             };
             slots.push(slot);
         }
@@ -83,45 +98,53 @@ const BookNowFormSecond = ({
         slidesToScroll: 1,
     };
 
-    const formatNum = (num) => {
+    const formatNum = (num: any) => {
         if (num < 10) {
             return `0${num}`;
         } else {
             return num;
         }
     };
+
     const bookNow = () => {
         const now = new Date();
-
         setFormData({
             ...formData,
             comment,
-            time: `${now.getFullYear()}-${formatNum(
-                day.month + 1
-            )}-${day.date}T${`${time}`.slice(0, 2)}:00:00`,
+            time: `${now.getFullYear()}-${formatNum(day.month + 1)}-${
+                day.date
+            }T${`${time}`.slice(0, 2)}:00:00`,
         });
         if (comment && day && time && month) {
-            console.log(`${now.getFullYear()}-${day.date}-${formatNum(
-                day.month + 1
-            )}T${`${time}`.slice(0, 2)}:00`);
+            console.log(
+                `${now.getFullYear()}-${day.date}-${formatNum(
+                    day.month + 1
+                )}T${`${time}`.slice(0, 2)}:00`
+            );
 
             setLoading(true);
-            axios.post('https://itek-dev.highcat.org/api/bookings/', {
-                ...formData,
-                comment,
-                time: `${now.getFullYear()}-${day.date}-${formatNum(
-                    day.month + 1
-                )}T${`${time}`.slice(0, 2)}:00`,
-            }).then(response => {
-                console.log(response);
-                setMessage(response.data)
-            }).catch(error => {
-                console.log(error);
-                setMessage('An error has occurred. Try again or contact our call center')
-            }).finally(() => {
-                setState(false);
-                setLoading(false)
-            })
+            axios
+                .post("https://itek-dev.highcat.org/api/bookings/", {
+                    ...formData,
+                    comment,
+                    time: `${now.getFullYear()}-${day.date}-${formatNum(
+                        day.month + 1
+                    )}T${`${time}`.slice(0, 2)}:00`,
+                })
+                .then((response) => {
+                    console.log(response);
+                    setMessage(response.data);
+                })
+                .catch((error) => {
+                    console.log(error);
+                    setMessage(
+                        "An error has occurred. Try again or contact our call center"
+                    );
+                })
+                .finally(() => {
+                    setState(false);
+                    setLoading(false);
+                });
         }
     };
 
@@ -140,7 +163,6 @@ const BookNowFormSecond = ({
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
                 <Slider {...settings}>
-
                     {dates.map((item, idx) => {
                         return (
                             <div key={idx}>
@@ -217,6 +239,4 @@ const BookNowFormSecond = ({
             )}
         </div>
     );
-};
-
-export default BookNowFormSecond;
+}
