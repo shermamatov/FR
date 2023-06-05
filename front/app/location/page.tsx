@@ -1,6 +1,6 @@
 "use client";
 import { Layout } from "@/components/Layout";
-import circleImg from "@/assets/circle-img.png";
+// import circleImg from "@/assets/circle-img.png";
 import Image from "next/image";
 import "./location.scss";
 import { use, useEffect, useState } from "react";
@@ -36,8 +36,13 @@ export default function Location() {
                         placeholder="insert your city or zip coude"
                         className="location_input"
                     />
-                    <Image
+                    {/* <Image
                         src={circleImg}
+                        alt=""
+                        className="location_row_img"
+                    /> */}
+                    <img
+                        src="/circle-img.webp"
                         alt=""
                         className="location_row_img"
                     />
