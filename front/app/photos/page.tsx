@@ -1,10 +1,9 @@
 "use client";
 import { PaginationData, Photo, fetchPhotos, getPaggPage } from "@/api";
 import { Layout } from "@/components/Layout";
-import Image from "next/image";
 import "./photos.scss";
 import { use, useEffect, useState } from "react";
-import filterIcon from "@/assets/filterIcon.png";
+
 
 export default function Photos() {
     const [modal, setModal] = useState(false);
@@ -55,7 +54,7 @@ export default function Photos() {
                         e.stopPropagation();
                     }}
                 >
-                    <Image width={30} height={20} src={filterIcon} alt="" />
+                    <img src='./filterIcon.png' alt="" />
                     <p>Filter</p>
                 </div>
                 <div className="grid lg:grid-cols-3 grid-cols-2  gap-x-4 gap-y-9 mt-5 relative">
@@ -169,13 +168,10 @@ export default function Photos() {
                         </div>
                     )}
                     {photos?.results.map((item) => (
-                        <Image
+                        <img
                             key={item.id}
                             src={item.photo}
                             alt={item.caption}
-                            width={300}
-                            height={300}
-                            unoptimized
                             className="aspect-video"
                             style={{ width: "100%" }}
                         />
