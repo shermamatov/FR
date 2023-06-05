@@ -1,11 +1,9 @@
 import { fetchBlog } from "@/api";
 import { Layout } from "@/components/Layout";
-import Image from "next/image";
 import Link from "next/link";
 import { use, useMemo } from "react";
-import bath from "@/assets/bath.png";
 import "./blogPage.scss";
-import { relative } from "path";
+// import { relative } from "path";
 
 export default function Blog() {
     const posts = use(fetchBlog());
@@ -14,6 +12,7 @@ export default function Blog() {
         const arr = [...posts.results];
         return arr.slice(2);
     }
+
     const formatter = useMemo(
         () =>
             new Intl.DateTimeFormat("en-US", {
@@ -23,6 +22,7 @@ export default function Blog() {
             }),
         []
     );
+
     return (
         <Layout className="content">
             <div className={"flex mb-8"}>
@@ -48,7 +48,7 @@ export default function Blog() {
             </div>
             <div className="blog_block1">
                 <div className="blog_block1_left">
-                    <Image src={bath} alt="" />
+                    <img src="/bath.png" alt="" />
                 </div>
                 <div className="blog_block1_right">
                     <div style={{ color: "#107EBD", whiteSpace: "nowrap" }}>
@@ -90,13 +90,7 @@ export default function Blog() {
                         style={{ position: "relative" }}
                         key={item.id}
                     >
-                        <Image
-                            src={item.image1 || bath}
-                            width={100}
-                            height={100}
-                            unoptimized
-                            alt=""
-                        />
+                        <img src={item.image1 || "/bath.png"} alt="" />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating
                         </div>
@@ -130,11 +124,8 @@ export default function Blog() {
             <div className="blog_block3 hidden md:grid">
                 {getMiniData().map((item) => (
                     <div className="blog_card" key={item.id}>
-                        <Image
-                            width={100}
-                            height={100}
-                            src={item.image1 ? item.image1 : bath}
-                            unoptimized
+                        <img
+                            src={item.image1 ? item.image1 : "/bath.png"}
                             alt=""
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
@@ -174,11 +165,8 @@ export default function Blog() {
             <div className="blog_block3 grid md:hidden">
                 {posts.results.map((item) => (
                     <div className="blog_card" key={item.id}>
-                        <Image
-                            src={item.image1 ? item.image1 : bath}
-                            width={100}
-                            height={100}
-                            unoptimized
+                        <img
+                            src={item.image1 ? item.image1 : "/bath.png"}
                             alt=""
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
@@ -215,62 +203,6 @@ export default function Blog() {
                     </div>
                 ))}
             </div>
-            {/* <section className="">
-                <div className="flex">
-                    <div className="w-1/2">
-                        <Image src={bath} alt="" />
-                    </div>
-                    <div className="">
-                        <div className="dsa">
-                            <span
-                                style={{
-                                    color: "#107EBD",
-                                    fontWeight: "700",
-                                }}
-                            >
-                                Business Strategy{" "}
-                            </span>
-                        </div>
-                        <div>
-                            <span
-                                style={{
-                                    color: "#72421C",
-                                    fontWeight: "600",
-                                    lineHeight: "15px",
-                                }}
-                            >
-                                December 30, 2019
-                            </span>
-                        </div>
-                        <h1 className="text-3xl">
-                            A-Series Ultra Low NOx Gas Furnace 80% Single Stage
-                            40,000 BTU Non-Variable Upflow/Horizontal 14.5 wide
-                        </h1>
-                        <p className="">
-                            A global print fulfillment company partnered with
-                            Mason Interactive to grow omnichannel sales via
-                            Search Engine Optimization (SEO). During the course
-                            of the engagement, the client saw a 134% increase in
-                            organic traffic, resulting in a measurable increase
-                            in leads, and sales. the client saw a 134% increase
-                            in organic traffic, resulting in a measurable
-                            increase in leads, and sales.
-                            <div>
-                                <span style={{ color: "#F2994A" }}>
-                                    Read More article
-                                </span>
-                            </div>
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <div className="grid grid-cols-3 gap-x-4 gap-y-9">
-                {posts?.results.map((item) => (
-                    <Link key={item.id} href={`/blog/${item.id}`}>
-                        {item.title}
-                    </Link>
-                ))}
-            </div> */}
         </Layout>
     );
 }
