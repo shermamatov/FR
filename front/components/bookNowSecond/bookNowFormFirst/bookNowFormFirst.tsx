@@ -16,13 +16,26 @@ export default function BookNowFormFirst({
   const [email, setEamil] = useState("");
   const [address, setAddress] = useState("");
   const [service, setService] = useState<any>(null);
-  const [location, setLocation] = useState(
-    localStorage.getItem("currentLocation") || ""
-      ? JSON.parse(localStorage.getItem("currentLocation") || "")
-      : {}
-  );
+  // const [location, setLocation] = useState(
+  //   localStorage.getItem("currentLocation") || ""
+  //     ? JSON.parse(localStorage.getItem("currentLocation") || "")
+  //     : {}
+  // );
+  const [location, setLocation] = useState();
   const [currentLocation, setCurrentLocation] = useState({});
-
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.localStorage &&
+      localStorage.getItem("currentLocation")
+    ) {
+      setLocation(
+        localStorage.getItem("currentLocation") || ""
+          ? JSON.parse(localStorage.getItem("currentLocation") || "")
+          : {}
+      );
+    }
+  }, []);
   useEffect(() => {
     if (JSON.stringify(location) === "{}") {
       axios("https://itek-dev.highcat.org/api/location/find/").then(
