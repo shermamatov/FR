@@ -1,7 +1,7 @@
 import Image from "next/image";
 import "./booknowFirst.css";
-import blockNow1Circle from "../../img/blockNow1-circle.png";
-import blockNow1Big from "../../img/blockNow1-big.webp";
+import blockNow1Circle from "../../assets/blockNow1-circle.png";
+import blockNow1Big from "../../assets/blockNow1-big.webp";
 export default function BooknowFirst() {
   return (
     <section className="blockNow1">

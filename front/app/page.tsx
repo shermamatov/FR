@@ -9,22 +9,22 @@ import HomeBlock5 from "./homeblock/homeBlock5/HomeBlock5";
 import HomeBlock6 from "./homeblock/homeBlock6/HomeBlock6";
 import HomeBlock7 from "./homeblock/homeBlock7/HomeBlock7";
 import { fetchBlog, fetchReviews } from "@/api";
-import ServBlock9 from "./services/[id]/ServBlock9";
+import ServBlock9 from "@/components/servBlock9/ServBlock9";
 import { use } from "react";
 
 export default function Home() {
-    const reviews = use(fetchReviews());
-    const blogs = use(fetchBlog());
-    return (
-        <Layout>
-            <HomeBlock1 />
-            <HomeBlock2 />
-            <HomeBlock3 />
-            <HomeBlock4 />
-            <HomeBlock5 />
-            <HomeBlock6 />
-            <ServBlock9 reviews={reviews} />
-            <Blog data={blogs.results} />
-        </Layout>
-    );
+  const reviews = use(fetchReviews());
+  const blogs = use(fetchBlog());
+  return (
+    <Layout>
+      <HomeBlock1 />
+      <HomeBlock2 />
+      <HomeBlock3 />
+      <HomeBlock4 />
+      <HomeBlock5 />
+      <HomeBlock6 />
+      <ServBlock9 reviews={reviews} />
+      <Blog data={blogs.results} />
+    </Layout>
+  );
 }
