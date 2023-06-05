@@ -16,6 +16,7 @@ const nextConfig = {
     ],
     domains: ["itek-dev.highcat.org"],
   },
+  output: "standalone",
   eslint: {
     ignoreDuringBuilds: true,
   },
