@@ -2,14 +2,8 @@ import { Post, fetchPostById } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
 import { use, useMemo } from "react";
-import twit from "@/assets/twit.png";
-import link from "@/assets/link.png";
-import share from "@/assets/share.png";
-import face from "@/assets/face.png";
-import bath from "@/assets/blogSingle_banner1.webp";
-import bath2 from "@/assets/bath.png";
-import Image from "next/image";
 import "../blogPage.scss";
+
 export default function BlogSingle({ params }: PageNavProps) {
     const post = use(fetchPostById(params.id));
     function sliceServArr() {
@@ -51,11 +45,8 @@ export default function BlogSingle({ params }: PageNavProps) {
                     </p>
                 </div>
                 <div className="blogSingle_main_block">
-                    <Image
-                        src={post.image1 || bath}
-                        width={100}
-                        height={100}
-                        unoptimized
+                    <img
+                        src={post.image1 || "/blogSingle_banner1.webp"}
                         alt=""
                     />
                     <div
@@ -75,17 +66,14 @@ export default function BlogSingle({ params }: PageNavProps) {
                         POSTED ON {formatter.format(new Date(post.created_at))}
                     </p>
                     <p>{post.description}</p>
-                    <Image
-                        src={post.image2 || bath}
-                        width={100}
-                        height={100}
-                        unoptimized
+                    <img
+                        src={post.image2 || "/blogSingle_banner1.webp"}
                         alt=""
                     />
                     <div className="blogSingle_services_block">
                         {sliceServArr().map((item) => (
                             <div key={item.id}>
-                                <Image src={bath2} alt="sorry" />
+                                <img src="/bath.png" alt="sorry" />
                                 <p>{item.name}</p>
                             </div>
                         ))}
@@ -156,10 +144,10 @@ export default function BlogSingle({ params }: PageNavProps) {
                     </p>
                     <div className="line"></div>
                     <div className="mess">
-                        <Image src={share} alt="" />
-                        <Image src={face} alt="" />
-                        <Image src={twit} alt="" />
-                        <Image src={link} alt="" />
+                        <img src="/share.png" alt="" />
+                        <img src="/face.png" alt="" />
+                        <img src="/twit.png" alt="" />
+                        <img src="/link.png" alt="" />
                     </div>
                 </div>
             </div>
