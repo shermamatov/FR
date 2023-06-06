@@ -13,8 +13,8 @@ import HomeBlock3 from "@/app/homeblock/homeBlock3/HomeBlock3";
 import ServBlock9 from "@/components/servBlock9/ServBlock9";
 import Link from "next/link";
 import React from "react";
-import galochkaIcon from "@/assets/galochkaIcon.svg";
-import stars from "@/assets/stars.svg";
+// import galochkaIcon from "@/assets/galochkaIcon.svg";
+// import stars from "@/assets/stars.svg";
 import google from "@/assets/google.svg";
 import facebook from "@/assets/facebook.svg";
 import yelp from "@/assets/yelp.svg";
@@ -67,24 +67,24 @@ export default function ServiceSingle({ params }: PageNavProps) {
                             <div className="left_bottom_block">
                                 <div className="block1_desc">
                                     <div className="bord">
-                                        <Image src={galochkaIcon} alt="" />
+                                        <img src="/galochkaIcon.svg" alt="" />
                                         <h4>
                                             30+ years experience in engineering
                                         </h4>
                                     </div>
                                     <div className="bord">
-                                        <Image src={galochkaIcon} alt="" />
+                                        <img src="/galochkaIcon.svg" alt="" />
                                         <h4>Available 24/7 for Emergencies</h4>
                                     </div>
                                     <div className="bord">
-                                        <Image src={galochkaIcon} alt="" />
+                                        <img src="/galochkaIcon.svg" alt="" />
                                         <h4>
                                             Quick service Same-Day inspection
                                             and estimate
                                         </h4>
                                     </div>
                                     <div className="rating_block bord">
-                                        <Image src={stars} alt="" />
+                                        <img src="/stars.svg" alt="" />
                                         <p>95% of clients recommend us</p>
                                     </div>
                                     <div className="mass_block bord">

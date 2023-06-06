@@ -1,9 +1,9 @@
 import "./block2.scss";
-import Image from "next/image";
+// import Image from "next/image";
 import Link from "next/link";
 
-import banner1 from "./banner1.jpg";
-import banner2 from "./banner2.jpg";
+// import banner1 from "./banner1.jpg";
+// import banner2 from "./banner2.jpg";
 
 export default function HomeBlock2() {
     return (
@@ -11,10 +11,10 @@ export default function HomeBlock2() {
             <div className="block2">
                 <div className="block2_top">
                     <div className="img_block2">
-                        <Image src={banner1} alt="" />
+                        <img src="/banner1.jpg" alt="" />
                     </div>
                     <div className="img_block2">
-                        <Image src={banner2} alt="" />
+                        <img src="/banner2.jpg" alt="" />
                     </div>
                 </div>
                 <Link href="./book" className="btn-book px-12 text-lg ">

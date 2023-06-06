@@ -1,9 +1,9 @@
 "use client";
 import "./block3.scss";
-import Image from "next/image";
-import banner from "./banner.jpg";
-import bannerAdap from "./banner_adap.jpg";
-import closeIcon from "./close_icon.svg";
+// import Image from "next/image";
+// import banner from "./banner.jpg";
+// import bannerAdap from "./banner_adap.jpg";
+// import closeIcon from "./close_icon.svg";
 import { useState } from "react";
 
 export default function HomeBlock3() {
@@ -21,7 +21,7 @@ export default function HomeBlock3() {
                             style={{ padding: "40px 3%" }}
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <Image
+                            <img
                                 style={{
                                     width: "40px",
                                     height: "40px",
@@ -31,12 +31,12 @@ export default function HomeBlock3() {
                                     cursor: "pointer",
                                 }}
                                 onClick={() => setModal(false)}
-                                src={closeIcon}
+                                src="/close_icon.svg"
                                 alt=""
                             />
-                            <Image
+                            <img
                                 className="modal_banner"
-                                src={bannerAdap}
+                                src="/banner_adap.jpg"
                                 alt="modal"
                             />
                             <h3>Beverly Hills</h3>
@@ -57,7 +57,7 @@ export default function HomeBlock3() {
                 )}
                 <div className="block3">
                     <div className="block3_left">
-                        <Image src={banner} alt="" />
+                        <img src="/bannerHome3.jpg" alt="" />
                     </div>
                     <div className="block3_right">
                         <h1 className="bord">
