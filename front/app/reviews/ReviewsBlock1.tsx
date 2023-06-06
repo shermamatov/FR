@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import starIcon from "./img/star-icon.svg";
-import circleImg from "./img/circle-img.svg";
-import bigImg from "./img/bg.jpg";
+// import starIcon from "./img/star-icon.svg";
+// import circleImg from "./img/circle-img.svg";
+// import bigImg from "./img/bg.jpg";
 import ReviewsWritePopup from "./ReviewsPopup/ReviewsWritePopup/ReviewsWritePopup";
 import { PaginationData, Service } from "@/api";
 
@@ -27,11 +27,31 @@ export default function ReviewsBlock1({ services }: any) {
                         </h2>
                         <div className="reviewsBlock1_stars">
                             <div className="reviewsBlock1_stars_icon">
-                                <Image className="w-7" src={starIcon} alt="" />
-                                <Image className="w-7" src={starIcon} alt="" />
-                                <Image className="w-7" src={starIcon} alt="" />
-                                <Image className="w-7" src={starIcon} alt="" />
-                                <Image className="w-7" src={starIcon} alt="" />
+                                <img
+                                    className="w-7"
+                                    src="/star-icon.svg"
+                                    alt=""
+                                />
+                                <img
+                                    className="w-7"
+                                    src="/star-icon.svg"
+                                    alt=""
+                                />
+                                <img
+                                    className="w-7"
+                                    src="/star-icon.svg"
+                                    alt=""
+                                />
+                                <img
+                                    className="w-7"
+                                    src="/star-icon.svg"
+                                    alt=""
+                                />
+                                <img
+                                    className="w-7"
+                                    src="/star-icon.svg"
+                                    alt=""
+                                />
                             </div>
                             <h4 className="reviewsBlock1_stars_count">
                                 5.0/4.7
@@ -102,13 +122,13 @@ export default function ReviewsBlock1({ services }: any) {
                     </div>
 
                     <div className="reviewsBlock1_images hidden md:block">
-                        <Image
-                            src={circleImg}
+                        <img
+                            src="/circle-img.svg"
                             className="reviewsBlock1_circleImg"
                             alt=""
                         />
-                        <Image
-                            src={bigImg}
+                        <img
+                            src="/bg.jpg"
                             className="reviewsBlock1_bigImg"
                             alt=""
                         />

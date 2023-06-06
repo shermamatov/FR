@@ -1,10 +1,9 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import React, { use, useEffect, useState } from "react";
-import logo from "@/assets/navLogo.png";
-import strela from "@/assets/strelka.png";
-import menuIcon from "@/assets/menu.png";
+// import logo from "@/assets/navLogo.png";
+// import strela from "@/assets/strelka.png";
+// import menuIcon from "@/assets/menu.png";
 import axios from "axios";
 import "./Header.scss";
 import {
@@ -78,8 +77,8 @@ const Header = () => {
                 <div className="navbar content">
                     <Link href={"/"}>
                         <div className="navbar_left_block">
-                            <Image
-                                src={logo}
+                            <img
+                                src="/navLogo.png"
                                 style={{ cursor: "pointer" }}
                                 alt=""
                             />
@@ -91,7 +90,7 @@ const Header = () => {
                     >
                         <div className="adap_logo_block">
                             <Link href="/">
-                                <Image src={logo} alt="" />
+                                <img src="/navLogo.png" alt="" />
                             </Link>
                         </div>
                         <div className="navbar_navigate">
@@ -124,7 +123,7 @@ const Header = () => {
                                     // onMouseLeave={() => setModal(false)}
                                 >
                                     <p className="serv">SERVICES</p>
-                                    <Image
+                                    <img
                                         style={{
                                             transform: `${
                                                 modal
@@ -132,7 +131,7 @@ const Header = () => {
                                                     : "rotate(-180deg)"
                                             }`,
                                         }}
-                                        src={strela}
+                                        src="/strelka.png"
                                         alt=""
                                     />
                                 </div>
@@ -238,7 +237,7 @@ const Header = () => {
                             }}
                             className="menu_block"
                         >
-                            <Image src={menuIcon} alt="" />
+                            <img src="/menu.png" alt="" />
                         </div>
                     </div>
                 </div>
@@ -269,8 +268,7 @@ const Header = () => {
                                 onClick={() => setModal(!modal)}
                             >
                                 SERVICES{" "}
-                                <Image
-                                    unoptimized
+                                <img
                                     className="mt-[10px]"
                                     style={{
                                         transform: `${
@@ -279,7 +277,7 @@ const Header = () => {
                                                 : "rotate(-180deg)"
                                         }`,
                                     }}
-                                    src={strela}
+                                    src="/strelka.png"
                                     alt=""
                                 />
                             </div>

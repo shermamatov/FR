@@ -36,11 +36,7 @@ export default function Location() {
                         placeholder="insert your city or zip coude"
                         className="location_input"
                     />
-                    {/* <Image
-                        src={circleImg}
-                        alt=""
-                        className="location_row_img"
-                    /> */}
+
                     <img
                         src="/circle-img.webp"
                         alt=""

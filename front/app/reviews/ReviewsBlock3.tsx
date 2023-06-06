@@ -46,7 +46,6 @@ export default function ReviewsBlock3() {
                                             className="reviewsBlock2_card_raiting_icons"
                                             style={{ marginLeft: "-5px" }}
                                         >
-                                            {/* <Image src={ratingIcons} alt="" /> */}
                                             <StyledRating
                                                 name="read-only"
                                                 value={item.stars}
