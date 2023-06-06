@@ -17,6 +17,8 @@ services:
     image: ${CI_APPLICATION_REPOSITORY}:front_${CI_APPLICATION_TAG}
     container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-front
     restart: always
+    ports:
+      - 127.0.0.1:23000:3000
     networks:
       - 1furniture
 networks:
