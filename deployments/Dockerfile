@@ -1,12 +1,10 @@
-# Build React static files
+# Build Next static files
 FROM node:16.20.0-alpine3.18 as build
 
 WORKDIR /app/front
 COPY ./front/package.json ./
 COPY ./front/package-lock.json ./
-RUN npm install axios
-RUN npm install sass
-RUN npm install next
+RUN npm install
 COPY ./front/ ./
 RUN npm run build
 # Nginx Start
