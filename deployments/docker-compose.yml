@@ -2,8 +2,8 @@ version: '3.7'
 
 services:
   next:
-    image: ${CI_APPLICATION_REPOSITORY}:web_${CI_APPLICATION_TAG}
-    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-web
+    image: ${CI_APPLICATION_REPOSITORY}:nginx_${CI_APPLICATION_TAG}
+    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-nginx
     restart: always
     ports:
       - 127.0.0.1:${APP_PORT}:80
