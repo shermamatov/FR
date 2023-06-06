@@ -2,7 +2,7 @@
 import { PaginationData, Photo, fetchPhotos, getPaggPage } from "@/api";
 import { use, useEffect, useState } from "react";
 import "./block4.css";
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function HomeBlock4() {
     // const photos = use(fetchPhotos(9));
@@ -25,13 +25,10 @@ export default function HomeBlock4() {
                 <div className="grid_block">
                     {photos?.results.map((item) => (
                         <div key={item.id} className="grid__item">
-                            <Image
+                            <img
                                 src={item.photo}
                                 alt={item.caption}
                                 className="grid__img"
-                                unoptimized
-                                width={100}
-                                height={100}
                             />
                             <p className="grid__desc bord">
                                 {item.caption || "media description"}

@@ -1,7 +1,7 @@
 "use client";
 import { Layout } from "@/components/Layout";
 // import circleImg from "@/assets/circle-img.png";
-import Image from "next/image";
+// import Image from "next/image";
 import "./location.scss";
 import { use, useEffect, useState } from "react";
 import { Location, PaginationData, fetchLocations } from "@/api";
