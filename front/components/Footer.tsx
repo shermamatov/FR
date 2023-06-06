@@ -1,16 +1,15 @@
 import React from "react";
-import facebook from "@/assets/path16.png";
-import m from "@/assets/m.png";
-import Yelp from "@/assets/Yelp1.png";
-import call from "@/assets/call.png";
-import email from "@/assets/email.png";
-import banner from "@/assets/Rectangle.webp";
+// import facebook from "@/assets/path16.png";
+// import m from "@/assets/m.png";
+// import Yelp from "@/assets/Yelp1.png";
+// import call from "@/assets/call.png";
+// import email from "@/assets/email.png";
+// import banner from "@/assets/Rectangle.webp";
 import "./Footer.scss";
-import Image from "next/image";
 const Footer = () => {
     return (
         <div>
-            <footer style={{ backgroundImage: `url(${banner.src})` }}>
+            <footer style={{ backgroundImage: `url(/Rectangle.webp)` }}>
                 <div className="footer__wrapper">
                     <div className="content">
                         <div className="row">
@@ -30,15 +29,15 @@ const Footer = () => {
 
                                 <div className="main_icons">
                                     <div className="okrug">
-                                        <Image src={facebook} alt="" />
+                                        <img src="/path16.png" alt="" />
                                     </div>
                                     <div className="okrug">
-                                        <Image src={m} alt="" />
+                                        <img src="/m.png" alt="" />
                                     </div>
                                     <div style={{}} className="okrug">
-                                        <Image
+                                        <img
                                             style={{ width: "70%" }}
-                                            src={Yelp}
+                                            src="/Yelp1.png"
                                             alt=""
                                         />
                                     </div>
@@ -60,7 +59,7 @@ const Footer = () => {
                                 <div className="contacts_polosa"></div> */}
 
                                 <div className="col-md-4-mini">
-                                    <Image src={call} alt="" />
+                                    <img src="/call.png" alt="" />
                                     <div className="con-min">
                                         <h4>Phone number</h4>
                                         <p>
@@ -73,7 +72,7 @@ const Footer = () => {
                                 <div className="contacts_polosa"></div>
 
                                 <div className="col-md-4-mini">
-                                    <Image src={email} alt="" />
+                                    <img src="/email.png" alt="" />
                                     <div className="con-min">
                                         <h4>E-mail</h4>
                                         <p>

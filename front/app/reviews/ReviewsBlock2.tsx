@@ -1,12 +1,11 @@
 "use client";
 import { use, useEffect, useState } from "react";
 import { PaginationData, Review, fetchReviews, getPaggPage } from "@/api";
-import Image from "next/image";
-import cardImg from "./img/card-img.jpg";
-import ratingIcons from "./img/rating-icons.svg";
+// import Image from "next/image";
+// import cardImg from "./img/card-img.jpg";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material";
-import filterIcon from "@/assets/filterIcon.png";
+// import filterIcon from "@/assets/filterIcon.png";
 
 export default function ReviewsBlock2() {
     // const reviews = use(fetchReviews());
@@ -46,7 +45,7 @@ export default function ReviewsBlock2() {
                             e.stopPropagation();
                         }}
                     >
-                        <Image width={30} height={20} src={filterIcon} alt="" />
+                        <img src="/filterIcon.png" alt="" />
                         <p>Filter</p>
                     </div>
                     <div
@@ -143,10 +142,6 @@ export default function ReviewsBlock2() {
                             </button>
                         </div>
                     </div>
-                    {/* <button className="reviewsBlock2_btns_filter flex">
-                        <Image src={filterIcon} alt="" />
-                        Filter
-                    </button> */}
                     <div className="reviewsBlock2_btns_right">
                         <button>All</button>
                         <button>Review</button>
@@ -162,13 +157,12 @@ export default function ReviewsBlock2() {
                                     <button className="reviewsBlock2_card_btn">
                                         Play video
                                     </button>
-                                    <Image
+                                    <img
                                         src={
-                                            item.image1 ? item.image1 : cardImg
+                                            item.image1
+                                                ? item.image1
+                                                : "/card-img.jpg"
                                         }
-                                        unoptimized
-                                        width={100}
-                                        height={100}
                                         className="reviewsBlock2_card_img"
                                         alt=""
                                     />
@@ -178,7 +172,6 @@ export default function ReviewsBlock2() {
                                 </h3>
                                 <div className="reviewsBlock2_card_raiting">
                                     <div className="reviewsBlock2_card_raiting_icons">
-                                        {/* <Image src={ratingIcons} alt="" /> */}
                                         <StyledRating
                                             name="read-only"
                                             value={item.stars}

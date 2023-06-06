@@ -1,8 +1,7 @@
 import { Post } from "@/api";
-import Image from "next/image";
 import Link from "next/link";
 import { useMemo } from "react";
-import bath from "@/assets/bath.png";
+// import bath from "@/assets/bath.png";
 import "./Blog.scss";
 interface BlogProps {
     data: Post[];
@@ -37,13 +36,7 @@ export function Blog({ data = [] }: BlogProps) {
                     {leftPart.map((post) => (
                         <article key={post.id} className="post">
                             <figure className="post1">
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src={post.image1 || bath}
-                                    alt=""
-                                    unoptimized
-                                />
+                                <img src={post.image1 || "/bath.png"} alt="" />
                             </figure>
                             <div className="about1">
                                 <p className="date">
@@ -64,12 +57,9 @@ export function Blog({ data = [] }: BlogProps) {
                 <div className="the-first-right-post">
                     {rightPost1 && (
                         <div className="postnot">
-                            <Image
-                                width={100}
-                                height={100}
-                                src={rightPost1.image1 || bath}
+                            <img
+                                src={rightPost1.image1 || "/bath.png"}
                                 alt=""
-                                unoptimized
                             />
                             <div className="about11">
                                 <p className="datenot">
@@ -88,12 +78,9 @@ export function Blog({ data = [] }: BlogProps) {
                     )}
                     {rightPost2 && (
                         <div className="postnot1">
-                            <Image
-                                width={100}
-                                height={100}
-                                src={rightPost2.image1 || bath}
+                            <img
+                                src={rightPost2.image1 || "/bath.png"}
                                 alt=""
-                                unoptimized
                             />
                             <div className="about11">
                                 <p className="datenot">

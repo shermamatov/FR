@@ -1,6 +1,5 @@
 "use client";
 import "./ReviewsWritePopup.scss";
-import reviewStar from "../../img/one-star-icon.svg";
 import WriteForm from "./WriteForm";
 import VideoForm from "./VideoForm";
 import logo from "../../img/logo.svg";
@@ -63,7 +62,7 @@ const ReviewsWritePopup = ({ services }: any) => {
                         onClick={() => closeReviewsWritePopup()}
                         className="reviewsWritePopup_logo"
                     >
-                        <Image src={logo} alt="" />
+                        <img src="/logo.svg" alt="" />
                     </button>
                     <h1 className="reviewsWritePopup_title">Write a review</h1>
 
@@ -137,19 +136,19 @@ const ReviewsWritePopup = ({ services }: any) => {
                         </p>
                         <div className="reviewsWritePopup_productRating_item_right">
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                         </div>
                     </div>
@@ -159,19 +158,19 @@ const ReviewsWritePopup = ({ services }: any) => {
                         </p>
                         <div className="reviewsWritePopup_productRating_item_right">
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                         </div>
                     </div>
@@ -181,19 +180,19 @@ const ReviewsWritePopup = ({ services }: any) => {
                         </p>
                         <div className="reviewsWritePopup_productRating_item_right">
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                         </div>
                     </div>
@@ -203,19 +202,19 @@ const ReviewsWritePopup = ({ services }: any) => {
                         </p>
                         <div className="reviewsWritePopup_productRating_item_right">
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button>
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                         </div>
                     </div>
@@ -238,31 +237,31 @@ const ReviewsWritePopup = ({ services }: any) => {
                                 className={stars > 0 ? "star_btn_point" : ""}
                                 onClick={() => setStars(1)}
                             >
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button
                                 className={stars > 1 ? "star_btn_point" : ""}
                                 onClick={() => setStars(2)}
                             >
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button
                                 className={stars > 2 ? "star_btn_point" : ""}
                                 onClick={() => setStars(3)}
                             >
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button
                                 className={stars > 3 ? "star_btn_point" : ""}
                                 onClick={() => setStars(4)}
                             >
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                             <button
                                 className={stars > 4 ? "star_btn_point" : ""}
                                 onClick={() => setStars(5)}
                             >
-                                <Image src={reviewStar} alt="" />
+                                <img src="/one-star-icon.svg" alt="" />
                             </button>
                         </div>
                     </div>
