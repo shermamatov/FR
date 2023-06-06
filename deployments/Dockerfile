@@ -16,4 +16,4 @@ COPY deployments/default.conf /etc/nginx/conf.d/default.conf
 COPY deployments/default.conf /etc/nginx/conf.d/default.conf
 COPY deployments/nginx.conf /etc/nginx/nginx.conf
 
-COPY --from=build /app/front/build /usr/share/nginx/html
+COPY --from=build /app/front/.next /usr/share/nginx/html
