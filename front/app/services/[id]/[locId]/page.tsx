@@ -64,7 +64,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                             </h1>
                             <LocationChecker params={params} />
 
-                            <div className="left_bottom_block">
+                            {/* <div className="left_bottom_block">
                                 <div className="block1_desc">
                                     <div className="bord">
                                         <img src="/galochkaIcon.svg" alt="" />
@@ -93,7 +93,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                                         <Image src={yelp} alt="" />
                                     </div>
                                 </div>
-                            </div>
+                            </div> */}
                         </div>
                         <div className="block1_right bord">
                             <div className="banner_block">
