@@ -1,9 +1,9 @@
 version: '3.7'
 
 services:
-  web:
-    image: ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG}
-    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-front
+  next:
+    image: ${CI_APPLICATION_REPOSITORY}:front_${CI_APPLICATION_TAG}
+    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-web
     restart: always
     ports:
       - 127.0.0.1:${APP_PORT}:80
@@ -11,6 +11,12 @@ services:
       - /home/1furniture/media:/opt/media
       - /home/1furniture/backend_static:/opt/backend_static
       - /home/1furniture/image_cache:/tmp/image_cache
+    networks:
+      - 1furniture
+  web:
+    image: ${CI_APPLICATION_REPOSITORY}:nginx_${CI_APPLICATION_TAG}
+    container_name: ${CI_PROJECT_NAME}-${CI_ENVIRONMENT_NAME}-front
+    restart: always
     networks:
       - 1furniture
 networks:

@@ -1,0 +1,15 @@
+# Build Next static files
+FROM node:16.20.0-alpine3.18
+
+WORKDIR /app/front
+COPY ./front/package.json ./
+COPY ./front/package-lock.json ./
+RUN npm install
+COPY ./front/ ./
+RUN npm run build
+
+EXPOSE 3000
+
+USER node
+
+CMD [ "npm", "start" ]
