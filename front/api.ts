@@ -80,7 +80,9 @@ export async function fetchPhotos(
     limit = 20,
     offset = 0
 ): Promise<PaginationData<Photo>> {
-    const res = await fetch(`${API_URL}/media?limit=${limit}&offset=${offset}`);
+    const res = await fetch(
+        `https://1furniturerestoration.com/api/media?limit=${limit}&offset=${offset}`
+    );
     return res.json();
 }
 
