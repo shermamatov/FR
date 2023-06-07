@@ -39,7 +39,7 @@ export default function BookNowFormSecond({
             "December",
         ];
         const days = [];
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 7; i++) {
             const date = moment().add(i, "days");
             days.push({
                 date: date.format("DD"),
@@ -88,7 +88,18 @@ export default function BookNowFormSecond({
         infinite: true,
         speed: 500,
         slidesToShow: 5,
-        slidesToScroll: 1,
+        slidesToScroll: 3,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true,
+                },
+            },
+        ],
     };
     const settings2 = {
         // dots: true,
@@ -157,8 +168,7 @@ export default function BookNowFormSecond({
                     <h2>{month}</h2>
                 </div>
             </div>
-            {/* </h2> */}
-            <div className="date_block-wrapper flex">
+            <div className="date_block-wrapper mt-8 ">
                 <button className="date_block-wrapper-prev-btn">
                     <FontAwesomeIcon icon={faChevronLeft} />
                 </button>
@@ -167,12 +177,17 @@ export default function BookNowFormSecond({
                         return (
                             <div key={idx}>
                                 <div
-                                    className="date_block"
+                                    className={`date_block ${
+                                        day.date == item.date
+                                            ? "active"
+                                            : "neActive"
+                                    }`}
                                     onClick={() => {
                                         setDay({
                                             date: item.date,
                                             month: item.month,
                                         });
+                                        console.log(day);
 
                                         setDayOfWeek(item.dayOfWeek);
                                     }}
@@ -188,10 +203,11 @@ export default function BookNowFormSecond({
                     <FontAwesomeIcon icon={faChevronRight} />
                 </button>
             </div>
-            <h2 className="blockNowForm2_time">
+
+            <h2 className="blockNowForm2_time mt-20">
                 Select time for {dayOfWeek}, {month} {day.date}
             </h2>
-            <div className="blockNowForm2_time_wrapper">
+            <div className="blockNowForm2_time_wrapper mb-16">
                 {slots.map((item) => {
                     return (
                         <p

@@ -4,7 +4,6 @@ import { Layout } from "@/components/Layout";
 import "./photos.scss";
 import { use, useEffect, useState } from "react";
 
-
 export default function Photos() {
     const [modal, setModal] = useState(false);
     // let photos = use(fetchPhotos(3));
@@ -54,7 +53,7 @@ export default function Photos() {
                         e.stopPropagation();
                     }}
                 >
-                    <img src='./filterIcon.png' alt="" />
+                    <img src="./filterIcon.png" alt="" />
                     <p>Filter</p>
                 </div>
                 <div className="grid lg:grid-cols-3 grid-cols-2  gap-x-4 gap-y-9 mt-5 relative">
@@ -70,42 +69,42 @@ export default function Photos() {
                                     <div>
                                         <input
                                             type="checkbox"
-                                            id="horns"
-                                            name="horns"
+                                            id="year"
+                                            name="year"
                                         />
-                                        <label htmlFor="horns">2018</label>
+                                        <label htmlFor="year">2018</label>
                                     </div>
                                     <div>
                                         <input
                                             type="checkbox"
-                                            id="horns"
-                                            name="horns"
+                                            id="year"
+                                            name="year"
                                         />
-                                        <label htmlFor="horns">2019</label>
+                                        <label htmlFor="year">2019</label>
                                     </div>
                                     <div>
                                         <input
                                             type="checkbox"
-                                            id="horns"
-                                            name="horns"
+                                            id="year"
+                                            name="year"
                                         />
-                                        <label htmlFor="horns">2020</label>
+                                        <label htmlFor="year">2020</label>
                                     </div>
                                     <div>
                                         <input
                                             type="checkbox"
-                                            id="horns"
-                                            name="horns"
+                                            id="year"
+                                            name="year"
                                         />
-                                        <label htmlFor="horns">2021</label>
+                                        <label htmlFor="year">2021</label>
                                     </div>
                                     <div>
                                         <input
                                             type="checkbox"
-                                            id="horns"
-                                            name="horns"
+                                            id="year"
+                                            name="year"
                                         />
-                                        <label htmlFor="horns">2022</label>
+                                        <label htmlFor="year">2022</label>
                                     </div>
                                     <p>more</p>
                                 </div>

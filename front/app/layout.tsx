@@ -24,6 +24,8 @@ export const metadata = {
     description:
         "We offer a wide range of HVAC services catered to both residential and commercial clients. Even the all-powerful Pointing has no control about the blind texts.",
 };
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function RootLayout({
     children,
