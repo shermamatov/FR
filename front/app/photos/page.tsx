@@ -6,10 +6,10 @@ import { use, useEffect, useState } from "react";
 
 export default function Photos() {
     const [modal, setModal] = useState(false);
-    // let photos = use(fetchPhotos(3));
     const [photos, setPhotos] = useState<PaginationData<Photo>>();
     const [currentPage, setCurrentPage] = useState(0);
     const num = 9;
+
     async function getData(limit = 3, offset = 0) {
         setPhotos(await fetchPhotos(limit, offset));
     }
@@ -18,29 +18,35 @@ export default function Photos() {
         getData(num, num * currentPage);
     }, [currentPage]);
 
-    // function getFilter(arr = [], filterArr = []): void {
-    //     let filter = [];
-    //     if (arr != [] || filterArr != []) {
-    //         for (let i of filterArr) {
-    //             for (let j of arr) {
-    //                 if (j.filter == i) {
-    //                     filter.push(j);
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
+    async function getFilter(filterArr = []) {
+        let filter: any = [];
+        let { results }: any = await fetchPhotos(num);
+        if (results.length !== 0 && filterArr.length !== 0) {
+            for (let i of filterArr) {
+                for (let j of results) {
+                    if (j.filter == i) {
+                        filter.push(j);
+                    }
+                }
+            }
+        }
+        setPhotos(filter);
+    }
 
-    // function filterHandler() {
-    //     let arr = [];
-    //     let checkboxArr = document.getElementsByName("horns");
-    //     for (let i = 0; i < checkboxArr.length; i++) {
-    //         if (checkboxArr[i].checked) {
-    //             arr.push(checkboxArr[i].value);
-    //         }
-    //     }
-    //     console.log(arr);
-    // }
+    function filterHandler() {
+        let arr: any = [];
+        let checkboxArr: any = document.getElementsByName("year");
+        for (let i = 0; i < checkboxArr.length; i++) {
+            if (checkboxArr[i].checked) {
+                arr.push(checkboxArr[i].value);
+            }
+        }
+        getFilter(arr);
+    }
+
+    function filter() {
+        filterHandler();
+    }
 
     return (
         <Layout className="content mb-16 pb-10 overflow-hidden">
@@ -163,7 +169,7 @@ export default function Photos() {
                                     </div>
                                 </div>
                             </div>
-                            <button>Save</button>
+                            <button onClick={() => filter()}>Save</button>
                         </div>
                     )}
                     {photos?.results.map((item) => (
