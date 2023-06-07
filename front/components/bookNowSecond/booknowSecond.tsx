@@ -9,7 +9,7 @@ export default function BooknowSecond({ services }: any) {
 
     return (
         <div>
-            {state ? (
+            {!state ? (
                 <BookNowFormFirst
                     message={message}
                     setFormData={setFormData}
