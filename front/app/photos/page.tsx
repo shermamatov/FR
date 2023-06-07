@@ -24,7 +24,7 @@ export default function Photos() {
         if (results.length !== 0 && filterArr.length !== 0) {
             for (let i of filterArr) {
                 for (let j of results) {
-                    if (j.filter == i) {
+                    if (j.created_at.slice(0, 4) == i) {
                         filter.push(j);
                     }
                 }
@@ -77,14 +77,7 @@ export default function Photos() {
                                             type="checkbox"
                                             id="year"
                                             name="year"
-                                        />
-                                        <label htmlFor="year">2018</label>
-                                    </div>
-                                    <div>
-                                        <input
-                                            type="checkbox"
-                                            id="year"
-                                            name="year"
+                                            value={"2019"}
                                         />
                                         <label htmlFor="year">2019</label>
                                     </div>
@@ -93,6 +86,7 @@ export default function Photos() {
                                             type="checkbox"
                                             id="year"
                                             name="year"
+                                            value={"2020"}
                                         />
                                         <label htmlFor="year">2020</label>
                                     </div>
@@ -101,6 +95,7 @@ export default function Photos() {
                                             type="checkbox"
                                             id="year"
                                             name="year"
+                                            value={"2021"}
                                         />
                                         <label htmlFor="year">2021</label>
                                     </div>
@@ -109,8 +104,18 @@ export default function Photos() {
                                             type="checkbox"
                                             id="year"
                                             name="year"
+                                            value={"2022"}
                                         />
                                         <label htmlFor="year">2022</label>
+                                    </div>
+                                    <div>
+                                        <input
+                                            type="checkbox"
+                                            id="year"
+                                            name="year"
+                                            value={"2023"}
+                                        />
+                                        <label htmlFor="year">2023</label>
                                     </div>
                                     <p>more</p>
                                 </div>
