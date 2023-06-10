@@ -10,6 +10,7 @@ export default function Photos() {
   const [photos, setPhotos] = useState<Photo[]>();
   const [photos2, setPhotos2] = useState<PaginationData<Photo>>();
   const [currentPage, setCurrentPage] = useState(0);
+  const [filterYear, setFilterYear] = useState<number | string>();
   const num = 9;
 
   async function getData(limit = num, offset = 0) {
@@ -42,6 +43,9 @@ export default function Photos() {
     console.log(filter);
     setPhotos(filter);
   }
+  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setFilterYear(e.currentTarget.value);
+  }
 
   function filterHandler() {
     let arr: any = [];
@@ -50,6 +54,9 @@ export default function Photos() {
       if (checkboxArr[i].checked) {
         arr.push(checkboxArr[i].value);
       }
+    }
+    if (filterYear) {
+      arr.push(filterYear);
     }
     console.log(arr);
     getFilter(arr);
@@ -75,7 +82,7 @@ export default function Photos() {
             <div className="photo_filter" onClick={(e) => e.stopPropagation()}>
               <div className="photo_filter_top">
                 <h2>By year</h2>
-                <input type="text" value={"2010"} />
+                <input type="text" value={filterYear} onChange={onChange} />
                 <div>
                   <div>
                     <input
@@ -126,52 +133,34 @@ export default function Photos() {
                 </div>
               </div>
               <div className="photo_filter_bottom">
-                <h2>By services</h2>
+                <h2>By type</h2>
                 <div>
                   <div>
                     <input
                       type="checkbox"
                       id="horns"
                       name="horns"
-                      value={"Repairing"}
+                      value={"Community"}
                     />
-                    <label htmlFor="horns">Repairing</label>
+                    <label htmlFor="horns">Community</label>
                   </div>
                   <div>
                     <input
                       type="checkbox"
                       id="horns"
                       name="horns"
-                      value={"Cooling"}
+                      value={"Before-After"}
                     />
-                    <label htmlFor="horns">Cooling</label>
+                    <label htmlFor="horns">Before-After</label>
                   </div>
                   <div>
                     <input
                       type="checkbox"
                       id="horns"
                       name="horns"
-                      value={"Mini split"}
+                      value={"Other"}
                     />
-                    <label htmlFor="horns">Mini split</label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="horns"
-                      name="horns"
-                      value={"Heating"}
-                    />
-                    <label htmlFor="horns">Heating</label>
-                  </div>
-                  <div>
-                    <input
-                      type="checkbox"
-                      id="horns"
-                      name="horns"
-                      value={"Commercial"}
-                    />
-                    <label htmlFor="horns">Commercial</label>
+                    <label htmlFor="horns">Other</label>
                   </div>
                 </div>
               </div>
