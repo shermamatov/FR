@@ -80,7 +80,7 @@ export default function Photos() {
           <p>Filter</p>
           {modal && (
             <div className="photo_filter" onClick={(e) => e.stopPropagation()}>
-              <div className="photo_filter_top">
+              <div className="photo_filter_top h-auto">
                 <h2>By year</h2>
                 <input type="text" value={filterYear} onChange={onChange} />
                 <div>
@@ -132,7 +132,7 @@ export default function Photos() {
                   <p>more</p>
                 </div>
               </div>
-              <div className="photo_filter_bottom">
+              <div className="photo_filter_bottom h-auto">
                 <h2>By type</h2>
                 <div>
                   <div>
@@ -175,7 +175,7 @@ export default function Photos() {
           )}
         </div>
         {photos?.length == 0 && (
-          <div className="h-[60vh]">
+          <div className="h-[80vh]">
             <h2 style={{ textAlign: "center", margin: "50px 0px" }}>
               there’s nothing here{" "}
             </h2>
