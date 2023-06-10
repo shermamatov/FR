@@ -15,35 +15,71 @@ const ReviewsWritePopup = ({ services }: any) => {
     const [service, setService] = useState<any>(null);
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
+    const [video, setVideo] = useState({});
+    const formData = new FormData();
 
-    const submitReview = () => {
-        if (name.trim() && review_text.trim() && stars && service && location) {
+
+  const submitReview = () => {
+    switch(formSelector){
+        case 'write':{
+          if (name.trim() && review_text.trim() && stars && service && location) {
             setLoading(true);
+            formData.set('name', name);
+            formData.set('stars', stars);
+            formData.set('review_text', review_text);
+            formData.set('service', service);
+            formData.set('location', location);
+            formData.set('video', null);
+            formData.set('image1', null);
+            formData.set('image2', null);
+            formData.set('phone', '');
+            formData.set('email', '');
             axios
-                .post("https://itek-dev.highcat.org/api/review/", {
-                    name,
-                    stars,
-                    review_text,
-                    service,
-                    location,
-                    image1: null,
-                    image2: null,
-                    phone: "",
-                    email: "",
-                })
-                .then((response) => {
-                    console.log(response);
-                    setMessage("Successfully");
-                })
-                .catch((error) => {
-                    console.log(error);
-                    setMessage("An error has occurred. try again");
-                })
-                .finally(() => {
-                    setLoading(false);
+              .post("https://1furniturerestoration.com/api/review/", formData)
+              .then((response) => {
+                console.log(response);
+                setMessage('Successfully');
+              })
+              .catch((error) =>{
+                 console.log(error);
+                 setMessage('An error has occurred. try again')
+                }).finally(()=>{
+                  setLoading(false)
                 });
+          }
+          break
         }
-    };
+        case 'video':{
+          if (name.trim() && video.name && stars && service && location) {
+            setLoading(true);
+            formData.set('name', name);
+            formData.set('stars', stars);
+            formData.set('review_text', '');
+            formData.set('service', service);
+            formData.set('location', location);
+            formData.set('video', video, video.name);
+            formData.set('image1', null);
+            formData.set('image2', null);
+            formData.set('phone', '');
+            formData.set('email', '');
+            axios
+              .post("https://1furniturerestoration.com/api/review/", formData)
+              .then((response) => {
+                console.log(response);
+                setMessage('Successfully');
+              })
+              .catch((error) =>{
+                 console.log(error);
+                 setMessage('An error has occurred. try again')
+                }).finally(()=>{
+                  setLoading(false)
+                });
+          }
+          break
+        }
+    }
+
+  };
 
     function closeReviewsWritePopup() {
         let popup: any = document.getElementById("reviewsWritePopup");
@@ -273,7 +309,7 @@ const ReviewsWritePopup = ({ services }: any) => {
                         setReview_text={setReview_text}
                     />
                 ) : (
-                    <VideoForm />
+                    <VideoFo-rm video={video} setVideo={setVideo}/>
                 )}
 
                 <p>{message}</p>
