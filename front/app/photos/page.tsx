@@ -7,7 +7,7 @@ import axios from "axios";
 
 export default function Photos() {
   const [modal, setModal] = useState(false);
-  const [photos, setPhotos] = useState<Photo[] | any>();
+  const [photos, setPhotos] = useState<Photo[]>();
   const [photos2, setPhotos2] = useState<PaginationData<Photo>>();
   const [currentPage, setCurrentPage] = useState(0);
   const num = 9;
