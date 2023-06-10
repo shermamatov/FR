@@ -29,11 +29,11 @@ export default function Photos() {
   }, [photos]);
   async function getFilter(filterArr = []) {
     let filter: any = [];
-    let results = [...photos];
+    let results = [...(photos ?? [])];
     if (results.length !== 0 && filterArr.length !== 0) {
       for (let i of filterArr) {
         for (let j of results) {
-          if (j.created_at.slice(0, 4) == i) {
+          if (j?.created_at?.slice(0, 4) == i) {
             filter.push(j);
           }
         }
