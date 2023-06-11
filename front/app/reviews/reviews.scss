@@ -337,14 +337,14 @@
     width: 370px;
     padding: 18px 32px;
     z-index: -1;
-    height: 0;
+    height: auto;
     transition: 0.7s;
     overflow: hidden;
     opacity: 0;
     &-show {
         z-index: 5;
         height: auto;
-        height: 890px;
+        height: auto;
         opacity: 1;
     }
     &_block {

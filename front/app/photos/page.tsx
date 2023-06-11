@@ -25,9 +25,6 @@ export default function Photos() {
   useEffect(() => {
     getData(num, num * currentPage);
   }, [currentPage]);
-  useEffect(() => {
-    console.log(photos);
-  }, [photos]);
   async function getFilter(filterArr = [], filterArrTypes = []) {
     let filter: any = [];
     let results = [...(photos ?? [])];
@@ -36,16 +33,47 @@ export default function Photos() {
       filterArr.length !== 0 &&
       filterArrTypes.length !== 0
     ) {
+      let yearArr: any = [];
+      let typeArr: any = [];
       for (let i of filterArr) {
-        for (let k of filterArrTypes) {
-          for (let j of results) {
-            if (j?.created_at?.slice(0, 4) == i && j?.type_of === k) {
-              filter.push(j);
-            }
+        for (let j of results) {
+          if (j?.created_at?.slice(0, 4) == i) {
+            yearArr.push(j);
           }
         }
       }
-    } else if (results.length !== 0 && filterArr.length !== 0) {
+      for (let i of filterArrTypes) {
+        for (let j of results) {
+          if (j?.type_of == i) {
+            typeArr.push(j);
+          }
+        }
+      }
+      if (yearArr.length >= typeArr.length) {
+        let filtered = yearArr.filter((value: any) => typeArr.includes(value));
+        for (let i of filtered) {
+          filter.push(i);
+        }
+      } else {
+        let filtered = typeArr.filter((value: any) => yearArr.includes(value));
+        for (let i of filtered) {
+          filter.push(i);
+        }
+      }
+      // for (let i of filterArr) {
+      //   for (let k of filterArrTypes) {
+      //     for (let j of results) {
+      //       if (j?.created_at?.slice(0, 4) == i && j?.type_of === k) {
+      //         filter.push(j);
+      //       }
+      //     }
+      //   }
+      // }
+    } else if (
+      results.length !== 0 &&
+      filterArr.length !== 0 &&
+      filterArrTypes.length === 0
+    ) {
       for (let i of filterArr) {
         for (let j of results) {
           if (j?.created_at?.slice(0, 4) == i) {
@@ -53,7 +81,11 @@ export default function Photos() {
           }
         }
       }
-    } else if (results.length !== 0 && filterArrTypes.length !== 0) {
+    } else if (
+      results.length !== 0 &&
+      filterArrTypes.length !== 0 &&
+      filterArr.length === 0
+    ) {
       for (let i of filterArrTypes) {
         for (let j of results) {
           if (j?.type_of === i) {
@@ -104,6 +136,7 @@ export default function Photos() {
           className="photos_filter_block relative"
           onClick={(e) => {
             setModal(!modal);
+            getData();
             e.stopPropagation();
           }}>
           <img src="./filterIcon.png" alt="" />
