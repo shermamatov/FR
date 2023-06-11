@@ -487,7 +487,7 @@ export default function ReviewsBlock2() {
                 </a>
               </div>
 
-              <div className="reviewsFilterPopup_block">
+              <div className="reviewsFilterPopup_block overflow-y-scroll h-[30%]">
                 <h3 className="reviewsFilterPopup_block_title">By services</h3>
                 {services?.results?.map((item) => (
                   <label
