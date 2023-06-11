@@ -79,8 +79,10 @@ export default function HomeBlock5() {
                                     ))}
                                 </ul>
                             </div>
-                            <div className={"d-none"}>
-                                <button>Read more</button>
+                            <div className="btn_block md:hidden">
+                                <Link href="/blog" className="latest__btn">
+                                    Read more
+                                </Link>
                             </div>
                         </div>
                     </div>

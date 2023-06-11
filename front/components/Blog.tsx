@@ -1,7 +1,6 @@
 import { Post } from "@/api";
 import Link from "next/link";
 import { useMemo } from "react";
-// import bath from "@/assets/bath.png";
 import "./Blog.scss";
 interface BlogProps {
     data: Post[];
@@ -82,7 +81,7 @@ export function Blog({ data = [] }: BlogProps) {
                                 src={rightPost2.image1 || "/bath.png"}
                                 alt=""
                             />
-                            <div className="about11">
+                            <div className="about11 p-2">
                                 <p className="datenot">
                                     {formatter.format(
                                         new Date(rightPost2.created_at)

@@ -70,6 +70,7 @@ const ServBlock9 = ({ reviews }: any) => {
                 breakpoint: 520,
                 settings: {
                     slidesToShow: 1, // на экранах меньше 768px показываем 2 слайда
+                    centerMode: false,
                 },
             },
         ],
