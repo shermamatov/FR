@@ -1,15 +1,13 @@
-import { fetchReviews } from "@/api";
 import { Layout } from "@/components/Layout";
 import { use } from "react";
 import "./reviews.scss";
 import ReviewsBlock1 from "./ReviewsBlock1";
 import ReviewsBlock2 from "./ReviewsBlock2";
 import ReviewsBlock3 from "./ReviewsBlock3";
-import { fetchServices } from '@/api';
+import { fetchServices } from "@/api";
 
 export default function Reviews() {
-    const reviews = use(fetchReviews());
-   const services = use(fetchServices());
+    const services = use(fetchServices());
 
     return (
         <Layout>
