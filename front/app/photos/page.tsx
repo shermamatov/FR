@@ -25,17 +25,74 @@ export default function Photos() {
     useEffect(() => {
         getData(num, num * currentPage);
     }, [currentPage]);
-    useEffect(() => {
-        console.log(photos);
-    }, [photos]);
-
-    async function getFilter(filterArr = []) {
+    async function getFilter(filterArr = [], filterArrTypes = []) {
         let filter: any = [];
         let results = [...(photos ?? [])];
-        if (results.length !== 0 && filterArr.length !== 0) {
+        if (
+            results.length !== 0 &&
+            filterArr.length !== 0 &&
+            filterArrTypes.length !== 0
+        ) {
+            let yearArr: any = [];
+            let typeArr: any = [];
             for (let i of filterArr) {
                 for (let j of results) {
                     if (j?.created_at?.slice(0, 4) == i) {
+                        yearArr.push(j);
+                    }
+                }
+            }
+            for (let i of filterArrTypes) {
+                for (let j of results) {
+                    if (j?.type_of == i) {
+                        typeArr.push(j);
+                    }
+                }
+            }
+            if (yearArr.length >= typeArr.length) {
+                let filtered = yearArr.filter((value: any) =>
+                    typeArr.includes(value)
+                );
+                for (let i of filtered) {
+                    filter.push(i);
+                }
+            } else {
+                let filtered = typeArr.filter((value: any) =>
+                    yearArr.includes(value)
+                );
+                for (let i of filtered) {
+                    filter.push(i);
+                }
+            }
+            // for (let i of filterArr) {
+            //   for (let k of filterArrTypes) {
+            //     for (let j of results) {
+            //       if (j?.created_at?.slice(0, 4) == i && j?.type_of === k) {
+            //         filter.push(j);
+            //       }
+            //     }
+            //   }
+            // }
+        } else if (
+            results.length !== 0 &&
+            filterArr.length !== 0 &&
+            filterArrTypes.length === 0
+        ) {
+            for (let i of filterArr) {
+                for (let j of results) {
+                    if (j?.created_at?.slice(0, 4) == i) {
+                        filter.push(j);
+                    }
+                }
+            }
+        } else if (
+            results.length !== 0 &&
+            filterArrTypes.length !== 0 &&
+            filterArr.length === 0
+        ) {
+            for (let i of filterArrTypes) {
+                for (let j of results) {
+                    if (j?.type_of === i) {
                         filter.push(j);
                     }
                 }
@@ -50,7 +107,9 @@ export default function Photos() {
 
     function filterHandler() {
         let arr: any = [];
+        let arrTypes: any = [];
         let checkboxArr: any = document.getElementsByName("year");
+        let checkboxArrType: any = document.getElementsByName("horns");
         for (let i = 0; i < checkboxArr.length; i++) {
             if (checkboxArr[i].checked) {
                 arr.push(checkboxArr[i].value);
@@ -59,8 +118,14 @@ export default function Photos() {
         if (filterYear) {
             arr.push(filterYear);
         }
-        console.log(arr);
-        getFilter(arr);
+        for (let i = 0; i < checkboxArrType.length; i++) {
+            if (checkboxArrType[i].checked) {
+                arrTypes.push(checkboxArrType[i].value);
+            }
+        }
+
+        // console.log(arr);
+        getFilter(arr, arrTypes);
     }
 
     function filter() {
@@ -75,6 +140,7 @@ export default function Photos() {
                     className="photos_filter_block relative"
                     onClick={(e) => {
                         setModal(!modal);
+                        getData();
                         e.stopPropagation();
                     }}
                 >
@@ -149,7 +215,7 @@ export default function Photos() {
                                             type="checkbox"
                                             id="horns"
                                             name="horns"
-                                            value={"Community"}
+                                            value={"community"}
                                         />
                                         <label htmlFor="horns">Community</label>
                                     </div>
@@ -158,7 +224,7 @@ export default function Photos() {
                                             type="checkbox"
                                             id="horns"
                                             name="horns"
-                                            value={"Before-After"}
+                                            value={"before-after"}
                                         />
                                         <label htmlFor="horns">
                                             Before-After
@@ -169,7 +235,7 @@ export default function Photos() {
                                             type="checkbox"
                                             id="horns"
                                             name="horns"
-                                            value={"Other"}
+                                            value={"other"}
                                         />
                                         <label htmlFor="horns">Other</label>
                                     </div>

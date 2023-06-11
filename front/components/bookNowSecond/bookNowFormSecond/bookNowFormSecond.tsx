@@ -144,7 +144,7 @@ export default function BookNowFormSecond({
                 })
                 .then((response) => {
                     console.log(response);
-                    setMessage(response.data);
+                    setMessage('Your request has been accepted. Thanks for the application!');
                 })
                 .catch((error) => {
                     console.log(error);

@@ -88,6 +88,7 @@ export default function BookNowFormFirst({
           })}
         </select>
 
+        {message ? <p className={'book-message'}>{message}</p> : ""}
         <button
           onClick={() => {
             if (name && phone && address && email && service) {
@@ -105,7 +106,7 @@ export default function BookNowFormFirst({
           {" "}
           Next
         </button>
-        {message ? <p>{message}</p> : ""}
+
       </div>
     </>
   );

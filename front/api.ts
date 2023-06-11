@@ -73,6 +73,7 @@ export interface Photo {
     photo: string;
     location: Location | null;
     order: number;
+    type_of: string;
     created_at?: string;
 }
 
