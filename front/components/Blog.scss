@@ -7,6 +7,7 @@ a:hover {
     color: #a5a582 !important;
 }
 .latest-Post {
+    margin-bottom: 100px;
     // max-width: 1600px;
     // margin: 0 auto;
     // width: 90%;
@@ -29,7 +30,10 @@ a:hover {
 .post {
     display: flex;
     align-items: center;
-    padding-top: 2%;
+    padding-bottom: 2%;
+}
+a:hover {
+    color: black;
 }
 .post1 {
     width: 60%;
@@ -63,7 +67,15 @@ a:hover {
 }
 .about1 p {
     font-family: "Montserrat" !important;
+    color: #a5a582;
+    font-weight: 600;
 }
+
+.about11 {
+    color: #a5a582;
+    font-weight: 600;
+}
+
 .date {
     /* padding-top: 2%; */
     line-height: 40px;
@@ -80,11 +92,10 @@ a:hover {
     width: 150%;
     font-family: "Montserrat" !important;
     font-weight: 700;
-    /* font-size: 25px; */
     font-size: calc(18px + (25 - 18) * ((100vw - 800px) / (1600 - 800)));
-
     color: #a5a582;
 }
+
 .titlenot1 {
     width: 120%;
     font-family: "Montserrat" !important;
@@ -93,6 +104,7 @@ a:hover {
     text-align: center;
     color: #a5a582;
 }
+
 .titlenot {
     width: 100%;
     line-height: 20px;
@@ -101,6 +113,13 @@ a:hover {
     font-weight: 700;
     color: #a5a582;
 }
+
+.title1:hover,
+.titlenot:hover,
+.titlenot1:hover {
+    text-decoration-line: underline;
+}
+
 .postnot img {
     width: 55%;
 }
@@ -153,6 +172,17 @@ a:hover {
     }
     .about1 {
         width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    .title1 {
+        font-size: 20px;
+    }
+    .latest {
+        font-size: 42px;
+    }
+    .Latest-Post-main {
+        margin-top: 0;
     }
 }
 @media (max-width: 425px) {
