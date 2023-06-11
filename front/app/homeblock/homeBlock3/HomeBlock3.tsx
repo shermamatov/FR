@@ -66,15 +66,11 @@ export default function HomeBlock3() {
                         </h1>
                         <p className="bord">
                             A global print fulfillment company partnered with
-                            Mason <br />
-                            Interactive to grow omnichannel sales via Search
-                            Engine <br />
-                            Optimization (SEO). During the course of the
-                            engagement, <br />
-                            the client saw a 134% increase in organic traffic,{" "}
-                            <br />
-                            resulting in a measurable increase in leads, and
-                            sales.
+                            Mason Interactive to grow omnichannel sales via
+                            Search Engine Optimization (SEO). During the course
+                            of the engagement, the client saw a 134% increase in
+                            organic traffic, resulting in a measurable increase
+                            in leads, and sales.
                         </p>
                         <button
                             className="btn_variant z-30"

@@ -13,7 +13,7 @@ export default function HomeBlock6() {
                         src="/serv_icon1.svg"
                         alt="#"
                     />
-                    <div className="flex flex-col ml-4">
+                    <div className="flex flex-col ml-1 sm:ml-4">
                         <h2 className="text-3xl md:text-5xl">+1000</h2>{" "}
                         <p className="text-center font-bold text-xs md:text-base">
                             Completed project
@@ -26,7 +26,7 @@ export default function HomeBlock6() {
                         src="/serv_icon2.svg"
                         alt="#"
                     />
-                    <div className="flex flex-col ">
+                    <div className="flex flex-col ml-1 sm:ml-4">
                         <h2 className="text-3xl md:text-5xl">+5000</h2>{" "}
                         <p className="text-center font-bold text-xs md:text-base">
                             clients review

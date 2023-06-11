@@ -211,7 +211,11 @@ li {
         flex-direction: column;
     }
     .services__list {
-        margin: 5% 0;
+        margin: 10% 0;
+    }
+    .services_block,
+    .services_block-2 {
+        padding-bottom: 0px;
     }
 }
 @media (max-width: 590px) {

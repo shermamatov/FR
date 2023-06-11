@@ -49,7 +49,7 @@ export default function HomeBlock5() {
         <div className="services_block">
             <div className="content">
                 <div className={"services__wrapper"}>
-                    <div className="container">
+                    <div>
                         <div className="services__inner">
                             <div className="services__top">
                                 <h2 className="services__title bord">
@@ -67,7 +67,7 @@ export default function HomeBlock5() {
                                 </p>
                             </div>
                             <div className="services__bottom">
-                                <ul className="services__list grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-9">
+                                <ul className="services__list gap-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-4 ">
                                     {services?.results.map((item) => (
                                         <li key={item.id}>
                                             <Link
