@@ -48,7 +48,8 @@
         text-transform: uppercase;
         position: absolute;
         bottom: -20px;
-        left: 0px;
+        // left: 0px;
+        right: -10px;
         white-space: nowrap;
     }
 }
@@ -111,7 +112,7 @@
         max-width: 1600px;
         overflow-y: auto;
         .modal_banner {
-            // width: 100%;
+            width: 100%;
             max-height: 450px;
             height: calc(
                 260px + (450 - 300) * ((100vw - 350px) / (1600 - 350))
@@ -160,14 +161,14 @@
 }
 @media (min-width: 1600px) {
     .block3_main {
-        min-height: 800px;
+        // min-height: 800px;
         .block3 {
             .block3_left {
                 width: 650px;
             }
             .block3_right {
                 > h1 {
-                    font-size: 60px;
+                    font-size: 56px;
                 }
                 > p {
                     font-size: 20px;
@@ -176,8 +177,8 @@
         }
     }
 }
-@media (min-width: 2900px) {
-    .block3_main {
-        min-height: 52vh;
-    }
-}
+// @media (min-width: 2900px) {
+//     .block3_main {
+//         height: 1000px;
+//     }
+// }

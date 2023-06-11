@@ -8,12 +8,15 @@ export default function HomeBlock4() {
     // const photos = use(fetchPhotos(9));
     const [photos, setPhotos] = useState<PaginationData<Photo>>();
     const [currentPage, setCurrentPage] = useState(0);
-    async function getData(limit = 3, offset = 0) {
+
+    const num = 6;
+
+    async function getData(limit = num, offset = 0) {
         setPhotos(await fetchPhotos(limit, offset));
     }
 
     useEffect(() => {
-        getData(3, 3 * currentPage);
+        getData(num, num * currentPage);
     }, [currentPage]);
 
     return (
@@ -21,7 +24,7 @@ export default function HomeBlock4() {
             <div className="fr_server">
                 <h2 className="transparent_text">at manufacturing plants</h2>
                 {/* <div className="container"> */}
-                <h2>our photos</h2>
+                <h2 className="text-4xl sm:text-5xl">our photos</h2>
                 <div className="grid_block">
                     {photos?.results.map((item) => (
                         <div key={item.id} className="grid__item">
@@ -61,11 +64,13 @@ export default function HomeBlock4() {
                         </svg>
                     </button>
                     <div className="flex pagg_numbers">
-                        {getPaggPage(photos?.count, 3).map((item: any) => (
+                        {getPaggPage(photos?.count, num).map((item: any) => (
                             <p
                                 onClick={() => setCurrentPage(item)}
                                 key={item}
-                                className="pagg__number"
+                                className={`pagg__number ${
+                                    item == currentPage && "pagg_number_active"
+                                }`}
                             >
                                 {item != ". . ." ? item + 1 : item}
                             </p>
@@ -83,14 +88,14 @@ export default function HomeBlock4() {
                     <button
                         className={`next__btn btn ${
                             photos &&
-                            currentPage >= Math.ceil(photos?.count / 3) - 1 &&
+                            currentPage >= Math.ceil(photos?.count / num) - 1 &&
                             "noActive"
                         } `}
                         onClick={() => {
                             setCurrentPage(
                                 photos &&
                                     currentPage >=
-                                        Math.ceil(photos?.count / 3) - 1
+                                        Math.ceil(photos?.count / num) - 1
                                     ? currentPage
                                     : currentPage + 1
                             );
