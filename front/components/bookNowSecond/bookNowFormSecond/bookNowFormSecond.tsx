@@ -135,7 +135,7 @@ export default function BookNowFormSecond({
 
       setLoading(true);
       axios
-        .post("https://1furniturerestoration.com/api/bookings", {
+        .post("https://1furniturerestoration.com/api/bookings/", {
           ...formData,
           comment,
           time: `${now.getFullYear()}-${day.date}-${formatNum(

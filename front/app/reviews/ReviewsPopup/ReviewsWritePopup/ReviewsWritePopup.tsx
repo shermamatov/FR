@@ -35,7 +35,7 @@ const ReviewsWritePopup = ({ services }: any) => {
           formData.append("phone", "");
           formData.append("email", "");
           axios
-            .post("https://1furniturerestoration.com/api/review/", formData)
+            .post("https://1furniturerestoration.com/api/review", formData)
             .then((response) => {
               console.log(response);
               setMessage("Successfully");
@@ -64,7 +64,7 @@ const ReviewsWritePopup = ({ services }: any) => {
           formData.append("phone", "");
           formData.append("email", "");
           axios
-            .post("https://1furniturerestoration.com/api/review/", formData)
+            .post("https://1furniturerestoration.com/api/review", formData)
             .then((response) => {
               console.log(response);
               setMessage("Successfully");
