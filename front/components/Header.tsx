@@ -258,7 +258,7 @@ const Header = () => {
                         </button>
                     </div>
                     <div className="navbar_burger">
-                        <Link href="/about_us">
+                        <Link href="/about">
                             <div className="burger__link">ABOUT US</div>
                         </Link>
 

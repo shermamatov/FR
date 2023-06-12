@@ -516,13 +516,13 @@
   .blockUs2 .bord {
     margin-top: 10px;
     column-gap: 6px;
+    align-items: center;
   }
 
   .blockUs2 .bord>img {
     width: calc(16px + 6 * (100vw - 800px) / 600);
     height: calc(16px + 6 * (100vw - 800px) / 600);
   }
-
   .blockUs2 .rating_block,
   .blockUs2 .mass_block {
     padding-left: 0;
@@ -531,6 +531,7 @@
   .blockUs2 .rating_block img {
     width: 100px;
     height: 16px;
+    margin-bottom: 10px;
   }
 
   .blockUs2 .rating_block {
