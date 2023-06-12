@@ -5,17 +5,27 @@ import ratingIcons from "./img/rating-icons.svg";
 import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material";
+import axios from "axios";
 
 export default function ReviewsBlock3({ services }: any) {
   const [reviews, setReviews] = useState<PaginationData<Review>>();
+  const [reviewsAll, setReviewsAll] = useState<Review[]>();
   const [currentPage, setCurrentPage] = useState(0);
   const [showFilterPopup, setShowFilterPopup] = useState(false);
+  const [filterYear, setFilterYear] = useState<number | string>();
 
   const pageSum = 6;
   async function getData(limit = pageSum, offset = 0) {
-    setReviews(await fetchReviews(limit, offset));
+    axios(
+      `https://1furniturerestoration.com/api/review/?limit=${limit}&offset=${offset}`
+    ).then(({ data }) => {
+      setReviewsAll(data.results);
+      setReviews(data);
+    });
   }
-
+  function onChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setFilterYear(e.currentTarget.value);
+  }
   useEffect(() => {
     getData(pageSum, pageSum * currentPage);
   }, [currentPage]);
@@ -28,15 +38,289 @@ export default function ReviewsBlock3({ services }: any) {
       color: "#ff3d47",
     },
   });
+  async function getFilter(
+    filterArr = [],
+    filterArrStars = [],
+    filterArrServices = []
+  ) {
+    let filter: any = [];
+    let results = [...(reviewsAll ?? [])];
+    if (results.length !== 0) {
+      //BY YEAR
+      if (
+        filterArr.length !== 0 &&
+        filterArrServices.length === 0 &&
+        filterArrStars.length === 0
+      ) {
+        for (let i of filterArr) {
+          for (let j of results) {
+            if (j?.created_at?.slice(0, 4) == i) {
+              filter.push(j);
+            }
+          }
+        }
+      }
+      //BY SERVICES
+      if (
+        filterArr.length === 0 &&
+        filterArrServices.length !== 0 &&
+        filterArrStars.length === 0
+      ) {
+        for (let i of filterArrServices) {
+          for (let j of results) {
+            if (j?.service == i) {
+              filter.push(j);
+            }
+          }
+        }
+      }
+      //BY STARS
+      if (
+        filterArr.length === 0 &&
+        filterArrServices.length === 0 &&
+        filterArrStars.length !== 0
+      ) {
+        for (let i of filterArrStars) {
+          for (let j of results) {
+            if (j?.stars == i) {
+              filter.push(j);
+            }
+          }
+        }
+      }
+      //BY YEARS AND SERVICES
+      if (
+        filterArr.length !== 0 &&
+        filterArrServices.length !== 0 &&
+        filterArrStars.length === 0
+      ) {
+        let yearArr: any = [];
+        let serviceArr: any = [];
+        for (let i of filterArr) {
+          for (let j of results) {
+            if (j?.created_at?.slice(0, 4) == i) {
+              yearArr.push(j);
+            }
+          }
+        }
+        for (let i of filterArrServices) {
+          for (let j of results) {
+            if (j?.service == i) {
+              serviceArr.push(j);
+            }
+          }
+        }
+        if (yearArr.length >= serviceArr.length) {
+          let filtered = yearArr.filter((value: any) =>
+            serviceArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        } else {
+          let filtered = serviceArr.filter((value: any) =>
+            yearArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        }
+      }
+
+      //BY YEARS AND STARS
+      if (
+        filterArr.length !== 0 &&
+        filterArrServices.length === 0 &&
+        filterArrStars.length !== 0
+      ) {
+        let yearArr: any = [];
+        let starsArr: any = [];
+        for (let i of filterArr) {
+          for (let j of results) {
+            if (j?.created_at?.slice(0, 4) == i) {
+              yearArr.push(j);
+            }
+          }
+        }
+        for (let i of filterArrStars) {
+          for (let j of results) {
+            if (j?.stars == i) {
+              starsArr.push(j);
+            }
+          }
+        }
+        if (yearArr.length >= starsArr.length) {
+          let filtered = yearArr.filter((value: any) =>
+            starsArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        } else {
+          let filtered = starsArr.filter((value: any) =>
+            yearArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        }
+      }
+      //BY SERVICES AND STARS
+      if (
+        filterArr.length === 0 &&
+        filterArrServices.length !== 0 &&
+        filterArrStars.length !== 0
+      ) {
+        let serviceArr: any = [];
+        let starsArr: any = [];
+        for (let i of filterArrServices) {
+          for (let j of results) {
+            if (j?.service == i) {
+              serviceArr.push(j);
+            }
+          }
+        }
+        for (let i of filterArrStars) {
+          for (let j of results) {
+            if (j?.stars == i) {
+              starsArr.push(j);
+            }
+          }
+        }
+        if (starsArr.length >= serviceArr.length) {
+          let filtered = starsArr.filter((value: any) =>
+            serviceArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        } else {
+          let filtered = serviceArr.filter((value: any) =>
+            starsArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        }
+      }
+
+      //BY SERVICES, Year and stars
+      if (
+        filterArr.length !== 0 &&
+        filterArrServices.length !== 0 &&
+        filterArrStars.length !== 0
+      ) {
+        let serviceArr: any = [];
+        let starsArr: any = [];
+        let yearsArr: any = [];
+        for (let i of filterArrServices) {
+          for (let j of results) {
+            if (j?.service == i) {
+              serviceArr.push(j);
+            }
+          }
+        }
+        for (let i of filterArrStars) {
+          for (let j of results) {
+            if (j?.stars == i) {
+              starsArr.push(j);
+            }
+          }
+        }
+        for (let i of filterArr) {
+          for (let j of results) {
+            if (j?.created_at?.slice(0, 4) == i) {
+              yearsArr.push(j);
+            }
+          }
+        }
+        if (
+          yearsArr.length >= serviceArr.length &&
+          yearsArr.length >= serviceArr.length
+        ) {
+          let filtered = yearsArr.filter(
+            (value: any) =>
+              serviceArr.includes(value) && starsArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        }
+        if (
+          serviceArr.length >= yearsArr.length &&
+          serviceArr.length >= starsArr.length
+        ) {
+          let filtered = serviceArr.filter(
+            (value: any) => yearsArr.includes(value) && starsArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        }
+        if (
+          starsArr.length >= yearsArr.length &&
+          starsArr.length >= serviceArr.length
+        ) {
+          let filtered = starsArr.filter(
+            (value: any) =>
+              yearsArr.includes(value) && serviceArr.includes(value)
+          );
+          for (let i of filtered) {
+            filter.push(i);
+          }
+        }
+      }
+    }
+
+    console.log(filter);
+    setReviewsAll(filter);
+  }
+
+  function filterHandler() {
+    let arr: any = [];
+    let arrStars: any = [];
+    let arrServices: any = [];
+    let checkboxArr: any = document.getElementsByName("year");
+    let checkboxArrStars: any = document.getElementsByName("stars");
+    let checkboxArrServices: any = document.getElementsByName("services");
+    for (let i = 0; i < checkboxArr.length; i++) {
+      if (checkboxArr[i].checked) {
+        arr.push(checkboxArr[i].value);
+      }
+    }
+    if (filterYear) {
+      arr.push(filterYear);
+    }
+    for (let i = 0; i < checkboxArrStars.length; i++) {
+      if (checkboxArrStars[i].checked) {
+        arrStars.push(checkboxArrStars[i].value);
+      }
+    }
+    for (let i = 0; i < checkboxArrServices.length; i++) {
+      if (checkboxArrServices[i].checked) {
+        arrServices.push(checkboxArrServices[i].value);
+      }
+    }
+
+    // console.log(arr);
+    getFilter(arr, arrStars, arrServices);
+    arr = [];
+    arrServices = [];
+    arrStars = [];
+  }
+
+  function filter() {
+    filterHandler();
+  }
 
   return (
     <div className="reviewsBlock3" onClick={() => setShowFilterPopup(false)}>
       <div className="content">
         <div className="reviewsBlock2_btns">
           <div
-            className="photos_filter_block z-10"
+            className="photos_filter_block z-8"
             onClick={(e) => {
-              //   getData();
+              getData();
               setShowFilterPopup(!showFilterPopup);
               // setModal(!modal);
               e.stopPropagation();
@@ -54,8 +338,8 @@ export default function ReviewsBlock3({ services }: any) {
                 <input
                   type="number"
                   className="reviewsFilterPopup_block_input"
-                  //   value={filterYear}
-                  //   onChange={onChange}
+                  value={filterYear}
+                  onChange={onChange}
                 />
                 <label className="reviewsFilterPopup_block_item">
                   <input type="checkbox" id="year" name="year" value={"2019"} />
@@ -115,7 +399,7 @@ export default function ReviewsBlock3({ services }: any) {
                 <button
                   className="reviewsFilterPopup_block_btn"
                   onClick={() => {
-                    // filter();
+                    filter();
                     setShowFilterPopup(false);
                   }}>
                   save
@@ -125,11 +409,21 @@ export default function ReviewsBlock3({ services }: any) {
           )}
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-9">
-          {reviews?.results.map((item) => (
-            <div key={item.id}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-4 gap-y-9">
+          {reviewsAll?.length == 0 && (
+            <div className="h-[80vh] col-span-2 md:col-span-3 lg:col-span-4">
+              <h2 style={{ textAlign: "center", margin: "50px 0px" }}>
+                there’s nothing here{" "}
+              </h2>
+              <h4 onClick={() => getData()}>back</h4>
+            </div>
+          )}
+          {reviewsAll?.map((item) => (
+            <div key={item.id} className="col-span-1">
               <div className="reviewsBlock3_card">
-                <p className="reviewsBlock3_card_text">{item.review_text}</p>
+                <p className="reviewsBlock3_card_text text-md">
+                  {item.review_text}
+                </p>
                 <div>
                   <h3 className="reviewsBlock3_card_name">{item.name}</h3>
                   <div className="reviewsBlock2_card_raiting">
@@ -154,43 +448,8 @@ export default function ReviewsBlock3({ services }: any) {
               </div>
             </div>
           ))}
-
-          {/* <div
-                    className="reviewsBlock2_bottom_row"
-                    style={{ width: "100%" }}
-                >
-                    <div className="reviewsBlock2_bottom">
-                        <button
-                            className="reviewsBlock2_bottom_btn"
-                            onClick={() => prevPage()}
-                        >
-                            <FontAwesomeIcon icon={faChevronLeft} />
-                        </button>
-                        <div className="reviewsBlock2_bottom_center">
-                            {paggArr?.map((item, index) => (
-                                <p
-                                    key={index}
-                                    onClick={() => {
-                                        setPage(index);
-                                        setCurrentPage(index);
-                                    }}
-                                    className="reviewsBlock2_bottom_center_item"
-                                >
-                                    {index + 1}
-                                </p>
-                            ))}
-
-                        </div>
-                        <button
-                            className="reviewsBlock2_bottom_btn"
-                            onClick={() => nextPage()}
-                        >
-                            <FontAwesomeIcon icon={faChevronRight} />
-                        </button>
-                    </div>
-                </div> */}
         </div>
-        {reviews && reviews?.count > pageSum && (
+        {reviews && reviewsAll?.length !== 0 && (
           <div className="paggination flex">
             <button
               className={`prev__btn btn ${currentPage <= 0 && "noActive"}`}

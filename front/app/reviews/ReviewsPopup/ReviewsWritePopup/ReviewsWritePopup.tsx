@@ -7,6 +7,8 @@ import Image from "next/image";
 import { use, useState } from "react";
 import axios from "axios";
 import FormData from "form-data";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ReviewsWritePopup = ({ services }: any) => {
   const [formSelector, setFormSelector] = useState("write");
@@ -18,7 +20,20 @@ const ReviewsWritePopup = ({ services }: any) => {
   const [message, setMessage] = useState("");
   const [video, setVideo] = useState<any>({});
   const formData: any = new FormData();
-
+  const notifyError = () => {
+    toast.error("An error has occurred. Please try again.", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 2000,
+      className: "custom-toast",
+    });
+  };
+  const notifySuccess = () => {
+    toast.success("Thank you for your review!", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 2000,
+      className: "custom-toast-success",
+    });
+  };
   const submitReview = () => {
     switch (formSelector) {
       case "write": {
@@ -38,11 +53,11 @@ const ReviewsWritePopup = ({ services }: any) => {
             .post("https://1furniturerestoration.com/api/review", formData)
             .then((response) => {
               console.log(response);
-              setMessage("Successfully");
+              notifySuccess();
             })
             .catch((error) => {
               console.log(error);
-              setMessage("An error has occurred. try again");
+              notifyError();
             })
             .finally(() => {
               setLoading(false);
@@ -67,11 +82,11 @@ const ReviewsWritePopup = ({ services }: any) => {
             .post("https://1furniturerestoration.com/api/review", formData)
             .then((response) => {
               console.log(response);
-              setMessage("Successfully");
+              notifySuccess();
             })
             .catch((error) => {
               console.log(error);
-              setMessage("An error has occurred. try again");
+              notifyError();
             })
             .finally(() => {
               setLoading(false);
@@ -89,6 +104,7 @@ const ReviewsWritePopup = ({ services }: any) => {
 
   return (
     <div className={"reviewsWritePopup"} id="reviewsWritePopup">
+      <ToastContainer />
       <div
         onClick={() => closeReviewsWritePopup()}
         className="reviewsWritePopup_left"></div>

@@ -9,6 +9,9 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import moment from "moment";
+import FormData from "form-data";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function BookNowFormSecond({
   setState,
@@ -22,7 +25,23 @@ export default function BookNowFormSecond({
   const [time, setTime] = useState("");
   const [comment, setComment] = useState("");
   const [loading, setLoading] = useState(false);
-
+  const notifyError = () => {
+    toast.error("An error has occurred. Please try again.", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+      autoClose: 2000,
+      className: "custom-toast",
+    });
+  };
+  const notifySuccess = () => {
+    toast.success(
+      "Thanks for the application! Your request has been submitted.",
+      {
+        position: toast.POSITION.BOTTOM_RIGHT,
+        autoClose: 2000,
+        className: "custom-toast-success",
+      }
+    );
+  };
   function getNextFiveDays() {
     const monthList = [
       "January",
@@ -116,8 +135,11 @@ export default function BookNowFormSecond({
       return num;
     }
   };
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
-  const bookNow = () => {
+  async function bookNow() {
     const now = new Date();
     setFormData({
       ...formData,
@@ -126,6 +148,10 @@ export default function BookNowFormSecond({
         day.date
       }T${`${time}`.slice(0, 2)}:00:00`,
     });
+    const data = new FormData();
+    for (let key in formData) {
+      data.append(key, formData[key]);
+    }
     if (comment && day && time && month) {
       console.log(
         `${now.getFullYear()}-${day.date}-${formatNum(
@@ -134,6 +160,19 @@ export default function BookNowFormSecond({
       );
 
       setLoading(true);
+      // axios({
+      //   method: "POST",
+      //   url: "https://1furniturerestoration.com/api/bookings",
+      //   data: data,
+      //   headers: { "Content-Type": "multipart/form-data" },
+      // })
+      // await fetch("https://1furniturerestoration.com/api/bookings", {
+      //   body: formData,
+      //   headers: {
+      //     "Content-Type": "multipart/form-data",
+      //   },
+      //   method: "POST",
+      // })
       axios
         .post("https://1furniturerestoration.com/api/bookings", {
           ...formData,
@@ -144,22 +183,20 @@ export default function BookNowFormSecond({
         })
         .then((response) => {
           console.log(response);
-          setMessage(
-            "Your request has been accepted. Thanks for the application!"
-          );
+          notifySuccess();
         })
         .catch((error) => {
           console.log(error);
-          setMessage(
-            "An error has occurred. Try again or contact our call center"
-          );
+          notifyError();
         })
         .finally(() => {
-          setState(false);
+          setTimeout(() => {
+            setState(false);
+          }, 3000);
           setLoading(false);
         });
     }
-  };
+  }
 
   return (
     <div className="blockNowForm2">
@@ -232,6 +269,7 @@ export default function BookNowFormSecond({
         onChange={(e) => {
           setComment(e.target.value);
         }}></textarea>
+      <ToastContainer />
 
       {loading ? (
         <div className="lds-ellipsis">
