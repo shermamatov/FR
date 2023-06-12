@@ -1,4 +1,4 @@
-const API_URL = "https://itek-dev.highcat.org/api";
+const API_URL = "https://1furniturerestoration.com/api";
 
 export interface PaginationData<T> {
     count: number;
@@ -132,7 +132,7 @@ export async function fetchServiceByIdandLoc(
     locationId: number | null | string
 ): Promise<Service> {
     const res = await fetch(
-        `${API_URL}/service/${id}/?for_location=${locationId}`
+        `https://1furniturerestoration.com/api/service/${id}/?for_location=${locationId}`
     );
     return res.json();
 }

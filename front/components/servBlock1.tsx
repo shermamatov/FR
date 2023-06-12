@@ -12,10 +12,13 @@ import "../app/services/services.scss";
 export default function ServBlock1() {
     return (
         <div>
-            <section className="content -mt-12 md:-mt-24 ">
+            <section className="content ">
                 <div className="block1">
                     <div className="block1_left">
-                        <p className="font-black" style={{ color: "#A5A582" }}>
+                        <p
+                            className="font-black hidden md:block"
+                            style={{ color: "#A5A582" }}
+                        >
                             SERVICES
                         </p>
                         <h1 className="bord">
@@ -58,7 +61,7 @@ export default function ServBlock1() {
                             </div>
                         </div>
                     </div>
-                    <div className="block1_right bord">
+                    <div className="block1_right bord hidden md:flex">
                         <div className="banner_block">
                             <Image src={banner} alt="" />
                             <div className="krujok">

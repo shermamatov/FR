@@ -22,13 +22,13 @@ import banner from "@/assets/banner.jpg";
 import krujok from "@/assets/block1Krug.png";
 import "../../../services.scss";
 import LocationChecker from "@/components/LocationChecker";
+import HomeBlock4 from "@/app/homeblock/homeBlock4/HomeBlock4";
+
 export default function ServiceSingle({ params }: PageNavProps) {
     // const post = use(fetchPostById(params.id));
     const service = use(fetchServiceById(params.id));
     const services = use(fetchServices());
     const reviews = use(fetchReviews());
-
-    // console.log(locationId);
 
     function sliceServArr() {
         if (service.children.length > 2) {
@@ -41,29 +41,23 @@ export default function ServiceSingle({ params }: PageNavProps) {
             return a;
         }
     }
-    function sliceServArr2() {
-        let arra = [...service.children];
-        let a = arra.splice(3);
-        return a;
-    }
 
     return (
         <Layout>
             <div>
-                <section className="content -mt-12 md:-mt-24 ">
-                    <div className="block1">
-                        <div className="block1_left">
+                <section className="content">
+                    <div className="block1 single_block1 ">
+                        <div className="block1_left w-full lg:w-[50%]">
                             <p
                                 className="font-black"
                                 style={{ color: "#A5A582" }}
                             >
                                 SERVICES
                             </p>
-                            <h1 className="bord w-full md:w-[50%] mb-4">
+                            <h1 className="bord w-[90%] mb-4">
                                 {service.name}
                             </h1>
                             <LocationChecker params={params} />
-
                             {/* <div className="left_bottom_block">
                                 <div className="block1_desc">
                                     <div className="bord">
@@ -95,7 +89,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                                 </div>
                             </div> */}
                         </div>
-                        <div className="block1_right bord">
+                        <div className="block1_right bord hidden lg:flex ">
                             <div className="banner_block">
                                 <Image src={banner} alt="" />
                                 <div className="krujok">
@@ -106,8 +100,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
                     </div>
                 </section>
             </div>
-            <section className="content mt-[60px] md:mt-[150px]">
-                <div className="serv_before_after_block hidden md:flex">
+            <section className="content mt-[60px] lg:mt-[100px]">
+                <div className="serv_before_after_block hidden lg:flex">
                     <Image
                         src={
                             service.offer_image_before
@@ -131,7 +125,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         unoptimized
                     />
                 </div>
-                <div className="serv_before_after_block_adap md:hidden">
+                <div className="serv_before_after_block_adap lg:hidden">
                     <div>
                         <Image
                             src={
@@ -156,13 +150,22 @@ export default function ServiceSingle({ params }: PageNavProps) {
                             unoptimized
                         />
                     </div>
-                    <div className="serv_before_after_block_bottom">
+                    {/* <div className="serv_before_after_block_bottom">
                         <h2>
                             Friendly <br /> offer
                         </h2>
                         <h4 className="">
                             cost <span>${service.offer_price}</span>
                         </h4>
+                    </div> */}
+                    <div className="serv_before_after_block_bottom">
+                        <h2>
+                            Friendly <br /> offer
+                        </h2>
+                        <div className="serv_before_after_block_bottom_price">
+                            <p>cost</p>
+                            <h4>${service.offer_price}</h4>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -275,31 +278,36 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 </div>
             </section>
             <HomeBlock3 />
-            <div className="content">
-                <div className="fr_server">
-                    <h2 className="transparent_text">
-                        at manufacturing plants
-                    </h2>
-                    <h2>our photos</h2>
-                    <div className="grid_block">
-                        {service.media.map((item) => (
-                            <div key={item.id} className="grid__item">
-                                <Image
-                                    src={item.photo}
-                                    alt={item.caption}
-                                    className="grid__img"
-                                    unoptimized
-                                    width={100}
-                                    height={100}
-                                />
-                                <p className="grid__desc bord">
-                                    {item.caption}
-                                </p>
-                            </div>
-                        ))}
+            {service.media.length != 0 ? (
+                <div className="content">
+                    <div className="fr_server">
+                        <h2 className="transparent_text">
+                            at manufacturing plants
+                        </h2>
+                        <h2 className="text-4xl sm:text-5xl">our photos</h2>
+                        <div className="grid_block">
+                            {service.media.map((item) => (
+                                <div key={item.id} className="grid__item">
+                                    <Image
+                                        src={item.photo}
+                                        alt={item.caption}
+                                        className="grid__img"
+                                        unoptimized
+                                        width={100}
+                                        height={100}
+                                    />
+                                    <p className="grid__desc bord">
+                                        {item.caption}
+                                    </p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
-            </div>
+            ) : (
+                <HomeBlock4 />
+            )}
+
             <div className="servBlock5">
                 <div className="servBlock5_bg"></div>
                 <h1 className="servBlock5_title">10 YERS WARANTY</h1>
