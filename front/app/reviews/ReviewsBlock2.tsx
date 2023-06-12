@@ -15,18 +15,15 @@ import { styled } from "@mui/material";
 import axios from "axios";
 import { Service } from "@/api";
 
-export default function ReviewsBlock2() {
+export default function ReviewsBlock2({ services }: any) {
   // const reviews = use(fetchReviews());
   const [reviews, setReviews] = useState<PaginationData<Review>>();
   const [reviewsAll, setReviewsAll] = useState<Review[]>();
   const [currentPage, setCurrentPage] = useState(0);
-  const [services, setServices] = useState<PaginationData<Service>>();
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [filterYear, setFilterYear] = useState<number | string>();
   let pageSum = 8;
-  async function getServices() {
-    setServices(await fetchServices());
-  }
+
   async function getData(limit = pageSum, offset = 0) {
     axios(
       `https://1furniturerestoration.com/api/review/?limit=${limit}&offset=${offset}`
@@ -35,9 +32,7 @@ export default function ReviewsBlock2() {
       setReviews(data);
     });
   }
-  useEffect(() => {
-    getServices();
-  }, []);
+
   useEffect(() => {
     console.log(services);
     console.log(reviewsAll);
@@ -448,6 +443,7 @@ export default function ReviewsBlock2() {
             }}>
             <img src="/filterIcon.png" alt="" />
             <p>Filter</p>
+            <button className="font-bold text-lg ml-4">Video reviews</button>
           </div>
           {showFilterPopup && (
             <div
@@ -489,7 +485,7 @@ export default function ReviewsBlock2() {
 
               <div className="reviewsFilterPopup_block overflow-y-scroll h-[30%]">
                 <h3 className="reviewsFilterPopup_block_title">By services</h3>
-                {services?.results?.map((item) => (
+                {services?.results?.map((item: any) => (
                   <label
                     key={item.id}
                     className="reviewsFilterPopup_block_item">
@@ -527,11 +523,11 @@ export default function ReviewsBlock2() {
               </div>
             </div>
           )}
-          <div className="reviewsBlock2_btns_right">
+          {/* <div className="reviewsBlock2_btns_right">
             <button>All</button>
             <button>Review</button>
             <button>Video review</button>
-          </div>
+          </div> */}
         </div>
         {/* <h1 className="reviewsBlock2_title">Video review</h1> */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
