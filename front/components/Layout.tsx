@@ -1,8 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
-import logo from "@/assets/navLogo.png";
 import { PropsWithChildren, use } from "react";
-import { Location, fetchServices, getCurrentLocation } from "@/api";
 import Header from "./Header";
 
 interface LayoutProps extends PropsWithChildren {

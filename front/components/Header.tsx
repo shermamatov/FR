@@ -323,14 +323,23 @@ const Header = () => {
                         </Link>
                     </div>
                 </div>
-                {/* <div className={width >= 769 ? "d-none" : "navbar"}>
-                    <div className="d-flex">
-                        <Link href={"/location"}>
+                <div className="block md:hidden content ">
+                    <div className="d-flex justify-between mt-4">
+                        <Link
+                            style={{ color: "#F2994A" }}
+                            className="font-semibold text-xs locat_link"
+                            href={"/location"}
+                        >
                             73 Canal Street, California, LA
                         </Link>
-                        <a href="tel:+18188881010">+1-818-888-10-10</a>
+                        <a
+                            className="font-semibold text-xs"
+                            href="tel:+18188881010"
+                        >
+                            +1-818-888-10-10
+                        </a>
                     </div>
-                </div> */}
+                </div>
             </header>
         </div>
     );

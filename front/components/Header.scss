@@ -23,7 +23,7 @@
                 14px + (20 - 14) * ((100vw - 350px) / (1400 - 350))
             );
             color: #72421c;
-            font-family: "Montserrat";
+            font-family: "Montserrat" !important;
             margin: auto;
             font-weight: 700;
             // margin-left: 100px;
@@ -84,7 +84,9 @@
         }
     }
 }
-
+.locat_link {
+    color: #f2994a !important;
+}
 .navbar {
     // width: 90%;
     margin: auto;
