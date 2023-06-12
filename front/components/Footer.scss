@@ -11,7 +11,7 @@ footer a {
 }
 
 .footer__wrapper {
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(42, 42, 42, 0.95);
     padding: 50px 0;
 }
 .container {
@@ -52,7 +52,7 @@ footer a {
     font-weight: revert;
 }
 .col-md-p {
-    font-family: Montserrat;
+    font-family: "Montserrat";
     width: 85%;
     line-height: 2.5;
 }
@@ -83,7 +83,7 @@ footer a {
     width: 60px;
     height: 5px;
     border-radius: 5px;
-    background-color: #e9be8a;
+    background-color: #f2994a;
 }
 .col-md-4-mini {
     display: flex;
@@ -94,10 +94,10 @@ footer a {
 .col-md-4-mini h4 {
     font-weight: 200;
     padding-bottom: 3%;
-    font-family: Montserrat;
+    font-family: "Montserrat";
 }
 .col-md-4-mini p {
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-weight: 700;
 }
 .col-md-4-mini img {
@@ -118,7 +118,7 @@ footer a {
 .col-md-p-4 {
     padding-top: 5%;
     padding-bottom: 5%;
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-weight: 700;
 }
 @media (max-width: 1250px) {
