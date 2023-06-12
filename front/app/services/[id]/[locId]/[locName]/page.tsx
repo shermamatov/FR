@@ -23,6 +23,7 @@ import krujok from "@/assets/block1Krug.png";
 import "../../../services.scss";
 import LocationChecker from "@/components/LocationChecker";
 import HomeBlock4 from "@/app/homeblock/homeBlock4/HomeBlock4";
+
 export default function ServiceSingle({ params }: PageNavProps) {
     // const post = use(fetchPostById(params.id));
     const service = use(fetchServiceById(params.id));
@@ -44,21 +45,51 @@ export default function ServiceSingle({ params }: PageNavProps) {
     return (
         <Layout>
             <div>
-                <section className="content  ">
-                    <div className="block1 single_block1">
-                        <div className="block1_left">
+                <section className="content">
+                    <div className="block1 single_block1 ">
+                        <div className="block1_left w-full lg:w-[50%]">
                             <p
                                 className="font-black"
                                 style={{ color: "#A5A582" }}
                             >
                                 SERVICES
                             </p>
-                            <h1 className="bord w-[80%] lg:w-[50%] mb-4">
+                            <h1 className="bord w-[90%] mb-4">
                                 {service.name}
                             </h1>
                             <LocationChecker params={params} />
+                            {/* <div className="left_bottom_block">
+                                <div className="block1_desc">
+                                    <div className="bord">
+                                        <img src="/galochkaIcon.svg" alt="" />
+                                        <h4>
+                                            30+ years experience in engineering
+                                        </h4>
+                                    </div>
+                                    <div className="bord">
+                                        <img src="/galochkaIcon.svg" alt="" />
+                                        <h4>Available 24/7 for Emergencies</h4>
+                                    </div>
+                                    <div className="bord">
+                                        <img src="/galochkaIcon.svg" alt="" />
+                                        <h4>
+                                            Quick service Same-Day inspection
+                                            and estimate
+                                        </h4>
+                                    </div>
+                                    <div className="rating_block bord">
+                                        <img src="/stars.svg" alt="" />
+                                        <p>95% of clients recommend us</p>
+                                    </div>
+                                    <div className="mass_block bord">
+                                        <Image src={google} alt="" />
+                                        <Image src={facebook} alt="" />
+                                        <Image src={yelp} alt="" />
+                                    </div>
+                                </div>
+                            </div> */}
                         </div>
-                        <div className="block1_right bord hidden lg:flex">
+                        <div className="block1_right bord hidden lg:flex ">
                             <div className="banner_block">
                                 <Image src={banner} alt="" />
                                 <div className="krujok">
@@ -69,7 +100,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                     </div>
                 </section>
             </div>
-            <section className="content mt-[60px] lg:mt-[150px]">
+            <section className="content mt-[60px] lg:mt-[100px]">
                 <div className="serv_before_after_block hidden lg:flex">
                     <Image
                         src={

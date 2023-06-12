@@ -214,12 +214,16 @@
     .block1_right {
         position: absolute;
         right: -12%;
+        // top: -2%;
         .banner_block {
             position: relative;
             max-width: 700px;
             width: calc(400px + (750 - 400) * ((100vw - 800px) / (1600 - 800)));
             > img {
                 width: 100%;
+                max-height: 450px;
+                object-fit: cover;
+                background-size: cover;
             }
             .krujok {
                 position: absolute;
@@ -792,10 +796,13 @@
 //         }
 //     }
 // }
-
+.single_block1 {
+    min-height: 400px;
+}
 @media (max-width: 1024px) {
     .single_block1 {
         flex-direction: column;
+        min-height: 200px;
         .block1_left {
             h1 {
                 font-size: calc(46px + 18 * (100vw - 800px) / 600);
