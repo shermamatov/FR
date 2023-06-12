@@ -11,7 +11,7 @@ import Link from "next/link";
 
 export default function HomeBlock1() {
     return (
-        <section className="content">
+        <section className="content -mt-8 lg:mt-0">
             <div className="block1">
                 <div className="block1_left">
                     <h1 className="bord">
