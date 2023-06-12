@@ -59,6 +59,7 @@ li {
     display: flex;
     align-items: center;
     column-gap: 5px;
+    color: black;
 }
 .services__list--fc li p {
     margin-left: 90px;

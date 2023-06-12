@@ -71,7 +71,7 @@ export default function HomeBlock5() {
                                     {services?.results.map((item) => (
                                         <li key={item.id}>
                                             <Link
-                                                href={`/services/${item.slug}/${location?.id}`}
+                                                href={`/services/${item.slug}/${location?.id}/${location?.location_name}`}
                                             >
                                                 {item.name}
                                             </Link>

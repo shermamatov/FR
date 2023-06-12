@@ -8,6 +8,9 @@ import "./ServBlock9.scss";
 import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
+import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
+
 const ServBlock9 = ({ reviews }: any) => {
     const [videoReviews, setVideoReviews] = useState([]);
     const StyledRating = styled(Rating)({
@@ -110,6 +113,18 @@ const ServBlock9 = ({ reviews }: any) => {
                                             sx={{
                                                 fontSize: "30px",
                                             }}
+                                            icon={
+                                                <StarIcon
+                                                    sx={{ color: "white" }}
+                                                    fontSize="inherit"
+                                                />
+                                            }
+                                            emptyIcon={
+                                                <StarOutlineOutlinedIcon
+                                                    sx={{ color: "white" }}
+                                                    fontSize="inherit"
+                                                />
+                                            }
                                         />
                                         <p>{item.stars}</p>
                                     </div>
@@ -144,6 +159,18 @@ const ServBlock9 = ({ reviews }: any) => {
                                         sx={{
                                             fontSize: "30px",
                                         }}
+                                        icon={
+                                            <StarIcon
+                                                sx={{ color: "white" }}
+                                                fontSize="inherit"
+                                            />
+                                        }
+                                        emptyIcon={
+                                            <StarOutlineOutlinedIcon
+                                                sx={{ color: "white" }}
+                                                fontSize="inherit"
+                                            />
+                                        }
                                     />
                                     <p>{item.stars}</p>
                                 </div>
@@ -179,6 +206,18 @@ const ServBlock9 = ({ reviews }: any) => {
                                             sx={{
                                                 fontSize: "24px",
                                             }}
+                                            icon={
+                                                <StarIcon
+                                                    sx={{ color: "white" }}
+                                                    fontSize="inherit"
+                                                />
+                                            }
+                                            emptyIcon={
+                                                <StarOutlineOutlinedIcon
+                                                    sx={{ color: "white" }}
+                                                    fontSize="inherit"
+                                                />
+                                            }
                                         />
                                         <p>{reviews.results[0].stars}</p>
                                     </div>
@@ -211,6 +250,18 @@ const ServBlock9 = ({ reviews }: any) => {
                                             sx={{
                                                 fontSize: "24px",
                                             }}
+                                            icon={
+                                                <StarIcon
+                                                    sx={{ color: "white" }}
+                                                    fontSize="inherit"
+                                                />
+                                            }
+                                            emptyIcon={
+                                                <StarOutlineOutlinedIcon
+                                                    sx={{ color: "white" }}
+                                                    fontSize="inherit"
+                                                />
+                                            }
                                         />
                                         <p>{item.stars}</p>
                                     </div>

@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="row">
                             <div className="col-md-4">
                                 <div className="about">
-                                    <h1 className="text-4xl font-normal">
+                                    <h1 className="text-3xl font-normal">
                                         About
                                     </h1>
                                     <div className="polosa"></div>
@@ -45,7 +45,7 @@ const Footer = () => {
                             </div>
                             <div className="col-md-4">
                                 <div className="contacts">
-                                    <h1 className="text-4xl font-normal">
+                                    <h1 className="text-3xl font-normal">
                                         Contacts
                                     </h1>
                                     <div className="polosa"></div>
@@ -85,7 +85,7 @@ const Footer = () => {
                             </div>
                             <div className="col-md-4">
                                 <div className="about">
-                                    <h1 className="text-4xl font-normal">
+                                    <h1 className="text-3xl font-normal">
                                         Quick links
                                     </h1>
                                     <div className="polosa"></div>
