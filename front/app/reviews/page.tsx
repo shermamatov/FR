@@ -7,15 +7,15 @@ import ReviewsBlock3 from "./ReviewsBlock3";
 import { fetchServices } from "@/api";
 
 export default function Reviews() {
-    const services = use(fetchServices());
+  const services = use(fetchServices());
 
-    return (
-        <Layout>
-            <ReviewsBlock1 services={services} />
+  return (
+    <Layout>
+      <ReviewsBlock1 services={services} />
 
-            <ReviewsBlock2 />
+      <ReviewsBlock2 services={services} />
 
-            <ReviewsBlock3 />
-        </Layout>
-    );
+      <ReviewsBlock3 services={services} />
+    </Layout>
+  );
 }
