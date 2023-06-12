@@ -263,7 +263,7 @@
     border: 5px solid #a5a582;
     > img {
         width: 49%;
-        max-height: 600px;
+        max-height: 500px;
         object-fit: cover;
         background-size: cover;
     }
@@ -1056,18 +1056,42 @@
 }
 
 @media (max-width: 500px) {
+    // .serv_before_after_block_adap {
+    //     border: 8px solid #a5a582;
+    //     .serv_before_after_block_bottom {
+    //         padding: 10px;
+    //         h2 {
+    //             font-size: 24px;
+    //             display: flex;
+    //             align-items: center;
+    //         }
+    //         h4 {
+    //             font-size: 24px;
+    //             font-family: "Alfa Slab One";
+
+    //             > span {
+    //                 font-size: 32px;
+    //             }
+    //         }
+    //     }
+    // }
     .serv_before_after_block_adap {
-        border: 8px solid #a5a582;
         .serv_before_after_block_bottom {
+            padding: 15px;
             h2 {
                 font-size: 24px;
             }
-            h4 {
-                font-size: 18px;
-                font-family: "Alfa Slab One";
-
-                > span {
+            .serv_before_after_block_bottom_price {
+                p {
+                    color: white;
+                    font-weight: 700;
+                    font-size: 24px;
+                }
+                h4 {
                     font-size: 32px;
+                    color: white;
+                    margin-bottom: -3%;
+                    margin-left: 5px;
                 }
             }
         }
