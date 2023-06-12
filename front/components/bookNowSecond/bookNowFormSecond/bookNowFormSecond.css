@@ -233,3 +233,16 @@
         display: none;
     }
 }
+.custom-toast {
+    color: #fff;
+  background: red;
+  font-family: inherit;
+  z-index: 1000;
+}
+
+.custom-toast-success {
+    color: #fff;
+  background: green;
+  font-family: inherit;
+  z-index: 1000;
+}

@@ -146,7 +146,14 @@
         > p {
             margin-top: 5px;
             margin-bottom: 10px;
-            font-size: 12px;
+            font-size: 16px;
+            // line-height: 30px;
+            line-height: calc(
+                20px + (30 - 25) * ((100vw - 800px) / (1400 - 800))
+            );
+            font-size: calc(
+                10px + (16 - 12) * ((100vw - 800px) / (1400 - 800))
+            );
         }
         a {
             font-size: 12px;
@@ -349,4 +356,25 @@
             }
         }
     }
+}
+
+.blog-card-desc {
+    font-size: 16px;
+            // line-height: 30px;
+            line-height: calc(
+                20px + (30 - 25) * ((100vw - 800px) / (1400 - 800))
+            );
+            font-size: calc(
+                10px + (16 - 12) * ((100vw - 800px) / (1400 - 800))
+            );
+}
+.blog-card-title{
+    font-size: 24px;
+            // line-height: 30px;
+            line-height: calc(
+                30px + (30 - 25) * ((100vw - 800px) / (1400 - 800))
+            );
+            font-size: calc(
+                20px + (16 - 12) * ((100vw - 800px) / (1400 - 800))
+            )!important;
 }
