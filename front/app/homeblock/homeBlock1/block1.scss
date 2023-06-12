@@ -147,9 +147,12 @@
 }
 @media (max-width: 768px) {
     .block1 {
-        margin-top: -30px;
+        margin-top: -50px;
         flex-direction: column;
         .block1_left {
+            > h1 {
+                font-size: calc(42px + 18 * (100vw - 800px) / 600);
+            }
             .left_bottom_block {
                 margin-top: 25px;
                 .block1_desc {
@@ -160,6 +163,7 @@
                                 10px + (16 - 12) *
                                     ((100vw - 350px) / (800 - 350))
                             );
+                            font-family: "Montserrat" !important;
                         }
                     }
                     .rating_block {
