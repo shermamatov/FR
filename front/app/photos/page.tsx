@@ -135,7 +135,9 @@ export default function Photos() {
     return (
         <Layout className="content mb-16 pb-10 overflow-hidden">
             <div onClick={() => setModal(false)}>
-                <h1 className="mb-14 md:text-5xl text-3xl">Project photos</h1>
+                <h1 className="mb-14 md:text-5xl text-3xl hidden md:block">
+                    Project photos
+                </h1>
                 <div
                     className="photos_filter_block relative"
                     onClick={(e) => {
@@ -260,14 +262,18 @@ export default function Photos() {
                         <h4 onClick={() => getData()}>back</h4>
                     </div>
                 )}
-                <div className="grid lg:grid-cols-3 grid-cols-2  gap-x-4 gap-y-9 mt-5">
+                <div className="grid lg:grid-cols-3 grid-cols-2  gap-x-4 gap-y-4 md:gap-y-9 mt-5">
                     {photos?.map((item) => (
                         <img
                             key={item.id}
                             src={item.photo}
                             alt={item.caption}
-                            className="aspect-video"
-                            style={{ width: "100%" }}
+                            className="aspect-video aspAdap"
+                            style={{
+                                width: "100%",
+                                objectFit: "cover",
+                                backgroundSize: "cover",
+                            }}
                         />
                     ))}
                 </div>
@@ -305,7 +311,11 @@ export default function Photos() {
                                     <p
                                         onClick={() => setCurrentPage(item)}
                                         key={item}
-                                        className="pagg__number"
+                                        // className="pagg__number"
+                                        className={`pagg__number ${
+                                            item == currentPage &&
+                                            "pagg_number_active"
+                                        }`}
                                     >
                                         {item != ". . ." ? item + 1 : item}
                                     </p>

@@ -3,15 +3,14 @@ import { Layout } from "@/components/Layout";
 import Link from "next/link";
 import { use, useMemo } from "react";
 import "./blogPage.scss";
-// import { relative } from "path";
 
 export default function Blog() {
     const posts = use(fetchBlog());
 
-    function getMiniData() {
-        const arr = [...posts.results];
-        return arr.slice(2);
-    }
+    // function getMiniData() {
+    //     const arr = [...posts.results];
+    //     return arr.slice(2);
+    // }
 
     const formatter = useMemo(
         () =>
@@ -122,7 +121,7 @@ export default function Blog() {
             </div>
 
             <div className="blog_block3 hidden md:grid">
-                {getMiniData().map((item) => (
+                {posts.results.slice(4).map((item) => (
                     <div className="blog_card" key={item.id}>
                         <img
                             src={item.image1 ? item.image1 : "/bath.png"}

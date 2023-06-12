@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // padding: 10px;
+    /* // padding: 10px; */
 }
 .btn svg path {
     transition: fill 0.5s;
@@ -36,6 +36,11 @@
 .pagg__number:hover {
     color: #a5a582;
 }
+
+.pagg_number_active {
+    color: #f2994a;
+}
+
 .photo_filter {
     position: absolute;
     border: 2px dashed #f2994a;
@@ -132,7 +137,7 @@
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
     .photo_filter {
         width: 100%;
         // left: 5%;
@@ -157,13 +162,16 @@
             }
         }
     }
+    .aspAdap {
+        aspect-ratio: 16 / 12 !important;
+    }
 }
 
 @media (max-width: 550px) {
     .paggination {
-        width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        margin-top: 50px;
     }
     .btn {
         width: 50px;
@@ -175,11 +183,14 @@
     }
     .pagg_numbers {
         display: flex;
-        width: 70%;
         justify-content: space-between;
-        // margin: 0;
     }
     .pagg__number {
-        margin: 0;
+        margin: 0, 20px;
+    }
+}
+@media (min-width: 1600px) {
+    .photos_filter_block {
+        margin-top: 30px;
     }
 }
