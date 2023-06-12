@@ -7,14 +7,14 @@ import HomeBlock5 from "../homeblock/homeBlock5/HomeBlock5";
 import ServBlock1 from "@/components/servBlock1";
 
 export default function Services() {
-  const services = use(fetchServices());
-  return (
-    <Layout>
-      <ServBlock1 />
-      <section className="mb-32 mt-[100px] md:mt-[200px]">
-        <HomeBlock5 />
-      </section>
-      {/* <h1 className="mb-14">Services</h1>
+    const services = use(fetchServices());
+    return (
+        <Layout>
+            <ServBlock1 />
+            <section className="mb-16 mt-[40px] md:mt-24 lg:mt-48">
+                <HomeBlock5 />
+            </section>
+            {/* <h1 className="mb-14">Services</h1>
             <div></div>
 
             <div className="grid grid-cols-3 gap-x-4 gap-y-9">
@@ -24,6 +24,6 @@ export default function Services() {
                     </Link>
                 ))}
             </div> */}
-    </Layout>
-  );
+        </Layout>
+    );
 }
