@@ -6,8 +6,7 @@
     width: 100%;
     height: 100vh;
     display: flex;
-    transition: .5s;
-
+    transition: 0.5s;
 
     &_logo {
         display: none;
@@ -19,7 +18,7 @@
 
     &_left {
         width: 40%;
-        background: #4F4F4F;
+        background: #4f4f4f;
         opacity: 0.5;
         height: 100vh;
         transition: 1.5s;
@@ -27,7 +26,7 @@
     }
 
     &_right {
-        background: #FFF8ED;
+        background: #fff8ed;
         width: 60%;
         height: 100vh;
         padding: 70px 70px;
@@ -35,18 +34,17 @@
     }
 
     &_title {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 700;
         font-size: 40px;
         line-height: 40px;
-        color: #2A2A2A;
+        color: #2a2a2a;
     }
-
 
     &_header {
         display: flex;
         justify-content: space-between;
-        border-bottom: 1px dashed #F2994A;
+        border-bottom: 1px dashed #f2994a;
         padding-bottom: 56px;
         align-items: center;
 
@@ -57,17 +55,17 @@
         }
 
         &_btn {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 20px;
             line-height: 24px;
             text-transform: uppercase;
-            color: #2A2A2A;
+            color: #2a2a2a;
             background-color: transparent;
             border: none;
 
             &-active {
-                color: #F2994A;
+                color: #f2994a;
             }
         }
 
@@ -77,24 +75,23 @@
     }
 
     &_name {
-
         &_title {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 20px;
             line-height: 24px;
             text-transform: uppercase;
-            color: #2A2A2A;
+            color: #2a2a2a;
             margin-top: 80px;
         }
 
         &_input {
             margin-top: 10px;
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 400;
             font-size: 18px;
             line-height: 22px;
-            color: #2A2A2A;
+            color: #2a2a2a;
             padding: 17px 25px;
             background-color: transparent;
             width: 560px;
@@ -110,23 +107,22 @@
     }
 
     &_productRating {
-
         &_title {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 20px;
             line-height: 24px;
             text-transform: uppercase;
-            color: #2A2A2A;
+            color: #2a2a2a;
             margin-top: 70px;
         }
 
         &_subtitle {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 500;
             font-size: 14px;
             line-height: 17px;
-            color: #2A2A2A;
+            color: #2a2a2a;
         }
 
         &_item {
@@ -136,17 +132,15 @@
             align-items: center;
             margin-top: 22px;
 
-
             &_text {
-                font-family: 'Montserrat';
+                font-family: "Montserrat";
                 font-weight: 500;
                 font-size: 18px;
                 line-height: 22px;
-                color: #2A2A2A;
+                color: #2a2a2a;
             }
 
             &_right {
-
                 button {
                     background-color: transparent;
                     border: none;
@@ -155,18 +149,17 @@
             }
         }
     }
-.star_btn_point{
-    border-bottom: 4px solid gold;
-}
+    .star_btn_point {
+        border-bottom: 4px solid gold;
+    }
     &_bottom {
-
         &_title {
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 700;
             font-size: 20px;
             line-height: 24px;
             text-transform: uppercase;
-            color: #2A2A2A;
+            color: #2a2a2a;
             margin-top: 80px;
             margin-bottom: 40px;
         }
@@ -175,41 +168,41 @@
             width: 100%;
             resize: none;
             padding: 20px 40px;
-            border: 1px solid #D9D9D9;
+            border: 1px solid #d9d9d9;
             border-radius: 10px;
             background-color: transparent;
             height: 200px;
             outline: none;
-            font-family: 'Montserrat';
+            font-family: "Montserrat";
             font-weight: 600;
             font-size: 20px;
             line-height: 24px;
 
             &::placeholder {
-                color: #D9D9D9;
+                color: #d9d9d9;
             }
         }
     }
 
     &_submitBtn {
-        font-family: 'Montserrat';
+        font-family: "Montserrat";
         font-weight: 500;
         font-size: 16px;
         line-height: 20px;
-        color: #2A2A2A;
+        color: #2a2a2a;
         width: 180px;
         height: 60px;
         border-radius: 50%;
         background-color: transparent;
-        border: 1px solid #2A2A2A;
-        transition: .5s;
+        border: 1px solid #2a2a2a;
+        transition: 0.5s;
         display: block;
         margin: 120px auto;
 
         &:hover {
-            color: #FFFFFF;
-            background: #F2994A;
-            border-color: #F2994A;
+            color: #ffffff;
+            background: #f2994a;
+            border-color: #f2994a;
         }
     }
 
@@ -228,22 +221,18 @@
             width: 35px;
             height: 35px;
             border-radius: 50%;
-            background: #FCF2E7;
-            border: 1px solid #F2994A;
-            color: #F2994A;
+            background: #fcf2e7;
+            border: 1px solid #f2994a;
+            color: #f2994a;
             font-weight: bold;
             right: -17px;
             top: -17px;
         }
     }
-
 }
 
-
 @media screen and (max-width: 1400px) {
-
     .reviewsWritePopup {
-
         &_title {
             font-size: 30px;
             line-height: 100%;
@@ -253,9 +242,6 @@
 
 @media screen and (max-width: 1200px) {
     .reviewsWritePopup {
-
-
-
         &_right {
             width: 70%;
         }
@@ -276,19 +262,12 @@
             &_right {
                 column-gap: 35px;
             }
-
-
         }
-
-
     }
-
-
 }
 
 @media screen and (max-width: 992px) {
     .reviewsWritePopup {
-
         &_right {
             width: 80%;
         }
@@ -296,13 +275,11 @@
         &_left {
             width: 20%;
         }
-
     }
 }
 
 @media screen and (max-width: 768px) {
     .reviewsWritePopup {
-
         &_name {
             &_title {
                 margin-top: 120px;
@@ -345,18 +322,15 @@
 
             &_closeBtn {
                 display: block;
-                color: #F2994A;
+                color: #f2994a;
                 font-weight: bold;
                 background-color: transparent;
                 border: none;
                 font-size: 25px;
             }
         }
-
     }
-
 }
-
 
 @media screen and (max-width: 576px) {
     .reviewsWritePopup {
@@ -377,7 +351,6 @@
         }
 
         &_name {
-
             &_title {
                 font-size: 14px;
                 line-height: 17px;
@@ -392,7 +365,6 @@
         }
 
         &_productRating {
-
             &_title {
                 font-size: 14px;
                 line-height: 17px;
@@ -414,7 +386,6 @@
         }
 
         &_bottom {
-
             &_title {
                 font-size: 14px;
                 line-height: 17px;
@@ -425,24 +396,23 @@
                 line-height: 15px;
             }
 
-            &_img{
+            &_img {
                 width: 240px;
             }
         }
     }
 }
 
-
 .custom-toast {
     color: #fff;
-  background: red;
-  font-family: inherit;
-  z-index: 1000;
+    background: red;
+    font-family: inherit;
+    z-index: 1000;
 }
 
 .custom-toast-success {
     color: #fff;
-  background: green;
-  font-family: inherit;
-  z-index: 1000;
+    background: green;
+    font-family: inherit;
+    z-index: 1000;
 }
