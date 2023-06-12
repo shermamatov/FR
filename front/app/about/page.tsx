@@ -1,4 +1,3 @@
-import { Blog } from "@/components/Blog";
 import { Layout } from "@/components/Layout";
 import "./aboutPage.css";
 // import imagesak from "../../assets/sak.png";
@@ -13,7 +12,6 @@ import "./aboutPage.css";
 // import blockUs2Icon1 from "../../assets/blockUs2-icon1.svg";
 // import blockUs2Icon2 from "../../assets/blockUs2-icon2.svg";
 import bg from "../../assets/blockUs2-bg.png";
-import Image from "next/dist/client/legacy/image";
 
 export default async function AboutUs() {
     return (
@@ -22,7 +20,12 @@ export default async function AboutUs() {
                 <div className="content">
                     <div className="block1">
                         <div className="block1_left">
-                            <p className="about-result">about us</p>
+                            <p
+                                className="font-black  mb-2"
+                                style={{ color: "#A5A582" }}
+                            >
+                                ABOUT US
+                            </p>
                             <h1 className="bord">
                                 Family owners <br /> business of <br />{" "}
                                 engineers
