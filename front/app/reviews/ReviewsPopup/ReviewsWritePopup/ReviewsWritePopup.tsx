@@ -25,6 +25,7 @@ const ReviewsWritePopup = ({ services }: any) => {
     const [message, setMessage] = useState("");
     const [video, setVideo] = useState<any>({});
     const formData: any = new FormData();
+    console.log(video);
 
     const notifyError = () => {
         toast.error("An error has occurred. Please try again.", {
@@ -359,6 +360,7 @@ const ReviewsWritePopup = ({ services }: any) => {
                                 name="read-only"
                                 value={stars}
                                 size="large"
+                                defaultValue={0}
                             />
                             {/* <button
                 className={stars > 0 ? "star_btn_point" : ""}

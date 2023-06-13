@@ -197,7 +197,7 @@
         border: 1px solid #2a2a2a;
         transition: 0.5s;
         display: block;
-        margin: 120px auto;
+        margin: 90px auto;
 
         &:hover {
             color: #ffffff;
@@ -208,9 +208,8 @@
 
     &_bottom {
         &_img {
-            width: 370px;
+            width: 300px;
             position: relative;
-
             img {
                 width: 100%;
             }
@@ -230,7 +229,18 @@
         }
     }
 }
-
+.fileUpload {
+    display: none;
+}
+.add_file {
+    width: 200px;
+    height: 120px;
+    display: flex;
+    border-radius: 10px;
+    border: 2px dashed #2a2a2a;
+    align-items: center;
+    justify-content: center;
+}
 @media screen and (max-width: 1400px) {
     .reviewsWritePopup {
         &_title {
