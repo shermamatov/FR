@@ -261,26 +261,26 @@ const Header = () => {
                             <div className="burger__link">ABOUT US</div>
                         </Link>
 
-                        <Link href="">
-                            <div
-                                className="burger__link serv"
-                                onClick={() => setModal(!modal)}
-                            >
-                                SERVICES{" "}
-                                <img
-                                    className="mt-[10px]"
-                                    style={{
-                                        transform: `${
-                                            modal
-                                                ? "rotate(-360deg)"
-                                                : "rotate(-180deg)"
-                                        }`,
-                                    }}
-                                    src="/strelka.png"
-                                    alt=""
-                                />
-                            </div>
-                        </Link>
+                        {/* <Link href=""> */}
+                        <div
+                            className="burger__link serv"
+                            onClick={() => setModal(!modal)}
+                        >
+                            SERVICES{" "}
+                            <img
+                                className="mt-[10px]"
+                                style={{
+                                    transform: `${
+                                        modal
+                                            ? "rotate(-360deg)"
+                                            : "rotate(-180deg)"
+                                    }`,
+                                }}
+                                src="/strelka.png"
+                                alt=""
+                            />
+                        </div>
+                        {/* </Link> */}
                         {modal && (
                             <div>
                                 <Link href={`/services/`}>

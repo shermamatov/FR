@@ -35,7 +35,7 @@ const ReviewsFilterPopup = ({ showFilterPopup }: any) => {
                     <input type="checkbox" />
                     2014
                 </label>
-                <a href="" className="reviewsFilterPopup_block_link">
+                <a href="#" className="reviewsFilterPopup_block_link">
                     more
                 </a>
             </div>
