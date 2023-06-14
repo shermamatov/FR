@@ -412,7 +412,7 @@ export default function ReviewsBlock2({ services }: any) {
                                 </label>
 
                                 <a
-                                    href=""
+                                    href="#"
                                     className="reviewsFilterPopup_block_link"
                                 >
                                     more
