@@ -101,7 +101,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 </section>
             </div>
             <section className="content mt-[60px] lg:mt-[100px]">
-                <div className="serv_before_after_block hidden lg:flex">
+                {/* <div className="serv_before_after_block hidden ">
                     <Image
                         src={
                             service.offer_image_before
@@ -124,8 +124,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         alt=""
                         unoptimized
                     />
-                </div>
-                <div className="serv_before_after_block_adap lg:hidden">
+                </div> */}
+                <div className="serv_before_after_block_adap ">
                     <div>
                         <Image
                             src={
@@ -274,7 +274,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                             </p>
                         </div>
                     </div>
-                    <button className="servBlock3_btn">more questions</button>
+                    {/* <button className="servBlock3_btn">more questions</button> */}
                 </div>
             </section>
             <HomeBlock3 />

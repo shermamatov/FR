@@ -6,6 +6,7 @@ import React from "react";
 // import email from "@/assets/email.png";
 // import banner from "@/assets/Rectangle.webp";
 import "./Footer.scss";
+import Link from "next/link";
 const Footer = () => {
     return (
         <div>
@@ -92,24 +93,40 @@ const Footer = () => {
                                 </div>
                                 <div>
                                     <div className="title">
-                                        <p className="col-md-p-4"> About Us</p>
+                                        <Link href="/about">
+                                            <p className="col-md-p-4">
+                                                About Us
+                                            </p>
+                                        </Link>
                                     </div>
                                     <div className="que_polasa"></div>
 
                                     <div className="title">
-                                        <p className="col-md-p-4"> Services</p>
+                                        <Link href="/services">
+                                            <p className="col-md-p-4">
+                                                Services
+                                            </p>
+                                        </Link>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p className="col-md-p-4"> Blogs</p>
+                                        <Link href="/blog">
+                                            <p className="col-md-p-4"> Blogs</p>
+                                        </Link>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p className="col-md-p-4"> Locations</p>
+                                        <Link href="location">
+                                            <p className="col-md-p-4">
+                                                Locations
+                                            </p>
+                                        </Link>
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <p className="col-md-p-4"> Photos</p>
+                                        <Link href="/photos">
+                                            <p className="col-md-p-4">Photos</p>
+                                        </Link>
                                     </div>
                                     <div className="que_polasa"></div>
                                 </div>

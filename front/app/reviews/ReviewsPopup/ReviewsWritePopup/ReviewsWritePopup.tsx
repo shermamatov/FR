@@ -14,10 +14,6 @@ import { Rating } from "@mui/material";
 const ReviewsWritePopup = ({ services }: any) => {
     const [formSelector, setFormSelector] = useState("write");
     const [stars, setStars] = useState<any>(0);
-    const [stars2, setStars2] = useState<any>(0);
-    const [stars3, setStars3] = useState<any>(0);
-    const [stars4, setStars4] = useState<any>(0);
-    const [stars5, setStars5] = useState<any>(0);
     const [name, setName] = useState("");
     const [review_text, setReview_text] = useState("");
     const [service, setService] = useState<any>(null);
@@ -41,24 +37,6 @@ const ReviewsWritePopup = ({ services }: any) => {
             className: "custom-toast-success",
         });
     };
-    function ratingArif() {
-        let RatingArr = [stars2, stars3, stars4, stars5];
-        let RatingArr2 = [];
-        let sum = 0;
-        for (let i of RatingArr) {
-            if (i != 0 && i != null) {
-                RatingArr2.push(i);
-            }
-        }
-        for (let i of RatingArr2) {
-            sum = sum += i;
-        }
-        setStars(sum / RatingArr2.length);
-    }
-
-    useEffect(() => {
-        ratingArif();
-    }, [stars2, stars3, stars4, stars5]);
 
     const submitReview = () => {
         switch (formSelector) {
@@ -217,11 +195,11 @@ const ReviewsWritePopup = ({ services }: any) => {
                 </select>
 
                 <div className="reviewsWritePopup_productRating">
-                    <h2 className="reviewsWritePopup_productRating_title">
+                    {/* <h2 className="reviewsWritePopup_productRating_title">
                         Product Rating
-                    </h2>
+                    </h2> */}
 
-                    <div className="reviewsWritePopup_productRating_item">
+                    {/* <div className="reviewsWritePopup_productRating_item">
                         <p className="reviewsWritePopup_productRating_item_text">
                             Features
                         </p>
@@ -234,21 +212,6 @@ const ReviewsWritePopup = ({ services }: any) => {
                                     setStars2(newValue);
                                 }}
                             />
-                            {/* <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button> */}
                         </div>
                     </div>
                     <div className="reviewsWritePopup_productRating_item">
@@ -264,21 +227,6 @@ const ReviewsWritePopup = ({ services }: any) => {
                                     setStars3(newValue);
                                 }}
                             />
-                            {/* <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button> */}
                         </div>
                     </div>
                     <div className="reviewsWritePopup_productRating_item">
@@ -294,24 +242,9 @@ const ReviewsWritePopup = ({ services }: any) => {
                                     setStars4(newValue);
                                 }}
                             />
-                            {/* <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button> */}
                         </div>
-                    </div>
-                    <div className="reviewsWritePopup_productRating_item">
+                    </div> */}
+                    {/* <div className="reviewsWritePopup_productRating_item">
                         <p className="reviewsWritePopup_productRating_item_text">
                             Value
                         </p>
@@ -324,32 +257,17 @@ const ReviewsWritePopup = ({ services }: any) => {
                                     setStars5(newValue);
                                 }}
                             />
-                            {/* <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button>
-                            <button>
-                                <img src="/one-star-icon.svg" alt="" />
-                            </button> */}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className="reviewsWritePopup_productRating">
                     <h2 className="reviewsWritePopup_productRating_title">
                         Overall Rating
                     </h2>
-                    <p className="reviewsWritePopup_productRating_subtitle">
+                    {/* <p className="reviewsWritePopup_productRating_subtitle">
                         Determined by averaging the above Product Ratings
-                    </p>
+                    </p> */}
 
                     <div className="reviewsWritePopup_productRating_item">
                         <p className="reviewsWritePopup_productRating_item_text">
@@ -357,10 +275,11 @@ const ReviewsWritePopup = ({ services }: any) => {
                         </p>
                         <div className="reviewsWritePopup_productRating_item_right">
                             <Rating
-                                name="read-only"
+                                name="simple-controlled"
                                 value={stars}
                                 size="large"
                                 defaultValue={0}
+                                onChange={(e, value) => setStars(value)}
                             />
                             {/* <button
                 className={stars > 0 ? "star_btn_point" : ""}
