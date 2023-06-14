@@ -14,7 +14,6 @@ import {
     getCurrentLocation,
 } from "@/api";
 import { usePathname } from "next/navigation";
-import { AppProps } from "next/app";
 
 const Header = () => {
     const pathname = usePathname();
