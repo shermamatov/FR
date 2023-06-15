@@ -20,21 +20,12 @@ export interface Post {
     image1: string | null;
     image2: string | null;
     services: ServiceShort[];
+    anchor_from_service?: string;
 }
 
 export interface State {
     id: number;
     name: string;
-}
-
-export async function fetchStates(
-    limit = 20,
-    offset = 0
-): Promise<PaginationData<Photo>> {
-    const res = await fetch(
-        `${API_URL}/states?limit=${limit}&offset=${offset}`
-    );
-    return res.json();
 }
 
 export interface Location {
@@ -46,27 +37,6 @@ export interface Location {
     geo_longitude: number;
 }
 
-export async function fetchLocations(
-    limit = 20,
-    offset = 0
-): Promise<PaginationData<Location>> {
-    const res = await fetch(`${API_URL}/locations/?is_active=1`);
-    return res.json();
-}
-
-export async function fetchBlog(
-    limit = 20,
-    offset = 0
-): Promise<PaginationData<Post>> {
-    const res = await fetch(`${API_URL}/blogs?limit=${limit}&offset=${offset}`);
-    return res.json();
-}
-
-export async function fetchPostById(id: number | string): Promise<Post> {
-    const res = await fetch(`${API_URL}/blogs/${id}`);
-    return res.json();
-}
-
 export interface Photo {
     id: number;
     caption: string;
@@ -75,16 +45,6 @@ export interface Photo {
     order: number;
     type_of: string;
     created_at?: string;
-}
-
-export async function fetchPhotos(
-    limit = 20,
-    offset = 0
-): Promise<PaginationData<Photo>> {
-    const res = await fetch(
-        `https://1furniturerestoration.com/api/media?limit=${limit}&offset=${offset}`
-    );
-    return res.json();
 }
 
 export interface ServiceShort {
@@ -113,28 +73,7 @@ export interface Service extends ServiceShort {
     children: ServiceShort[];
     created_at: string;
     text_for_location: object | any;
-}
-
-export async function fetchServices(
-    limit = 20,
-    offset = 0
-): Promise<PaginationData<Service>> {
-    const res = await fetch(`${API_URL}/service/`);
-    return res.json();
-}
-
-export async function fetchServiceById(id: number | string): Promise<Service> {
-    const res = await fetch(`${API_URL}/service/${id}`);
-    return res.json();
-}
-export async function fetchServiceByIdandLoc(
-    id: number | string,
-    locationId: number | null | string
-): Promise<Service> {
-    const res = await fetch(
-        `https://1furniturerestoration.com/api/service/${id}/?for_location=${locationId}`
-    );
-    return res.json();
+    blogs?: Post[];
 }
 
 export interface Review {
@@ -150,6 +89,77 @@ export interface Review {
     created_at: string;
 }
 
+export interface Booking {
+    id: number;
+    time: string;
+    service: number;
+    location: number | null;
+}
+
+export async function fetchStates(
+    limit = 20,
+    offset = 0
+): Promise<PaginationData<Photo>> {
+    const res = await fetch(
+        `${API_URL}/states?limit=${limit}&offset=${offset}`
+    );
+    return res.json();
+}
+
+export async function fetchLocations(
+    limit = 20,
+    offset = 0
+): Promise<PaginationData<Location>> {
+    const res = await fetch(`${API_URL}/locations/?is_active=1`);
+    return res.json();
+}
+
+export async function fetchBlog(
+    limit = 20,
+    offset = 0
+): Promise<PaginationData<Post>> {
+    const res = await fetch(`${API_URL}/blogs?limit=${limit}&offset=${offset}`);
+    return res.json();
+}
+
+export async function fetchPostById(id: number | string): Promise<Post> {
+    const res = await fetch(`${API_URL}/blogs/${id}`);
+    return res.json();
+}
+
+export async function fetchPhotos(
+    limit = 20,
+    offset = 0
+): Promise<PaginationData<Photo>> {
+    const res = await fetch(
+        `https://1furniturerestoration.com/api/media?limit=${limit}&offset=${offset}`
+    );
+    return res.json();
+}
+
+export async function fetchServices(
+    limit = 20,
+    offset = 0
+): Promise<PaginationData<Service>> {
+    const res = await fetch(`${API_URL}/service/`);
+    return res.json();
+}
+
+export async function fetchServiceById(id: number | string): Promise<Service> {
+    const res = await fetch(`${API_URL}/service/${id}`);
+    return res.json();
+}
+
+export async function fetchServiceByIdandLoc(
+    id: number | string,
+    locationId: number | null | string
+): Promise<Service> {
+    const res = await fetch(
+        `https://1furniturerestoration.com/api/service/${id}/?for_location=${locationId}`
+    );
+    return res.json();
+}
+
 export async function fetchReviews(
     limit = 20,
     offset = 0
@@ -158,13 +168,6 @@ export async function fetchReviews(
         `${API_URL}/review?limit=${limit}&offset=${offset}`
     );
     return res.json();
-}
-
-export interface Booking {
-    id: number;
-    time: string;
-    service: number;
-    location: number | null;
 }
 
 export async function createBooking(payload: Booking): Promise<Service> {
@@ -182,6 +185,7 @@ export async function getCurrentLocation(): Promise<Location> {
     const res = await fetch(`${API_URL}/location/find/`);
     return res.json();
 }
+
 export function getPaggPage(count = 0, page = 1) {
     let num = Math.ceil(count / page);
     let arr: any = [];
