@@ -137,7 +137,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         alt=""
                         unoptimized
                     />
-                    <Image
+                    <Image 
                         width={100}
                         height={100}
                         src={
@@ -255,14 +255,18 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         </div>
                         <div className="col-6"></div>
                     </div>
+                    {service.blogs?.map((item) => (
+                        <Link
+                            className="w-[45%]"
+                            key={item.id}
+                            href={`/blog/${item.id}`}
+                        >
+                            <p className="servBlock3_question  cursor-pointer">
+                                {item.anchor_from_service || item.title}
+                            </p>
+                        </Link>
+                    ))}
                     <div className="row row2">
-                        {service.blogs?.map((item) => (
-                            <Link key={item.id} href={`/blog/${item.id}`}>
-                                <p className="servBlock3_question cursor-pointer">
-                                    {item.anchor_from_service}
-                                </p>
-                            </Link>
-                        ))}
                         {/* <div className="col-6">
               <p className="servBlock3_question">
                 How often should the system be cleaned and why?
