@@ -47,21 +47,9 @@ export default async function AboutUs() {
                         </div>
                         <div className="block1_right bord">
                             <div className="banner_block">
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src="/sak.webp"
-                                    alt=""
-                                    unoptimized
-                                />
+                                <img src="/sak.webp" alt="" />
                                 <div className="krujok">
-                                    <Image
-                                        width={100}
-                                        height={100}
-                                        src="/circle-img.webp"
-                                        alt=""
-                                        unoptimized
-                                    />
+                                    <img src="/circle-img.webp" alt="" />
                                 </div>
                             </div>
                         </div>
@@ -80,17 +68,17 @@ export default async function AboutUs() {
                             <div className="col-6">
                                 <div className="blockUs2_wrapper_left">
                                     <h2 className="blockUs2_subtitle1">
-                                        Our engineers <br /> are trained{" "}
+                                        Our engineers are trained{" "}
                                     </h2>
                                     <div className="blockUs2_subtitle2">
                                         <img
-                                            src="/blockUs2-subtitle.png"
+                                            src="blockUs2-subtitle.png"
                                             alt=""
                                         />
                                     </div>
                                     <div className="blockUs2_subtitle2-mobile">
                                         <img
-                                            src="/blockUs2-subtitle-mobile.png"
+                                            src="blockUs2-subtitle-mobile.png"
                                             alt=""
                                         />
                                     </div>
@@ -100,35 +88,20 @@ export default async function AboutUs() {
                                 <div className="left_bottom_block">
                                     <div className="block1_desc">
                                         <div className="bord">
-                                            <Image
-                                                width={30}
-                                                height={30}
-                                                src="/galochka.png"
-                                                alt=""
-                                            />
+                                            <img src="/galochka.png" alt="" />
                                             <h4>
                                                 30+ years experience in
                                                 engineering
                                             </h4>
                                         </div>
                                         <div className="bord">
-                                            <Image
-                                                width={30}
-                                                height={30}
-                                                src="/galochka.png"
-                                                alt=""
-                                            />
+                                            <img src="/galochka.png" alt="" />
                                             <h4>
                                                 Available 24/7 for Emergencies
                                             </h4>
                                         </div>
                                         <div className="bord">
-                                            <Image
-                                                width={30}
-                                                height={30}
-                                                src="/galochka.png"
-                                                alt=""
-                                            />
+                                            <img src="/galochka.png" alt="" />
                                             <h4>
                                                 Quick service Same-Day
                                                 inspection and estimate
@@ -142,29 +115,20 @@ export default async function AboutUs() {
                                             <p>95% of clients recommend us</p>
                                         </div>
                                         <div className="mass_block bord">
-                                            <Image
-                                                width={100}
-                                                height={100}
+                                            <img
                                                 src="/Google.png"
                                                 alt=""
                                                 style={{ objectFit: "contain" }}
-                                                unoptimized
                                             />
-                                            <Image
-                                                width={100}
-                                                height={100}
+                                            <img
                                                 src="/Facebook.png"
                                                 alt=""
                                                 style={{ objectFit: "contain" }}
-                                                unoptimized
                                             />
-                                            <Image
-                                                width={100}
-                                                height={100}
+                                            <img
                                                 src="/Yelp.png"
                                                 alt=""
                                                 style={{ objectFit: "cover" }}
-                                                unoptimized
                                             />
                                         </div>
                                     </div>
@@ -198,24 +162,14 @@ export default async function AboutUs() {
                             }}
                         >
                             <div className="blockUs2_bottom_item">
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src="/blockUs2-icon1.svg"
-                                    alt=""
-                                />
+                                <img src="/blockUs2-icon1.svg" alt="" />
                                 <div className="blockUs2_bottom_item_text">
                                     <h4>+1000</h4>
                                     <p>Completed project</p>
                                 </div>
                             </div>
                             <div className="blockUs2_bottom_item">
-                                <Image
-                                    width={100}
-                                    height={100}
-                                    src="/blockUs2-icon2.svg"
-                                    alt=""
-                                />
+                                <img src="/blockUs2-icon2.svg" alt="" />
                                 <div className="blockUs2_bottom_item_text">
                                     <h4>+5000</h4>
                                     <p>clients reviews</p>
