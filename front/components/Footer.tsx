@@ -116,7 +116,7 @@ const Footer = () => {
                                     </div>
                                     <div className="que_polasa"></div>
                                     <div className="title">
-                                        <Link href="location">
+                                        <Link href="/location">
                                             <p className="col-md-p-4">
                                                 Locations
                                             </p>
