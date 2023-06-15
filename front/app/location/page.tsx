@@ -1,26 +1,27 @@
 "use client";
 import { Layout } from "@/components/Layout";
-// import circleImg from "@/assets/circle-img.png";
-// import Image from "next/image";
 import "./location.scss";
 import { use, useEffect, useState } from "react";
 import { Location, PaginationData, fetchLocations } from "@/api";
 import Link from "next/link";
 export default function Location() {
     const [locations, setLocations] = useState<PaginationData<Location>>();
+
     async function getLocations() {
         setLocations(await fetchLocations());
     }
-    useEffect(() => {
-        getLocations();
-    }, []);
-    // const locations = use(fetchLocations());
+
     function setCurrentLocation(elem: Location) {
         if (typeof window !== "undefined") {
             localStorage.setItem("currentLocation", JSON.stringify(elem));
             localStorage.setItem("locationId", JSON.stringify(elem.id));
         }
     }
+
+    useEffect(() => {
+        getLocations();
+    }, []);
+
     return (
         <Layout location={false}>
             <section className="content location_adap_main_block">
