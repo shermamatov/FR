@@ -13,6 +13,15 @@ import "./aboutPage.css";
 // import blockUs2Icon2 from "../../assets/blockUs2-icon2.svg";
 import bg from "../../assets/blockUs2-bg.png";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+    return {
+        title: "About 1#furniturerestoration - Expert Furniture Repair and Restoration Services",
+        description:
+            "1#furniturerestoration is a trusted provider of expert furniture repair and restoration services. Our skilled artisans and craftsmen are dedicated to preserving the beauty and integrity of your furniture pieces, using traditional techniques and high-quality materials. With personalized attention and a commitment to customer satisfaction, we breathe new life into cherished heirlooms, antiques, and modern furniture, ensuring exceptional results every time.",
+    };
+}
 
 export default async function AboutUs() {
     return (
