@@ -24,6 +24,30 @@ import "../../../services.scss";
 import LocationChecker from "@/components/LocationChecker";
 import HomeBlock4 from "@/app/homeblock/homeBlock4/HomeBlock4";
 
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: { id: string };
+};
+
+// set dynamic metadata
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+  const url = "https://1furniturerestoration.com/api/service/" + id;
+
+  // fetch data
+  const data = await fetch(url).then((res) => res.json());
+  const service = data;
+
+  return {
+    title: service.name + " | #1furniturerestoration - Services",
+    description: service.text_for_location.text
+      ? service.text_for_location.text
+      : service.description,
+  };
+}
+
 export default function ServiceSingle({ params }: PageNavProps) {
   // const post = use(fetchPostById(params.id));
   const service = use(fetchServiceById(params.id));
@@ -186,9 +210,6 @@ export default function ServiceSingle({ params }: PageNavProps) {
       <section
         className="content mt-10 pt-10 pb-16 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid justify-between gap-2.5"
         style={{ width: "100%" }}>
-        <div style={{ marginTop: "20px" }} key={service.id}>
-          <p className="font-bold text-3xl underline">{service.name}</p>
-        </div>
         {services.results.map(
           (item) =>
             item.name != service.name && (

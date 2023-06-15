@@ -4,6 +4,28 @@ import { Layout } from "@/components/Layout";
 import { use, useMemo } from "react";
 import "../blogPage.scss";
 
+import { Metadata, ResolvingMetadata } from "next";
+
+type Props = {
+  params: { id: string };
+};
+
+// set dynamic metadata
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const id = params.id;
+  const url = "https://1furniturerestoration.com/api/blogs/" + id;
+
+  // fetch data
+  const data = await fetch(url).then((res) => res.json());
+  const post = data;
+
+  return {
+    title: post.title + " | #1furniturerestoration - Blog",
+    description: post.description,
+  };
+}
+
 export default function BlogSingle({ params }: PageNavProps) {
   const post = use(fetchPostById(params.id));
   function sliceServArr() {

@@ -4,6 +4,17 @@ import Link from "next/link";
 import { use, useMemo } from "react";
 import "./blogPage.scss";
 
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title:
+      "Explore the World of Furniture Restoration - Insights and Inspiration from #1furniturerestoration's Blog ",
+    description:
+      "Welcome to the captivating world of furniture restoration through the eyes of #1furniturerestoration's blog. Delve into a treasure trove of insightful articles, expert tips, and inspiring stories that celebrate the art of preserving and rejuvenating furniture. From guides on DIY repairs to exploring different restoration techniques, our blog is a valuable resource for both enthusiasts and novices alike. Immerse yourself in the fascinating journey of furniture transformation and discover how our passion for craftsmanship can breathe new life into your cherished pieces. Get inspired and enhance your knowledge with #1furniturerestoration's captivating blog content.",
+  };
+}
+
 export default function Blog() {
   const posts = use(fetchBlog());
 
