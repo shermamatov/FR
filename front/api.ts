@@ -57,6 +57,7 @@ export interface ServiceShort {
     offer_price: string;
     offer_is_friendly: boolean;
     anchor_from_blog: string;
+    anchor_from_parent: string;
 }
 
 export interface Service extends ServiceShort {
