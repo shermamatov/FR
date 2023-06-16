@@ -61,7 +61,13 @@ export default function ServiceSingle({ params }: PageNavProps) {
             return a;
         } else {
             let arra = [...services.results];
-            let a = arra.splice(0, 3);
+            let newArr = [];
+            for (let i of arra) {
+                if (i.main_menu) {
+                    newArr.push(i);
+                }
+            }
+            let a = newArr.splice(0, 3);
             return a;
         }
     }
@@ -82,36 +88,6 @@ export default function ServiceSingle({ params }: PageNavProps) {
                                 {service.name}
                             </h1>
                             <LocationChecker params={params} />
-                            {/* <div className="left_bottom_block">
-                                <div className="block1_desc">
-                                    <div className="bord">
-                                        <img src="/galochkaIcon.svg" alt="" />
-                                        <h4>
-                                            30+ years experience in engineering
-                                        </h4>
-                                    </div>
-                                    <div className="bord">
-                                        <img src="/galochkaIcon.svg" alt="" />
-                                        <h4>Available 24/7 for Emergencies</h4>
-                                    </div>
-                                    <div className="bord">
-                                        <img src="/galochkaIcon.svg" alt="" />
-                                        <h4>
-                                            Quick service Same-Day inspection
-                                            and estimate
-                                        </h4>
-                                    </div>
-                                    <div className="rating_block bord">
-                                        <img src="/stars.svg" alt="" />
-                                        <p>95% of clients recommend us</p>
-                                    </div>
-                                    <div className="mass_block bord">
-                                        <Image src={google} alt="" />
-                                        <Image src={facebook} alt="" />
-                                        <Image src={yelp} alt="" />
-                                    </div>
-                                </div>
-                            </div> */}
                         </div>
                         <div className="block1_right bord hidden lg:flex ">
                             <div className="banner_block">
@@ -125,30 +101,6 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 </section>
             </div>
             <section className="content mt-[60px] lg:mt-[100px]">
-                {/* <div className="serv_before_after_block hidden ">
-                    <Image
-                        src={
-                            service.offer_image_before
-                                ? service.offer_image_before
-                                : altBefore
-                        }
-                        width={100}
-                        height={100}
-                        alt=""
-                        unoptimized
-                    />
-                    <Image 
-                        width={100}
-                        height={100}
-                        src={
-                            service.offer_image_after
-                                ? service.offer_image_after
-                                : altAfter
-                        }
-                        alt=""
-                        unoptimized
-                    />
-                </div> */}
                 <div className="serv_before_after_block_adap ">
                     <div>
                         <Image
@@ -174,14 +126,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                             unoptimized
                         />
                     </div>
-                    {/* <div className="serv_before_after_block_bottom">
-                        <h2>
-                            Friendly <br /> offer
-                        </h2>
-                        <h4 className="">
-                            cost <span>${service.offer_price}</span>
-                        </h4>
-                    </div> */}
+
                     <div className="serv_before_after_block_bottom">
                         <h2>
                             Friendly <br /> offer
@@ -199,7 +144,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         <div key={item.id}>
                             <Image
                                 src={
-                                    item.offer_image ? item.offer_image : bath2
+                                    item.offer_image ? item.offer_image : banner
                                 }
                                 alt="sorry"
                                 width={100}
@@ -266,49 +211,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
                             </p>
                         </Link>
                     ))}
-                    <div className="row row2">
-                        {/* <div className="col-6">
-              <p className="servBlock3_question">
-                How often should the system be cleaned and why?
-              </p>
-              <p className="servBlock3_question">
-                Can I clean the air conditioner myself?
-              </p>
-              <p className="servBlock3_question">
-                How often should the system be cleaned and why?
-              </p>
-              <p className="servBlock3_question">
-                How often should the system be cleaned and why?
-              </p>
-              <p className="servBlock3_question">
-                Can I clean the air conditioner myself?
-              </p>
-              <p className="servBlock3_question">
-                Can I clean the air conditioner myself?
-              </p>
-            </div>
-            <div className="col-6">
-              <p className="servBlock3_question">
-                How often should the system be cleaned and why?
-              </p>
-              <p className="servBlock3_question">
-                Can I clean the air conditioner myself?
-              </p>
-              <p className="servBlock3_question">
-                How often should the system be cleaned and why?
-              </p>
-              <p className="servBlock3_question">
-                How often should the system be cleaned and why?
-              </p>
-              <p className="servBlock3_question">
-                Can I clean the air conditioner myself?
-              </p>
-              <p className="servBlock3_question">
-                Can I clean the air conditioner myself?
-              </p>
-            </div> */}
-                    </div>
-                    {/* <button className="servBlock3_btn">more questions</button> */}
+                    {/* <div className="row row2">
+                    </div> */}
                 </div>
             </section>
             <HomeBlock3 />

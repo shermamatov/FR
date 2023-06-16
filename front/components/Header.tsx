@@ -52,14 +52,6 @@ const Header = () => {
             );
         }
     }, []);
-    //   useEffect(() => {
-    //     if (location?.location_name) {
-    //       let url = location.location_name;
-    //       url.replace(/%| /g, "");
-    //       setSpecialUrl(url);
-    //       console.log(specialUrl, location.location_name);
-    //     }
-    //   }, [location?.location_name, specialUrl]);
 
     return (
         <div>
@@ -212,23 +204,24 @@ const Header = () => {
                                         {services?.results.length === 0
                                             ? ""
                                             : services?.results.map(
-                                                  (item: Service) => (
-                                                      <Link
-                                                          href={`/services/${
-                                                              item.slug
-                                                          }/${
-                                                              location?.id
-                                                          }/${location?.location_name.replace(
-                                                              /%| /g,
-                                                              "_"
-                                                          )}`}
-                                                          key={item.id}
-                                                      >
-                                                          <li className="mb-5">
-                                                              {item.name}
-                                                          </li>
-                                                      </Link>
-                                                  )
+                                                  (item: Service) =>
+                                                      item.main_menu && (
+                                                          <Link
+                                                              href={`/services/${
+                                                                  item.slug
+                                                              }/${
+                                                                  location?.id
+                                                              }/${location?.location_name.replace(
+                                                                  /%| /g,
+                                                                  "_"
+                                                              )}`}
+                                                              key={item.id}
+                                                          >
+                                                              <li className="mb-5">
+                                                                  {item.name}
+                                                              </li>
+                                                          </Link>
+                                                      )
                                               )}
                                     </ul>
                                 </div>
@@ -306,21 +299,26 @@ const Header = () => {
                                 </Link>
                                 {services?.results.length === 0
                                     ? ""
-                                    : services?.results.map((item: Service) => (
-                                          <Link
-                                              href={`/services/${item.slug}/${
-                                                  location?.id
-                                              }/${location?.location_name.replace(
-                                                  /%| /g,
-                                                  "_"
-                                              )}`}
-                                              key={item.id}
-                                          >
-                                              <div className="burger__link font-medium text-base ml-14">
-                                                  {item.name}
-                                              </div>
-                                          </Link>
-                                      ))}
+                                    : services?.results.map(
+                                          (item: Service) =>
+                                              item.main_menu && (
+                                                  <Link
+                                                      href={`/services/${
+                                                          item.slug
+                                                      }/${
+                                                          location?.id
+                                                      }/${location?.location_name.replace(
+                                                          /%| /g,
+                                                          "_"
+                                                      )}`}
+                                                      key={item.id}
+                                                  >
+                                                      <div className="burger__link font-medium text-base ml-14">
+                                                          {item.name}
+                                                      </div>
+                                                  </Link>
+                                              )
+                                      )}
                             </div>
                         )}
 
@@ -358,9 +356,9 @@ const Header = () => {
                         </Link>
                         <a
                             className="font-semibold text-xs"
-                            href="tel:+18188881010"
+                            href="tel: +1 818 858 15 33"
                         >
-                            +1-818-888-10-10
+                            +1 818 858 15 33
                         </a>
                     </div>
                 </div>
