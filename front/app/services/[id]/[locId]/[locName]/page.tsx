@@ -1,4 +1,9 @@
-import { fetchServiceById, fetchReviews, fetchServices } from "@/api";
+import {
+    fetchServiceById,
+    fetchReviews,
+    fetchServices,
+    fetchBlog,
+} from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
 import { use } from "react";
@@ -53,7 +58,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
     const service = use(fetchServiceById(params.id));
     const services = use(fetchServices());
     const reviews = use(fetchReviews());
-
+    const blogs = use(fetchBlog());
     function sliceServArr() {
         if (service.children.length > 2) {
             let arra = [...service.children];
@@ -71,6 +76,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
             return a;
         }
     }
+    console.log(service.media.length);
 
     return (
         <Layout>
@@ -200,17 +206,29 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         </div>
                         <div className="col-6"></div>
                     </div>
-                    {service.blogs?.map((item) => (
-                        <Link
-                            className="w-[45%]"
-                            key={item.id}
-                            href={`/blog/${item.id}`}
-                        >
-                            <p className="servBlock3_question  cursor-pointer">
-                                {item.anchor_from_service || item.title}
-                            </p>
-                        </Link>
-                    ))}
+                    {service.blogs?.length !== 0
+                        ? service.blogs?.map((item) => (
+                              <Link
+                                  className="w-[45%]"
+                                  key={item.id}
+                                  href={`/blog/${item.id}`}
+                              >
+                                  <p className="servBlock3_question  cursor-pointer">
+                                      {item.anchor_from_service || item.title}
+                                  </p>
+                              </Link>
+                          ))
+                        : blogs.results.map((item) => (
+                              <Link
+                                  className="w-[45%]"
+                                  key={item.id}
+                                  href={`/blog/${item.id}`}
+                              >
+                                  <p className="servBlock3_question  cursor-pointer">
+                                      {item.anchor_from_service || item.title}
+                                  </p>
+                              </Link>
+                          ))}
                     {/* <div className="row row2">
                     </div> */}
                 </div>
