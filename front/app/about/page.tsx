@@ -124,21 +124,33 @@ export default async function AboutUs() {
                                             <p>95% of clients recommend us</p>
                                         </div>
                                         <div className="mass_block bord">
-                                            <img
-                                                src="/Google.png"
-                                                alt=""
-                                                style={{ objectFit: "contain" }}
-                                            />
-                                            <img
-                                                src="/Facebook.png"
-                                                alt=""
-                                                style={{ objectFit: "contain" }}
-                                            />
-                                            <img
-                                                src="/Yelp.png"
-                                                alt=""
-                                                style={{ objectFit: "cover" }}
-                                            />
+                                            <a href="#">
+                                                <img
+                                                    src="/Google.png"
+                                                    alt=""
+                                                    style={{
+                                                        objectFit: "contain",
+                                                    }}
+                                                />
+                                            </a>
+                                            <a href="https://www.facebook.com/profile.php?id=100091922500599">
+                                                <img
+                                                    src="/Facebook.png"
+                                                    alt=""
+                                                    style={{
+                                                        objectFit: "contain",
+                                                    }}
+                                                />
+                                            </a>
+                                            <a href="#">
+                                                <img
+                                                    src="/Yelp.png"
+                                                    alt=""
+                                                    style={{
+                                                        objectFit: "cover",
+                                                    }}
+                                                />
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

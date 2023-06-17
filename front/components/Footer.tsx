@@ -29,13 +29,15 @@ const Footer = () => {
                                 </p>
 
                                 <div className="main_icons">
-                                    <div className="okrug">
-                                        <img src="/path16.png" alt="" />
-                                    </div>
+                                    <a href="https://www.facebook.com/profile.php?id=100091922500599">
+                                        <div className="okrug">
+                                            <img src="/path16.png" alt="" />
+                                        </div>
+                                    </a>
                                     <div className="okrug">
                                         <img src="/m.png" alt="" />
                                     </div>
-                                    <div style={{}} className="okrug">
+                                    <div className="okrug">
                                         <img
                                             style={{ width: "70%" }}
                                             src="/Yelp1.png"

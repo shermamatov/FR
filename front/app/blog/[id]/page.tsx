@@ -166,10 +166,18 @@ export default function BlogSingle({ params }: PageNavProps) {
                     </p>
                     <div className="line"></div>
                     <div className="mess">
-                        <img src="/share.png" alt="" />
-                        <img src="/face.png" alt="" />
-                        <img src="/twit.png" alt="" />
-                        <img src="/link.png" alt="" />
+                        <a href="#">
+                            <img src="/share.png" alt="" />
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100091922500599">
+                            <img src="/face.png" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="/link.png" alt="" />
+                        </a>
+                        <a href="#">
+                            <img src="/twit.png" alt="" />
+                        </a>
                     </div>
                 </div>
             </div>
