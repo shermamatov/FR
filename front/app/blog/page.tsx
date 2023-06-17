@@ -76,9 +76,9 @@ export default function Blog() {
                         style={{ position: "relative" }}
                         key={item.id}
                     >
-                        <img
-                            // width={100}
-                            // height={100}
+                        <Image
+                            width={100}
+                            height={100}
                             src={item.image1 || "/bath.png"}
                             alt=""
                             // unoptimized
