@@ -76,7 +76,6 @@ export default function ServiceSingle({ params }: PageNavProps) {
             return a;
         }
     }
-    console.log(service.media.length);
 
     return (
         <Layout>
