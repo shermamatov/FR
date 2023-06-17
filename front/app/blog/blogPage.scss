@@ -9,6 +9,9 @@
         width: 45%;
         img {
             width: 100%;
+            min-height: 250px;
+            object-fit: cover;
+            background-size: cover;
         }
     }
     .blog_block1_right {
