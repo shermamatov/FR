@@ -5,6 +5,7 @@ import { use, useMemo } from "react";
 import "./blogPage.scss";
 
 import { Metadata } from "next";
+import Image from "next/image";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
@@ -33,7 +34,12 @@ export default function Blog() {
             {posts.results.slice(0, 1).map((item) => (
                 <div className="blog_block1" key={item.id}>
                     <div className="blog_block1_left">
-                        <img src={item.image1 || "/bath.png"} alt="" />
+                        <Image
+                            width={100}
+                            height={100}
+                            src={item.image1 || "/bath.png"}
+                            alt=""
+                        />
                     </div>
                     <div className="blog_block1_right">
                         <div style={{ color: "#107EBD", whiteSpace: "nowrap" }}>
@@ -69,7 +75,13 @@ export default function Blog() {
                         style={{ position: "relative" }}
                         key={item.id}
                     >
-                        <img src={item.image1 || "/bath.png"} alt="" />
+                        <Image
+                            width={100}
+                            height={100}
+                            src={item.image1 || "/bath.png"}
+                            alt=""
+                            unoptimized
+                        />
                         <div
                             style={{
                                 color: "#F2994A",
@@ -109,9 +121,12 @@ export default function Blog() {
             <div className="blog_block3 hidden md:grid">
                 {posts.results.slice(4).map((item) => (
                     <div className="blog_card" key={item.id}>
-                        <img
+                        <Image
+                            width={100}
+                            height={100}
                             src={item.image1 ? item.image1 : "/bath.png"}
                             alt=""
+                            unoptimized
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating
@@ -150,9 +165,12 @@ export default function Blog() {
             <div className="blog_block3 grid md:hidden">
                 {posts.results.map((item) => (
                     <div className="blog_card" key={item.id}>
-                        <img
+                        <Image
+                            width={100}
+                            height={100}
                             src={item.image1 ? item.image1 : "/bath.png"}
                             alt=""
+                            unoptimized
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating
