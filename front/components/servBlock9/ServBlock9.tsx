@@ -13,6 +13,7 @@ import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
 
 const ServBlock9 = ({ reviews }: any) => {
     const [videoReviews, setVideoReviews] = useState([]);
+    const [textState, setTextState] = useState(false);
     const StyledRating = styled(Rating)({
         "& .MuiRating-iconFilled": {
             color: "#f2994a",
@@ -97,8 +98,8 @@ const ServBlock9 = ({ reviews }: any) => {
                     <Slider {...settings}>
                         {reviews.results.map((item: any) => (
                             <div className="text_review_block" key={item.id}>
-                                <p>
-                                    {item.review_text.length > 150
+                                <p onClick={() => setTextState(!textState)}>
+                                    {item.review_text.length > 150 && !textState
                                         ? item.review_text.slice(0, 147) + "..."
                                         : item.review_text}
                                 </p>

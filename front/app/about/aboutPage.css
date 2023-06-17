@@ -73,6 +73,11 @@
     margin-left: 45px;
 }
 
+.mass_block > a {
+    display: flex;
+    align-items: end;
+}
+
 .block1 .block1_left .left_bottom_block .block1_desc .mass_block > img {
     cursor: pointer;
     margin-right: 10px;

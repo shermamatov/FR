@@ -40,7 +40,9 @@ export default function HomeBlock1() {
                             </div>
                             <div className="mass_block bord">
                                 <img src="/google.svg" alt="" />
-                                <img src="/facebook.svg" alt="" />
+                                <a href="https://www.facebook.com/profile.php?id=100091922500599">
+                                    <img src="/facebook.svg" alt="" />
+                                </a>
                                 <img src="/yelp.svg" alt="" />
                             </div>
                             <div className="btn_block1">

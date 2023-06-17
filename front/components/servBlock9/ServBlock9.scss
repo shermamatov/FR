@@ -25,18 +25,26 @@
         padding: 50px 0px;
         border-top: 1px dashed #fff;
         border-bottom: 1px dashed #fff;
-
         // justify-content: space-between;
         .text_review_block {
             cursor: pointer;
-            height: 250px;
+            height: 280px;
+            max-width: 450px;
             display: inline-flex !important;
             flex-direction: column;
             justify-content: space-between;
             padding: 20px;
             p {
+                overflow: auto;
                 font-family: "Montserrat";
                 width: 100%;
+                &_::-webkit-scrollbar {
+                    width: 0 !important;
+                    height: 0 !important;
+                }
+                ::-webkit-scrollbar {
+                    width: 0;
+                }
                 // line-height: 200%;
             }
 
