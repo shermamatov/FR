@@ -39,6 +39,7 @@ export default function Blog() {
                             height={100}
                             src={item.image1 || "/bath.png"}
                             alt=""
+                            unoptimized
                         />
                     </div>
                     <div className="blog_block1_right">
@@ -75,12 +76,12 @@ export default function Blog() {
                         style={{ position: "relative" }}
                         key={item.id}
                     >
-                        <Image
-                            width={100}
-                            height={100}
+                        <img
+                            // width={100}
+                            // height={100}
                             src={item.image1 || "/bath.png"}
                             alt=""
-                            unoptimized
+                            // unoptimized
                         />
                         <div
                             style={{
