@@ -81,7 +81,7 @@ export default function Blog() {
                             height={100}
                             src={item.image1 || "/bath.png"}
                             alt=""
-                            // unoptimized
+                            unoptimized
                         />
                         <div
                             style={{
