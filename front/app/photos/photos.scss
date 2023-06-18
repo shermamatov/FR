@@ -162,12 +162,12 @@
             }
         }
     }
-    .aspAdap {
-        aspect-ratio: 16 / 12 !important;
-    }
 }
 
 @media (max-width: 550px) {
+    .aspAdap {
+        aspect-ratio: 16 / 12 !important;
+    }
     .paggination {
         display: flex;
         justify-content: center;

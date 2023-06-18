@@ -341,8 +341,8 @@ const Header = () => {
                         </Link>
                     </div>
                 </div>
-                <div className="block md:hidden content ">
-                    <div className="d-flex justify-between mt-4">
+                <div className="flex md:hidden content ">
+                    <div className="flex w-full justify-between mt-4">
                         <Link
                             style={{ color: "#F2994A" }}
                             className="font-semibold text-xs locat_link"

@@ -45,6 +45,8 @@ export interface Photo {
     order: number;
     type_of: string;
     created_at?: string;
+    before_img: string;
+    after_img: string;
 }
 
 export interface ServiceShort {
