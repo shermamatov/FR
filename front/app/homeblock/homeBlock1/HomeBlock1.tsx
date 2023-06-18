@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./block1.scss";
 import Link from "next/link";
 // import Image from "next/image";
@@ -55,9 +56,23 @@ export default function HomeBlock1() {
                 </div>
                 <div className="block1_right bord">
                     <div className="banner_block">
-                        <img src="/banner.jpg" alt="" />
+                        <Image
+                            width={50}
+                            height={100}
+                            quality={100}
+                            layout="responsive"
+                            src="/banner.jpg"
+                            alt="image"
+                        />
                         <div className="krujok">
-                            <img src="/block1Krug.png" alt="" />
+                            <Image
+                                width={50}
+                                height={100}
+                                quality={100}
+                                layout="responsive"
+                                src="/block1Krug.png"
+                                alt=""
+                            />
                         </div>
                     </div>
                 </div>

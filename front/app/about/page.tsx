@@ -56,9 +56,23 @@ export default async function AboutUs() {
                         </div>
                         <div className="block1_right bord">
                             <div className="banner_block">
-                                <img src="/sak.webp" alt="" />
+                                <Image
+                                    quality={100}
+                                    layout="responsive"
+                                    width={100}
+                                    height={100}
+                                    src="/sak.webp"
+                                    alt=""
+                                />
                                 <div className="krujok">
-                                    <img src="/circle-img.webp" alt="" />
+                                    <Image
+                                        quality={100}
+                                        layout="responsive"
+                                        width={100}
+                                        height={100}
+                                        src="/circle-img.webp"
+                                        alt=""
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -80,14 +94,22 @@ export default async function AboutUs() {
                                         Our engineers are trained{" "}
                                     </h2>
                                     <div className="blockUs2_subtitle2">
-                                        <img
-                                            src="blockUs2-subtitle.png"
+                                        <Image
+                                            quality={100}
+                                            layout="responsive"
+                                            width={100}
+                                            height={100}
+                                            src="/blockUs2-subtitle.png"
                                             alt=""
                                         />
                                     </div>
                                     <div className="blockUs2_subtitle2-mobile">
-                                        <img
-                                            src="blockUs2-subtitle-mobile.png"
+                                        <Image
+                                            quality={100}
+                                            layout="responsive"
+                                            width={100}
+                                            height={100}
+                                            src="/blockUs2-subtitle-mobile.png"
                                             alt=""
                                         />
                                     </div>

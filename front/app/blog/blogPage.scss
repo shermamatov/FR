@@ -244,8 +244,10 @@
     }
     > img {
         width: 100%;
-        height: calc(250px + (500 - 250) * ((100vw - 350px) / (1400 - 350)));
-        max-height: 550px;
+        height: calc(
+            250px + (500 - 250) * ((100vw - 350px) / (1400 - 350))
+        ) !important;
+        max-height: 550px !important;
         object-fit: cover;
         background-size: cover;
     }
@@ -304,7 +306,7 @@
             width: 32%;
             > img {
                 width: 100%;
-                height: 220px;
+                height: 220px !important;
                 object-fit: cover;
                 background-size: cover;
             }
@@ -341,6 +343,9 @@
 
 @media (max-width: 800px) {
     .blogSingle_main_block {
+        .blogSingle_blogData {
+            margin: 20px auto;
+        }
         .blogSingle_services_block {
             flex-wrap: wrap;
             justify-content: space-between;
@@ -350,7 +355,7 @@
                 margin-top: 20px;
                 > img {
                     width: 100%;
-                    height: 150px;
+                    height: 150px !important;
                 }
                 > p {
                     font-size: 14px;

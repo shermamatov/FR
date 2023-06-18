@@ -5,6 +5,7 @@ import { use, useMemo } from "react";
 import "../blogPage.scss";
 
 import { Metadata, ResolvingMetadata } from "next";
+import Image from "next/image";
 
 type Props = {
     params: { id: string };
@@ -67,7 +68,11 @@ export default function BlogSingle({ params }: PageNavProps) {
                     </p>
                 </div> */}
                 <div className="blogSingle_main_block">
-                    <img
+                    <Image
+                        quality={100}
+                        layout="responsive"
+                        width={100}
+                        height={100}
                         src={post.image1 || "/blogSingle_banner1.webp"}
                         alt=""
                     />
@@ -88,14 +93,25 @@ export default function BlogSingle({ params }: PageNavProps) {
                         POSTED ON {formatter.format(new Date(post.created_at))}
                     </p>
                     <p>{post.description}</p>
-                    <img
+                    <Image
+                        quality={100}
+                        layout="responsive"
+                        width={100}
+                        height={100}
                         src={post.image2 || "/blogSingle_banner1.webp"}
                         alt=""
                     />
                     <div className="blogSingle_services_block">
                         {post.services.slice(0, 3).map((item) => (
                             <div key={item.id}>
-                                <img src="/bath.png" alt="sorry" />
+                                <Image
+                                    quality={100}
+                                    layout="responsive"
+                                    width={100}
+                                    height={100}
+                                    src="/bath.png"
+                                    alt="sorry"
+                                />
                                 <p>{item.anchor_from_blog || item.name}</p>
                             </div>
                         ))}

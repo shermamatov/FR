@@ -313,7 +313,7 @@
         justify-content: space-between;
         width: 100%;
         > img {
-            width: 49.5%;
+            width: 49.5% !important;
             // max-height: 320px;
             object-fit: cover;
             background-size: cover;

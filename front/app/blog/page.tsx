@@ -35,11 +35,13 @@ export default function Blog() {
                 <div className="blog_block1" key={item.id}>
                     <div className="blog_block1_left">
                         <Image
+                            layout="responsive"
+                            quality={100}
                             width={100}
                             height={100}
                             src={item.image1 || "/bath.png"}
                             alt=""
-                            unoptimized
+                            // unoptimized
                         />
                     </div>
                     <div className="blog_block1_right">
@@ -77,11 +79,13 @@ export default function Blog() {
                         key={item.id}
                     >
                         <Image
+                            quality={100}
+                            layout="responsive"
                             width={100}
                             height={100}
                             src={item.image1 || "/bath.png"}
                             alt=""
-                            unoptimized
+                            // unoptimized
                         />
                         <div
                             style={{
@@ -123,11 +127,12 @@ export default function Blog() {
                 {posts.results.slice(4).map((item) => (
                     <div className="blog_card" key={item.id}>
                         <Image
+                            quality={100}
+                            layout="responsive"
                             width={100}
                             height={100}
                             src={item.image1 ? item.image1 : "/bath.png"}
                             alt=""
-                            unoptimized
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating
@@ -167,11 +172,12 @@ export default function Blog() {
                 {posts.results.map((item) => (
                     <div className="blog_card" key={item.id}>
                         <Image
+                            quality={100}
+                            layout="responsive"
                             width={100}
                             height={100}
                             src={item.image1 ? item.image1 : "/bath.png"}
                             alt=""
-                            unoptimized
                         />
                         <div style={{ color: "#F2994A", fontWeight: "700" }}>
                             Heating

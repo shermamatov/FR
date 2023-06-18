@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import "./block3.scss";
 // import Image from "next/image";
 // import banner from "./banner.jpg";
@@ -34,7 +35,11 @@ export default function HomeBlock3() {
                                 src="/close_icon.svg"
                                 alt=""
                             />
-                            <img
+                            <Image
+                                quality={100}
+                                width={100}
+                                height={100}
+                                layout="responsive"
                                 className="modal_banner"
                                 src="/banner_adap.jpg"
                                 alt="modal"
@@ -57,7 +62,14 @@ export default function HomeBlock3() {
                 )}
                 <div className="block3">
                     <div className="block3_left">
-                        <img src="/bannerHome3.jpg" alt="" />
+                        <Image
+                            quality={100}
+                            layout="responsive"
+                            width={100}
+                            height={100}
+                            src="/bannerHome3.jpg"
+                            alt=""
+                        />
                     </div>
                     <div className="block3_right">
                         <h1 className="bord">
