@@ -88,6 +88,7 @@ export interface Review {
     image1: string | null;
     image2: string | null;
     created_at: string;
+    video: string | null;
 }
 
 export interface Booking {

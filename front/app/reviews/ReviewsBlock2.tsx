@@ -19,6 +19,7 @@ export default function ReviewsBlock2({ services }: any) {
   // const reviews = use(fetchReviews());
   const [reviews, setReviews] = useState<PaginationData<Review>>();
   const [reviewsAll, setReviewsAll] = useState<Review[]>();
+  const [videoReviewsAll, setVideoReviewsAll] = useState<Review[]>();
   const [currentPage, setCurrentPage] = useState(0);
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [filterYear, setFilterYear] = useState<number | string>();
@@ -32,11 +33,16 @@ export default function ReviewsBlock2({ services }: any) {
       setReviews(data);
     });
   }
+  useEffect(() => {
+    if (reviewsAll) {
+      setVideoReviewsAll(reviewsAll.filter((item) => item.video !== null));
+    }
+  }, [reviewsAll]);
 
-  // useEffect(() => {
-  //     console.log(services);
-  //     console.log(reviewsAll);
-  // }, [services, reviewsAll]);
+  useEffect(() => {
+    console.log(services);
+    console.log(reviewsAll);
+  }, [services, reviewsAll]);
 
   useEffect(() => {
     getData(pageSum, pageSum * currentPage);
@@ -471,37 +477,45 @@ export default function ReviewsBlock2({ services }: any) {
               <h4 onClick={() => getData()}>back</h4>
             </div>
           )}
-          {reviewsAll?.map((item) => (
-            <div key={item.id}>
-              <div className="reviewsBlock2_card">
-                <div style={{ position: "relative" }}>
-                  <button className="reviewsBlock2_card_btn">Play video</button>
-                  <img
-                    src={item.image1 ? item.image1 : "/card-img.jpg"}
-                    className="reviewsBlock2_card_img"
-                    alt=""
-                  />
-                </div>
-                <h3 className="reviewsBlock2_card_title">{item.name}</h3>
-                <div className="reviewsBlock2_card_raiting">
-                  <div className="reviewsBlock2_card_raiting_icons">
-                    <StyledRating
-                      name="read-only"
-                      value={item.stars}
-                      readOnly
-                      precision={0.5}
-                      sx={{
-                        fontSize: "30px",
-                      }}
-                    />
+          {videoReviewsAll &&
+            videoReviewsAll?.map((item) => (
+              <div key={item.id}>
+                <div className="reviewsBlock2_card">
+                  <div style={{ position: "relative" }}>
+                    <button className="reviewsBlock2_card_btn">
+                      Play video
+                    </button>
+                    {/* <img
+                      src={item.image1 ? item.image1 : "/card-img.jpg"}
+                      className="reviewsBlock2_card_img"
+                      alt=""
+                    /> */}
+                    <video className="reviewsBlock2_card_img" controls>
+                      <source src={`${item.video}`} type="video/mp4" />
+                      <source src={`${item.video}`} type="video/ogg" />
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
-                  <p className="reviewsBlock2_card_raiting_count">
-                    {item.stars}
-                  </p>
+                  <h3 className="reviewsBlock2_card_title">{item.name}</h3>
+                  <div className="reviewsBlock2_card_raiting">
+                    <div className="reviewsBlock2_card_raiting_icons">
+                      <StyledRating
+                        name="read-only"
+                        value={item.stars}
+                        readOnly
+                        precision={0.5}
+                        sx={{
+                          fontSize: "30px",
+                        }}
+                      />
+                    </div>
+                    <p className="reviewsBlock2_card_raiting_count">
+                      {item.stars}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
           <div></div>
         </div>
         {reviews && reviewsAll?.length !== 0 && (
