@@ -173,14 +173,20 @@ export default function BookNowFormSecond({
       //   },
       //   method: "POST",
       // })
+      let axiosConfig = {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: " */*",
+          "Accept-Encoding": "gzip, deflate, br",
+          Connection: "keep-alive",
+        },
+      };
       axios
-        .post("https://1furniturerestoration.com/api/bookings", {
-          ...formData,
-          comment,
-          time: `${now.getFullYear()}-${day.date}-${formatNum(
-            day.month + 1
-          )}T${`${time}`.slice(0, 2)}:00`,
-        })
+        .post(
+          "https://1furniturerestoration.com/api/bookings/",
+          formData,
+          axiosConfig
+        )
         .then((response) => {
           console.log(response);
           notifySuccess();

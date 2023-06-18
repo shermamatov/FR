@@ -142,7 +142,7 @@ export async function fetchServices(
     limit = 20,
     offset = 0
 ): Promise<PaginationData<Service>> {
-    const res = await fetch(`${API_URL}/service/`);
+    const res = await fetch(`${API_URL}/service`);
     return res.json();
 }
 
