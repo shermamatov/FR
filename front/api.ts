@@ -90,6 +90,7 @@ export interface Review {
     image1: string | null;
     image2: string | null;
     created_at: string;
+    video: string | null;
 }
 
 export interface Booking {
@@ -144,7 +145,7 @@ export async function fetchServices(
     limit = 20,
     offset = 0
 ): Promise<PaginationData<Service>> {
-    const res = await fetch(`${API_URL}/service/`);
+    const res = await fetch(`${API_URL}/service`);
     return res.json();
 }
 
