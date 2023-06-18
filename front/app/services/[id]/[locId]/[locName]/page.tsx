@@ -96,9 +96,23 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         </div>
                         <div className="block1_right bord hidden lg:flex ">
                             <div className="banner_block">
-                                <Image src={banner} alt="" />
+                                <Image
+                                    layout="responsive"
+                                    quality={100}
+                                    width={100}
+                                    height={100}
+                                    src={banner}
+                                    alt=""
+                                />
                                 <div className="krujok">
-                                    <Image src={krujok} alt="" />
+                                    <Image
+                                        layout="responsive"
+                                        quality={100}
+                                        width={100}
+                                        height={100}
+                                        src={krujok}
+                                        alt=""
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -109,26 +123,30 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 <div className="serv_before_after_block_adap ">
                     <div>
                         <Image
+                            layout="responsive"
+                            quality={100}
                             src={
                                 service.offer_image_before
                                     ? service.offer_image_before
                                     : altBefore
                             }
-                            width={100}
-                            height={100}
+                            // width={100}
+                            // height={100}
                             alt=""
-                            unoptimized
+                            // unoptimized
                         />
                         <Image
-                            width={100}
-                            height={100}
+                            layout="responsive"
+                            quality={100}
+                            // width={100}
+                            // height={100}
                             src={
                                 service.offer_image_after
                                     ? service.offer_image_after
                                     : altAfter
                             }
                             alt=""
-                            unoptimized
+                            // unoptimized
                         />
                     </div>
 
@@ -148,13 +166,14 @@ export default function ServiceSingle({ params }: PageNavProps) {
                     {sliceServArr().map((item) => (
                         <div key={item.id}>
                             <Image
+                                quality={100}
+                                layout="responsive"
                                 src={
                                     item.offer_image ? item.offer_image : banner
                                 }
                                 alt="sorry"
                                 width={100}
                                 height={100}
-                                unoptimized
                             />
                             <Link
                                 href={`/services/${item.slug}/${
@@ -233,7 +252,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 </div>
             </section>
             <HomeBlock3 />
-            {service.media.length != 0 ? (
+            {service.media.length !== 0 ? (
                 <div className="content">
                     <div className="fr_server">
                         <h2 className="transparent_text">
@@ -241,13 +260,86 @@ export default function ServiceSingle({ params }: PageNavProps) {
                         </h2>
                         <h2 className="text-4xl sm:text-5xl">our photos</h2>
                         <div className="grid_block">
-                            {service.media.map((item) => (
+                            {service.media.map((item) =>
+                                item.type_of !== "before-after" ? (
+                                    <div key={item.id} className="grid__item">
+                                        <Image
+                                            layout="responsive"
+                                            quality={100}
+                                            width={100}
+                                            height={100}
+                                            src={item.photo}
+                                            alt={item.caption}
+                                            className="grid__img aspect-video aspAdap"
+                                            style={{
+                                                width: "100%",
+                                                objectFit: "cover",
+                                                backgroundSize: "cover",
+                                            }}
+                                        />
+                                        <p className="grid__desc bord">
+                                            {item.caption ||
+                                                "media description"}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div key={item.id}>
+                                        <div
+                                            key={item.id}
+                                            className="flex aspect-video aspAdap"
+                                            style={{ width: "100%" }}
+                                        >
+                                            <Image
+                                                layout="responsive"
+                                                // quality={100}
+                                                src={
+                                                    item.before_img ||
+                                                    item.photo
+                                                }
+                                                alt={item.caption}
+                                                width={50}
+                                                height={100}
+                                                className="w-[50%]"
+                                                style={{
+                                                    width: "50%",
+                                                    objectFit: "cover",
+                                                    backgroundSize: "cover",
+                                                }}
+                                            />
+                                            <Image
+                                                layout="responsive"
+                                                // quality={100}
+                                                src={
+                                                    item.after_img || item.photo
+                                                }
+                                                alt={item.caption}
+                                                width={50}
+                                                height={100}
+                                                className="w-[50%]"
+                                                // className="aspect-video aspAdap"
+                                                style={{
+                                                    width: "50%",
+                                                    objectFit: "cover",
+                                                    backgroundSize: "cover",
+                                                }}
+                                            />
+                                        </div>
+                                        <p className="grid__desc bord">
+                                            {item.caption ||
+                                                "media description"}
+                                        </p>
+                                    </div>
+                                )
+                            )}
+                            {/* {service.media.map((item) => (
                                 <div key={item.id} className="grid__item">
                                     <Image
                                         src={item.photo}
                                         alt={item.caption}
                                         className="grid__img"
-                                        unoptimized
+                                        // unoptimized
+                                        quality={100}
+                                        layout="responsive"
                                         width={100}
                                         height={100}
                                     />
@@ -255,7 +347,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                                         {item.caption}
                                     </p>
                                 </div>
-                            ))}
+                            ))} */}
                         </div>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import "./booknowFirst.css";
 export default function BooknowFirst() {
     return (
@@ -13,7 +14,11 @@ export default function BooknowFirst() {
                             alt=""
                             className="blockNow1_imgBlock_circle"
                         />
-                        <img
+                        <Image
+                            quality={100}
+                            layout="responsive"
+                            width={100}
+                            height={100}
                             src="/blockNow1-big.webp"
                             alt=""
                             className="blockNow1_imgBlock_big"

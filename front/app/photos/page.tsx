@@ -289,7 +289,7 @@ export default function Photos() {
                             >
                                 <Image
                                     layout="responsive"
-                                    // quality={100}
+                                    quality={100}
                                     src={item.before_img || item.photo}
                                     alt={item.caption}
                                     width={50}
@@ -303,7 +303,7 @@ export default function Photos() {
                                 />
                                 <Image
                                     layout="responsive"
-                                    // quality={100}
+                                    quality={100}
                                     src={item.after_img || item.photo}
                                     alt={item.caption}
                                     width={50}
