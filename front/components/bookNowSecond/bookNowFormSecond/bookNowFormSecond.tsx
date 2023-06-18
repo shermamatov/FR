@@ -177,7 +177,6 @@ export default function BookNowFormSecond({
         headers: {
           "Content-Type": "application/json",
           Accept: " */*",
-          "Accept-Encoding": "gzip, deflate, br",
           Connection: "keep-alive",
         },
       };
