@@ -138,16 +138,22 @@ export default function BookNowFormSecond({
   useEffect(() => {
     console.log(formData);
   }, [formData]);
+  useEffect(() => {
+    if (time && comment) {
+      const now = new Date();
+      setFormData({
+        ...formData,
+        comment,
+        time: `${now.getFullYear()}-${formatNum(day.month + 1)}-${
+          day.date
+        }T${`${time}`.slice(0, 2)}:00:00`,
+      });
+    }
+  }, [time, comment]);
 
   async function bookNow() {
     const now = new Date();
-    setFormData({
-      ...formData,
-      comment,
-      time: `${now.getFullYear()}-${formatNum(day.month + 1)}-${
-        day.date
-      }T${`${time}`.slice(0, 2)}:00:00`,
-    });
+
     const data = new FormData();
     for (let key in formData) {
       data.append(key, formData[key]);
