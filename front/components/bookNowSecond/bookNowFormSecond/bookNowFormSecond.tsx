@@ -177,13 +177,15 @@ export default function BookNowFormSecond({
         headers: {
           "Content-Type": "application/json",
           Accept: " */*",
-          Connection: "keep-alive",
         },
       };
+      const data = JSON.stringify({ ...formData });
+      console.log(data);
+
       axios
         .post(
           "https://1furniturerestoration.com/api/bookings/",
-          formData,
+          data,
           axiosConfig
         )
         .then((response) => {
