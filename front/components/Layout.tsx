@@ -1,5 +1,6 @@
 import { PropsWithChildren, use } from "react";
 import Header from "./Header";
+import CookiesPL from "./CookiesPL";
 
 interface LayoutProps extends PropsWithChildren {
     location?: boolean;
@@ -15,6 +16,7 @@ export function Layout({ children, location = true, className }: LayoutProps) {
             <Header />
             {/* <Header services={services} currLocation={currLocation} /> */}
             <main className={className}>{children}</main>
+            <CookiesPL />
             {location && (
                 <section>
                     <h2 className="content mb-[23px] text-brown-800 text-center text-3xl sm:text-5xl">

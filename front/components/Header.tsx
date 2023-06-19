@@ -62,7 +62,7 @@ const Header = () => {
                             {location
                                 ? `${location?.location_name}, ${location?.state.name}`
                                 : JSON.stringify(currentLocation) !== "{}"
-                                ? `${currentLocation?.currentLocation_name} ${currentLocation?.state.name}`
+                                ? `${currentLocation?.currentLocation_name}, ${currentLocation?.state.name}`
                                 : ""}
                             <Link href="/location" className="upn_change">
                                 change
