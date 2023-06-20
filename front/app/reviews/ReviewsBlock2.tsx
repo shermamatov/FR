@@ -482,9 +482,9 @@ export default function ReviewsBlock2({ services }: any) {
               <div key={item.id}>
                 <div className="reviewsBlock2_card">
                   <div style={{ position: "relative" }}>
-                    <button className="reviewsBlock2_card_btn">
+                    {/* <button className="reviewsBlock2_card_btn">
                       Play video
-                    </button>
+                    </button> */}
                     {/* <img
                       src={item.image1 ? item.image1 : "/card-img.jpg"}
                       className="reviewsBlock2_card_img"
