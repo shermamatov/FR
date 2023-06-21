@@ -1,6 +1,7 @@
 import { PropsWithChildren, use } from "react";
 import Header from "./Header";
 import CookiesPL from "./CookiesPL";
+import { fetchServices, getCurrentLocation } from "@/api";
 
 interface LayoutProps extends PropsWithChildren {
     location?: boolean;
@@ -8,12 +9,12 @@ interface LayoutProps extends PropsWithChildren {
 }
 
 export function Layout({ children, location = true, className }: LayoutProps) {
-    // const currLocation = use(getCurrentLocation());
-    // const services = use(fetchServices());
+    const currLocation = use(getCurrentLocation());
+    const services = use(fetchServices());
 
     return (
         <>
-            <Header />
+            <Header locat={currLocation} serv={services} />
             {/* <Header services={services} currLocation={currLocation} /> */}
             <main className={className}>{children}</main>
             <CookiesPL />
