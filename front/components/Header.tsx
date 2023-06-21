@@ -14,8 +14,9 @@ import {
     getCurrentLocation,
 } from "@/api";
 import { usePathname } from "next/navigation";
+import HeaderModal from "./HeaderModal";
 
-const Header = () => {
+const Header = ({ serv, locat }: any) => {
     const pathname = usePathname();
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
@@ -47,7 +48,7 @@ const Header = () => {
             localStorage.setItem("currentLocation", JSON.stringify(location));
             localStorage.setItem("locationId", JSON.stringify(location.id));
         } else {
-            axios("https://itek-dev.highcat.org/api/location/find/").then(
+            axios("https://1furniturerestoration.com/api/location/find/").then(
                 ({ data }) => setCurrentLocation(data)
             );
         }
@@ -191,41 +192,14 @@ const Header = () => {
                                 </div>
                             </Link>
                             {/* <NavbarModal setModal={setModal} modal={modal} /> */}
-                            {modal && (
-                                <div
-                                    onMouseOver={() => setModal(true)}
-                                    // onMouseLeave={() => setModal(false)}
-                                    className="nav_modal"
-                                    // style={{
-                                    //     display: `${modal ? "flex" : "none"}`,
-                                    // }}
-                                >
-                                    <ul>
-                                        {services?.results.length === 0
-                                            ? ""
-                                            : services?.results.map(
-                                                  (item: Service) =>
-                                                      item.main_menu && (
-                                                          <Link
-                                                              href={`/services/${
-                                                                  item.slug
-                                                              }/${
-                                                                  location?.id
-                                                              }/${location?.location_name.replace(
-                                                                  /%| /g,
-                                                                  "_"
-                                                              )}`}
-                                                              key={item.id}
-                                                          >
-                                                              <li className="mb-5">
-                                                                  {item.name}
-                                                              </li>
-                                                          </Link>
-                                                      )
-                                              )}
-                                    </ul>
-                                </div>
-                            )}
+                            {
+                                <HeaderModal
+                                    modal={modal}
+                                    setModal={setModal}
+                                    services={serv}
+                                    location={locat}
+                                />
+                            }
                         </div>
                         <div className={"right_block_buttons"}>
                             <button className="number_btn">
