@@ -14,7 +14,7 @@ export default function HomeBlock6() {
                         alt="#"
                     />
                     <div className="flex flex-col ml-1 sm:ml-4">
-                        <h2 className="text-3xl md:text-5xl">+1000</h2>{" "}
+                        <h2 className="text-3xl md:text-5xl">+30 000</h2>{" "}
                         <p className="text-center font-bold text-xs md:text-base">
                             Completed project
                         </p>

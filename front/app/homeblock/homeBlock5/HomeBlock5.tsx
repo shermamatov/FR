@@ -53,17 +53,15 @@ export default function HomeBlock5() {
                         <div className="services__inner">
                             <div className="services__top">
                                 <h2 className="services__title bord">
-                                    FR Services in <br /> Southern California
+                                    {/* FR Services in Southern California */}
+                                    Our Furniture <br /> Restoration Services
                                 </h2>
                                 <p className="services__desc bord">
-                                    The core SEO strategy has remained steady
-                                    from day one: provide high-quality content
-                                    to website visitors and be an authoritative
-                                    thought leader in the industry; creating
-                                    new, highly-useful content for the blog and
-                                    landing pages; focusing on on-page
-                                    optimizations targeting high-value
-                                    search-terms.
+                                    Explore a wide range of our furniture
+                                    restoration services. From small fixes to
+                                    extensive reconstructions, we cover all
+                                    aspects of restoration with our 20+ years of
+                                    experience!
                                 </p>
                             </div>
                             <div className="services__bottom">

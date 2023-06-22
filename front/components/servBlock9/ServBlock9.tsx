@@ -27,8 +27,20 @@ const ServBlock9 = ({ reviews }: any) => {
         arrows: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3.5,
+        slidesToShow: 5.5,
         responsive: [
+            {
+                breakpoint: 2200,
+                settings: {
+                    slidesToShow: 4.5, // на экранах меньше 768px показываем 2 слайда
+                },
+            },
+            {
+                breakpoint: 1800,
+                settings: {
+                    slidesToShow: 3.5, // на экранах меньше 768px показываем 2 слайда
+                },
+            },
             {
                 breakpoint: 1208,
                 settings: {

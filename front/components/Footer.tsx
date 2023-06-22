@@ -22,10 +22,11 @@ const Footer = () => {
                                     <div className="polosa"></div>
                                 </div>
                                 <p className="col-md-p">
-                                    We are an award winning HVAC company with
-                                    over 10+ years experience in the business.
-                                    We prvide a wide range of services for both
-                                    residential and commercial clients.
+                                    We are a family-owned furniture restoration
+                                    business with over 20+ years of experience.
+                                    We take pride in reviving the beauty and
+                                    function of each piece we work on. Trust us
+                                    with your restoration needs!
                                 </p>
 
                                 <div className="main_icons">
