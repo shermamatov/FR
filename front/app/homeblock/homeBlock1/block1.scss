@@ -11,7 +11,7 @@
         margin-top: calc(20px + (30 - 20) * ((100vw - 800px) / (1400 - 800)));
         > h1 {
             font-size: calc(
-                36px + (54 - 36) * ((100vw - 800px) / (1400 - 800))
+                32px + (50 - 32) * ((100vw - 800px) / (1400 - 800))
             );
 
             font-weight: 400;
@@ -36,8 +36,9 @@
                         max-height: 25px;
                     }
                     > h4 {
+                        width: 50%;
                         font-family: "Montserrat";
-                        margin-left: 15px;
+                        // margin-left: 15px;
                         font-size: calc(
                             12px + (18 - 12) * ((100vw - 800px) / (1400 - 800))
                         );
@@ -45,7 +46,7 @@
                     }
                 }
                 .rating_block {
-                    margin-left: 40px;
+                    margin-left: 5px;
                     display: flex;
                     align-items: center;
                     > img {
@@ -65,7 +66,7 @@
                 .mass_block {
                     display: flex;
                     align-items: center;
-                    margin-left: 30px;
+                    // margin-left: 30px;
                     img {
                         cursor: pointer;
                         margin-right: 10px;
@@ -93,7 +94,7 @@
                     }
                     max-width: 250px;
                     max-height: 70px;
-                    margin-left: 40px;
+                    // margin-left: 40px;
                     margin-top: 30px;
                 }
             }
@@ -159,6 +160,7 @@
                     > div {
                         margin-top: 10px;
                         > h4 {
+                            width: 80%;
                             font-size: calc(
                                 10px + (16 - 12) *
                                     ((100vw - 350px) / (800 - 350))
@@ -249,6 +251,8 @@
                         }
                     }
                     .btn_block1 {
+                        width: 200px;
+                        height: 65px;
                         > a {
                             font-size: 18px !important;
                         }

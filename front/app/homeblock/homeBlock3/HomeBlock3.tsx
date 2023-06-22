@@ -19,18 +19,10 @@ export default function HomeBlock3() {
                     >
                         <div
                             className="relative"
-                            style={{ padding: "40px 3%" }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             <img
-                                style={{
-                                    width: "40px",
-                                    height: "40px",
-                                    position: "absolute",
-                                    right: "2%",
-                                    top: "3%",
-                                    cursor: "pointer",
-                                }}
+                                className="block3_modal_close"
                                 onClick={() => setModal(false)}
                                 src="/close_icon.svg"
                                 alt=""
@@ -44,18 +36,42 @@ export default function HomeBlock3() {
                                 src="/banner_adap.jpg"
                                 alt="modal"
                             />
-                            <h3>Beverly Hills</h3>
-                            <h2>Antique Restoration</h2>
+                            {/* <h3>Beverly Hills</h3> */}
+                            <h2>
+                                Professionalism and Experience <br /> in
+                                Furniture Restoration
+                            </h2>
                             <p>
-                                A global print fulfillment company partnered
-                                with Mason Interactive to grow omnichannel sales
-                                via Search Engine Optimization (SEO). During the
-                                course of the engagement, the client saw a 134%
-                                increase in organic traffic, resulting in a
-                                measurable increase in leads, and sales.During
-                                the course of the engagement, the client saw a
-                                134% increase in organic traffic, resulting in a
-                                measurable increase in leads, and sa
+                                Our family business, which has been restoring
+                                furniture for over 20 years, takes pride in its
+                                history and rich experience. We have a deep
+                                knowledge and practical skills that allow us to
+                                restore furniture of any complexity, preserving
+                                its original style and beauty. <br />
+                                <br />
+                                <span>Variety of Services</span> <br />
+                                We offer a wide range of furniture restoration
+                                services, including repair, restoration,
+                                refurbishing, and even reconstruction of
+                                furniture of various eras and styles. <br />{" "}
+                                <br />
+                                <span>Twenty Years of Experience</span> <br />
+                                Over the 20 years of work, we have accumulated
+                                vast experience, which allows us to cope with
+                                any challenges that furniture restoration poses
+                                for us. This, in turn, guarantees impeccable
+                                quality of services to our customers. <br />{" "}
+                                <br />
+                                <span>Family Values</span> <br />
+                                Being a family business, we value relationships
+                                with our clients and strive to provide the best
+                                service. Our main goal is to meet the needs of
+                                each client. <br /> <br />
+                                <span>Trust Our Experience</span> <br />
+                                If you want to restore the original beauty and
+                                functionality of your furniture, entrust this
+                                work to our specialists. With us, your furniture
+                                will look like new!
                             </p>
                         </div>
                     </div>
@@ -72,17 +88,19 @@ export default function HomeBlock3() {
                         />
                     </div>
                     <div className="block3_right">
-                        <h1 className="bord">
-                            SEO TITLE HVAC <br /> CONTRACTOR <br /> IN LOS
-                            ANGELES
-                        </h1>
+                        <h2 className="bord">
+                            {/* SEO TITLE HVAC <br /> CONTRACTOR <br /> IN LOS
+                            ANGELES */}
+                            Professionalism and Experience in <br />
+                            Furniture Restoration
+                        </h2>
                         <p className="bord">
-                            A global print fulfillment company partnered with
-                            Mason Interactive to grow omnichannel sales via
-                            Search Engine Optimization (SEO). During the course
-                            of the engagement, the client saw a 134% increase in
-                            organic traffic, resulting in a measurable increase
-                            in leads, and sales.
+                            Our family business, which has been restoring
+                            furniture for over 20 years, takes pride in its
+                            history and rich experience. We have a deep
+                            knowledge and practical skills that allow us to
+                            restore furniture of any complexity, preserving its
+                            original style and beauty.
                         </p>
                         <button
                             className="btn_variant z-30"

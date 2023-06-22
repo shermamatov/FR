@@ -16,15 +16,22 @@ export default function HomeBlock1() {
             <div className="block1">
                 <div className="block1_left">
                     <h1 className="bord">
-                        Family owners <br /> business of <br /> engineers
+                        {/* Family owners <br /> business of <br /> engineers Family */}
+                        Family Owned <br /> Business of <br /> Furniture <br />
+                        Restoration
                     </h1>
                     <div className="left_bottom_block">
                         <div className="block1_desc">
                             <div className="bord">
-                                <img src="/galochkaIcon.svg" alt="" />
-                                <h4>30+ years experience in engineering</h4>
+                                {/* <img src="/galochkaIcon.svg" alt="" /> */}
+                                <h4>
+                                    High-quality furniture restoration services
+                                    from our family company with rich 20+ years
+                                    of experience. Preserve the beauty and value
+                                    of your furniture with us!
+                                </h4>
                             </div>
-                            <div className="bord">
+                            {/* <div className="bord">
                                 <img src="/galochkaIcon.svg" alt="" />
                                 <h4>Available 24/7 for Emergencies</h4>
                             </div>
@@ -34,7 +41,7 @@ export default function HomeBlock1() {
                                     Quick service Same-Day inspection and
                                     estimate
                                 </h4>
-                            </div>
+                            </div> */}
                             <div className="rating_block bord">
                                 <img src="/stars.svg" alt="" />
                                 <p>95% of clients recommend us</p>
