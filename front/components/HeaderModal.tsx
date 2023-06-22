@@ -25,7 +25,7 @@ export default function HeaderModal({
                                   <Link
                                       href={`/services/${item.slug}/${
                                           location?.id
-                                      }/${location?.location_name.replace(
+                                      }/${location?.location_name?.replace(
                                           /%| /g,
                                           "_"
                                       )}`}

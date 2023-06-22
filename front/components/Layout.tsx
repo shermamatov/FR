@@ -1,5 +1,5 @@
 import { PropsWithChildren, use } from "react";
-import Header from "./Header";
+// import Header from "./Header";
 import CookiesPL from "./CookiesPL";
 import { fetchServices, getCurrentLocation } from "@/api";
 
@@ -14,7 +14,7 @@ export function Layout({ children, location = true, className }: LayoutProps) {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <Header services={services} currLocation={currLocation} /> */}
       <main className={className}>{children}</main>
       <CookiesPL />

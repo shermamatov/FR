@@ -1,6 +1,8 @@
 "use client";
 import Link from "next/link";
 import React, { use, useEffect, useState } from "react";
+import Cookies from "universal-cookie";
+
 // import logo from "@/assets/navLogo.png";
 // import strela from "@/assets/strelka.png";
 // import menuIcon from "@/assets/menu.png";
@@ -16,35 +18,38 @@ import {
 import { usePathname } from "next/navigation";
 import HeaderModal from "./HeaderModal";
 
-const Header = () => {
+const Header = ({ services, locat }: any) => {
     const pathname = usePathname();
+    const cookies = new Cookies();
+
     const [burger, setBurger] = useState(false);
     const [modal, setModal] = useState(false);
     const [currentLocation, setCurrentLocation] = useState<any>({});
     const [specialUrl, setSpecialUrl] = useState<any>();
 
-    const [services, setServices] = useState<PaginationData<Service>>();
+    // const [services, setServices] = useState<PaginationData<Service>>();
     const [location, setLocation] = useState<Location>();
-    async function getData() {
-        setServices(await fetchServices());
-    }
+    // async function getData() {
+    //   setServices(await fetchServices());
+    // }
     async function getLocat() {
         if (
             typeof window !== "undefined" &&
             window.localStorage &&
-            localStorage.getItem("currentLocation")
+            localStorage.getItem("currentLocation") &&
+            cookies.get("currentLocation")
         ) {
-            setLocation(
-                JSON.parse(localStorage.getItem("currentLocation") || "")
-            );
+            setLocation(cookies.get("currentLocation") || "");
         } else {
             setLocation(await getCurrentLocation());
         }
     }
     useEffect(() => {
-        getData();
+        // getData();
         getLocat();
         if (location) {
+            cookies.set("currentLocation", location, { path: "/" });
+
             localStorage.setItem("currentLocation", JSON.stringify(location));
             localStorage.setItem("locationId", JSON.stringify(location.id));
         } else {
@@ -65,7 +70,13 @@ const Header = () => {
                                 : JSON.stringify(currentLocation) !== "{}"
                                 ? `${currentLocation?.currentLocation_name}, ${currentLocation?.state.name}`
                                 : ""}
-                            <Link href="/location" className="upn_change">
+                            <Link
+                                href={`/location/${location?.location_name?.replace(
+                                    /%| /g,
+                                    "_"
+                                )}`}
+                                className="upn_change"
+                            >
                                 change
                             </Link>
                         </p>
@@ -197,7 +208,7 @@ const Header = () => {
                                     modal={modal}
                                     setModal={setModal}
                                     services={services}
-                                    location={location}
+                                    location={locat}
                                 />
                             }
                         </div>
@@ -320,7 +331,10 @@ const Header = () => {
                         <Link
                             style={{ color: "#F2994A" }}
                             className="font-semibold text-xs locat_link"
-                            href={"/location"}
+                            href={`/location/${location?.location_name?.replace(
+                                /%| /g,
+                                "_"
+                            )}`}
                         >
                             {location
                                 ? `${location?.location_name}, ${location?.state.name}`
