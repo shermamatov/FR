@@ -40,7 +40,16 @@ export default function RootLayout({
   const nextCookies = cookies();
   const location: any = nextCookies.get("currentLocation");
   // console.log(typeof location?.value);
-  const loc: any = JSON.parse(location?.value);
+  const loc: any = location
+    ? JSON.parse(location?.value)
+    : {
+        geo_latitude: 38.4088,
+        geo_longitude: -121.3716,
+        id: 398,
+        location_name: "Elk Grove",
+        population: 172886,
+        state: { id: 4, name: "California" },
+      };
 
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
