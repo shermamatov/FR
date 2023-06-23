@@ -349,7 +349,7 @@ const ServBlock9 = ({ reviews }: any) => {
                         {videoReviews.map((item: any) => {
                             return (
                                 <div key={item.id}>
-                                    <div className="video_left_block relative">
+                                    <div className="video_left_block relative flex flex-col">
                                         {/* <Image
                                         width={100}
                                         height={100}
