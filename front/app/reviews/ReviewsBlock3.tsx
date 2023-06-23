@@ -6,14 +6,15 @@ import Image from "next/image";
 import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material";
 import axios from "axios";
-
+import "../homeblock/homeBlock3/block3.scss";
 export default function ReviewsBlock3({ services }: any) {
   const [reviews, setReviews] = useState<PaginationData<Review>>();
   const [reviewsAll, setReviewsAll] = useState<Review[]>();
   const [currentPage, setCurrentPage] = useState(0);
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [filterYear, setFilterYear] = useState<number | string>();
-
+  const [modal, setModal] = useState(false);
+  const [review, setReview] = useState<any>();
   const pageSum = 6;
   async function getData(limit = pageSum, offset = 0) {
     axios(
@@ -312,6 +313,14 @@ export default function ReviewsBlock3({ services }: any) {
   function filter() {
     filterHandler();
   }
+  function openReviewModal(item: any) {
+    setModal(true);
+    setReview(item);
+  }
+  function closeReviewModal() {
+    setModal(false);
+    setReview(null);
+  }
 
   return (
     <div className="reviewsBlock3" onClick={() => setShowFilterPopup(false)}>
@@ -397,7 +406,7 @@ export default function ReviewsBlock3({ services }: any) {
                                 </a>
                             </div> */}
 
-              <div className="reviewsFilterPopup_block overflow-y-scroll h-[30%]">
+              <div className="reviewsFilterPopup_block overflow-y-scroll h-[300px]">
                 <h3 className="reviewsFilterPopup_block_title">By services</h3>
                 {services?.results?.map((item: any) => (
                   <label
@@ -452,11 +461,17 @@ export default function ReviewsBlock3({ services }: any) {
               <h4 onClick={() => getData()}>back</h4>
             </div>
           )}
+
           {reviewsAll?.map((item) => (
             <div key={item.id} className="col-span-1">
               <div className="reviewsBlock3_card">
                 <p className="reviewsBlock3_card_text text-md">
                   {item.review_text}
+                </p>
+                <p
+                  className="text-sm text-gray-400 mt-4"
+                  onClick={() => openReviewModal(item)}>
+                  Read more...
                 </p>
                 <div>
                   <h3 className="reviewsBlock3_card_name">{item.name}</h3>
@@ -480,6 +495,38 @@ export default function ReviewsBlock3({ services }: any) {
                   </div>
                 </div>
               </div>
+              {modal && (
+                <div className="block3_modal" onClick={closeReviewModal}>
+                  <div
+                    className="relative"
+                    onClick={(e) => e.stopPropagation()}>
+                    <img
+                      className="block3_modal_close"
+                      onClick={closeReviewModal}
+                      src="/close_icon.svg"
+                      alt=""
+                    />
+
+                    {/* <h3>Beverly Hills</h3> */}
+                    <h2>{review.name}</h2>
+                    <div
+                      className="reviewsBlock2_card_raiting_icons"
+                      style={{ marginLeft: "-5px" }}>
+                      <StyledRating
+                        name="read-only"
+                        value={review.stars}
+                        readOnly
+                        precision={0.5}
+                        sx={{
+                          fontSize: "30px",
+                        }}
+                      />
+                    </div>
+
+                    <p>{review.review_text}</p>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -13,7 +13,6 @@ import Rating from "@mui/material/Rating";
 import { styled } from "@mui/material";
 // import filterIcon from "@/assets/filterIcon.png";
 import axios from "axios";
-import { Service } from "@/api";
 
 export default function ReviewsBlock2({ services }: any) {
   // const reviews = use(fetchReviews());
@@ -23,7 +22,10 @@ export default function ReviewsBlock2({ services }: any) {
   const [currentPage, setCurrentPage] = useState(0);
   const [showFilterPopup, setShowFilterPopup] = useState(false);
   const [filterYear, setFilterYear] = useState<number | string>();
-  let pageSum = 8;
+  const [review, setReview] = useState<any>();
+  const [modal, setModal] = useState(false);
+
+  let pageSum = 20;
 
   async function getData(limit = pageSum, offset = 0) {
     axios(
@@ -331,6 +333,14 @@ export default function ReviewsBlock2({ services }: any) {
   function filter() {
     filterHandler();
   }
+  function openReviewModal(item: any) {
+    setModal(true);
+    setReview(item);
+  }
+  function closeReviewModal() {
+    setModal(false);
+    setReview(null);
+  }
   return (
     <div
       className="reviewsBlock2 mt-10"
@@ -352,7 +362,7 @@ export default function ReviewsBlock2({ services }: any) {
           {showFilterPopup && (
             <div
               onClick={(e) => e.stopPropagation()}
-              className="reviewsFilterPopup reviewsFilterPopup-show">
+              className="reviewsFilterPopup reviewsFilterPopup-show z-[11]">
               {/* <div className="reviewsFilterPopup_block">
                                 <h3 className="reviewsFilterPopup_block_title">
                                     By year
@@ -417,7 +427,7 @@ export default function ReviewsBlock2({ services }: any) {
                                 </a>
                             </div> */}
 
-              <div className="reviewsFilterPopup_block overflow-y-scroll h-[30%]">
+              <div className="reviewsFilterPopup_block overflow-y-scroll h-[300px]">
                 <h3 className="reviewsFilterPopup_block_title">By services</h3>
                 {services?.results?.map((item: any) => (
                   <label
@@ -482,15 +492,17 @@ export default function ReviewsBlock2({ services }: any) {
               <div key={item.id}>
                 <div className="reviewsBlock2_card">
                   <div style={{ position: "relative" }}>
-                    {/* <button className="reviewsBlock2_card_btn">
+                    <button
+                      className="reviewsBlock2_card_btn z-10"
+                      onClick={() => openReviewModal(item)}>
                       Play video
-                    </button> */}
+                    </button>
                     {/* <img
                       src={item.image1 ? item.image1 : "/card-img.jpg"}
                       className="reviewsBlock2_card_img"
                       alt=""
                     /> */}
-                    <video className="reviewsBlock2_card_img" controls>
+                    <video className="reviewsBlock2_card_img">
                       <source src={`${item.video}`} type="video/mp4" />
                       <source src={`${item.video}`} type="video/ogg" />
                       Your browser does not support the video tag.
@@ -514,6 +526,44 @@ export default function ReviewsBlock2({ services }: any) {
                     </p>
                   </div>
                 </div>
+                {modal && (
+                  <div className="block3_modal" onClick={closeReviewModal}>
+                    <div
+                      className="relative"
+                      onClick={(e) => e.stopPropagation()}>
+                      <img
+                        className="block3_modal_close"
+                        onClick={closeReviewModal}
+                        src="/close_icon.svg"
+                        alt=""
+                      />
+
+                      {/* <h3>Beverly Hills</h3> */}
+                      <h2>{review.name}</h2>
+                      <div
+                        className="reviewsBlock2_card_raiting_icons"
+                        style={{ marginLeft: "-5px" }}>
+                        <StyledRating
+                          name="read-only"
+                          value={review.stars}
+                          readOnly
+                          precision={0.5}
+                          sx={{
+                            fontSize: "30px",
+                          }}
+                        />
+                      </div>
+
+                      <video
+                        className="reviewsBlock2_card_img h-[400px]"
+                        controls>
+                        <source src={`${review.video}`} type="video/mp4" />
+                        <source src={`${review.video}`} type="video/ogg" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                )}
               </div>
             ))}
           <div></div>
