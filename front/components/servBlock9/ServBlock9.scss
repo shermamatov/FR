@@ -28,12 +28,20 @@
         // justify-content: space-between;
         .text_review_block {
             cursor: pointer;
-            height: 220px;
+            height: 235px;
             max-width: 450px;
             display: inline-flex !important;
             flex-direction: column;
             justify-content: space-between;
+            overflow: auto;
             padding: 20px;
+            &_::-webkit-scrollbar {
+                width: 0 !important;
+                height: 0 !important;
+            }
+            ::-webkit-scrollbar {
+                width: 0;
+            }
             p {
                 overflow: auto;
                 font-family: "Montserrat";

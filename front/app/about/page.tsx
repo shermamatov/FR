@@ -17,9 +17,9 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
     return {
-        title: "About 1#furniturerestoration - Expert Furniture Repair and Restoration Services",
+        title: "Learn More About Our Family-Owned Furniture Restoration Business with 20+ Years of Experience | #1FurnitureRestoration.com",
         description:
-            "1#furniturerestoration is a trusted provider of expert furniture repair and restoration services. Our skilled artisans and craftsmen are dedicated to preserving the beauty and integrity of your furniture pieces, using traditional techniques and high-quality materials. With personalized attention and a commitment to customer satisfaction, we breathe new life into cherished heirlooms, antiques, and modern furniture, ensuring exceptional results every time.",
+            "Get to know us, a family-owned furniture restoration business with 20+ years of experience. Discover our journey, values, and the craftsmanship that we provide.",
     };
 }
 
@@ -37,18 +37,27 @@ export default async function AboutUs() {
                                 ABOUT US
                             </p>
                             <h1 className="bord">
-                                Family owners <br /> business of <br />{" "}
-                                engineers
+                                About Us: A Family-Owned <br /> Furniture
+                                Restoration <br /> Business with 20+ <br />{" "}
+                                Years of Experience
                             </h1>
                             <div className="left_bottom_block">
                                 <div className="block1_desc about_us">
                                     <div>
                                         <p className="aboutUs_block1_text">
-                                            We offer a wide range of HVAC
-                                            services catered to both residential
-                                            and commercial clients. Even the
-                                            all-powerful Pointing has no control
-                                            about the blind texts.
+                                            We are a family-owned business with
+                                            over two decades of experience in
+                                            furniture restoration. We take pride
+                                            in our work, which is grounded in a
+                                            deep understanding of the art and
+                                            science of restoration. Over the
+                                            years, we have honed our skills to
+                                            handle any type of furniture, from
+                                            antique to modern, and have mastered
+                                            a wide array of techniques to ensure
+                                            that each piece we restore retains
+                                            its original beauty and
+                                            functionality.
                                         </p>
                                     </div>
                                 </div>
@@ -179,17 +188,63 @@ export default async function AboutUs() {
                             </div>
                         </div>
                         <div className="blockUs2_text">
+                            <h2>Our Story, Mission, and Values</h2>
                             <p>
-                                Our attention to detail and commitment to our
-                                values have helped us grow. It all started 15
-                                years ago with our President, a young aspiring
-                                HVAC technician, who wanted to make an impact in
-                                the industry. Well, with his drive, and the help
-                                of our NexGen family along the way, we ve grown
-                                to 8 locations across Southern California,
-                                servicing customers every day and continuing to
-                                grow into the industry standard for all things
-                                HVAC. Welcome to NexGen!
+                                Our journey started over 20 years ago when we
+                                realized the need for quality furniture
+                                restoration services. We started small but with
+                                a big vision - to offer the best furniture
+                                restoration services, preserving the legacy and
+                                beauty of every piece of furniture we work on.
+                                Over the years, our skills, knowledge, and the
+                                team have grown, but our core values of quality,
+                                integrity, and respect for the craft remain the
+                                same. <br /> <br />
+                                <span>Expert Craftsmanship</span>
+                                <br />
+                                Our team of skilled craftsmen brings a wealth of
+                                experience and passion to every project. We
+                                treat each piece of furniture as a unique
+                                artifact with its own history and personality.
+                                Our comprehensive approach ensures that we fully
+                                understand the original construction methods,
+                                materials, and aesthetics before we start the
+                                restoration process. <br />
+                                <br />
+                                <span>Our Services</span>
+                                <br />
+                                We offer a broad spectrum of services,
+                                including, but not limited to, repairing
+                                structural damage, veneer restoration, finishing
+                                and refinishing, upholstery, and color matching.
+                                Each service is tailored to the specific needs
+                                of each piece of furniture and client. <br />
+                                <br />
+                                <span>Commitment to Excellence</span>
+                                <br />
+                                We are committed to delivering outstanding
+                                results. Our extensive experience and deep
+                                understanding of the art of restoration allow us
+                                to achieve a high level of precision and
+                                excellence in every project. We believe that
+                                each piece of furniture deserves a second chance
+                                to shine, and we make it happen. <br />
+                                <br />
+                                <span>Trust Us with Your Furniture</span>
+                                <br />
+                                We understand that your furniture is more than
+                                just a functional item. It carries sentimental
+                                value, family history, and a personal story.
+                                Trust us to treat your furniture with the care,
+                                respect, and attention it deserves. <br />{" "}
+                                <br />
+                                <span>Join Our Satisfied Clients</span> <br />
+                                Over the years, we have restored countless
+                                pieces of furniture, bringing joy and
+                                satisfaction to our clients. We invite you to
+                                become part of our story and experience the
+                                excellence of our furniture restoration
+                                services.
                             </p>
                         </div>
                     </div>
