@@ -9,11 +9,11 @@
 }
 
 .block1 .block1_left {
-    margin-top: calc(20px + (30 - 20) * ((100vw - 800px) / (1400 - 800)));
+    /* margin-top: calc(20px + (30 - 20) * ((100vw - 800px) / (1400 - 800))); */
 }
 
 .block1 .block1_left > h1 {
-    font-size: calc(36px + (54 - 36) * ((100vw - 800px) / (1400 - 800)));
+    font-size: calc(30px + (38 - 32) * ((100vw - 800px) / (1400 - 800)));
     font-weight: 400;
     color: #2a2a2a;
     line-height: 90%;
@@ -35,7 +35,8 @@
 }
 
 .block1 .block1_left .left_bottom_block .block1_desc .aboutUs_block1_text {
-    max-width: 400px;
+    /* max-width: ; */
+    width: 50%;
     font-size: 20px;
     font-weight: 500;
     line-height: 35px;
@@ -141,8 +142,8 @@
     }
 
     .aboutUs_block1_text {
-        font-size: 16px !important;
-        line-height: 30px !important;
+        font-size: 12px !important;
+        line-height: 16px !important;
     }
 }
 
@@ -156,7 +157,10 @@
     .block1 {
         flex-direction: column;
     }
-
+    .aboutUs_block1_text {
+        width: 100% !important ;
+        font-size: 14px !important;
+    }
     .block1 .block1_left .left_bottom_block {
         margin-top: 25px;
     }
@@ -293,11 +297,22 @@
     margin: 92px auto 0;
 }
 
+.blockUs2_text h2 {
+    font-size: 42px;
+}
+
 .blockUs2_text p {
+    margin-top: 20px;
     font-weight: 600;
-    font-size: 34px;
-    line-height: 55px;
+    font-size: 20px;
+    line-height: 35px;
     color: #041e3c;
+}
+
+.blockUs2_text > p > span {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 24px;
 }
 
 .blockUs2 .row {
@@ -327,7 +342,7 @@
 
 .blockUs2_bottom {
     margin-top: 91px;
-    margin-bottom: 170px;
+    margin-bottom: 100px;
 }
 
 .blockUs2_bottom_bg::before {
@@ -370,6 +385,15 @@
     color: #2a2a2a;
 }
 
+@media (min-width: 1600px) {
+    .block1 .block1_left > h1 {
+        font-size: 36px;
+    }
+    /* .block1 .block1_left {
+        margin-top: 50px;
+    } */
+}
+
 @media screen and (max-width: 1400px) {
     .blockUs2_subtitle1 {
         left: -5%;
@@ -404,6 +428,9 @@
 
     .blockUs2_subtitle2 {
         margin-top: 20px;
+        width: 600px;
+        position: absolute;
+        right: 0;
     }
 
     .blockUs2_bottom_bg {
@@ -421,12 +448,19 @@
     .plants .left_bottom_block {
         margin-left: 0;
     }
+    .blockUs2_text {
+        margin-top: 250px;
+    }
 }
 
 @media screen and (max-width: 992px) {
     /* .container {
       max-width: 720px;
   } */
+    .block1 .block1_left > h1 {
+        font-size: 26px;
+    }
+
     .blockUs2_subtitle1 {
         font-size: 60px;
     }
@@ -444,7 +478,16 @@
     }
 }
 
+@media (max-width: 900px) {
+    .block1 .block1_left > h1 {
+        font-size: 22px;
+    }
+}
+
 @media screen and (max-width: 768px) {
+    .block1 .block1_left > h1 {
+        font-size: calc(24px + (32 - 24) * ((100vw - 350px) / (800 - 350)));
+    }
     .blockUs2 {
         margin-top: 50px;
     }
@@ -470,6 +513,10 @@
         display: inline-block;
         display: flex;
         justify-content: end;
+        position: absolute;
+        width: 350px;
+        right: 0;
+        margin-top: 30px;
     }
 
     .blockUs2_text p {
@@ -505,9 +552,15 @@
     .blockUs2_bottom {
         margin-top: 33px;
     }
+    .blockUs2_text {
+        margin-top: 180px;
+    }
 }
 
 @media screen and (max-width: 576px) {
+    .blockUs2_text {
+        margin-top: 140px;
+    }
     .blockUs2_subtitle2-mobile {
         margin-top: 10px;
     }
@@ -570,9 +623,9 @@
         width: 25px !important;
     }
 
-    .block1 .block1_left > h1 {
+    /* .block1 .block1_left > h1 {
         font-size: 36px;
-    }
+    } */
 
     .block1 .block1_right {
         right: 0 !important;
@@ -580,10 +633,23 @@
         margin-left: 0;
         transform: none;
     }
+    .blockUs2_text h2 {
+        font-size: 32px;
+    }
+
+    .blockUs2_text p {
+        font-size: 14px;
+    }
+
+    .blockUs2_text > p > span {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 20px;
+    }
 }
 
-@media (max-width: 420px) {
+/* @media (max-width: 420px) {
     .block1 .block1_left > h1 {
         font-size: 32px;
     }
-}
+} */

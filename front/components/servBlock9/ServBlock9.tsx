@@ -106,43 +106,50 @@ const ServBlock9 = ({ reviews }: any) => {
         <div className="block7_main mb-20">
             <div className="">
                 <h1>Words From Customers</h1>
-                <div className="text_review">
+                <div className="text_review ">
                     <Slider {...settings}>
                         {reviews.results.map((item: any) => (
-                            <div className="text_review_block" key={item.id}>
-                                <p onClick={() => setTextState(!textState)}>
-                                    {item.review_text.length > 150 && !textState
-                                        ? item.review_text.slice(0, 147) + "..."
-                                        : item.review_text}
-                                </p>
-                                <div>
-                                    <h5>{item.name}</h5>
+                            <>
+                                <div
+                                    className="text_review_block"
+                                    key={item.id}
+                                >
+                                    <p onClick={() => setTextState(!textState)}>
+                                        {item.review_text.length > 150 &&
+                                        !textState
+                                            ? item.review_text.slice(0, 147) +
+                                              "..."
+                                            : item.review_text}
+                                    </p>
                                     <div>
-                                        <StyledRating
-                                            name="read-only"
-                                            value={item.stars}
-                                            readOnly
-                                            precision={0.5}
-                                            sx={{
-                                                fontSize: "30px",
-                                            }}
-                                            icon={
-                                                <StarIcon
-                                                    sx={{ color: "white" }}
-                                                    fontSize="inherit"
-                                                />
-                                            }
-                                            emptyIcon={
-                                                <StarOutlineOutlinedIcon
-                                                    sx={{ color: "white" }}
-                                                    fontSize="inherit"
-                                                />
-                                            }
-                                        />
-                                        <p>{item.stars}</p>
+                                        <h5>{item.name}</h5>
+                                        <div>
+                                            <StyledRating
+                                                name="read-only"
+                                                value={item.stars}
+                                                readOnly
+                                                precision={0.5}
+                                                sx={{
+                                                    fontSize: "30px",
+                                                }}
+                                                icon={
+                                                    <StarIcon
+                                                        sx={{ color: "white" }}
+                                                        fontSize="inherit"
+                                                    />
+                                                }
+                                                emptyIcon={
+                                                    <StarOutlineOutlinedIcon
+                                                        sx={{ color: "white" }}
+                                                        fontSize="inherit"
+                                                    />
+                                                }
+                                            />
+                                            <p>{item.stars}</p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </>
                         ))}
                     </Slider>
                 </div>
