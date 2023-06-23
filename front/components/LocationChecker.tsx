@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import React, { useEffect, useState } from "react";
 import { use } from "react";
 import { fetchServiceByIdandLoc } from "@/api";
@@ -15,9 +15,26 @@ function LocationChecker({ params }: PageNavProps) {
 
   return service.text_for_location?.text || service.description != "" ? (
     service.text_for_location?.text ? (
-      <p className=" w-[90%] text-justify ">{service.text_for_location.text}</p>
+      <>
+        <h1 className="bord w-[90%] mb-4">
+          {service.text_for_location.h1
+            ? service.text_for_location.h1
+            : service.name}
+        </h1>
+        <p className=" w-[90%] text-justify ">
+          {service.text_for_location.text}
+        </p>
+      </>
     ) : (
-      <p className="w-[90%] text-justify ">{service.description}</p>
+      <>
+        <h1 className="bord w-[90%] mb-4">
+          {service.text_for_location.h1
+            ? service.text_for_location.h1
+            : service.name}
+        </h1>
+
+        <p className="w-[90%] text-justify ">{service.description}</p>
+      </>
     )
   ) : (
     <div className="left_bottom_block">
