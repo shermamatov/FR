@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import { use } from "react";
 import { fetchServiceByIdandLoc } from "@/api";
@@ -11,7 +10,6 @@ import "../app/services/services.scss";
 
 function LocationChecker({ params }: PageNavProps) {
   const service = use(fetchServiceByIdandLoc(params.id, params.locId));
-  console.log(service.text_for_location);
 
   return service.text_for_location?.text || service.description != "" ? (
     service.text_for_location?.text ? (

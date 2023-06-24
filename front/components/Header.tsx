@@ -103,7 +103,8 @@ const Header = ({ services, locat }: any) => {
               <Link href="/about">
                 <div
                   className="has__border"
-                  onMouseLeave={() => setModal(false)}>
+                  onMouseLeave={() => setModal(false)}
+                  onClick={() => setModal(false)}>
                   ABOUT US
                   <div
                     className="linia"
@@ -120,6 +121,7 @@ const Header = ({ services, locat }: any) => {
                     setModal(true);
                     e.stopPropagation();
                   }}
+                  onClick={() => setModal(false)}
                   // onMouseLeave={() => setModal(false)}
                 >
                   <p className="serv">SERVICES</p>
@@ -138,7 +140,8 @@ const Header = ({ services, locat }: any) => {
               <Link href="/reviews">
                 <div
                   className="has__border "
-                  onMouseLeave={() => setModal(false)}>
+                  onMouseLeave={() => setModal(false)}
+                  onClick={() => setModal(false)}>
                   REVIEWS
                   <div
                     className="linia"
@@ -151,7 +154,8 @@ const Header = ({ services, locat }: any) => {
               <Link href="/blog">
                 <div
                   className="has__border"
-                  onMouseLeave={() => setModal(false)}>
+                  onMouseLeave={() => setModal(false)}
+                  onClick={() => setModal(false)}>
                   BLOG
                   <div
                     className="linia"
@@ -162,7 +166,9 @@ const Header = ({ services, locat }: any) => {
               </Link>
 
               <Link href="/photos">
-                <div onMouseLeave={() => setModal(false)}>
+                <div
+                  onMouseLeave={() => setModal(false)}
+                  onClick={() => setModal(false)}>
                   PROJECT PHOTOS
                   <div
                     className="linia"
