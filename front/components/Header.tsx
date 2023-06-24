@@ -32,6 +32,12 @@ const Header = ({ services, locat }: any) => {
   // async function getData() {
   //   setServices(await fetchServices());
   // }
+  useEffect(() => {
+    if (locat) {
+      cookies.set("currentLocation", locat, { path: "/" });
+      localStorage.setItem("currentLocation", JSON.stringify(locat));
+    }
+  }, [locat]);
   async function getLocat() {
     if (
       typeof window !== "undefined" &&
