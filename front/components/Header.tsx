@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { use, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
+import { AiOutlineClose } from "react-icons/ai";
 
 // import logo from "@/assets/navLogo.png";
 // import strela from "@/assets/strelka.png";
@@ -221,7 +222,8 @@ const Header = ({ services, locat }: any) => {
               onClick={() => {
                 setBurger(false);
               }}>
-              <span>&#128473;</span>
+              {/* <span>&#128473;</span> */}
+              <AiOutlineClose size={25} color="#f2994a" />
             </button>
           </div>
           <div className="navbar_burger">
@@ -256,7 +258,7 @@ const Header = ({ services, locat }: any) => {
                     onClick={() => {
                       setBurger(false);
                     }}>
-                    main services
+                    All services
                   </div>
                 </Link>
                 {services?.results.length === 0

@@ -44,11 +44,11 @@ export default function RootLayout({
   const loc: any = location
     ? JSON.parse(location?.value)
     : {
-        geo_latitude: 38.4088,
-        geo_longitude: -121.3716,
-        id: 398,
-        location_name: "Elk Grove",
-        population: 172886,
+        geo_latitude: 34.0522,
+        geo_longitude: -118.2437,
+        id: 369,
+        location_name: "Los Angeles",
+        population: 3977683,
         state: { id: 4, name: "California" },
       };
 

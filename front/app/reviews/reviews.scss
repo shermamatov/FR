@@ -177,8 +177,9 @@
             height: 56px;
             border-radius: 50%;
             position: absolute;
-            bottom: 15px;
-            left: 15px;
+            left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
         }
     }
 

@@ -111,8 +111,9 @@
                     border: none;
                     border-radius: 50%;
                     position: absolute;
-                    bottom: 15px;
-                    left: 15px;
+                    left: 35%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
                     width: 90px;
                     height: 48px;
                     font-size: 12px;
@@ -177,8 +178,9 @@
                         border: none;
                         border-radius: 50%;
                         position: absolute;
-                        bottom: 15px;
-                        left: 15px;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
                         width: 90px;
                         height: 48px;
                         font-size: 12px;
@@ -252,8 +254,9 @@
                             border: none;
                             border-radius: 50%;
                             position: absolute;
-                            bottom: 5px;
-                            left: 5px;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
                             width: 90px;
                             height: 48px;
                             font-size: 12px;
