@@ -56,9 +56,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
       <body>
-        <Suspense>
+        {/* <Suspense>
           <Analytics />
-        </Suspense>
+        </Suspense> */}
         <Header services={services} locat={loc} />
         {children}
         <Footer />
