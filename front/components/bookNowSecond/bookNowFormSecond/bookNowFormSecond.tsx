@@ -127,7 +127,18 @@ export default function BookNowFormSecond({
     slidesToShow: 1,
     slidesToScroll: 1,
   };
+  function formatTimeRange(timeRange: any) {
+    const regex = /(\d{2})(\d{2}) - (\d{2})(\d{2})/;
+    const matches = timeRange.match(regex);
 
+    if (matches) {
+      const formattedStart = `${matches[1]}:${matches[2]}`;
+      const formattedEnd = `${matches[3]}:${matches[4]}`;
+      return `${formattedStart}-${formattedEnd}`;
+    }
+
+    return timeRange; // Return the original string if the format doesn't match
+  }
   const formatNum = (num: any) => {
     if (num < 10) {
       return `0${num}`;
@@ -271,7 +282,8 @@ export default function BookNowFormSecond({
                   ? "blockNowForm2_time_item blockNowForm2_time_item-active"
                   : "blockNowForm2_time_item"
               }>
-              {item.full}
+              {item.full && formatTimeRange(item.full)}
+              {/* {item.full} */}
             </p>
           );
         })}

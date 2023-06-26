@@ -53,7 +53,7 @@ export default function RootLayout({
   //       population: 3977683,
   //       state: { id: 4, name: "California" },
   //     };
-  console.log(locationCurrent);
+  // console.log(locationCurrent);
 
   const loc: any = location ? JSON.parse(location?.value) : locationCurrent;
 
