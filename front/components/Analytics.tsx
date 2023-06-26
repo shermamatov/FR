@@ -4,6 +4,13 @@ import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    // ⚠️ notice that "Window" is capitalized here
+    dataLayer: any;
+  }
+}
+
 const pageview = (url: any) => {
   if (process.env.NEXT_PUBLIC_VERCEL_ENV !== "production") {
     return;
