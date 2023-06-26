@@ -78,10 +78,7 @@ const Header = ({ services, locat }: any) => {
                 ? `${currentLocation?.currentLocation_name}, ${currentLocation?.state.name}`
                 : ""}
               <Link
-                href={`/location/${location?.location_name?.replace(
-                  /%| /g,
-                  "_"
-                )}`}
+                href={`/location/${locat?.location_name?.replace(/%| /g, "_")}`}
                 className="upn_change">
                 change
               </Link>
@@ -330,10 +327,7 @@ const Header = ({ services, locat }: any) => {
             <Link
               style={{ color: "#F2994A" }}
               className="font-semibold text-xs locat_link"
-              href={`/location/${location?.location_name?.replace(
-                /%| /g,
-                "_"
-              )}`}>
+              href={`/location/${locat?.location_name?.replace(/%| /g, "_")}`}>
               {location
                 ? `${location?.location_name}, ${location?.state.name}`
                 : JSON.stringify(currentLocation) !== "{}"

@@ -30,7 +30,6 @@ export const metadata = {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "@/components/Header";
-import Analytics from "@/components/Analytics";
 
 export default function RootLayout({
   children,
@@ -56,9 +55,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
       <body>
-        {/* <Suspense>
-          <Analytics />
-        </Suspense> */}
         <Header services={services} locat={loc} />
         {children}
         <Footer />
