@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { fetchServices, getCurrentLocation } from "@/api";
 import { use, Suspense } from "react";
 import { cookies } from "next/headers";
+import Analytics from "@/components/Analytics";
 export const fontAlfa = Alfa_Slab_One({
   weight: ["400"],
   style: ["normal"],
@@ -55,6 +56,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
       <body>
+        <Suspense>
+          <Analytics />
+        </Suspense>
+
         <Header services={services} locat={loc} />
         {children}
         <Footer />
