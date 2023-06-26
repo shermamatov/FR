@@ -33,7 +33,7 @@ const ReviewsWritePopup = ({ services }: any) => {
 
   useEffect(() => {
     if (JSON.stringify(location) === "{}") {
-      axios("https://itek-dev.highcat.org/api/location/find/").then(
+      axios("https://1furniturerestoration.com/api/location/find/").then(
         ({ data }) => setLocation(data)
       );
     }

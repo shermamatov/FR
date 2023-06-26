@@ -28,7 +28,7 @@ export default function BookNowFormFirst({
 
   useEffect(() => {
     if (JSON.stringify(location) === "{}") {
-      axios("https://itek-dev.highcat.org/api/location/find/").then(
+      axios("https://1furniturerestoration.com/api/location/find/").then(
         ({ data }) => setLocation(data)
       );
     }
@@ -88,7 +88,7 @@ export default function BookNowFormFirst({
           })}
         </select>
 
-        {message ? <p className={'book-message'}>{message}</p> : ""}
+        {message ? <p className={"book-message"}>{message}</p> : ""}
         <button
           onClick={() => {
             if (name && phone && address && email && service) {
@@ -106,7 +106,6 @@ export default function BookNowFormFirst({
           {" "}
           Next
         </button>
-
       </div>
     </>
   );
