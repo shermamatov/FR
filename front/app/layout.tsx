@@ -3,7 +3,7 @@ import "./globals.css";
 import { Alfa_Slab_One, Montserrat } from "next/font/google";
 import Footer from "@/components/Footer";
 import { fetchServices, getCurrentLocation } from "@/api";
-import { use } from "react";
+import { use, Suspense } from "react";
 import { cookies } from "next/headers";
 export const fontAlfa = Alfa_Slab_One({
   weight: ["400"],
@@ -30,6 +30,7 @@ export const metadata = {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Header from "@/components/Header";
+import Analytics from "@/components/Analytics";
 
 export default function RootLayout({
   children,
@@ -55,6 +56,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
       <body>
+        <Suspense>
+          <Analytics />
+        </Suspense>
         <Header services={services} locat={loc} />
         {children}
         <Footer />
