@@ -6,6 +6,7 @@ import { fetchServices, getCurrentLocation } from "@/api";
 import { use, Suspense } from "react";
 import { cookies } from "next/headers";
 import Analytics from "@/components/Analytics";
+import AnalyticsTwo from "@/components/AnalyticsTwo";
 export const fontAlfa = Alfa_Slab_One({
   weight: ["400"],
   style: ["normal"],
@@ -58,6 +59,7 @@ export default function RootLayout({
       <body>
         <Suspense>
           <Analytics />
+          <AnalyticsTwo />
         </Suspense>
 
         <Header services={services} locat={loc} />
