@@ -41,16 +41,24 @@ export default function RootLayout({
   const nextCookies = cookies();
   const location: any = nextCookies.get("currentLocation");
   // console.log(typeof location?.value);
-  const loc: any = location
-    ? JSON.parse(location?.value)
-    : {
-        geo_latitude: 34.0522,
-        geo_longitude: -118.2437,
-        id: 369,
-        location_name: "Los Angeles",
-        population: 3977683,
-        state: { id: 4, name: "California" },
-      };
+  const loc: any = {
+    geo_latitude: 34.0522,
+    geo_longitude: -118.2437,
+    id: 369,
+    location_name: "Los Angeles",
+    population: 3977683,
+    state: { id: 4, name: "California" },
+  };
+  // const loc: any = location
+  //   ? JSON.parse(location?.value)
+  //   : {
+  //       geo_latitude: 34.0522,
+  //       geo_longitude: -118.2437,
+  //       id: 369,
+  //       location_name: "Los Angeles",
+  //       population: 3977683,
+  //       state: { id: 4, name: "California" },
+  //     };
 
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
