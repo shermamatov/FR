@@ -15,6 +15,14 @@ const dataPromise = getData();
 export default function Location({ params }: any) {
   // const [locations, setLocations] = useState<PaginationData<Location>>();
   const cookies = new Cookies();
+  const [location, setLocation] = useState(
+    (typeof window !== "undefined" &&
+      window.localStorage &&
+      localStorage.getItem("currentLocation")) ||
+      ""
+      ? JSON.parse(localStorage.getItem("currentLocation") || "")
+      : {}
+  );
   const { locName } = params;
   const locations = use(dataPromise);
   // async function getLocations() {
@@ -32,9 +40,21 @@ export default function Location({ params }: any) {
     }
   }
 
-  // useEffect(() => {
-  //   getLocations();
-  // }, []);
+  useEffect(() => {
+    let loc = locations.results.filter(
+      (item: any) => item.location_name.replace(/%| /g, "_") === locName
+    );
+
+    if (
+      loc &&
+      location.location_name.replace(/%| /g, "_") !==
+        loc[0].location_name.replace(/%| /g, "_")
+    ) {
+      setCurrentLocation(loc[0]);
+    }
+    // console.log(loc[0]);
+    // console.log(location);
+  }, [locName]);
 
   return (
     <Layout location={false}>
