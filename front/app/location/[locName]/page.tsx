@@ -5,13 +5,21 @@ import { use, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import { Location, PaginationData, fetchLocations } from "@/api";
 import Link from "next/link";
+
+async function getData() {
+  const res = await fetchLocations();
+  return res;
+}
+const dataPromise = getData();
+
 export default function Location({ params }: any) {
-  const [locations, setLocations] = useState<PaginationData<Location>>();
+  // const [locations, setLocations] = useState<PaginationData<Location>>();
   const cookies = new Cookies();
   const { locName } = params;
-  async function getLocations() {
-    setLocations(await fetchLocations());
-  }
+  const locations = use(dataPromise);
+  // async function getLocations() {
+  //   setLocations(await fetchLocations());
+  // }
 
   function setCurrentLocation(elem: Location) {
     if (typeof window !== "undefined") {
@@ -24,9 +32,9 @@ export default function Location({ params }: any) {
     }
   }
 
-  useEffect(() => {
-    getLocations();
-  }, []);
+  // useEffect(() => {
+  //   getLocations();
+  // }, []);
 
   return (
     <Layout location={false}>
@@ -36,11 +44,11 @@ export default function Location({ params }: any) {
             <p className="location_subtitle">Locations</p>
             <h1 className="location_title">Your city is {locName}</h1>
           </div>
-          <input
+          {/* <input
             type="text"
             placeholder="insert your city or zip coude"
             className="location_input"
-          />
+          /> */}
 
           <img src="/circle-img.webp" alt="" className="location_row_img" />
         </div>
@@ -63,17 +71,17 @@ export default function Location({ params }: any) {
           <div className="row" style={{ flexDirection: "column" }}>
             {locations?.results?.map((item) => (
               <div className="col" key={item.id}>
-                <Link
-                  href={`/location/${item?.location_name?.replace(
-                    /%| /g,
-                    "_"
-                  )}`}>
-                  <p
-                    className="location_block2_item"
-                    onClick={() => setCurrentLocation(item)}>
+                <p
+                  className="location_block2_item"
+                  onClick={() => setCurrentLocation(item)}>
+                  <Link
+                    href={`/location/${item?.location_name?.replace(
+                      /%| /g,
+                      "_"
+                    )}`}>
                     {item.location_name}
-                  </p>
-                </Link>
+                  </Link>
+                </p>
               </div>
             ))}
           </div>
