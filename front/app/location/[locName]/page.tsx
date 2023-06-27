@@ -51,8 +51,6 @@ export default function Location({ params }: any) {
         loc[0].location_name.replace(/%| /g, "_")
     ) {
       setCurrentLocation(loc[0]);
-    } else {
-      setCurrentLocation(location);
     }
     // console.log(loc[0]);
     // console.log(location);
