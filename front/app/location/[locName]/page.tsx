@@ -5,7 +5,7 @@ import { use, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
 import { Location, PaginationData, fetchLocations } from "@/api";
 import Link from "next/link";
-
+import { useRouter } from "next/navigation";
 async function getData() {
   const res = await fetchLocations();
   return res;
@@ -15,6 +15,7 @@ const dataPromise = getData();
 export default function Location({ params }: any) {
   // const [locations, setLocations] = useState<PaginationData<Location>>();
   const cookies = new Cookies();
+  const router = useRouter();
   const [location, setLocation] = useState(
     (typeof window !== "undefined" &&
       window.localStorage &&
@@ -46,11 +47,13 @@ export default function Location({ params }: any) {
     );
 
     if (
-      loc &&
+      loc.length > 0 &&
       location.location_name.replace(/%| /g, "_") !==
         loc[0].location_name.replace(/%| /g, "_")
     ) {
       setCurrentLocation(loc[0]);
+    } else {
+      router.push(`/location/${location.location_name.replace(/%| /g, "_")}`);
     }
     // console.log(loc[0]);
     // console.log(location);
