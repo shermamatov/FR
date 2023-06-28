@@ -27,7 +27,15 @@ const Header = ({ services, locat }: any) => {
   const [modal, setModal] = useState(false);
   const [currentLocation, setCurrentLocation] = useState<any>({});
   const [specialUrl, setSpecialUrl] = useState<any>();
-  const [specLoc, setSpecLoc] = useState(locat);
+  const [specLoc, setSpecLoc] = useState<any>(locat);
+  const [isChanged, setIsChanged] = useState(
+    (typeof window !== "undefined" &&
+      window.localStorage &&
+      localStorage.getItem("isChanged")) ||
+      ""
+      ? localStorage.getItem("isChanged")
+      : {}
+  );
 
   // const [services, setServices] = useState<PaginationData<Service>>();
   const [location, setLocation] = useState<Location>();
@@ -37,6 +45,7 @@ const Header = ({ services, locat }: any) => {
 
   useEffect(() => {
     if (locat) {
+      cookies.remove("currentLocation", { path: "/" });
       cookies.set("currentLocation", locat, { path: "/" });
       localStorage.setItem("currentLocation", JSON.stringify(locat));
     }
@@ -57,6 +66,7 @@ const Header = ({ services, locat }: any) => {
     // getData();
     getLocat();
     if (location) {
+      cookies.remove("currentLocation", { path: "/" });
       cookies.set("currentLocation", location, { path: "/" });
 
       localStorage.setItem("currentLocation", JSON.stringify(location));
@@ -67,11 +77,6 @@ const Header = ({ services, locat }: any) => {
       );
     }
   }, []);
-  useEffect(() => {
-    if (locat !== specLoc) {
-      setSpecLoc(locat);
-    }
-  }, [locat]);
 
   return (
     <div>

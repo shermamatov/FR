@@ -32,12 +32,13 @@ export default function Location({ params }: any) {
 
   function setCurrentLocation(elem: Location) {
     if (typeof window !== "undefined") {
+      cookies.remove("currentLocation", { path: "/" });
       cookies.set("currentLocation", elem, { path: "/" });
       localStorage.setItem("currentLocation", JSON.stringify(elem));
       localStorage.setItem("locationId", JSON.stringify(elem.id));
-      // setTimeout(() => {
-      //   window.location.reload();
-      // }, 2000);
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     }
   }
 
