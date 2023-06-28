@@ -142,10 +142,10 @@ export async function fetchPhotos(
 }
 
 export async function fetchServices(
-    limit = 20,
+    limit = 1000,
     offset = 0
 ): Promise<PaginationData<Service>> {
-    const res = await fetch(`${API_URL}/service`);
+    const res = await fetch(`${API_URL}/service?limit=${limit}&offset=${offset}`);
     return res.json();
 }
 

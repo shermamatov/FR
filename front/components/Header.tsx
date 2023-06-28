@@ -33,6 +33,7 @@ const Header = ({ services, locat }: any) => {
   // async function getData() {
   //   setServices(await fetchServices());
   // }
+
   useEffect(() => {
     if (locat) {
       cookies.set("currentLocation", locat, { path: "/" });
