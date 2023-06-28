@@ -27,6 +27,7 @@ const Header = ({ services, locat }: any) => {
   const [modal, setModal] = useState(false);
   const [currentLocation, setCurrentLocation] = useState<any>({});
   const [specialUrl, setSpecialUrl] = useState<any>();
+  const [specLoc, setSpecLoc] = useState(locat);
 
   // const [services, setServices] = useState<PaginationData<Service>>();
   const [location, setLocation] = useState<Location>();
@@ -66,6 +67,11 @@ const Header = ({ services, locat }: any) => {
       );
     }
   }, []);
+  useEffect(() => {
+    if (locat !== specLoc) {
+      setSpecLoc(locat);
+    }
+  }, [locat]);
 
   return (
     <div>
@@ -73,13 +79,17 @@ const Header = ({ services, locat }: any) => {
         <div className="upNavbar">
           <div className="content">
             <p>
-              {location
+              {/* {location
                 ? `${location?.location_name}, ${location?.state.name}`
                 : JSON.stringify(currentLocation) !== "{}"
                 ? `${currentLocation?.currentLocation_name}, ${currentLocation?.state.name}`
-                : ""}
+                : ""} */}
+              {specLoc && `${specLoc?.location_name}, ${specLoc?.state.name}`}
               <Link
-                href={`/location/${locat?.location_name?.replace(/%| /g, "_")}`}
+                href={`/location/${specLoc?.location_name?.replace(
+                  /%| /g,
+                  "_"
+                )}`}
                 className="upn_change">
                 change
               </Link>
@@ -188,7 +198,7 @@ const Header = ({ services, locat }: any) => {
                   modal={modal}
                   setModal={setModal}
                   services={services}
-                  location={locat}
+                  location={specLoc}
                 />
               }
             </div>
@@ -266,8 +276,8 @@ const Header = ({ services, locat }: any) => {
                         item.main_menu && (
                           <Link
                             href={`/services/${item.slug}/${
-                              location?.id
-                            }/${location?.location_name.replace(/%| /g, "_")}`}
+                              specLoc?.id
+                            }/${specLoc?.location_name.replace(/%| /g, "_")}`}
                             key={item.id}>
                             <div
                               onClick={() => {
@@ -328,12 +338,16 @@ const Header = ({ services, locat }: any) => {
             <Link
               style={{ color: "#F2994A" }}
               className="font-semibold text-xs locat_link"
-              href={`/location/${locat?.location_name?.replace(/%| /g, "_")}`}>
-              {location
+              href={`/location/${specLoc?.location_name?.replace(
+                /%| /g,
+                "_"
+              )}`}>
+              {/* {location
                 ? `${location?.location_name}, ${location?.state.name}`
                 : JSON.stringify(currentLocation) !== "{}"
                 ? `${currentLocation?.currentLocation_name} ${currentLocation?.state.name}`
-                : ""}
+                : ""} */}
+              {specLoc && `${specLoc?.location_name}, ${specLoc?.state.name}`}
             </Link>
             <a className="font-semibold text-xs" href="tel: +1 818 858 15 33">
               +1 818 858 15 33
