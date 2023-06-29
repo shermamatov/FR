@@ -36,9 +36,9 @@ export default function Location({ params }: any) {
       cookies.set("currentLocation", elem, { path: "/" });
       localStorage.setItem("currentLocation", JSON.stringify(elem));
       localStorage.setItem("locationId", JSON.stringify(elem.id));
-      setTimeout(() => {
-        window.location.reload();
-      }, 2000);
+      // setTimeout(() => {
+      //   window.location.reload();
+      // }, 2000);
     }
   }
 

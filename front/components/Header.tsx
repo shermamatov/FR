@@ -14,28 +14,53 @@ import {
   PaginationData,
   Service,
   fetchServices,
+  fetchLocations,
   getCurrentLocation,
 } from "@/api";
 import { usePathname } from "next/navigation";
 import HeaderModal from "./HeaderModal";
 
+async function getData() {
+  const res = await fetchLocations();
+  return res;
+}
+const dataPromise = getData();
+
 const Header = ({ services, locat }: any) => {
   const pathname = usePathname();
   const cookies = new Cookies();
-
+  const locations = use(dataPromise);
   const [burger, setBurger] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentLocation, setCurrentLocation] = useState<any>({});
   const [specialUrl, setSpecialUrl] = useState<any>();
   const [specLoc, setSpecLoc] = useState<any>(locat);
-  const [isChanged, setIsChanged] = useState(
-    (typeof window !== "undefined" &&
-      window.localStorage &&
-      localStorage.getItem("isChanged")) ||
-      ""
-      ? localStorage.getItem("isChanged")
-      : {}
-  );
+  // const [isChanged, setIsChanged] = useState(
+  //   (typeof window !== "undefined" &&
+  //     window.localStorage &&
+  //     localStorage.getItem("isChanged")) ||
+  //     ""
+  //     ? localStorage.getItem("isChanged")
+  //     : {}
+  // );
+  useEffect(() => {
+    // setSpecLoc( (typeof window !== "undefined" &&
+    // window.localStorage &&
+    // localStorage.getItem("currentLocation")) ||
+    // ""
+    // ? JSON.parse(localStorage.getItem("currentLocation") || "")
+    // : {})
+    let path = pathname.split("/");
+    let location_new = locations.results.filter(
+      (item: any) =>
+        item.location_name.replace(/%| /g, "_") === path[path.length - 1]
+    );
+    if (location_new.length !== 0) {
+      setSpecLoc(location_new[0]);
+    }
+    console.log(pathname);
+    console.log(location_new);
+  }, [pathname]);
 
   // const [services, setServices] = useState<PaginationData<Service>>();
   const [location, setLocation] = useState<Location>();
