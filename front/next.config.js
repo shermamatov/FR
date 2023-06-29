@@ -5,21 +5,6 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  async rewrites() {
-    return [
-      {
-        source: "/:path*",
-        destination: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "(http://)",
-          },
-        ],
-        permanent: true,
-      },
-    ];
-  },
   images: {
     remotePatterns: [
       {
