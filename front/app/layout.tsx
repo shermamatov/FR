@@ -59,6 +59,12 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
+      <head>
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        />
+      </head>
       <body>
         <Suspense>
           <Analytics />
