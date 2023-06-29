@@ -5,16 +5,18 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  async headers() {
+  async rewrites() {
     return [
       {
-        source: "/(.*)",
-        headers: [
+        source: "/:path*",
+        destination: "/:path*",
+        has: [
           {
-            key: "Content-Security-Policy",
-            value: "upgrade-insecure-requests",
+            type: "host",
+            value: "(http://)",
           },
         ],
+        permanent: true,
       },
     ];
   },
