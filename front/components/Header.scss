@@ -108,7 +108,7 @@
     }
     .navbar_left_block {
         // width: 12%;
-        width: 150px;
+        width: 125px;
         position: absolute;
         left: 25px;
         // height: 145px;
@@ -202,7 +202,7 @@ button {
             height: 60px;
         }
         .navbar_left_block {
-            width: calc(115px + (135 - 115) * ((100vw - 800px) / (1600 - 800)));
+            width: calc(100px + (125 - 100) * ((100vw - 800px) / (1600 - 800)));
         }
     }
 }
@@ -278,14 +278,15 @@ button {
 
             .adap_logo_block {
                 // width: 20%;
-                width: auto;
+                // width: auto;
                 display: block;
-                height: 100%;
+                width: 70px;
+                // height: 100%;
                 img {
                     height: 100%;
                     width: 100%;
-                    max-width: 55px;
-                    max-height: 50px;
+                    // max-width: 55px;
+                    // max-height: 50px;
                 }
             }
             .right_block_buttons {
@@ -343,7 +344,7 @@ button {
             }
         }
         .navbar_left_block {
-            width: 180px;
+            width: 135px;
         }
     }
 }
