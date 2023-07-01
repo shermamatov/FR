@@ -64,6 +64,10 @@ export default function RootLayout({
           http-equiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
+        <meta
+          name="google-site-verification"
+          content="VmYrpKg91VtR1vWxd3rNQPbsc0wBDd8rK-e3y0-kmYo"
+        />
       </head>
       <body>
         <Suspense>
