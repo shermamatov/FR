@@ -2,7 +2,7 @@ import clsx from "clsx";
 import "./globals.css";
 import { Alfa_Slab_One, Montserrat } from "next/font/google";
 import Footer from "@/components/Footer";
-import { fetchServices, getCurrentLocation } from "@/api";
+import { fetchServices, getCurrentLocation, fetchLocations } from "@/api";
 import { use, Suspense } from "react";
 import { cookies } from "next/headers";
 import Analytics from "@/components/Analytics";
@@ -39,6 +39,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const services = use(fetchServices());
+  const locations = use(fetchLocations());
   const locationCurrent = use(getCurrentLocation());
   const nextCookies = cookies();
   const location: any = nextCookies.get("currentLocation");
@@ -75,7 +76,7 @@ export default function RootLayout({
           <AnalyticsTwo />
         </Suspense>
 
-        <Header services={services} locat={loc} />
+        <Header services={services} locat={loc} locations={locations} />
         {children}
         <Footer />
       </body>

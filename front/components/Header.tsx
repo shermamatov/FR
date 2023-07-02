@@ -20,16 +20,16 @@ import {
 import { usePathname } from "next/navigation";
 import HeaderModal from "./HeaderModal";
 
-async function getData() {
-  const res = await fetchLocations();
-  return res;
-}
-const dataPromise = getData();
+// async function getData() {
+//   const res = await fetchLocations();
+//   return res;
+// }
+// const dataPromise = getData();
 
-const Header = ({ services, locat }: any) => {
+const Header = ({ services, locat, locations }: any) => {
   const pathname = usePathname();
   const cookies = new Cookies();
-  const locations = use(dataPromise);
+  // const locations = use(dataPromise);
   const [burger, setBurger] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentLocation, setCurrentLocation] = useState<any>({});
@@ -229,6 +229,7 @@ const Header = ({ services, locat }: any) => {
                   setModal={setModal}
                   services={services}
                   location={specLoc}
+                  locations={locations}
                 />
               }
             </div>
