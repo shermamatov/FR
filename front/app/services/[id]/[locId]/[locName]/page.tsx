@@ -1,5 +1,5 @@
 import {
-  fetchServiceById,
+  fetchServiceByIdandLoc,
   fetchReviews,
   fetchServices,
   fetchBlog,
@@ -14,7 +14,7 @@ import Image from "next/image";
 import bath2 from "@/assets/bath.png";
 import icon1 from "@/assets/serv_icon1.svg";
 import icon2 from "@/assets/serv_icon2.svg";
-import HomeBlock3 from "@/app/homeblock/homeBlock3/HomeBlock3";
+// import HomeBlock3 from "@/app/homeblock/homeBlock3/HomeBlock3";
 import ServBlock9 from "@/components/servBlock9/ServBlock9";
 import Link from "next/link";
 import React from "react";
@@ -26,10 +26,10 @@ import yelp from "@/assets/yelp.svg";
 import banner from "@/assets/banner.jpg";
 import krujok from "@/assets/block1Krug.png";
 import "../../../services.scss";
-import LocationChecker from "@/components/LocationChecker";
 import HomeBlock4 from "@/app/homeblock/homeBlock4/HomeBlock4";
 
 import { Metadata, ResolvingMetadata } from "next";
+import HomeBlockService from "@/app/homeblock/homeBlockService/HomeBlockService";
 
 type Props = {
   params: { id: string; locId: string };
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function ServiceSingle({ params }: PageNavProps) {
   // const post = use(fetchPostById(params.id));
-  const service = use(fetchServiceById(params.id));
+  const service = use(fetchServiceByIdandLoc(params.id, params.locId));
   const services = use(fetchServices());
   const reviews = use(fetchReviews());
   const blogs = use(fetchBlog());
@@ -92,7 +92,60 @@ export default function ServiceSingle({ params }: PageNavProps) {
               {/* <h1 className="bord w-[90%] mb-4">
                                 {service.name}
                             </h1> */}
-              <LocationChecker params={params} />
+              {/* <LocationChecker params={params} /> */}
+              {service.text_for_location?.text || service.description != "" ? (
+                service.text_for_location?.text ? (
+                  <>
+                    <h1 className="bord w-full lg:w-[90%] mb-4">
+                      {service.text_for_location.h1
+                        ? service.text_for_location.h1
+                        : service.name}
+                    </h1>
+                    {/* {service.text_for_location.h2 && <h2>{service.text_for_location.h2}</h2>} */}
+                    <p className=" w-full lg:w-[90%] text-justify ">
+                      {service.text_for_location.text}
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <h1 className="bord w-full lg:w-[90%] mb-4">
+                      {service.text_for_location.h1
+                        ? service.text_for_location.h1
+                        : service.name}
+                    </h1>
+
+                    <p className="w-full lg:w-[90%] text-justify ">
+                      {service.description}
+                    </p>
+                  </>
+                )
+              ) : (
+                <div className="left_bottom_block">
+                  <div className="block1_desc">
+                    <div className="bord">
+                      <img src="/galochkaIcon.svg" alt="" />
+                      <h4>30+ years experience in engineering</h4>
+                    </div>
+                    <div className="bord">
+                      <img src="/galochkaIcon.svg" alt="" />
+                      <h4>Available 24/7 for Emergencies</h4>
+                    </div>
+                    <div className="bord">
+                      <img src="/galochkaIcon.svg" alt="" />
+                      <h4>Quick service Same-Day inspection and estimate</h4>
+                    </div>
+                    <div className="rating_block bord">
+                      <img src="/stars.svg" alt="" />
+                      <p>95% of clients recommend us</p>
+                    </div>
+                    <div className="mass_block bord">
+                      <Image src={google} alt="" />
+                      <Image src={facebook} alt="" />
+                      <Image src={yelp} alt="" />
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
             <div className="block1_right bord hidden lg:flex ">
               <div className="banner_block">
@@ -241,7 +294,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
                     </div> */}
         </div>
       </section>
-      <HomeBlock3 />
+      {/* <HomeBlock3 /> */}
+      <HomeBlockService service={service} />
       {service.media.length !== 0 ? (
         <div className="content">
           <div className="fr_server">
