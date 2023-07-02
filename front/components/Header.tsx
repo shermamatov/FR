@@ -300,7 +300,7 @@ const Header = ({ services, locat, locations }: any) => {
                     All services
                   </div>
                 </Link>
-                {services?.results.length === 0
+                {/* {services?.results.length === 0
                   ? ""
                   : services?.results.map(
                       (item: Service) =>
@@ -319,6 +319,34 @@ const Header = ({ services, locat, locations }: any) => {
                             </div>
                           </Link>
                         )
+                    )} */}
+                {locations?.results?.length === 0 ||
+                services?.results?.length === 0
+                  ? ""
+                  : locations?.results?.map((locat: any) =>
+                      services?.results?.map(
+                        (item: Service) =>
+                          item.main_menu && (
+                            <Link
+                              href={`/services/${item.slug}/${
+                                locat?.id
+                              }/${locat?.location_name?.replace(/%| /g, "_")}`}
+                              key={item.id}
+                              className={
+                                specLoc.location_name !== locat?.location_name
+                                  ? `hidden invisible`
+                                  : "flex"
+                              }>
+                              <li
+                                className="burger__link font-medium text-base ml-14"
+                                onClick={() => {
+                                  setBurger(false);
+                                }}>
+                                {item.name}
+                              </li>
+                            </Link>
+                          )
+                      )
                     )}
               </div>
             )}

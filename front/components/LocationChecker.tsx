@@ -19,6 +19,7 @@ function LocationChecker({ params }: PageNavProps) {
             ? service.text_for_location.h1
             : service.name}
         </h1>
+        {/* {service.text_for_location.h2 && <h2>{service.text_for_location.h2}</h2>} */}
         <p className=" w-[90%] text-justify ">
           {service.text_for_location.text}
         </p>
