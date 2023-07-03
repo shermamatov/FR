@@ -300,7 +300,7 @@ const Header = ({ services, locat, locations }: any) => {
                     All services
                   </div>
                 </Link>
-                {/* {services?.results.length === 0
+                {services?.results.length === 0
                   ? ""
                   : services?.results.map(
                       (item: Service) =>
@@ -319,8 +319,8 @@ const Header = ({ services, locat, locations }: any) => {
                             </div>
                           </Link>
                         )
-                    )} */}
-                {locations?.results?.length === 0 ||
+                    )}
+                {/* {locations?.results?.length === 0 ||
                 services?.results?.length === 0
                   ? ""
                   : locations?.results?.map((locat: any) =>
@@ -347,7 +347,7 @@ const Header = ({ services, locat, locations }: any) => {
                             </Link>
                           )
                       )
-                    )}
+                    )}*/}
               </div>
             )}
 

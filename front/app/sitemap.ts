@@ -55,7 +55,7 @@ export default async function Sitemap() {
       },
       ...posts,
       ...locs,
-      ...servicesMap
+      // ...servicesMap
 
   ]
 }

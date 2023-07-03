@@ -17,7 +17,7 @@ export default function HeaderModal({
         display: `${modal ? "flex" : "none"}`,
       }}>
       <ul className="h-auto">
-        {/* {services?.results?.length === 0
+        {services?.results?.length === 0
           ? ""
           : services?.results.map(
               (item: Service) =>
@@ -32,8 +32,8 @@ export default function HeaderModal({
                     </li>
                   </Link>
                 )
-            )} */}
-        {locations?.results?.length === 0 || services?.results?.length === 0
+            )}
+        {/* {locations?.results?.length === 0 || services?.results?.length === 0
           ? ""
           : locations?.results?.map((locat: any) =>
               services?.results?.map(
@@ -53,7 +53,7 @@ export default function HeaderModal({
                     </Link>
                   )
               )
-            )}
+            )} */}
       </ul>
     </div>
   );
