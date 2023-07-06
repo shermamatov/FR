@@ -54,7 +54,7 @@ export default function Location({ params }: any) {
     ) {
       setCurrentLocation(loc[0]);
     } else {
-      router.push(`/location/${location.location_name.replace(/%| /g, "_")}`);
+      router.push(`/location/${location?.location_name?.replace(/%| /g, "_")}`);
     }
     // console.log(loc[0]);
     // console.log(location);

@@ -105,24 +105,24 @@ export async function fetchStates(
     offset = 0
 ): Promise<PaginationData<Photo>> {
     const res = await fetch(
-        `${API_URL}/states?limit=${limit}&offset=${offset}`
+        `${API_URL}/states?limit=${limit}&offset=${offset}`, { next: { revalidate: 60 } }
     );
     return res.json();
 }
 
 export async function fetchLocations(
-    limit = 20,
+    limit = 1000,
     offset = 0
 ): Promise<PaginationData<Location>> {
-    const res = await fetch(`${API_URL}/locations/?is_active=1`);
+    const res = await fetch(`${API_URL}/locations/?is_active=1`, { next: { revalidate: 60 } });
     return res.json();
 }
 
 export async function fetchBlog(
-    limit = 20,
+    limit = 1000,
     offset = 0
 ): Promise<PaginationData<Post>> {
-    const res = await fetch(`${API_URL}/blogs?limit=${limit}&offset=${offset}`);
+    const res = await fetch(`${API_URL}/blogs?limit=${limit}&offset=${offset}`, { next: { revalidate: 60 } });
     return res.json();
 }
 
@@ -132,11 +132,11 @@ export async function fetchPostById(id: number | string): Promise<Post> {
 }
 
 export async function fetchPhotos(
-    limit = 20,
+    limit = 1000,
     offset = 0
 ): Promise<PaginationData<Photo>> {
     const res = await fetch(
-        `https://1furniturerestoration.com/api/media?limit=${limit}&offset=${offset}`
+        `https://1furniturerestoration.com/api/media?limit=${limit}&offset=${offset}`, { next: { revalidate: 60 } }
     );
     return res.json();
 }
@@ -145,12 +145,12 @@ export async function fetchServices(
     limit = 1000,
     offset = 0
 ): Promise<PaginationData<Service>> {
-    const res = await fetch(`${API_URL}/service?limit=${limit}&offset=${offset}`);
+    const res = await fetch(`${API_URL}/service?limit=${limit}&offset=${offset}`, { next: { revalidate: 60 } });
     return res.json();
 }
 
 export async function fetchServiceById(id: number | string): Promise<Service> {
-    const res = await fetch(`${API_URL}/service/${id}`);
+    const res = await fetch(`${API_URL}/service/${id}`, { next: { revalidate: 60 } });
     return res.json();
 }
 
@@ -159,7 +159,7 @@ export async function fetchServiceByIdandLoc(
     locationId: number | null | string
 ): Promise<Service> {
     const res = await fetch(
-        `https://1furniturerestoration.com/api/service/${id}/?for_location=${locationId}`
+        `https://1furniturerestoration.com/api/service/${id}/?for_location=${locationId}`, { next: { revalidate: 60 } }
     );
     return res.json();
 }
@@ -169,7 +169,7 @@ export async function fetchReviews(
     offset = 0
 ): Promise<PaginationData<Review>> {
     const res = await fetch(
-        `${API_URL}/review?limit=${limit}&offset=${offset}`
+        `${API_URL}/review?limit=${limit}&offset=${offset}`, { next: { revalidate: 60 } }
     );
     return res.json();
 }
