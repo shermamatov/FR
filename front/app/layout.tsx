@@ -53,15 +53,16 @@ export default function RootLayout({
       item.location_name.replace(/%| /g, "_") === path[path.length - 1]
   );
 
-  console.log("fullUrl", fullUrl);
-  console.log("location_new", location_new);
-  console.log("City", path[path.length - 1]);
-  console.log("Locc", locc);
+  // console.log("fullUrl", fullUrl);
+  // console.log("location_new", location_new);
+  // console.log("City", path[path.length - 1]);
+  // console.log("Locc", locc);
 
   // const loc: any = location_new ? location_new[0] : locationCurrent;
   const loc: any = location
     ? JSON.parse(location?.value)
-    : location_new && locc?.location_name !== location_new[0]?.location_name
+    : location_new.length > 0 &&
+      locc?.location_name !== location_new[0]?.location_name
     ? location_new[0]
     : locationCurrent;
 
