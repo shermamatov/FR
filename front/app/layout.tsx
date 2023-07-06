@@ -4,9 +4,10 @@ import { Alfa_Slab_One, Montserrat } from "next/font/google";
 import Footer from "@/components/Footer";
 import { fetchServices, getCurrentLocation, fetchLocations } from "@/api";
 import { use, Suspense } from "react";
-import { cookies } from "next/headers";
+import { cookies, headers } from "next/headers";
 import Analytics from "@/components/Analytics";
 import AnalyticsTwo from "@/components/AnalyticsTwo";
+
 export const fontAlfa = Alfa_Slab_One({
   weight: ["400"],
   style: ["normal"],
@@ -43,20 +44,26 @@ export default function RootLayout({
   const locationCurrent = use(getCurrentLocation());
   const nextCookies = cookies();
   const location: any = nextCookies.get("currentLocation");
-  // console.log(typeof location?.value);
-  // const loc: any = location
-  //   ? JSON.parse(location?.value)
-  //   : {
-  //       geo_latitude: 34.0522,
-  //       geo_longitude: -118.2437,
-  //       id: 369,
-  //       location_name: "Los Angeles",
-  //       population: 3977683,
-  //       state: { id: 4, name: "California" },
-  //     };
-  // console.log(locationCurrent);
+  const headersList = headers();
+  const fullUrl = headersList.get("referer") || "";
+  let locc = JSON.parse(location?.value);
+  let path = fullUrl.split("/");
+  let location_new = locations.results.filter(
+    (item: any) =>
+      item.location_name.replace(/%| /g, "_") === path[path.length - 1]
+  );
 
-  const loc: any = location ? JSON.parse(location?.value) : locationCurrent;
+  console.log("fullUrl", fullUrl);
+  console.log("location_new", location_new);
+  console.log("City", path[path.length - 1]);
+  console.log("Locc", locc);
+
+  // const loc: any = location_new ? location_new[0] : locationCurrent;
+  const loc: any = location
+    ? JSON.parse(location?.value)
+    : locc?.location_name !== location_new[0]?.location_name
+    ? location_new
+    : locationCurrent;
 
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>

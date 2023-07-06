@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { use, useEffect, useState } from "react";
 import Cookies from "universal-cookie";
+import { useRouter } from "next/navigation";
 import { AiOutlineClose } from "react-icons/ai";
 
 // import logo from "@/assets/navLogo.png";
@@ -20,21 +21,16 @@ import {
 import { usePathname } from "next/navigation";
 import HeaderModal from "./HeaderModal";
 
-// async function getData() {
-//   const res = await fetchLocations();
-//   return res;
-// }
-// const dataPromise = getData();
-
 const Header = ({ services, locat, locations }: any) => {
   const pathname = usePathname();
   const cookies = new Cookies();
-  // const locations = use(dataPromise);
+  const router = useRouter();
   const [burger, setBurger] = useState(false);
   const [modal, setModal] = useState(false);
   const [currentLocation, setCurrentLocation] = useState<any>({});
   const [specialUrl, setSpecialUrl] = useState<any>();
   const [specLoc, setSpecLoc] = useState<any>(locat);
+
   // const [isChanged, setIsChanged] = useState(
   //   (typeof window !== "undefined" &&
   //     window.localStorage &&
@@ -43,6 +39,7 @@ const Header = ({ services, locat, locations }: any) => {
   //     ? localStorage.getItem("isChanged")
   //     : {}
   // );
+
   useEffect(() => {
     // setSpecLoc( (typeof window !== "undefined" &&
     // window.localStorage &&
@@ -58,8 +55,10 @@ const Header = ({ services, locat, locations }: any) => {
     if (location_new.length !== 0) {
       setSpecLoc(location_new[0]);
     }
-    console.log(pathname);
-    console.log(location_new);
+    router.refresh();
+
+    // console.log(pathname);
+    // console.log(location_new);
   }, [pathname]);
 
   // const [services, setServices] = useState<PaginationData<Service>>();
