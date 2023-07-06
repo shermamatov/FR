@@ -61,8 +61,8 @@ export default function RootLayout({
   // const loc: any = location_new ? location_new[0] : locationCurrent;
   const loc: any = location
     ? JSON.parse(location?.value)
-    : locc?.location_name !== location_new[0]?.location_name
-    ? location_new
+    : location_new && locc?.location_name !== location_new[0]?.location_name
+    ? location_new[0]
     : locationCurrent;
 
   return (
