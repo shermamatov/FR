@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import "./homeblockservice.scss";
+import parse from "html-react-parser";
 // import Image from "next/image";
 // import banner from "./banner.jpg";
 // import bannerAdap from "./banner_adap.jpg";
@@ -33,15 +34,15 @@ export default function HomeBlockService({ service }: any) {
                 alt="modal"
               />
               {/* <h3>Beverly Hills</h3> */}
-              {service.text_for_location?.h2 ? (
+              {/* {service.text_for_location?.h2 ? (
                 <h2>{service.text_for_location?.h2}</h2>
               ) : (
                 <h2>
                   Professionalism and Experience <br /> in Furniture Restoration
                 </h2>
-              )}
+              )} */}
               {service.text_for_location?.second_text ? (
-                <p>{service.text_for_location?.second_text}</p>
+                <>{parse(service.text_for_location?.second_text)}</>
               ) : (
                 <p>
                   Our family business, which has been restoring furniture for
@@ -66,17 +67,18 @@ export default function HomeBlockService({ service }: any) {
             />
           </div>
           <div className="block3_right">
-            {service.text_for_location?.h2 ? (
+            {/* {service.text_for_location?.h2 ? (
               <h2 className="bord">{service.text_for_location?.h2}</h2>
             ) : (
               <h2 className="bord">
                 Professionalism and Experience <br /> in Furniture Restoration
               </h2>
-            )}
+            )} */}
+
             {service.text_for_location?.second_text ? (
-              <p className="bord">
-                {service.text_for_location?.second_text.slice(0, 300)}...
-              </p>
+              <>
+                {parse(service.text_for_location?.second_text.slice(0, 300))}...
+              </>
             ) : (
               <p className="bord">
                 Our family business, which has been restoring furniture for over

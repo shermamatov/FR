@@ -53,6 +53,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: service.text_for_location.text
       ? service.text_for_location.text
       : service.description,
+    keywords: service.text_for_location.keywords
+      ? service.text_for_location.keywords
+      : "",
   };
 }
 
@@ -62,23 +65,23 @@ export default function ServiceSingle({ params }: PageNavProps) {
   const services = use(fetchServices());
   const reviews = use(fetchReviews());
   const blogs = use(fetchBlog());
-  function sliceServArr() {
-    if (service.children.length > 2) {
-      let arra = [...service.children];
-      let a = arra.splice(0, 3);
-      return a;
-    } else {
-      let arra = [...services.results];
-      let newArr = [];
-      for (let i of arra) {
-        if (i.main_menu) {
-          newArr.push(i);
-        }
-      }
-      let a = newArr.splice(0, 3);
-      return a;
-    }
-  }
+  // function sliceServArr() {
+  //   if (service.children.length > 2) {
+  //     let arra = [...service.children];
+  //     let a = arra.splice(0, 10);
+  //     return a;
+  //   } else {
+  //     let arra = [...services.results];
+  //     let newArr = [];
+  //     for (let i of arra) {
+  //       if (i.main_menu) {
+  //         newArr.push(i);
+  //       }
+  //     }
+  //     let a = newArr.splice(0, 10);
+  //     return a;
+  //   }
+  // }
 
   return (
     <Layout>
@@ -214,24 +217,25 @@ export default function ServiceSingle({ params }: PageNavProps) {
       </section>
       <section className="content">
         <div className="blogSingle_services_block">
-          {sliceServArr().map((item) => (
-            <div key={item.id}>
-              <Image
-                quality={100}
-                layout="responsive"
-                src={item.offer_image ? item.offer_image : banner}
-                alt="sorry"
-                width={100}
-                height={100}
-              />
-              <Link
-                href={`/services/${item.slug}/${
-                  params.locId
-                }/${params.locName.replace(/%| /g, "_")}`}>
-                <p>{item.anchor_from_parent || item.name}</p>
-              </Link>
-            </div>
-          ))}
+          {service?.children &&
+            service?.children?.map((item: any) => (
+              <div key={item.id}>
+                <Image
+                  quality={100}
+                  layout="responsive"
+                  src={item.offer_image ? item.offer_image : banner}
+                  alt="sorry"
+                  width={100}
+                  height={100}
+                />
+                <Link
+                  href={`/services/${item.slug}/${
+                    params.locId
+                  }/${params.locName.replace(/%| /g, "_")}`}>
+                  <p>{item.anchor_from_parent || item.name}</p>
+                </Link>
+              </div>
+            ))}
         </div>
       </section>
       <section

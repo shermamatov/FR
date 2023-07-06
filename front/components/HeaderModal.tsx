@@ -16,7 +16,7 @@ export default function HeaderModal({
       style={{
         display: `${modal ? "flex" : "none"}`,
       }}>
-      <ul className="h-auto">
+      <ul className="h-auto" onClick={() => setModal(false)}>
         {services?.results?.length === 0
           ? ""
           : services?.results.map(
@@ -33,6 +33,8 @@ export default function HeaderModal({
                   </Link>
                 )
             )}
+        {/* {serviceLinks} */}
+
         {/* {locations?.results?.length === 0 || services?.results?.length === 0
           ? ""
           : locations?.results?.map((locat: any) =>

@@ -463,9 +463,9 @@ export default function ReviewsBlock3({ services }: any) {
           )}
 
           {reviewsAll?.map((item) => (
-            <div key={item.id} className="col-span-1">
-              <div className="reviewsBlock3_card">
-                <p className="reviewsBlock3_card_text text-md">
+            <div key={item.id} className="col-span-1 overflow-hidden">
+              <div className="reviewsBlock3_card overflow-hidden">
+                <p className="reviewsBlock3_card_text text-md overflow-hidden">
                   {item.review_text}
                 </p>
                 <p

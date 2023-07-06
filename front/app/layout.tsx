@@ -7,7 +7,7 @@ import { use, Suspense } from "react";
 import { cookies, headers } from "next/headers";
 import Analytics from "@/components/Analytics";
 import AnalyticsTwo from "@/components/AnalyticsTwo";
-
+import Link from "next/link";
 export const fontAlfa = Alfa_Slab_One({
   weight: ["400"],
   style: ["normal"],
@@ -44,28 +44,59 @@ export default function RootLayout({
   const locationCurrent = use(getCurrentLocation());
   const nextCookies = cookies();
   const location: any = nextCookies.get("currentLocation");
-  const headersList = headers();
-  const fullUrl = headersList.get("referer") || "";
-  let locc = location?.value ? JSON.parse(location?.value) : {};
-  let path = fullUrl.split("/");
-  let location_new = locations.results.filter(
-    (item: any) =>
-      item.location_name.replace(/%| /g, "_") === path[path.length - 1]
-  );
+  // const headersList = headers();
+  // const fullUrl = headersList.get("referer") || "";
+  // let locc = location?.value ? JSON.parse(location?.value) : {};
+  // let path = fullUrl.split("/");
+  // let location_new = locations.results.filter(
+  //   (item: any) =>
+  //     item.location_name.replace(/%| /g, "_") === path[path.length - 1]
+  // );
 
   // console.log("fullUrl", fullUrl);
   // console.log("location_new", location_new);
   // console.log("City", path[path.length - 1]);
   // console.log("Locc", locc);
 
-  // const loc: any = location_new ? location_new[0] : locationCurrent;
-  const loc: any = location
-    ? JSON.parse(location?.value)
-    : location_new.length > 0 &&
-      locc?.location_name !== location_new[0]?.location_name
-    ? location_new[0]
-    : locationCurrent;
+  // const serviceLinks = locations?.results?.map((locat: any) =>
+  //   services?.results?.map(
+  //     (item: any) =>
+  //       item.main_menu && (
+  //         <Link
+  //           href={`/services/${item.slug}/${
+  //             locat?.id
+  //           }/${locat?.location_name?.replace(/%| /g, "_")}`}
+  //           key={item.id}
+  //           className={"flex mb-5"}>
+  //           <li>{item.name}</li>
+  //         </Link>
+  //       )
+  //   )
+  // );
+  console.log(services);
 
+  const loc: any = location ? JSON.parse(location?.value) : locationCurrent;
+  // const loc: any = location
+  //   ? JSON.parse(location?.value)
+  //   : location_new.length > 0 &&
+  //     locc?.location_name !== location_new[0]?.location_name
+  //   ? location_new[0]
+  //   : locationCurrent;
+  // const serviceLinks =
+  //   services?.results?.length === 0
+  //     ? ""
+  //     : services?.results.map(
+  //         (item: any) =>
+  //           item.main_menu && (
+  //             <Link
+  //               href={`/services/${item.slug}/${
+  //                 loc?.id
+  //               }/${loc?.location_name?.replace(/%| /g, "_")}`}
+  //               key={item.id}>
+  //               <li className="mb-5">{item.name}</li>
+  //             </Link>
+  //           )
+  //       );
   return (
     <html lang="en" className={clsx(fontMain.variable, fontAlfa.variable)}>
       <head>
@@ -84,7 +115,12 @@ export default function RootLayout({
           <AnalyticsTwo />
         </Suspense>
 
-        <Header services={services} locat={loc} locations={locations} />
+        <Header
+          services={services}
+          locat={loc}
+          locations={locations}
+          // serviceLinks={serviceLinks}
+        />
         {children}
         <Footer />
       </body>
