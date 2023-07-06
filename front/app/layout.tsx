@@ -46,7 +46,7 @@ export default function RootLayout({
   const location: any = nextCookies.get("currentLocation");
   const headersList = headers();
   const fullUrl = headersList.get("referer") || "";
-  let locc = JSON.parse(location?.value);
+  let locc = location?.value ? JSON.parse(location?.value) : {};
   let path = fullUrl.split("/");
   let location_new = locations.results.filter(
     (item: any) =>
