@@ -23,8 +23,8 @@ export default function HeaderModal({
               (item: Service) =>
                 item.main_menu && (
                   <Link
-                    href={`/services/${item.slug}/${
-                      location?.id
+                    href={`/services/${
+                      item.slug
                     }/${location?.location_name?.replace(/%| /g, "_")}`}
                     key={item.id}>
                     <li className="mb-5" onClick={() => setModal(false)}>

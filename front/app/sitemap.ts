@@ -18,7 +18,7 @@ export default async function Sitemap() {
     const services = await fetchServices()
    const servs = locations?.results.map((location : any) => 
     services?.results?.map((service : any) => ({
-        url: `https://1furniturerestoration.com/services/${service?.slug}/${location?.id}/${location?.location_name?.replace(/%| /g,"_")}`,
+        url: `https://1furniturerestoration.com/services/${service?.slug}/${location?.location_name?.replace(/%| /g,"_")}`,
         lastModified: new Date()
     }))
    )

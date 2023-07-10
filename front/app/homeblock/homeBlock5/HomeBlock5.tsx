@@ -67,8 +67,8 @@ export default function HomeBlock5() {
                       item.main_menu && (
                         <li key={item.id}>
                           <Link
-                            href={`/services/${item.slug}/${
-                              location?.id
+                            href={`/services/${
+                              item.slug
                             }/${location?.location_name.replace(/%| /g, "_")}`}>
                             {item.name}
                           </Link>

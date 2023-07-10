@@ -306,8 +306,8 @@ const Header = ({ services, locat, locations }: any) => {
                       (item: Service) =>
                         item.main_menu && (
                           <Link
-                            href={`/services/${item.slug}/${
-                              specLoc?.id
+                            href={`/services/${
+                              item.slug
                             }/${specLoc?.location_name.replace(/%| /g, "_")}`}
                             key={item.id}>
                             <div

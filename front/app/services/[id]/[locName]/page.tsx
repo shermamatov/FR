@@ -3,6 +3,7 @@ import {
   fetchReviews,
   fetchServices,
   fetchBlog,
+  fetchLocations,
 } from "@/api";
 import { PageNavProps } from "@/app/types";
 import { Layout } from "@/components/Layout";
@@ -25,22 +26,26 @@ import facebook from "@/assets/facebook.svg";
 import yelp from "@/assets/yelp.svg";
 import banner from "@/assets/banner.jpg";
 import krujok from "@/assets/block1Krug.png";
-import "../../../services.scss";
+import "../../services.scss";
 import HomeBlock4 from "@/app/homeblock/homeBlock4/HomeBlock4";
 
 import { Metadata, ResolvingMetadata } from "next";
 import HomeBlockService from "@/app/homeblock/homeBlockService/HomeBlockService";
 
 type Props = {
-  params: { id: string; locId: string };
+  params: { id: string; locName: string };
 };
 
 // set dynamic metadata
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   // read route params
+  const locations = await fetchLocations();
+  let location_id = locations.results.filter(
+    (item: any) => item.location_name.replace(/%| /g, "_") === params.locName
+  );
   const id = params.id;
-  const locationId = params.locId;
-  const url = `https://1furniturerestoration.com/api/service/${id}/?for_location=${locationId}`;
+
+  const url = `https://1furniturerestoration.com/api/service/${id}/?for_location=${location_id[0].id}`;
 
   // fetch data
   const data = await fetch(url).then((res) => res.json());
@@ -61,10 +66,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function ServiceSingle({ params }: PageNavProps) {
   // const post = use(fetchPostById(params.id));
-  const service = use(fetchServiceByIdandLoc(params.id, params.locId));
+  const locations = use(fetchLocations());
+  let location_id = locations.results.filter(
+    (item: any) => item.location_name.replace(/%| /g, "_") === params.locName
+  );
+  const service = use(fetchServiceByIdandLoc(params.id, location_id[0].id));
   const services = use(fetchServices());
+
   const reviews = use(fetchReviews());
   const blogs = use(fetchBlog());
+
+  console.log(location_id[0].id);
+
   // function sliceServArr() {
   //   if (service.children.length > 2) {
   //     let arra = [...service.children];
@@ -93,8 +106,8 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 SERVICES
               </p>
               {/* <h1 className="bord w-[90%] mb-4">
-                                {service.name}
-                            </h1> */}
+                                  {service.name}
+                              </h1> */}
               {/* <LocationChecker params={params} /> */}
               {service.text_for_location?.text || service.description != "" ? (
                 service.text_for_location?.text ? (
@@ -229,9 +242,10 @@ export default function ServiceSingle({ params }: PageNavProps) {
                   height={100}
                 />
                 <Link
-                  href={`/services/${item.slug}/${
-                    params.locId
-                  }/${params.locName.replace(/%| /g, "_")}`}>
+                  href={`/services/${item.slug}/${params.locName.replace(
+                    /%| /g,
+                    "_"
+                  )}`}>
                   <p>{item.anchor_from_parent || item.name}</p>
                 </Link>
               </div>
@@ -246,9 +260,10 @@ export default function ServiceSingle({ params }: PageNavProps) {
             item.name != service.name && (
               <div style={{ marginTop: "20px" }} key={item.id}>
                 <Link
-                  href={`/services/${item.slug}/${
-                    params.locId
-                  }/${params.locName.replace(/%| /g, "_")}`}>
+                  href={`/services/${item.slug}/${params.locName.replace(
+                    /%| /g,
+                    "_"
+                  )}`}>
                   <p className="font-bold text-xl cursor-pointer">
                     {item.anchor_from_parent || item.name}
                   </p>
@@ -295,7 +310,7 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 </Link>
               ))}
           {/* <div className="row row2">
-                    </div> */}
+                      </div> */}
         </div>
       </section>
       {/* <HomeBlock3 /> */}
@@ -370,22 +385,22 @@ export default function ServiceSingle({ params }: PageNavProps) {
                 )
               )}
               {/* {service.media.map((item) => (
-                                <div key={item.id} className="grid__item">
-                                    <Image
-                                        src={item.photo}
-                                        alt={item.caption}
-                                        className="grid__img"
-                                        // unoptimized
-                                        quality={100}
-                                        layout="responsive"
-                                        width={100}
-                                        height={100}
-                                    />
-                                    <p className="grid__desc bord">
-                                        {item.caption}
-                                    </p>
-                                </div>
-                            ))} */}
+                                  <div key={item.id} className="grid__item">
+                                      <Image
+                                          src={item.photo}
+                                          alt={item.caption}
+                                          className="grid__img"
+                                          // unoptimized
+                                          quality={100}
+                                          layout="responsive"
+                                          width={100}
+                                          height={100}
+                                      />
+                                      <p className="grid__desc bord">
+                                          {item.caption}
+                                      </p>
+                                  </div>
+                              ))} */}
             </div>
           </div>
         </div>
