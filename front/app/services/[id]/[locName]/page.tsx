@@ -76,8 +76,6 @@ export default function ServiceSingle({ params }: PageNavProps) {
   const reviews = use(fetchReviews());
   const blogs = use(fetchBlog());
 
-  console.log(location_id[0].id);
-
   // function sliceServArr() {
   //   if (service.children.length > 2) {
   //     let arra = [...service.children];

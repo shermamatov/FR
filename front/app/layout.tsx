@@ -44,9 +44,10 @@ export default function RootLayout({
   const locationCurrent = use(getCurrentLocation());
   const nextCookies = cookies();
   const location: any = nextCookies.get("currentLocation");
+
   // const headersList = headers();
   // const fullUrl = headersList.get("referer") || "";
-  // let locc = location?.value ? JSON.parse(location?.value) : {};
+  // // let locc = location?.value ? JSON.parse(location?.value) : {};
   // let path = fullUrl.split("/");
   // let location_new = locations.results.filter(
   //   (item: any) =>
@@ -58,22 +59,19 @@ export default function RootLayout({
   // console.log("City", path[path.length - 1]);
   // console.log("Locc", locc);
 
-  // const serviceLinks = locations?.results?.map((locat: any) =>
-  //   services?.results?.map(
-  //     (item: any) =>
-  //       item.main_menu && (
-  //         <Link
-  //           href={`/services/${item.slug}/${
-  //             locat?.id
-  //           }/${locat?.location_name?.replace(/%| /g, "_")}`}
-  //           key={item.id}
-  //           className={"flex mb-5"}>
-  //           <li>{item.name}</li>
-  //         </Link>
-  //       )
-  //   )
+  // const serviceLinks = services?.results?.map(
+  //   (item: any) =>
+  //     item.main_menu && (
+  //       <Link
+  //         href={`/services/${
+  //           item.slug
+  //         }/${location_new[0]?.location_name?.replace(/%| /g, "_")}`}
+  //         key={item.id}
+  //         className={"flex mb-5"}>
+  //         <li>{item.name}</li>
+  //       </Link>
+  //     )
   // );
-  console.log(services);
 
   const loc: any = location ? JSON.parse(location?.value) : locationCurrent;
   // const loc: any = location
@@ -108,6 +106,7 @@ export default function RootLayout({
           name="google-site-verification"
           content="VmYrpKg91VtR1vWxd3rNQPbsc0wBDd8rK-e3y0-kmYo"
         />
+        <meta name="robots" content="all" />
       </head>
       <body>
         <Suspense>
